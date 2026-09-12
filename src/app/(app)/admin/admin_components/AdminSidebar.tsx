@@ -41,6 +41,12 @@ const adminCategories = [
     title: "6. Attendance Management",
     icon: LayoutDashboard,
     href: "/admin/06-attendance-management",
+  },
+  {
+    id: "examination-management",
+    title: "7. Examination Management",
+    icon: LayoutDashboard,
+    href: "/admin/07-examination-management",
   }
 ];
 
