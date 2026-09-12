@@ -149,6 +149,12 @@ const adminCategories = [
     title: "24. Search & Filters",
     icon: LayoutDashboard,
     href: "/admin/24-search-filters",
+  },
+  {
+    id: "settings",
+    title: "25. Settings",
+    icon: LayoutDashboard,
+    href: "/admin/25-settings",
   }
 ];
 
