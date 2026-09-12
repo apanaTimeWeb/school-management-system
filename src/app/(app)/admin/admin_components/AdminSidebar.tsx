@@ -83,6 +83,18 @@ const adminCategories = [
     title: "13. Transport Management",
     icon: LayoutDashboard,
     href: "/admin/13-transport-management",
+  },
+  {
+    id: "library",
+    title: "14. Library",
+    icon: LayoutDashboard,
+    href: "/admin/14-library",
+  },
+  {
+    id: "inventory-assets",
+    title: "15. Inventory / Assets",
+    icon: LayoutDashboard,
+    href: "/admin/15-inventory-assets",
   }
 ];
 
