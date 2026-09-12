@@ -23,7 +23,29 @@ export default function SuperAdminSystemActivityLogsTable() {
   ];
 
   return (
-    <div className="bg-card border border-border rounded-lg overflow-x-auto">
+    <div className="flex flex-col gap-4">
+      {/* Filters and Exports Header */}
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-card p-4 rounded-lg border border-border">
+        <div className="flex flex-wrap items-center gap-3">
+          <input type="text" placeholder="Search Activity or User..." className="bg-input border border-border rounded-md px-3 py-1.5 text-sm focus:border-primary outline-none" />
+          <select className="bg-input border border-border rounded-md px-3 py-1.5 text-sm focus:border-primary outline-none">
+            <option value="">All Activity Types</option>
+            <option value="Login">Login</option>
+            <option value="Failed login">Failed login</option>
+            <option value="Record creation">Record creation</option>
+            <option value="Record update">Record update</option>
+            <option value="Record deletion">Record deletion</option>
+            <option value="Configuration changes">Configuration changes</option>
+          </select>
+          <input type="date" className="bg-input border border-border rounded-md px-3 py-1.5 text-sm focus:border-primary outline-none" />
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <button className="px-3 py-1.5 bg-bg-page border border-border rounded-md text-xs font-medium text-text-primary hover:border-primary transition-colors">CSV</button>
+          <button className="px-3 py-1.5 bg-bg-page border border-border rounded-md text-xs font-medium text-text-primary hover:border-primary transition-colors">Excel</button>
+          <button className="px-3 py-1.5 bg-bg-page border border-border rounded-md text-xs font-medium text-text-primary hover:border-primary transition-colors">PDF</button>
+        </div>
+      </div>
+      <div className="bg-card border border-border rounded-lg overflow-x-auto">
       <table className="w-full text-left text-sm whitespace-nowrap">
         <thead className="bg-primary-subtle text-text-secondary uppercase text-[11px] font-semibold">
           <tr>
@@ -59,6 +81,7 @@ export default function SuperAdminSystemActivityLogsTable() {
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }
