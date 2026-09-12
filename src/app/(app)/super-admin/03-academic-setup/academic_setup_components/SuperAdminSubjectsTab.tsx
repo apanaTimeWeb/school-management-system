@@ -78,10 +78,10 @@ export default function SuperAdminSubjectsTab() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-right">
-                  <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                    <button className="p-1 text-text-secondary hover:text-info" title="Edit"><Edit size={14} /></button>
-                    <button className="p-1 text-text-secondary hover:text-danger" title="Delete"><Trash2 size={14} /></button>
-                    <button className="p-1 text-text-secondary hover:text-warning" title={sub.isActive ? "Deactivate" : "Activate"}>
+                  <div className="flex items-center justify-end gap-2">
+                    <button className="p-1 text-info hover:bg-info/10 rounded transition-colors" title="Edit"><Edit size={14} /></button>
+                    <button className="p-1 text-danger hover:bg-danger/10 rounded transition-colors" title="Delete"><Trash2 size={14} /></button>
+                    <button className={cn("p-1 rounded transition-colors", sub.isActive ? "text-warning hover:bg-warning/10" : "text-success hover:bg-success/10")} title={sub.isActive ? "Deactivate" : "Activate"}>
                       {sub.isActive ? <PowerOff size={14} /> : <Power size={14} />}
                     </button>
                   </div>
