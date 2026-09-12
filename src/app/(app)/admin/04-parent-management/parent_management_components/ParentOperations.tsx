@@ -128,7 +128,14 @@ export default function ParentOperations() {
                 <p className="text-sm text-text-primary">"The bus has been coming late by 20 minutes for the past 3 days."</p>
                 <div className="flex justify-between items-center mt-2 pt-2 border-t border-border/50">
                   <span className="text-xs text-text-secondary font-semibold">Raised by: Rajesh Patel (Aarav, Class X)</span>
-                  <button className="text-xs text-primary font-bold hover:underline">Reply & Resolve</button>
+                </div>
+                
+                <div className="mt-2 bg-card border border-border rounded p-3">
+                  <label className="text-xs font-bold text-text-secondary uppercase mb-1 block">Reply & Resolve</label>
+                  <textarea className="w-full bg-bg-input border border-border rounded px-3 py-2 text-sm outline-none focus:border-primary min-h-[60px]" placeholder="Type your response to the parent..."></textarea>
+                  <div className="flex justify-end mt-2">
+                    <button className="text-xs font-bold bg-success text-white px-3 py-1.5 rounded">Mark as Resolved & Send</button>
+                  </div>
                 </div>
               </div>
 
@@ -141,6 +148,9 @@ export default function ParentOperations() {
                 <div className="flex justify-between items-center mt-2 pt-2 border-t border-border/50">
                   <span className="text-xs text-text-secondary font-semibold">Raised by: Priya Sharma (Class I)</span>
                   <span className="text-xs text-success font-bold">Resolved on Oct 10</span>
+                </div>
+                <div className="mt-1 bg-card border border-border rounded p-3 opacity-70">
+                  <p className="text-xs text-text-secondary"><span className="font-bold text-text-primary">Admin Reply:</span> "No outside food is allowed. Refreshments will be provided."</p>
                 </div>
               </div>
             </div>

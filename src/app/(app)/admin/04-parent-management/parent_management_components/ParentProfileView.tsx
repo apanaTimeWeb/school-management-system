@@ -50,7 +50,13 @@ export default function ParentProfileView() {
                 </div>
               </div>
             </div>
-            <button className="mt-4 text-sm font-bold text-primary hover:underline flex items-center gap-1">+ Link Another Child</button>
+            <div className="mt-4 p-4 border border-border bg-bg-page/50 rounded-lg flex flex-col gap-2">
+              <label className="text-xs font-bold text-text-secondary uppercase">Link Another Child</label>
+              <div className="flex gap-2">
+                <input type="text" placeholder="Enter Student Admission No..." className="flex-1 bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
+                <button className="text-sm font-bold bg-primary text-white px-4 py-1.5 rounded-md shadow-sm">Link</button>
+              </div>
+            </div>
           </div>
 
           <div className="bg-bg-page border border-border rounded-lg p-5">
@@ -113,6 +119,18 @@ export default function ParentProfileView() {
                   <span className="text-warning text-xs font-semibold">Pending Update</span>
                 </div>
                 <button className="text-primary bg-primary/10 p-1.5 rounded hover:bg-primary/20"><Download size={16}/></button>
+              </div>
+              
+              <div className="mt-2 pt-3 border-t border-border">
+                <label className="text-xs font-bold text-text-secondary uppercase mb-2 block">Upload New Document</label>
+                <div className="flex gap-2">
+                  <select className="bg-bg-input border border-border rounded-md px-2 py-1.5 text-xs outline-none focus:border-primary w-24">
+                    <option>Aadhar</option>
+                    <option>PAN</option>
+                  </select>
+                  <input type="file" className="text-xs flex-1 file:bg-bg-page file:border file:border-border file:rounded file:px-2 file:py-1 file:text-text-primary" />
+                  <button className="text-xs font-bold bg-primary text-white px-3 py-1.5 rounded">Upload</button>
+                </div>
               </div>
             </div>
           </div>
