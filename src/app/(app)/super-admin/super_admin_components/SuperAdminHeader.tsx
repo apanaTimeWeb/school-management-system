@@ -1,35 +1,47 @@
 "use client";
 
-import { Bell, ChevronDown, UserCircle } from "lucide-react";
+import { Bell, ChevronDown, UserCircle, Menu } from "lucide-react";
 
-export default function SuperAdminHeader() {
+interface SuperAdminHeaderProps {
+  onMenuClick?: () => void;
+}
+
+export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps) {
   return (
-    <header className="fixed top-0 right-0 left-0 lg:left-[240px] z-10 h-16 bg-header/80 backdrop-blur-md border-b border-border flex items-center justify-between px-6 transition-all duration-300">
+    <header className="fixed top-0 right-0 left-0 md:left-[280px] z-10 h-16 bg-sidebar border-b border-border/20 flex items-center justify-between px-4 md:px-6 transition-all duration-300">
       
-      {/* Left side: Page Title / Breadcrumbs can go here */}
-      <div className="flex items-center gap-2">
-        <h2 className="text-lg font-semibold text-text-primary hidden sm:block">Super Admin Portal</h2>
+      {/* Left side: Hamburger (Mobile) & Title */}
+      <div className="flex items-center gap-3">
+        <button 
+          onClick={onMenuClick}
+          className="md:hidden p-2 rounded-md text-sidebar-text-muted hover:text-secondary hover:bg-secondary/10 transition-colors"
+        >
+          <Menu size={24} />
+        </button>
+        <h2 className="text-lg font-bold text-sidebar-text hidden sm:block">
+          <span className="text-secondary">Super Admin</span> Portal
+        </h2>
       </div>
 
       {/* Right side: Actions & Profile */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3 md:gap-4">
         
         {/* Notifications */}
-        <button className="relative p-2 rounded-full hover:bg-primary-subtle text-text-secondary hover:text-primary transition-colors">
+        <button className="relative p-2 rounded-full hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors">
           <Bell size={20} />
-          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-header"></span>
+          <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
         </button>
 
-        <div className="h-6 w-px bg-border"></div>
+        <div className="h-6 w-px bg-border/20 hidden md:block"></div>
 
-        {/* User Profile Dropdown Placeholder */}
-        <button className="flex items-center gap-2 p-1.5 rounded-md hover:bg-primary-subtle transition-colors group">
-          <UserCircle size={28} className="text-text-secondary group-hover:text-primary transition-colors" />
+        {/* User Profile Dropdown */}
+        <button className="flex items-center gap-2 p-1.5 md:p-2 rounded-md hover:bg-secondary/10 transition-colors group">
+          <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-secondary transition-colors" />
           <div className="hidden md:flex flex-col items-start leading-tight">
-            <span className="text-sm font-semibold text-text-primary">System Admin</span>
-            <span className="text-xs text-text-secondary">super@erp360.com</span>
+            <span className="text-sm font-bold text-sidebar-text">System Admin</span>
+            <span className="text-xs text-sidebar-text-muted">super@erp360.com</span>
           </div>
-          <ChevronDown size={16} className="text-text-secondary ml-1 hidden md:block" />
+          <ChevronDown size={16} className="text-sidebar-text-muted ml-1 hidden md:block group-hover:text-secondary" />
         </button>
 
       </div>

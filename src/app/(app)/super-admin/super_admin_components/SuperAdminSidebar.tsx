@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import { ChevronDown, ChevronRight, LayoutDashboard, Settings, Shield } from 'lucide-react';
+import React, { useState } from 'react';
+import { ChevronDown, ChevronRight, Shield, X } from 'lucide-react';
 import clsx from 'clsx';
 
 const MENU_STRUCTURE = [
@@ -35,7 +35,12 @@ const MENU_STRUCTURE = [
   { title: "26. Emergency Controls", href: "/super-admin/26-emergency-controls", items: ["Lockdown", "Reset"] },
 ];
 
-export default function SuperAdminSidebar() {
+interface SuperAdminSidebarProps {
+  isOpen?: boolean;
+  setIsOpen?: (val: boolean) => void;
+}
+
+export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSidebarProps) {
   const pathname = usePathname();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
@@ -48,16 +53,31 @@ export default function SuperAdminSidebar() {
   };
 
   return (
-    <aside className="fixed top-0 left-0 z-20 h-screen w-[280px] bg-sidebar border-r border-border/20 flex flex-col transition-all duration-300">
-      <div className="h-16 flex items-center px-6 border-b border-border/20 bg-sidebar">
+    <aside 
+      className={clsx(
+        "fixed top-0 left-0 z-30 h-screen w-[280px] bg-sidebar border-r border-border/20 flex flex-col transition-transform duration-300",
+        isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      )}
+    >
+      <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-sidebar">
         <h1 className="text-xl font-bold text-sidebar-text tracking-tight">Super<span className="text-secondary">Admin</span></h1>
+        
+        {/* Mobile Close Button */}
+        {setIsOpen && (
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="md:hidden text-sidebar-text-muted hover:text-secondary p-1"
+          >
+            <X size={24} />
+          </button>
+        )}
       </div>
 
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 hide-scrollbar">
-        <nav className="flex flex-col gap-1">
+        <nav className="flex flex-col gap-1 pb-10">
           {MENU_STRUCTURE.map((category) => {
             const hasItems = category.items && category.items.length > 0;
-            const isOpen = openSections[category.title];
+            const isOpenSection = openSections[category.title];
             const isActive = pathname.startsWith(category.href);
             
             return (
@@ -68,6 +88,7 @@ export default function SuperAdminSidebar() {
                 )}>
                   <Link
                     href={category.href}
+                    onClick={() => setIsOpen && setIsOpen(false)}
                     className={clsx(
                       "flex-1 px-3 py-2.5 text-[13px] font-semibold flex items-center gap-3",
                       isActive ? "text-primary" : "text-sidebar-text-muted hover:text-sidebar-text"
@@ -81,12 +102,12 @@ export default function SuperAdminSidebar() {
                       onClick={(e) => toggleSection(category.title, e)}
                       className={clsx("p-2 rounded-r-md transition-colors", isActive ? "text-primary hover:bg-black/10" : "text-sidebar-text-muted hover:text-sidebar-text")}
                     >
-                      {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                      {isOpenSection ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                     </button>
                   )}
                 </div>
 
-                {hasItems && isOpen && (
+                {hasItems && isOpenSection && (
                   <div className="ml-9 border-l border-border/30 flex flex-col gap-1 mt-1 mb-2">
                     {category.items.map((item) => (
                       <div
