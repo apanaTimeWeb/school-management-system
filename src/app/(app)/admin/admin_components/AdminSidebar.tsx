@@ -107,6 +107,12 @@ const adminCategories = [
     title: "17. Events & Activities",
     icon: LayoutDashboard,
     href: "/admin/17-events-activities",
+  },
+  {
+    id: "documents-certificates",
+    title: "18. Documents & Certificates",
+    icon: LayoutDashboard,
+    href: "/admin/18-documents-certificates",
   }
 ];
 
