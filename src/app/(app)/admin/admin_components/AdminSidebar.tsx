@@ -143,6 +143,12 @@ const adminCategories = [
     title: "23. Approval Center",
     icon: LayoutDashboard,
     href: "/admin/23-approval-center",
+  },
+  {
+    id: "search-filters",
+    title: "24. Search & Filters",
+    icon: LayoutDashboard,
+    href: "/admin/24-search-filters",
   }
 ];
 
