@@ -13,11 +13,11 @@ interface DrawerProps {
 
 export default function SuperAdminHouseDrawer({ isOpen, onClose }: DrawerProps) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<HouseType, 'id'>>({
-    resolver: zodResolver(HouseSchema),
-    defaultValues: { isActive: true, houseColor: "#3b82f6" }
+    resolver: zodResolver(HouseSchema) as any,
+    defaultValues: { isActive: true }
   });
 
-  const onSubmit = async (data: Omit<HouseType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting house data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

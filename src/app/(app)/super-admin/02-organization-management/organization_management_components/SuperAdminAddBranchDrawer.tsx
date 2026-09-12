@@ -18,14 +18,13 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
     reset,
     formState: { errors, isSubmitting },
   } = useForm<Omit<Branch, 'id'>>({
-    resolver: zodResolver(BranchSchema),
+    resolver: zodResolver(BranchSchema) as any,
     defaultValues: {
       isActive: true,
-      schoolId: "sch_1" // Defaulting for demo
     }
   });
 
-  const onSubmit = async (data: Omit<Branch, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting branch data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

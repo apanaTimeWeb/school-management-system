@@ -13,11 +13,11 @@ interface DrawerProps {
 
 export default function SuperAdminDepartmentDrawer({ isOpen, onClose }: DrawerProps) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<DepartmentType, 'id'>>({
-    resolver: zodResolver(DepartmentSchema),
+    resolver: zodResolver(DepartmentSchema) as any,
     defaultValues: { isActive: true }
   });
 
-  const onSubmit = async (data: Omit<DepartmentType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting dept data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

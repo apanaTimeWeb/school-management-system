@@ -55,7 +55,7 @@ export default function SuperAdminFinancialYearsTable() {
               <td className="px-4 py-3 font-semibold text-text-primary">
                 <div className="flex items-center gap-2">
                   {fy.fyName}
-                  {fy.status === 'Active' && <CheckCircle size={14} className="text-success" title="Active Financial Year" />}
+                  {fy.status === 'Active' && <CheckCircle size={14} className="text-success" />}
                 </div>
               </td>
               <td className="px-4 py-3 text-text-secondary">

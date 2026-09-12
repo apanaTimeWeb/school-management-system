@@ -15,7 +15,7 @@ export default function SuperAdminSchoolForm() {
     handleSubmit,
     formState: { errors, isSubmitting },
   } = useForm<Omit<School, 'id'>>({
-    resolver: zodResolver(SchoolSchema),
+    resolver: zodResolver(SchoolSchema) as any,
     defaultValues: {
       isActive: true,
       timeZone: "Asia/Kolkata",
@@ -24,7 +24,7 @@ export default function SuperAdminSchoolForm() {
     }
   });
 
-  const onSubmit = async (data: Omit<School, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting school data:", data);
     // TODO: Connect to backend API when ready
     // Mock API delay

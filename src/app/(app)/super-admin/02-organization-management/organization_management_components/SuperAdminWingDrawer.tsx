@@ -13,11 +13,11 @@ interface DrawerProps {
 
 export default function SuperAdminWingDrawer({ isOpen, onClose }: DrawerProps) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<WingType, 'id'>>({
-    resolver: zodResolver(WingSchema),
+    resolver: zodResolver(WingSchema) as any,
     defaultValues: { isActive: true }
   });
 
-  const onSubmit = async (data: Omit<WingType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting wing data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

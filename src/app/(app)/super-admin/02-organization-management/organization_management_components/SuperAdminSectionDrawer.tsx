@@ -13,11 +13,11 @@ interface DrawerProps {
 
 export default function SuperAdminSectionDrawer({ isOpen, onClose }: DrawerProps) {
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<SectionType, 'id'>>({
-    resolver: zodResolver(SectionSchema),
+    resolver: zodResolver(SectionSchema) as any,
     defaultValues: { isActive: true, capacity: 40 }
   });
 
-  const onSubmit = async (data: Omit<SectionType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting section data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();
