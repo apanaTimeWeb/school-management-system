@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Users, CheckCircle, XCircle, Clock, Save, FileText } from 'lucide-react';
 import clsx from 'clsx';
 
-const mockStudents = [
+const initialStudents = [
   { id: '10452', name: 'Aarav Patel', roll: '1', status: 'present', remarks: '' },
   { id: '10453', name: 'Rohan Sharma', roll: '2', status: 'absent', remarks: 'Sick leave approved' },
   { id: '10454', name: 'Sneha Verma', roll: '3', status: 'late', remarks: 'Bus delayed' },
@@ -13,6 +13,27 @@ const mockStudents = [
 
 export default function StudentAttendance() {
   const [activeTab, setActiveTab] = useState('mark');
+  const [students, setStudents] = useState(initialStudents);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const updateStatus = (id: string, status: string) => {
+    setStudents(students.map(s => s.id === id ? { ...s, status } : s));
+    setIsSubmitted(false);
+  };
+
+  const updateRemarks = (id: string, remarks: string) => {
+    setStudents(students.map(s => s.id === id ? { ...s, remarks } : s));
+  };
+
+  const markAllPresent = () => {
+    setStudents(students.map(s => ({ ...s, status: 'present' })));
+    setIsSubmitted(false);
+  };
+
+  const handleSubmit = () => {
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 3000);
+  };
 
   return (
     <div className="flex flex-col md:flex-row gap-6 h-full min-h-[500px] fade-in">
@@ -43,13 +64,13 @@ export default function StudentAttendance() {
                 <label className="text-xs font-semibold text-text-secondary">Attendance Date</label>
                 <input type="date" defaultValue="2026-10-15" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm">Load Roster</button>
+              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Roster</button>
             </div>
 
             <div className="flex justify-between items-center mt-2">
-              <h3 className="font-bold text-sm text-text-secondary uppercase">Class X - A | 4 Students</h3>
+              <h3 className="font-bold text-sm text-text-secondary uppercase">Class X - A | {students.length} Students</h3>
               <div className="flex gap-2">
-                <button className="text-xs font-bold text-success border border-success/30 bg-success-bg px-3 py-1 rounded">Mark All Present</button>
+                <button onClick={markAllPresent} className="text-xs font-bold text-success border border-success/30 bg-success-bg px-3 py-1 rounded hover:bg-success/20 active:scale-95 transition">Mark All Present</button>
               </div>
             </div>
 
@@ -63,7 +84,7 @@ export default function StudentAttendance() {
                 </tr>
               </thead>
               <tbody>
-                {mockStudents.map(student => (
+                {students.map(student => (
                   <tr key={student.id} className="border-b border-border bg-card">
                     <td className="p-3 font-semibold text-sm">{student.roll}</td>
                     <td className="p-3 text-sm flex flex-col">
@@ -72,21 +93,28 @@ export default function StudentAttendance() {
                     </td>
                     <td className="p-3 text-center">
                       <div className="flex items-center justify-center gap-2">
-                        <button className={clsx("p-1.5 rounded-full transition", student.status === 'present' ? 'bg-success text-white' : 'bg-bg-page text-text-secondary hover:bg-success/20')} title="Present"><CheckCircle size={20}/></button>
-                        <button className={clsx("p-1.5 rounded-full transition", student.status === 'absent' ? 'bg-danger text-white' : 'bg-bg-page text-text-secondary hover:bg-danger/20')} title="Absent"><XCircle size={20}/></button>
-                        <button className={clsx("p-1.5 rounded-full transition", student.status === 'late' ? 'bg-warning text-white' : 'bg-bg-page text-text-secondary hover:bg-warning/20')} title="Late"><Clock size={20}/></button>
+                        <button onClick={() => updateStatus(student.id, 'present')} className={clsx("p-1.5 rounded-full transition", student.status === 'present' ? 'bg-success text-white' : 'bg-bg-page text-text-secondary hover:bg-success/20')} title="Present"><CheckCircle size={20}/></button>
+                        <button onClick={() => updateStatus(student.id, 'absent')} className={clsx("p-1.5 rounded-full transition", student.status === 'absent' ? 'bg-danger text-white' : 'bg-bg-page text-text-secondary hover:bg-danger/20')} title="Absent"><XCircle size={20}/></button>
+                        <button onClick={() => updateStatus(student.id, 'late')} className={clsx("p-1.5 rounded-full transition", student.status === 'late' ? 'bg-warning text-white' : 'bg-bg-page text-text-secondary hover:bg-warning/20')} title="Late"><Clock size={20}/></button>
                       </div>
                     </td>
                     <td className="p-3">
-                      <input type="text" placeholder="Add note (optional)" defaultValue={student.remarks} className="w-full bg-bg-input border border-border rounded px-2 py-1 text-xs outline-none focus:border-primary" />
+                      <input 
+                        type="text" 
+                        placeholder="Add note (optional)" 
+                        value={student.remarks} 
+                        onChange={(e) => updateRemarks(student.id, e.target.value)}
+                        className="w-full bg-bg-input border border-border rounded px-2 py-1 text-xs outline-none focus:border-primary" 
+                      />
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
 
-            <div className="flex justify-end mt-4">
-              <button className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2"><Save size={16}/> Submit Attendance</button>
+            <div className="flex items-center justify-end gap-4 mt-4">
+              {isSubmitted && <span className="text-sm font-bold text-success fade-in">Attendance Saved Successfully!</span>}
+              <button onClick={handleSubmit} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-primary-hover active:scale-95 transition"><Save size={16}/> Submit Attendance</button>
             </div>
           </div>
         )}

@@ -4,8 +4,43 @@ import React, { useState } from 'react';
 import { Fingerprint, Users, Clock, CheckSquare } from 'lucide-react';
 import clsx from 'clsx';
 
+const initialStaff = [
+  { id: '1', name: 'Mr. John Doe (Teacher)', punchIn: '07:55', punchOut: '15:00', status: 'present' },
+  { id: '2', name: 'Mrs. Smith (HOD)', punchIn: '', punchOut: '', status: 'absent' },
+];
+
 export default function StaffAttendance() {
   const [activeTab, setActiveTab] = useState('biometric');
+  const [staff, setStaff] = useState(initialStaff);
+  const [isSyncing, setIsSyncing] = useState(false);
+  const [syncStatus, setSyncStatus] = useState('Today, 08:35 AM - Success');
+
+  const handleSync = () => {
+    setIsSyncing(true);
+    setTimeout(() => {
+      setIsSyncing(false);
+      setSyncStatus(`Today, ${new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} - Success`);
+    }, 2000);
+  };
+
+  const updateStaffTime = (id: string, field: 'punchIn' | 'punchOut', value: string) => {
+    setStaff(staff.map(s => s.id === id ? { ...s, [field]: value, status: 'present' } : s));
+  };
+
+  const markAbsent = (id: string) => {
+    setStaff(staff.map(s => s.id === id ? { ...s, punchIn: '', punchOut: '', status: 'absent' } : s));
+  };
+
+  const handleAction = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const btn = e.currentTarget;
+    const originalText = btn.innerText;
+    btn.innerText = "Updated!";
+    btn.classList.add("bg-success");
+    setTimeout(() => {
+      btn.innerText = originalText;
+      btn.classList.remove("bg-success");
+    }, 2000);
+  };
 
   return (
     <div className="flex flex-col md:flex-row gap-6 h-full min-h-[500px] fade-in">
@@ -25,7 +60,7 @@ export default function StaffAttendance() {
         
         {activeTab === 'biometric' && (
           <div className="flex flex-col gap-6 fade-in items-center justify-center py-10">
-            <div className="w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4">
+            <div className={clsx("w-20 h-20 bg-primary/10 text-primary rounded-full flex items-center justify-center mb-4 transition-all", isSyncing && "animate-pulse scale-110")}>
               <Fingerprint size={40} />
             </div>
             <h2 className="text-2xl font-bold text-text-primary text-center">Biometric Integration</h2>
@@ -33,12 +68,14 @@ export default function StaffAttendance() {
               Staff attendance is automatically synced from the Biometric RFID/Fingerprint devices installed at the gates.
             </p>
             <div className="flex gap-4 mt-6">
-              <button className="px-6 py-2 bg-primary text-white rounded-lg font-bold shadow-sm hover:bg-primary-hover">Sync Now</button>
-              <button className="px-6 py-2 bg-bg-page border border-border text-text-primary rounded-lg font-bold shadow-sm">View Raw Device Logs</button>
+              <button onClick={handleSync} disabled={isSyncing} className="px-6 py-2 bg-primary text-white rounded-lg font-bold shadow-sm hover:bg-primary-hover disabled:opacity-50 transition min-w-[120px]">
+                {isSyncing ? "Syncing..." : "Sync Now"}
+              </button>
+              <button className="px-6 py-2 bg-bg-page border border-border text-text-primary rounded-lg font-bold shadow-sm hover:bg-card">View Raw Device Logs</button>
             </div>
-            <div className="mt-8 w-full max-w-md bg-bg-page border border-border p-4 rounded-lg flex justify-between items-center">
+            <div className="mt-8 w-full max-w-md bg-bg-page border border-border p-4 rounded-lg flex justify-between items-center transition-all">
               <span className="text-sm font-bold text-text-primary">Last Sync Status</span>
-              <span className="text-xs font-bold text-success">Today, 08:35 AM - Success</span>
+              <span className="text-xs font-bold text-success">{syncStatus}</span>
             </div>
           </div>
         )}
@@ -73,21 +110,20 @@ export default function StaffAttendance() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-t border-border bg-card">
-                  <td className="p-3 font-semibold text-sm">Mr. John Doe (Teacher)</td>
-                  <td className="p-3"><input type="time" defaultValue="07:55" className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
-                  <td className="p-3"><input type="time" defaultValue="15:00" className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
-                  <td className="p-3 text-right"><button className="text-xs bg-primary text-white px-3 py-1.5 rounded font-bold">Update</button></td>
-                </tr>
-                <tr className="border-t border-border bg-card">
-                  <td className="p-3 font-semibold text-sm">Mrs. Smith (HOD)</td>
-                  <td className="p-3"><input type="time" className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
-                  <td className="p-3"><input type="time" className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
-                  <td className="p-3 text-right">
-                    <button className="text-xs bg-danger-bg text-danger border border-danger/30 px-3 py-1.5 rounded font-bold mr-2">Mark Absent</button>
-                    <button className="text-xs bg-primary text-white px-3 py-1.5 rounded font-bold">Update</button>
-                  </td>
-                </tr>
+                {staff.map(s => (
+                  <tr key={s.id} className="border-t border-border bg-card">
+                    <td className="p-3 font-semibold text-sm">
+                      {s.name}
+                      {s.status === 'absent' && <span className="ml-2 text-[10px] bg-danger text-white px-1.5 py-0.5 rounded uppercase">Absent</span>}
+                    </td>
+                    <td className="p-3"><input type="time" value={s.punchIn} onChange={(e) => updateStaffTime(s.id, 'punchIn', e.target.value)} className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
+                    <td className="p-3"><input type="time" value={s.punchOut} onChange={(e) => updateStaffTime(s.id, 'punchOut', e.target.value)} className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
+                    <td className="p-3 text-right">
+                      {s.status !== 'absent' && <button onClick={() => markAbsent(s.id)} className="text-xs bg-danger-bg text-danger border border-danger/30 px-3 py-1.5 rounded font-bold mr-2 hover:bg-danger/10">Mark Absent</button>}
+                      <button onClick={handleAction} className="text-xs bg-primary text-white px-3 py-1.5 rounded font-bold transition-colors w-[70px]">Update</button>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
