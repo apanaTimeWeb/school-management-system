@@ -155,6 +155,18 @@ const adminCategories = [
     title: "25. Settings",
     icon: LayoutDashboard,
     href: "/admin/25-settings",
+  },
+  {
+    id: "security",
+    title: "26. Security",
+    icon: LayoutDashboard,
+    href: "/admin/26-security",
+  },
+  {
+    id: "audit",
+    title: "27. Audit",
+    icon: LayoutDashboard,
+    href: "/admin/27-audit",
   }
 ];
 
