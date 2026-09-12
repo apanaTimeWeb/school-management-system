@@ -1,5 +1,5 @@
 import { Building2, School, MapPin, Grid, Layers, DoorOpen } from "lucide-react";
-import { cn } from "@/app/(app)/super-admin/super_admin_components/SuperAdminSidebar";
+import { cn } from "@/lib/utils";
 
 export default function SuperAdminOrgStructureTree() {
   const tree = [

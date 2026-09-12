@@ -3,7 +3,7 @@ import {
   School, GraduationCap, Key, DatabaseBackup, History 
 } from 'lucide-react';
 import Link from 'next/link';
-import { cn } from '@/app/(app)/super-admin/super_admin_components/SuperAdminSidebar';
+import { cn } from '@/lib/utils';
 
 export default function QuickActions() {
   const actions = [

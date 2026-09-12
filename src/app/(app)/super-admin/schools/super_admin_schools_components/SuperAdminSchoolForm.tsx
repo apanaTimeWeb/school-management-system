@@ -3,7 +3,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "next/navigation";
-import { SchoolSchema, type School } from "../super_admin_schools_types/super_admin_schools.types";
+import { SchoolSchema, type School } from "@/app/(app)/super-admin/schools/super_admin_schools_types/super_admin_schools.types";
 import { Save, X } from "lucide-react";
 import Link from "next/link";
 

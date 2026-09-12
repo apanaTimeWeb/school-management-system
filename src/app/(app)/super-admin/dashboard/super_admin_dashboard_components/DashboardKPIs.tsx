@@ -2,7 +2,7 @@ import {
   School, Users, UserCheck, GraduationCap, Users2, ShieldAlert, 
   UserMinus, CheckCircle, Calendar, CreditCard, UserPlus, Clock, Banknote 
 } from 'lucide-react';
-import { cn } from '@/app/(app)/super-admin/super_admin_components/SuperAdminSidebar';
+import { cn } from '@/lib/utils';
 
 interface KPIProps {
   title: string;

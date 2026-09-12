@@ -19,13 +19,7 @@ import {
   Menu
 } from 'lucide-react';
 import { useState } from 'react';
-import { clsx, type ClassValue } from 'clsx';
-import { twMerge } from 'tailwind-merge';
-
-// Temporary utility function, typically would live in src/lib/utils.ts
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+import { cn } from '@/lib/utils';
 
 const SIDEBAR_LINKS = [
   { label: 'Dashboard', href: '/super-admin/dashboard', icon: LayoutDashboard },

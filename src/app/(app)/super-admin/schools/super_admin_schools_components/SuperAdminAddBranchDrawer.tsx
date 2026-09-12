@@ -2,9 +2,9 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { BranchSchema, type Branch } from "../super_admin_schools_types/super_admin_schools.types";
+import { BranchSchema, type Branch } from "@/app/(app)/super-admin/schools/super_admin_schools_types/super_admin_schools.types";
 import { Save, X } from "lucide-react";
-import { cn } from "@/app/(app)/super-admin/super_admin_components/SuperAdminSidebar";
+import { cn } from "@/lib/utils";
 
 interface DrawerProps {
   isOpen: boolean;

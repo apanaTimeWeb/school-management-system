@@ -1,8 +1,8 @@
 "use client";
 
 import { Edit, Eye, Power, PowerOff } from "lucide-react";
-import type { Branch } from "../super_admin_schools_types/super_admin_schools.types";
-import { cn } from "@/app/(app)/super-admin/super_admin_components/SuperAdminSidebar";
+import type { Branch } from "@/app/(app)/super-admin/schools/super_admin_schools_types/super_admin_schools.types";
+import { cn } from "@/lib/utils";
 
 export default function SuperAdminBranchesTable() {
   const branches: Branch[] = [
