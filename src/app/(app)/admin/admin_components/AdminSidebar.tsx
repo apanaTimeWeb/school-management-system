@@ -119,6 +119,18 @@ const adminCategories = [
     title: "19. Discipline & Grievance",
     icon: LayoutDashboard,
     href: "/admin/19-discipline-grievance",
+  },
+  {
+    id: "health-medical",
+    title: "20. Health / Medical",
+    icon: LayoutDashboard,
+    href: "/admin/20-health-medical",
+  },
+  {
+    id: "website-public-content",
+    title: "21. Website / Public Content",
+    icon: LayoutDashboard,
+    href: "/admin/21-website-public-content",
   }
 ];
 
