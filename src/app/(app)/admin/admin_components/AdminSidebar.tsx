@@ -47,6 +47,12 @@ const adminCategories = [
     title: "7. Examination Management",
     icon: LayoutDashboard,
     href: "/admin/07-examination-management",
+  },
+  {
+    id: "fee-management",
+    title: "8. Fee Management",
+    icon: LayoutDashboard,
+    href: "/admin/08-fee-management",
   }
 ];
 
