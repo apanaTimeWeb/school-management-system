@@ -89,7 +89,7 @@ export default function SuperAdminUsersTable({ onEdit }: TableProps) {
                   <div className="relative inline-block text-left">
                     <button 
                       onClick={() => setOpenDropdownId(openDropdownId === user.id ? null : user.id)}
-                      className="p-1.5 text-text-secondary hover:bg-bg-page rounded-md transition-colors"
+                      className="p-1.5 text-primary bg-primary/10 hover:bg-primary/20 rounded-md transition-colors"
                     >
                       <MoreVertical size={16} />
                     </button>
@@ -98,36 +98,36 @@ export default function SuperAdminUsersTable({ onEdit }: TableProps) {
                       <div className="absolute right-0 mt-2 w-56 bg-card border border-border rounded-md shadow-lg z-10 py-1">
                         
                         <div className="px-3 py-1.5 text-xs font-bold text-text-primary border-b border-border bg-bg-page">Basic Actions</div>
-                        <button onClick={() => {setViewUserId(user.id); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-primary flex items-center gap-2"><Eye size={14}/> View User</button>
-                        <button onClick={() => {onEdit(user); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-info flex items-center gap-2"><Edit size={14}/> Edit User</button>
+                        <button onClick={() => {setViewUserId(user.id); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs font-medium text-info hover:bg-info/10 flex items-center gap-2"><Eye size={14}/> View User</button>
+                        <button onClick={() => {onEdit(user); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs font-medium text-primary hover:bg-primary/10 flex items-center gap-2"><Edit size={14}/> Edit User</button>
                         
                         <div className="px-3 py-1.5 text-xs font-bold text-text-primary border-y border-border bg-bg-page mt-1">Status Management</div>
                         {user.status === 'Deleted' ? (
-                          <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-success flex items-center gap-2"><RotateCcw size={14}/> Restore</button>
+                          <button className="w-full text-left px-4 py-2 text-xs font-medium text-success hover:bg-success/10 flex items-center gap-2"><RotateCcw size={14}/> Restore</button>
                         ) : (
                           <>
                             {user.status !== 'Active' ? (
-                              <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-success flex items-center gap-2"><Power size={14}/> Activate</button>
+                              <button className="w-full text-left px-4 py-2 text-xs font-medium text-success hover:bg-success/10 flex items-center gap-2"><Power size={14}/> Activate</button>
                             ) : (
-                              <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-warning flex items-center gap-2"><PowerOff size={14}/> Deactivate</button>
+                              <button className="w-full text-left px-4 py-2 text-xs font-medium text-warning hover:bg-warning/10 flex items-center gap-2"><PowerOff size={14}/> Deactivate</button>
                             )}
                             
                             {user.status !== 'Suspended' && (
-                              <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-purple flex items-center gap-2"><ShieldAlert size={14}/> Suspend</button>
+                              <button className="w-full text-left px-4 py-2 text-xs font-medium text-purple hover:bg-purple/10 flex items-center gap-2"><ShieldAlert size={14}/> Suspend</button>
                             )}
 
                             {user.status === 'Locked' ? (
-                              <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-success flex items-center gap-2"><Unlock size={14}/> Unlock account</button>
+                              <button className="w-full text-left px-4 py-2 text-xs font-medium text-success hover:bg-success/10 flex items-center gap-2"><Unlock size={14}/> Unlock account</button>
                             ) : (
-                              <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-danger flex items-center gap-2"><Lock size={14}/> Lock account</button>
+                              <button className="w-full text-left px-4 py-2 text-xs font-medium text-danger hover:bg-danger/10 flex items-center gap-2"><Lock size={14}/> Lock account</button>
                             )}
                           </>
                         )}
 
                         <div className="px-3 py-1.5 text-xs font-bold text-text-primary border-y border-border bg-bg-page mt-1">Security & Danger</div>
-                        <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-info flex items-center gap-2"><Key size={14}/> Reset password</button>
-                        <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-warning flex items-center gap-2"><RefreshCw size={14}/> Force password change</button>
-                        <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-danger flex items-center gap-2"><LogOut size={14}/> Force logout</button>
+                        <button className="w-full text-left px-4 py-2 text-xs font-medium text-info hover:bg-info/10 flex items-center gap-2"><Key size={14}/> Reset password</button>
+                        <button className="w-full text-left px-4 py-2 text-xs font-medium text-warning hover:bg-warning/10 flex items-center gap-2"><RefreshCw size={14}/> Force password change</button>
+                        <button className="w-full text-left px-4 py-2 text-xs font-medium text-danger hover:bg-danger/10 flex items-center gap-2"><LogOut size={14}/> Force logout</button>
                         
                         {user.status !== 'Deleted' && (
                           <button className="w-full text-left px-4 py-2 text-xs text-danger hover:bg-danger-bg font-medium flex items-center gap-2 border-t border-border mt-1 pt-2"><Trash2 size={14}/> Delete</button>

@@ -52,7 +52,7 @@ export default function SuperAdminRolesTable({ onEdit }: TableProps) {
                 <div className="relative inline-block text-left">
                   <button 
                     onClick={() => setOpenDropdownId(openDropdownId === role.id ? null : role.id)}
-                    className="p-1.5 text-text-secondary hover:bg-bg-page rounded-md transition-colors"
+                    className="p-1.5 text-primary bg-primary/10 hover:bg-primary/20 rounded-md transition-colors"
                   >
                     <MoreVertical size={16} />
                   </button>
@@ -62,19 +62,19 @@ export default function SuperAdminRolesTable({ onEdit }: TableProps) {
                       <div className="px-3 py-1.5 text-xs font-bold text-text-primary border-b border-border bg-bg-page">Role Actions</div>
                       
                       {/* Explicit Text Actions matching the checklist */}
-                      <button onClick={() => {onEdit(role); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-info flex items-center gap-2">
+                      <button onClick={() => {onEdit(role); setOpenDropdownId(null);}} className="w-full text-left px-4 py-2 text-xs font-medium text-info hover:bg-info/10 flex items-center gap-2">
                         <Edit size={14}/> Edit
                       </button>
-                      <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-primary flex items-center gap-2">
+                      <button className="w-full text-left px-4 py-2 text-xs font-medium text-primary hover:bg-primary/10 flex items-center gap-2">
                         <Copy size={14}/> Duplicate
                       </button>
                       
                       {role.isActive ? (
-                        <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-warning flex items-center gap-2">
+                        <button className="w-full text-left px-4 py-2 text-xs font-medium text-warning hover:bg-warning/10 flex items-center gap-2">
                           <PowerOff size={14}/> Deactivate
                         </button>
                       ) : (
-                        <button className="w-full text-left px-4 py-2 text-xs text-text-secondary hover:bg-bg-page hover:text-success flex items-center gap-2">
+                        <button className="w-full text-left px-4 py-2 text-xs font-medium text-success hover:bg-success/10 flex items-center gap-2">
                           <Power size={14}/> Activate
                         </button>
                       )}
