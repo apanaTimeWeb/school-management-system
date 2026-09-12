@@ -60,7 +60,12 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
       )}
     >
       <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-sidebar">
-        <h1 className="text-xl font-bold text-sidebar-text tracking-tight">Super<span className="text-secondary">Admin</span></h1>
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-primary font-extrabold text-xl">
+            S
+          </div>
+          <h1 className="text-xl font-bold text-sidebar-text tracking-tight">Super<span className="text-secondary">Admin</span></h1>
+        </div>
         
         {/* Mobile Close Button */}
         {setIsOpen && (
