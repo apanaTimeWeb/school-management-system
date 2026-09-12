@@ -76,25 +76,25 @@ export default function SuperAdminRolloverDrawer({ isOpen, onClose }: DrawerProp
                   <option value="ses_1">2026-2027 (Current)</option>
                   <option value="ses_0">2025-2026 (Previous)</option>
                 </select>
-                {errors.fromSessionId && <span className="text-xs text-danger">{errors.fromSessionId.message}</span>}
+                {errors.fromSessionId && <span className="text-xs text-danger">{String(errors.fromSessionId.message)}</span>}
               </div>
 
               <div className="flex flex-col gap-1.5">
                 <label className="text-sm font-medium text-text-primary">New Session Name <span className="text-danger">*</span></label>
                 <input {...register("toSessionName")} placeholder="e.g. 2027-2028" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-                {errors.toSessionName && <span className="text-xs text-danger">{errors.toSessionName.message}</span>}
+                {errors.toSessionName && <span className="text-xs text-danger">{String(errors.toSessionName.message)}</span>}
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-text-primary">Start Date <span className="text-danger">*</span></label>
                   <input type="date" {...register("startDate")} className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-                  {errors.startDate && <span className="text-xs text-danger">{errors.startDate.message}</span>}
+                  {errors.startDate && <span className="text-xs text-danger">{String(errors.startDate.message)}</span>}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-text-primary">End Date <span className="text-danger">*</span></label>
                   <input type="date" {...register("endDate")} className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-                  {errors.endDate && <span className="text-xs text-danger">{errors.endDate.message}</span>}
+                  {errors.endDate && <span className="text-xs text-danger">{String(errors.endDate.message)}</span>}
                 </div>
               </div>
             </div>

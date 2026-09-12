@@ -43,7 +43,7 @@ export default function SuperAdminDepartmentDrawer({ isOpen, onClose }: DrawerPr
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Department Name <span className="text-danger">*</span></label>
               <input {...register("deptName")} placeholder="e.g. Academic, HR" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.deptName && <span className="text-xs text-danger">{errors.deptName.message}</span>}
+              {errors.deptName && <span className="text-xs text-danger">{String(errors.deptName.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">

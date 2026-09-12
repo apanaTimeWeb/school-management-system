@@ -43,7 +43,7 @@ export default function SuperAdminRoleDrawer({ isOpen, onClose }: DrawerProps) {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Role Name <span className="text-danger">*</span></label>
               <input {...register("roleName")} placeholder="e.g. Class Teacher, HOD" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.roleName && <span className="text-xs text-danger">{errors.roleName.message}</span>}
+              {errors.roleName && <span className="text-xs text-danger">{String(errors.roleName.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">

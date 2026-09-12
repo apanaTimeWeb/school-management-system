@@ -47,19 +47,19 @@ export default function SuperAdminSectionDrawer({ isOpen, onClose }: DrawerProps
                 <option value="c1">Class 10</option>
                 <option value="c2">Class 11</option>
               </select>
-              {errors.classId && <span className="text-xs text-danger">{errors.classId.message}</span>}
+              {errors.classId && <span className="text-xs text-danger">{String(errors.classId.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Section Name <span className="text-danger">*</span></label>
               <input {...register("sectionName")} placeholder="e.g. A" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.sectionName && <span className="text-xs text-danger">{errors.sectionName.message}</span>}
+              {errors.sectionName && <span className="text-xs text-danger">{String(errors.sectionName.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Capacity <span className="text-danger">*</span></label>
               <input type="number" {...register("capacity", { valueAsNumber: true })} placeholder="e.g. 40" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.capacity && <span className="text-xs text-danger">{errors.capacity.message}</span>}
+              {errors.capacity && <span className="text-xs text-danger">{String(errors.capacity.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">

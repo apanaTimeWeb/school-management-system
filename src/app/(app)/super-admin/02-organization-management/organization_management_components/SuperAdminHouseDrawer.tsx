@@ -43,7 +43,7 @@ export default function SuperAdminHouseDrawer({ isOpen, onClose }: DrawerProps) 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">House Name <span className="text-danger">*</span></label>
               <input {...register("houseName")} placeholder="e.g. Red House" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.houseName && <span className="text-xs text-danger">{errors.houseName.message}</span>}
+              {errors.houseName && <span className="text-xs text-danger">{String(errors.houseName.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">

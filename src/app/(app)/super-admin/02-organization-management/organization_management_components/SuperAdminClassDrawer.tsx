@@ -43,19 +43,19 @@ export default function SuperAdminClassDrawer({ isOpen, onClose }: DrawerProps) 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Class Name <span className="text-danger">*</span></label>
               <input {...register("className")} placeholder="e.g. Class 10" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.className && <span className="text-xs text-danger">{errors.className.message}</span>}
+              {errors.className && <span className="text-xs text-danger">{String(errors.className.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Class Code <span className="text-danger">*</span></label>
               <input {...register("classCode")} placeholder="e.g. CLS-10" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.classCode && <span className="text-xs text-danger">{errors.classCode.message}</span>}
+              {errors.classCode && <span className="text-xs text-danger">{String(errors.classCode.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Class Order (Sequence) <span className="text-danger">*</span></label>
               <input type="number" {...register("classOrder", { valueAsNumber: true })} className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.classOrder && <span className="text-xs text-danger">{errors.classOrder.message}</span>}
+              {errors.classOrder && <span className="text-xs text-danger">{String(errors.classOrder.message)}</span>}
             </div>
             
             <div className="flex items-center gap-2 mt-2">

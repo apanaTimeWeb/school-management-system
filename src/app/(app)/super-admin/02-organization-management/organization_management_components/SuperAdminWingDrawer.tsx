@@ -43,7 +43,7 @@ export default function SuperAdminWingDrawer({ isOpen, onClose }: DrawerProps) {
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Wing Name <span className="text-danger">*</span></label>
               <input {...register("wingName")} placeholder="e.g. Primary, Secondary" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.wingName && <span className="text-xs text-danger">{errors.wingName.message}</span>}
+              {errors.wingName && <span className="text-xs text-danger">{String(errors.wingName.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">

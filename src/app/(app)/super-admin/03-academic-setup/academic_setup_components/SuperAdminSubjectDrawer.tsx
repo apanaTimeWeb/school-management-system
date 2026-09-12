@@ -47,14 +47,14 @@ export default function SuperAdminSubjectDrawer({ isOpen, onClose }: DrawerProps
               <div className="flex flex-col gap-1.5">
                 <label className="text-sm font-medium text-text-primary">Subject Name <span className="text-danger">*</span></label>
                 <input {...register("subjectName")} placeholder="e.g. Mathematics" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-                {errors.subjectName && <span className="text-xs text-danger">{errors.subjectName.message}</span>}
+                {errors.subjectName && <span className="text-xs text-danger">{String(errors.subjectName.message)}</span>}
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-text-primary">Subject Code <span className="text-danger">*</span></label>
                   <input {...register("subjectCode")} placeholder="e.g. MAT-101" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-                  {errors.subjectCode && <span className="text-xs text-danger">{errors.subjectCode.message}</span>}
+                  {errors.subjectCode && <span className="text-xs text-danger">{String(errors.subjectCode.message)}</span>}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-medium text-text-primary">Category <span className="text-danger">*</span></label>

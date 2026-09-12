@@ -69,7 +69,7 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="e.g. North Campus"
               />
-              {errors.branchName && <span className="text-xs text-danger">{errors.branchName.message}</span>}
+              {errors.branchName && <span className="text-xs text-danger">{String(errors.branchName.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -79,7 +79,7 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="e.g. BR-NORTH"
               />
-              {errors.branchCode && <span className="text-xs text-danger">{errors.branchCode.message}</span>}
+              {errors.branchCode && <span className="text-xs text-danger">{String(errors.branchCode.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -89,7 +89,7 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="Enter branch head name"
               />
-              {errors.branchHead && <span className="text-xs text-danger">{errors.branchHead.message}</span>}
+              {errors.branchHead && <span className="text-xs text-danger">{String(errors.branchHead.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -99,7 +99,7 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="10-digit number"
               />
-              {errors.contact && <span className="text-xs text-danger">{errors.contact.message}</span>}
+              {errors.contact && <span className="text-xs text-danger">{String(errors.contact.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -110,7 +110,7 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 placeholder="Enter branch address"
               />
-              {errors.address && <span className="text-xs text-danger">{errors.address.message}</span>}
+              {errors.address && <span className="text-xs text-danger">{String(errors.address.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">

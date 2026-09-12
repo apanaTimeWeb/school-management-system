@@ -12,14 +12,14 @@ interface DrawerProps {
 }
 
 export default function SuperAdminFinancialYearDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<FinancialYear, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(FinancialYearSchema),
     defaultValues: {
       status: "Active"
     }
   });
 
-  const onSubmit = async (data: Omit<FinancialYear, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting FY data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();
@@ -45,19 +45,19 @@ export default function SuperAdminFinancialYearDrawer({ isOpen, onClose }: Drawe
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Financial Year Name <span className="text-danger">*</span></label>
               <input {...register("fyName")} placeholder="e.g. FY 2026-27" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-              {errors.fyName && <span className="text-xs text-danger">{errors.fyName.message}</span>}
+              {errors.fyName && <span className="text-xs text-danger">{String(errors.fyName.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Start Date <span className="text-danger">*</span></label>
               <input type="date" {...register("startDate")} className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-              {errors.startDate && <span className="text-xs text-danger">{errors.startDate.message}</span>}
+              {errors.startDate && <span className="text-xs text-danger">{String(errors.startDate.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">End Date <span className="text-danger">*</span></label>
               <input type="date" {...register("endDate")} className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
-              {errors.endDate && <span className="text-xs text-danger">{errors.endDate.message}</span>}
+              {errors.endDate && <span className="text-xs text-danger">{String(errors.endDate.message)}</span>}
             </div>
             
             <div className="flex flex-col gap-1.5">

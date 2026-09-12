@@ -53,12 +53,12 @@ export default function SuperAdminUserDrawer({ isOpen, onClose }: DrawerProps) {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-medium text-text-primary">Full Name <span className="text-danger">*</span></label>
                   <input {...register("name")} placeholder="John Doe" className="bg-input border border-border rounded-md px-3 py-1.5 text-sm focus:border-primary outline-none text-text-primary" />
-                  {errors.name && <span className="text-xs text-danger">{errors.name.message}</span>}
+                  {errors.name && <span className="text-xs text-danger">{String(errors.name.message)}</span>}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-medium text-text-primary">Username <span className="text-danger">*</span></label>
                   <input {...register("username")} placeholder="john.doe" className="bg-input border border-border rounded-md px-3 py-1.5 text-sm focus:border-primary outline-none text-text-primary" />
-                  {errors.username && <span className="text-xs text-danger">{errors.username.message}</span>}
+                  {errors.username && <span className="text-xs text-danger">{String(errors.username.message)}</span>}
                 </div>
               </div>
             </div>
@@ -68,12 +68,12 @@ export default function SuperAdminUserDrawer({ isOpen, onClose }: DrawerProps) {
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-medium text-text-primary">Email <span className="text-danger">*</span></label>
                 <input type="email" {...register("email")} placeholder="john@example.com" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-                {errors.email && <span className="text-xs text-danger">{errors.email.message}</span>}
+                {errors.email && <span className="text-xs text-danger">{String(errors.email.message)}</span>}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-medium text-text-primary">Mobile <span className="text-danger">*</span></label>
                 <input {...register("mobile")} placeholder="9876543210" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-                {errors.mobile && <span className="text-xs text-danger">{errors.mobile.message}</span>}
+                {errors.mobile && <span className="text-xs text-danger">{String(errors.mobile.message)}</span>}
               </div>
             </div>
 
@@ -91,7 +91,7 @@ export default function SuperAdminUserDrawer({ isOpen, onClose }: DrawerProps) {
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-medium text-text-primary">Branch <span className="text-danger">*</span></label>
                   <input {...register("branch")} placeholder="Main Campus" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-                  {errors.branch && <span className="text-xs text-danger">{errors.branch.message}</span>}
+                  {errors.branch && <span className="text-xs text-danger">{String(errors.branch.message)}</span>}
                 </div>
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-medium text-text-primary">Department</label>

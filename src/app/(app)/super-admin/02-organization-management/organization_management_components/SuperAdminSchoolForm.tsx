@@ -59,7 +59,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="Enter school name"
               />
-              {errors.schoolName && <span className="text-xs text-danger">{errors.schoolName.message}</span>}
+              {errors.schoolName && <span className="text-xs text-danger">{String(errors.schoolName.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -69,7 +69,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="e.g. SCH001"
               />
-              {errors.schoolCode && <span className="text-xs text-danger">{errors.schoolCode.message}</span>}
+              {errors.schoolCode && <span className="text-xs text-danger">{String(errors.schoolCode.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -79,7 +79,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="Enter principal name"
               />
-              {errors.principalName && <span className="text-xs text-danger">{errors.principalName.message}</span>}
+              {errors.principalName && <span className="text-xs text-danger">{String(errors.principalName.message)}</span>}
             </div>
 
           </div>
@@ -98,7 +98,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 placeholder="Enter full address"
               />
-              {errors.address && <span className="text-xs text-danger">{errors.address.message}</span>}
+              {errors.address && <span className="text-xs text-danger">{String(errors.address.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -108,7 +108,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="Enter 10-digit number"
               />
-              {errors.contact && <span className="text-xs text-danger">{errors.contact.message}</span>}
+              {errors.contact && <span className="text-xs text-danger">{String(errors.contact.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -119,7 +119,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="school@example.com"
               />
-              {errors.email && <span className="text-xs text-danger">{errors.email.message}</span>}
+              {errors.email && <span className="text-xs text-danger">{String(errors.email.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -130,7 +130,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="https://www.example.com"
               />
-              {errors.website && <span className="text-xs text-danger">{errors.website.message}</span>}
+              {errors.website && <span className="text-xs text-danger">{String(errors.website.message)}</span>}
             </div>
 
           </div>
@@ -148,7 +148,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="e.g. 08:00 AM - 03:00 PM"
               />
-              {errors.schoolTimings && <span className="text-xs text-danger">{errors.schoolTimings.message}</span>}
+              {errors.schoolTimings && <span className="text-xs text-danger">{String(errors.schoolTimings.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
@@ -158,7 +158,7 @@ export default function SuperAdminSchoolForm() {
                 className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 placeholder="e.g. Monday to Saturday"
               />
-              {errors.workingDays && <span className="text-xs text-danger">{errors.workingDays.message}</span>}
+              {errors.workingDays && <span className="text-xs text-danger">{String(errors.workingDays.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">

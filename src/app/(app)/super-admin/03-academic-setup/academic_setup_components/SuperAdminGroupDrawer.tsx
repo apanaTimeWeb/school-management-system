@@ -12,12 +12,12 @@ interface DrawerProps {
 }
 
 export default function SuperAdminGroupDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<AcademicGroupType, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(AcademicGroupSchema),
     defaultValues: { isActive: true, groupType: 'Stream' }
   });
 
-  const onSubmit = async (data: Omit<AcademicGroupType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting group data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();
@@ -43,7 +43,7 @@ export default function SuperAdminGroupDrawer({ isOpen, onClose }: DrawerProps) 
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">Name <span className="text-danger">*</span></label>
               <input {...register("groupName")} placeholder="e.g. Science Stream" className="bg-input border border-border rounded-md px-3 py-2 text-sm focus:border-primary outline-none text-text-primary" />
-              {errors.groupName && <span className="text-xs text-danger">{errors.groupName.message}</span>}
+              {errors.groupName && <span className="text-xs text-danger">{String(errors.groupName.message)}</span>}
             </div>
 
             <div className="flex flex-col gap-1.5">
