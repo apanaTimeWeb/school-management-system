@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Bell, ChevronDown, UserCircle, Menu, Search, X, Users, BookOpen, GraduationCap, CreditCard, Activity, Bus, FileText } from "lucide-react";
+import { Bell, ChevronDown, UserCircle, Menu, Search, X, Users, BookOpen, GraduationCap, CreditCard, Activity, Bus, FileText, LogOut } from "lucide-react";
 
 interface SuperAdminHeaderProps {
   onMenuClick?: () => void;
@@ -10,6 +10,7 @@ interface SuperAdminHeaderProps {
 export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   const searchResults = [
     { type: 'Student', icon: GraduationCap, title: 'Rahul Kumar (Class 10-A)', subtitle: 'Admission No: 2024001', permission: 'Allowed' },
@@ -71,14 +72,35 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           <div className="h-6 w-px bg-border/20 hidden md:block"></div>
 
           {/* User Profile Dropdown */}
-          <button className="flex items-center gap-2 p-1.5 md:p-2 rounded-md hover:bg-secondary/10 transition-colors group">
-            <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-secondary transition-colors" />
-            <div className="hidden md:flex flex-col items-start leading-tight">
-              <span className="text-sm font-bold text-sidebar-text">System Admin</span>
-              <span className="text-xs text-sidebar-text-muted">super@erp360.com</span>
-            </div>
-            <ChevronDown size={16} className="text-sidebar-text-muted ml-1 hidden md:block group-hover:text-secondary" />
-          </button>
+          <div className="relative">
+            <button 
+              onClick={() => setIsProfileOpen(!isProfileOpen)}
+              className="flex items-center gap-2 p-1.5 md:p-2 rounded-md hover:bg-secondary/10 transition-colors group"
+            >
+              <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-secondary transition-colors" />
+              <div className="hidden md:flex flex-col items-start leading-tight">
+                <span className="text-sm font-bold text-sidebar-text">System Admin</span>
+                <span className="text-xs text-sidebar-text-muted">super@erp360.com</span>
+              </div>
+              <ChevronDown size={16} className="text-sidebar-text-muted ml-1 hidden md:block group-hover:text-secondary" />
+            </button>
+
+            {/* Dropdown Menu */}
+            {isProfileOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setIsProfileOpen(false)}></div>
+                <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-lg py-1 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <a href="/super-admin/25-my-profile" className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-primary hover:bg-bg-page hover:text-primary transition-colors">
+                    <UserCircle size={16} /> My Profile
+                  </a>
+                  <div className="h-px bg-border my-1"></div>
+                  <button className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger-bg hover:text-danger-strong transition-colors text-left">
+                    <LogOut size={16} /> Logout
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
 
         </div>
       </header>
