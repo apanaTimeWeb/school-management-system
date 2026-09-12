@@ -1,63 +1,55 @@
-import React from "react";
-import AdminStudentListConfig from "./student_management_components/AdminStudentListConfig";
-import AdminStudentProfileConfig from "./student_management_components/AdminStudentProfileConfig";
-import AdminStudentRegistrationConfig from "./student_management_components/AdminStudentRegistrationConfig";
-import AdminAdmissionNumberConfig from "./student_management_components/AdminAdmissionNumberConfig";
-import AdminStudentIDConfig from "./student_management_components/AdminStudentIDConfig";
-import AdminAcademicDetailsConfig from "./student_management_components/AdminAcademicDetailsConfig";
-import AdminParentGuardianDetailsConfig from "./student_management_components/AdminParentGuardianDetailsConfig";
-import AdminContactDetailsConfig from "./student_management_components/AdminContactDetailsConfig";
-import AdminAddressConfig from "./student_management_components/AdminAddressConfig";
-import AdminDocumentsConfig from "./student_management_components/AdminDocumentsConfig";
-import AdminPreviousSchoolDetailsConfig from "./student_management_components/AdminPreviousSchoolDetailsConfig";
-import AdminMedicalInformationConfig from "./student_management_components/AdminMedicalInformationConfig";
-import AdminCategoryReservationDetailsConfig from "./student_management_components/AdminCategoryReservationDetailsConfig";
-import AdminSiblingInformationConfig from "./student_management_components/AdminSiblingInformationConfig";
-import AdminHouseConfig from "./student_management_components/AdminHouseConfig";
-import AdminStudentStatusConfig from "./student_management_components/AdminStudentStatusConfig";
-import AdminClassSectionTransferConfig from "./student_management_components/AdminClassSectionTransferConfig";
-import AdminStudentPromotionConfig from "./student_management_components/AdminStudentPromotionConfig";
-import AdminStudentTCConfig from "./student_management_components/AdminStudentTCConfig";
-import AdminStudentWithdrawalConfig from "./student_management_components/AdminStudentWithdrawalConfig";
-import AdminStudentReadmissionConfig from "./student_management_components/AdminStudentReadmissionConfig";
-import AdminStudentArchiveConfig from "./student_management_components/AdminStudentArchiveConfig";
-import AdminStudentSearchFiltersConfig from "./student_management_components/AdminStudentSearchFiltersConfig";
-import AdminBulkImportExportConfig from "./student_management_components/AdminBulkImportExportConfig";
+"use client";
 
-export default function AdminPage() {
+import React, { useState } from "react";
+import StudentDirectory from "./student_management_components/StudentDirectory";
+import StudentRegistrationForm from "./student_management_components/StudentRegistrationForm";
+import StudentOperations from "./student_management_components/StudentOperations";
+import { Users, UserPlus, Settings2 } from "lucide-react";
+import clsx from "clsx";
+
+const tabs = [
+  { id: "directory", label: "Student Directory", icon: Users },
+  { id: "registration", label: "New Registration", icon: UserPlus },
+  { id: "operations", label: "Operations & Actions", icon: Settings2 },
+];
+
+export default function StudentManagementPage() {
+  const [activeTab, setActiveTab] = useState("directory");
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
+      {/* Header & Tabs */}
+      <div className="flex flex-col gap-4 mb-2">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">STUDENT MANAGEMENT</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage all features related to student_management</p>
+          <h1 className="text-2xl font-bold text-text-primary">Student Management</h1>
+          <p className="text-sm text-text-secondary mt-1">Manage student records, admissions, transfers, and operations.</p>
+        </div>
+        
+        <div className="flex bg-card border border-border rounded-lg p-1 w-fit shadow-sm overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "bg-primary text-white shadow-sm" 
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <AdminStudentListConfig />
-      <AdminStudentProfileConfig />
-      <AdminStudentRegistrationConfig />
-      <AdminAdmissionNumberConfig />
-      <AdminStudentIDConfig />
-      <AdminAcademicDetailsConfig />
-      <AdminParentGuardianDetailsConfig />
-      <AdminContactDetailsConfig />
-      <AdminAddressConfig />
-      <AdminDocumentsConfig />
-      <AdminPreviousSchoolDetailsConfig />
-      <AdminMedicalInformationConfig />
-      <AdminCategoryReservationDetailsConfig />
-      <AdminSiblingInformationConfig />
-      <AdminHouseConfig />
-      <AdminStudentStatusConfig />
-      <AdminClassSectionTransferConfig />
-      <AdminStudentPromotionConfig />
-      <AdminStudentTCConfig />
-      <AdminStudentWithdrawalConfig />
-      <AdminStudentReadmissionConfig />
-      <AdminStudentArchiveConfig />
-      <AdminStudentSearchFiltersConfig />
-      <AdminBulkImportExportConfig />
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
+        {activeTab === "directory" && <StudentDirectory />}
+        {activeTab === "registration" && <StudentRegistrationForm />}
+        {activeTab === "operations" && <StudentOperations />}
+      </div>
     </div>
   );
 }
