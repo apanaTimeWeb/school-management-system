@@ -13,33 +13,33 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
       {/* Left side: Page Title / Breadcrumbs can go here */}
       <div className="flex items-center gap-3">
         <button 
-          className="md:hidden p-2 -ml-2 rounded-md text-text-secondary hover:bg-primary-subtle hover:text-primary transition-colors"
+          className="md:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
           onClick={onMenuClick}
         >
           <Menu size={24} />
         </button>
-        <h2 className="text-lg font-semibold text-text-primary">School Admin Portal</h2>
+        <h2 className="text-lg font-semibold text-sidebar-text">School Admin Portal</h2>
       </div>
 
       {/* Right side: Actions & Profile */}
       <div className="flex items-center gap-4">
         
         {/* Notifications */}
-        <button className="relative p-2 rounded-full hover:bg-primary-subtle text-text-secondary hover:text-primary transition-colors">
+        <button className="relative p-2 rounded-full hover:bg-primary-subtle text-sidebar-text-muted hover:text-sidebar-text transition-colors">
           <Bell size={20} />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-header"></span>
         </button>
 
-        <div className="hidden sm:block h-6 w-px bg-border"></div>
+        <div className="hidden sm:block h-6 w-px bg-sidebar-text-muted/30"></div>
 
         {/* User Profile Dropdown Placeholder */}
         <button className="flex items-center gap-2 p-1.5 rounded-md hover:bg-primary-subtle transition-colors group">
-          <UserCircle size={28} className="text-text-secondary group-hover:text-primary transition-colors" />
+          <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-sidebar-text transition-colors" />
           <div className="hidden sm:flex flex-col items-start leading-tight">
-            <span className="text-sm font-semibold text-text-primary">Principal / Admin</span>
-            <span className="text-xs text-text-secondary hidden md:block">admin@erp360.com</span>
+            <span className="text-sm font-semibold text-sidebar-text">Principal / Admin</span>
+            <span className="text-xs text-sidebar-text-muted hidden md:block">admin@erp360.com</span>
           </div>
-          <ChevronDown size={16} className="text-text-secondary ml-1 hidden sm:block" />
+          <ChevronDown size={16} className="text-sidebar-text-muted ml-1 hidden sm:block group-hover:text-sidebar-text" />
         </button>
 
       </div>
