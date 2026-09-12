@@ -1,37 +1,58 @@
-import React from "react";
-import AdminAdmissionConfig from "./approval_center_components/AdminAdmissionConfig";
-import AdminFeeConcessionConfig from "./approval_center_components/AdminFeeConcessionConfig";
-import AdminRefundConfig from "./approval_center_components/AdminRefundConfig";
-import AdminLeaveConfig from "./approval_center_components/AdminLeaveConfig";
-import AdminPurchaseConfig from "./approval_center_components/AdminPurchaseConfig";
-import AdminExpenseConfig from "./approval_center_components/AdminExpenseConfig";
-import AdminStudentTransferConfig from "./approval_center_components/AdminStudentTransferConfig";
-import AdminTCConfig from "./approval_center_components/AdminTCConfig";
-import AdminCertificateConfig from "./approval_center_components/AdminCertificateConfig";
-import AdminAttendanceCorrectionConfig from "./approval_center_components/AdminAttendanceCorrectionConfig";
-import AdminMarksCorrectionConfig from "./approval_center_components/AdminMarksCorrectionConfig";
+"use client";
 
-export default function AdminPage() {
+import React, { useState } from "react";
+import AcademicApprovals from "./approval_components/AcademicApprovals";
+import FinancialApprovals from "./approval_components/FinancialApprovals";
+import StaffLeaveApprovals from "./approval_components/StaffLeaveApprovals";
+import CorrectionApprovals from "./approval_components/CorrectionApprovals";
+import { CheckSquare, DollarSign, Calendar, Edit3 } from "lucide-react";
+import clsx from "clsx";
+
+const tabs = [
+  { id: "academic", label: "Academic Approvals", icon: CheckSquare },
+  { id: "financial", label: "Financial Approvals", icon: DollarSign },
+  { id: "leave", label: "Leave Requests", icon: Calendar },
+  { id: "corrections", label: "Data Corrections", icon: Edit3 },
+];
+
+export default function ApprovalCenterPage() {
+  const [activeTab, setActiveTab] = useState("academic");
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
+      {/* Header & Tabs */}
+      <div className="flex flex-col gap-4 mb-2">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">Approval Center Dashboard</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage all features related to Approval Center</p>
+          <h1 className="text-2xl font-bold text-text-primary">Approval Center</h1>
+          <p className="text-sm text-text-secondary mt-1">Single dashboard for admins to approve or reject cross-module requests.</p>
+        </div>
+        
+        <div className="flex bg-card border border-border rounded-lg p-1 w-fit shadow-sm overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "bg-primary text-white shadow-sm" 
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <AdminAdmissionConfig />
-      <AdminFeeConcessionConfig />
-      <AdminRefundConfig />
-      <AdminLeaveConfig />
-      <AdminPurchaseConfig />
-      <AdminExpenseConfig />
-      <AdminStudentTransferConfig />
-      <AdminTCConfig />
-      <AdminCertificateConfig />
-      <AdminAttendanceCorrectionConfig />
-      <AdminMarksCorrectionConfig />
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
+        {activeTab === "academic" && <AcademicApprovals />}
+        {activeTab === "financial" && <FinancialApprovals />}
+        {activeTab === "leave" && <StaffLeaveApprovals />}
+        {activeTab === "corrections" && <CorrectionApprovals />}
+      </div>
     </div>
   );
 }
