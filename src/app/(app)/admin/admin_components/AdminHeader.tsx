@@ -62,8 +62,8 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
               setShowProfileMenu(false);
             }}
             className={clsx(
-              "relative p-2 rounded-full transition-colors",
-              showNotifications ? "bg-primary-subtle text-sidebar-text" : "hover:bg-primary-subtle text-sidebar-text-muted hover:text-sidebar-text"
+              "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
+              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
             )}
           >
             <Bell size={20} />
@@ -115,16 +115,16 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
               setShowNotifications(false);
             }}
             className={clsx(
-              "flex items-center gap-2 p-1.5 rounded-md transition-colors group",
-              showProfileMenu ? "bg-primary-subtle" : "hover:bg-primary-subtle"
+              "flex items-center gap-2 p-1.5 pr-2 rounded-lg transition-all duration-200 ease-in-out group",
+              showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-sidebar-text" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className="text-sm font-semibold text-sidebar-text">Principal / Admin</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Principal / Admin</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">admin@erp360.com</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-sidebar-text" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
           </button>
 
           {/* Profile Dropdown */}
