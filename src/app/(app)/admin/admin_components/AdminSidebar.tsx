@@ -29,6 +29,12 @@ const adminCategories = [
     title: "4. Parent / Guardian Management",
     icon: LayoutDashboard,
     href: "/admin/04-parent-management",
+  },
+  {
+    id: "academic-management",
+    title: "5. Academic Management",
+    icon: LayoutDashboard,
+    href: "/admin/05-academic-management",
   }
 ];
 
