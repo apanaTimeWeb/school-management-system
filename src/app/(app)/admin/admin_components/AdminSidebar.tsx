@@ -65,6 +65,18 @@ const adminCategories = [
     title: "10. Leave Management",
     icon: LayoutDashboard,
     href: "/admin/10-leave-management",
+  },
+  {
+    id: "communication",
+    title: "11. Communication",
+    icon: LayoutDashboard,
+    href: "/admin/11-communication",
+  },
+  {
+    id: "timetable",
+    title: "12. Timetable",
+    icon: LayoutDashboard,
+    href: "/admin/12-timetable",
   }
 ];
 
