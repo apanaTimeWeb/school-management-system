@@ -42,6 +42,7 @@ const KPICard = ({ title, value, subtitle, trend, trendUp, icon: Icon, colorClas
 
 export default function DashboardKPIs() {
   const kpis: KPIProps[] = [
+    { title: 'Total Schools', value: '2', icon: School, colorClass: 'bg-primary-subtle text-primary' },
     { title: 'Total Branches', value: '4', icon: School, colorClass: 'bg-primary-subtle text-primary' },
     { title: 'Total Students', value: '3,250', trend: '12%', trendUp: true, icon: GraduationCap, colorClass: 'bg-info-bg text-info' },
     { title: 'Total Parents', value: '2,900', icon: Users, colorClass: 'bg-purple-bg text-purple' },
