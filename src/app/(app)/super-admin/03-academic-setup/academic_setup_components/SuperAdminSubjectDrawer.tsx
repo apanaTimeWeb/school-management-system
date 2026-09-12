@@ -12,12 +12,12 @@ interface DrawerProps {
 }
 
 export default function SuperAdminSubjectDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<SubjectType, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(SubjectSchema),
     defaultValues: { isActive: true, subjectCategory: 'Core', maxMarks: 100, passMarks: 33, theoryMarks: 100, practicalMarks: 0, internalAssessment: 0 }
   });
 
-  const onSubmit = async (data: Omit<SubjectType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting subject data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

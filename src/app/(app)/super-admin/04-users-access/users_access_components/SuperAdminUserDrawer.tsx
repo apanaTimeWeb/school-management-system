@@ -12,12 +12,12 @@ interface DrawerProps {
 }
 
 export default function SuperAdminUserDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<UserProfileType, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(UserProfileSchema),
     defaultValues: { status: 'Active', role: 'Student' }
   });
 
-  const onSubmit = async (data: Omit<UserProfileType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting user data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

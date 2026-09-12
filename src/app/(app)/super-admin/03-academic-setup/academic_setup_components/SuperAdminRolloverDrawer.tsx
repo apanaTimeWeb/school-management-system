@@ -12,7 +12,7 @@ interface DrawerProps {
 }
 
 export default function SuperAdminRolloverDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<SessionRollover>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(RolloverSchema),
     defaultValues: {
       copyClasses: true, copySubjects: true, copyTeachers: true,
@@ -21,7 +21,7 @@ export default function SuperAdminRolloverDrawer({ isOpen, onClose }: DrawerProp
     }
   });
 
-  const onSubmit = async (data: SessionRollover) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting rollover data:", data);
     await new Promise(resolve => setTimeout(resolve, 2000)); // Simulating heavy operation
     reset();

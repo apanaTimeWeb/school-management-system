@@ -12,14 +12,14 @@ interface DrawerProps {
 }
 
 export default function SuperAdminSessionDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<AcademicSession, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(SessionSchema),
     defaultValues: {
       status: "Upcoming"
     }
   });
 
-  const onSubmit = async (data: Omit<AcademicSession, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting session data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();

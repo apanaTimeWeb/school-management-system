@@ -12,12 +12,12 @@ interface DrawerProps {
 }
 
 export default function SuperAdminRoleDrawer({ isOpen, onClose }: DrawerProps) {
-  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<Omit<RoleType, 'id'>>({
+  const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<any>({
     resolver: zodResolver(RoleSchema),
     defaultValues: { isActive: true }
   });
 
-  const onSubmit = async (data: Omit<RoleType, 'id'>) => {
+  const onSubmit = async (data: any) => {
     console.log("Submitting role data:", data);
     await new Promise(resolve => setTimeout(resolve, 1000));
     reset();
