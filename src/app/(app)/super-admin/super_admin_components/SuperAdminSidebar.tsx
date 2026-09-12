@@ -47,6 +47,8 @@ const SIDEBAR_LINKS = [
   { label: 'Fee & Finance', href: '/super-admin/fee-finance-master-settings', icon: CreditCard },
   { label: 'HR Master Settings', href: '/super-admin/hr-master-settings', icon: BookOpen },
   { label: 'Library Master', href: '/super-admin/library-master-settings', icon: BookOpen },
+  { label: 'Transport Master', href: '/super-admin/transport-master-settings', icon: Bus },
+  { label: 'Hostel Master', href: '/super-admin/hostel-master-settings', icon: Building2 },
 ];
 
 export default function SuperAdminSidebar() {
