@@ -59,6 +59,7 @@ const SIDEBAR_LINKS = [
   { label: 'System Health', href: '/super-admin/system-health', icon: Settings },
   { label: 'Support / Helpdesk', href: '/super-admin/support-helpdesk', icon: Settings },
   { label: 'System Announcement', href: '/super-admin/system-announcement', icon: Settings },
+  { label: 'Maintenance Mode', href: '/super-admin/maintenance-mode', icon: Settings },
 ];
 
 export default function SuperAdminSidebar() {
