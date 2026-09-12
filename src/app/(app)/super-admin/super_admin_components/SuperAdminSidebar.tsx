@@ -51,6 +51,12 @@ const SIDEBAR_LINKS = [
   { label: 'Hostel Master', href: '/super-admin/hostel-master-settings', icon: Building2 },
   { label: 'Document & Certificate', href: '/super-admin/document-certificate-settings', icon: FileText },
   { label: 'Numbering / Sequence', href: '/super-admin/numbering-sequence', icon: Hash },
+  { label: 'Holiday & Working Day', href: '/super-admin/holiday-working-day-master', icon: CalendarDays },
+  { label: 'Category / Master Data', href: '/super-admin/category-master-data', icon: BookOpen },
+  { label: 'Reports & Analytics', href: '/super-admin/reports-analytics', icon: BookOpen },
+  { label: 'System Alerts', href: '/super-admin/system-alerts', icon: Settings },
+  { label: 'Integration Management', href: '/super-admin/integration-management', icon: Blocks },
+  { label: 'System Health', href: '/super-admin/system-health', icon: Settings },
 ];
 
 export default function SuperAdminSidebar() {
