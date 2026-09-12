@@ -60,6 +60,8 @@ const SIDEBAR_LINKS = [
   { label: 'Support / Helpdesk', href: '/super-admin/support-helpdesk', icon: Settings },
   { label: 'System Announcement', href: '/super-admin/system-announcement', icon: Settings },
   { label: 'Maintenance Mode', href: '/super-admin/maintenance-mode', icon: Settings },
+  { label: 'Recycle Bin', href: '/super-admin/recycle-bin', icon: Trash2 },
+  { label: 'Data Retention & Archiving', href: '/super-admin/data-retention-archiving', icon: Archive },
 ];
 
 export default function SuperAdminSidebar() {
