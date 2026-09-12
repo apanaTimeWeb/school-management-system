@@ -62,6 +62,7 @@ const SIDEBAR_LINKS = [
   { label: 'Maintenance Mode', href: '/super-admin/maintenance-mode', icon: Settings },
   { label: 'Recycle Bin', href: '/super-admin/recycle-bin', icon: Trash2 },
   { label: 'Data Retention & Archiving', href: '/super-admin/data-retention-archiving', icon: Archive },
+  { label: 'Approval Workflow', href: '/super-admin/approval-workflow', icon: Blocks },
 ];
 
 export default function SuperAdminSidebar() {
