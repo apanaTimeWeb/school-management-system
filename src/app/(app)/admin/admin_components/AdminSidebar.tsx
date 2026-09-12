@@ -101,6 +101,12 @@ const adminCategories = [
     title: "16. Purchase & Expense",
     icon: LayoutDashboard,
     href: "/admin/16-purchase-expense",
+  },
+  {
+    id: "events-activities",
+    title: "17. Events & Activities",
+    icon: LayoutDashboard,
+    href: "/admin/17-events-activities",
   }
 ];
 
