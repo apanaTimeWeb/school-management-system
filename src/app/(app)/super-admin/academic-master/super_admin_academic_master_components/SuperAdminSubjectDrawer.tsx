@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SubjectSchema, type SubjectType } from "../super_admin_academic_master_types/super_admin_academic_master.types";
+import { SubjectSchema, type SubjectType } from "@/app/(app)/super-admin/academic-master/super_admin_academic_master_types/super_admin_academic_master.types";
 import { Save, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 

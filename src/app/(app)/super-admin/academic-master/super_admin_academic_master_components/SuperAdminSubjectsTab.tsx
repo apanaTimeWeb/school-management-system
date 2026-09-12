@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Plus, Edit, Trash2, PowerOff, Power, Library } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { SubjectType } from "../super_admin_academic_master_types/super_admin_academic_master.types";
+import type { SubjectType } from "@/app/(app)/super-admin/academic-master/super_admin_academic_master_types/super_admin_academic_master.types";
 import SuperAdminSubjectDrawer from "./SuperAdminSubjectDrawer";
 
 export default function SuperAdminSubjectsTab() {

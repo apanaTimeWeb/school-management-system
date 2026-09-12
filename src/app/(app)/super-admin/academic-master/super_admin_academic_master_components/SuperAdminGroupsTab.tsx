@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Plus, Edit, Trash2, PowerOff, Power, Layers } from "lucide-react";
 import { cn } from "@/lib/utils";
-import type { AcademicGroupType } from "../super_admin_academic_master_types/super_admin_academic_master.types";
+import type { AcademicGroupType } from "@/app/(app)/super-admin/academic-master/super_admin_academic_master_types/super_admin_academic_master.types";
 import SuperAdminGroupDrawer from "./SuperAdminGroupDrawer";
 
 export default function SuperAdminGroupsTab() {
