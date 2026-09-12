@@ -2,148 +2,182 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { 
-  LayoutDashboard, 
-  School, 
-  CalendarDays,
-  CreditCard,
-  Building2,
-  BookOpen,
-  Users,
-  ShieldCheck,
-  Lock,
-  Settings,
-  DatabaseBackup,
-  History,
-  LogOut,
-  Menu
-} from 'lucide-react';
 import { useState } from 'react';
-import { cn } from '@/lib/utils';
+import { ChevronDown, ChevronRight, LayoutDashboard } from 'lucide-react';
 
-const SIDEBAR_LINKS = [
-  { label: 'Dashboard', href: '/super-admin/dashboard', icon: LayoutDashboard },
-  { label: 'School Management', href: '/super-admin/schools', icon: School },
-  { label: 'Academic Sessions', href: '/super-admin/sessions', icon: CalendarDays },
-  { label: 'Financial Years', href: '/super-admin/financial-years', icon: CreditCard },
-  { label: 'School Structure', href: '/super-admin/school-structure', icon: Building2 },
-  { label: 'Academics Master', href: '/super-admin/academic-master', icon: BookOpen },
-  { label: 'User Management', href: '/super-admin/user-management', icon: Users },
-  { label: 'Role Management', href: '/super-admin/role-management', icon: ShieldCheck },
-  { label: 'Permissions', href: '/super-admin/permission-management', icon: ShieldCheck },
-  { label: 'Security Controls', href: '/super-admin/security-management', icon: Lock },
-  { label: 'Device & Session', href: '/super-admin/device-session', icon: Lock },
-  { label: 'Audit Logs', href: '/super-admin/audit-logs', icon: History },
-  { label: 'System Activity Logs', href: '/super-admin/system-activity-logs', icon: History },
-  { label: 'Backups & Restore', href: '/super-admin/backup-restore', icon: DatabaseBackup },
-  { label: 'Data Import/Export', href: '/super-admin/data-import-export', icon: DatabaseBackup },
-  { label: 'General Settings', href: '/super-admin/general-settings', icon: Settings },
-  { label: 'Language Management', href: '/super-admin/language-management', icon: Settings },
-  { label: 'Notification Config', href: '/super-admin/notification-configuration', icon: Settings },
-  { label: 'Email Config', href: '/super-admin/email-configuration', icon: Settings },
-  { label: 'SMS Config', href: '/super-admin/sms-configuration', icon: Settings },
-  { label: 'WhatsApp Config', href: '/super-admin/whatsapp-configuration', icon: Settings },
-  { label: 'Payment Gateway', href: '/super-admin/payment-gateway', icon: CreditCard },
-  { label: 'Fee & Finance', href: '/super-admin/fee-finance-master-settings', icon: CreditCard },
-  { label: 'HR Master Settings', href: '/super-admin/hr-master-settings', icon: BookOpen },
-  { label: 'Library Master', href: '/super-admin/library-master-settings', icon: BookOpen },
-  { label: 'Transport Master', href: '/super-admin/transport-master-settings', icon: Bus },
-  { label: 'Hostel Master', href: '/super-admin/hostel-master-settings', icon: Building2 },
-  { label: 'Document & Certificate', href: '/super-admin/document-certificate-settings', icon: FileText },
-  { label: 'Numbering / Sequence', href: '/super-admin/numbering-sequence', icon: Hash },
-  { label: 'Holiday & Working Day', href: '/super-admin/holiday-working-day-master', icon: CalendarDays },
-  { label: 'Category / Master Data', href: '/super-admin/category-master-data', icon: BookOpen },
-  { label: 'Reports & Analytics', href: '/super-admin/reports-analytics', icon: BookOpen },
-  { label: 'System Alerts', href: '/super-admin/system-alerts', icon: Settings },
-  { label: 'Integration Management', href: '/super-admin/integration-management', icon: Blocks },
-  { label: 'System Health', href: '/super-admin/system-health', icon: Settings },
-  { label: 'Support / Helpdesk', href: '/super-admin/support-helpdesk', icon: Settings },
-  { label: 'System Announcement', href: '/super-admin/system-announcement', icon: Settings },
-  { label: 'Maintenance Mode', href: '/super-admin/maintenance-mode', icon: Settings },
-  { label: 'Recycle Bin', href: '/super-admin/recycle-bin', icon: Trash2 },
-  { label: 'Data Retention & Archiving', href: '/super-admin/data-retention-archiving', icon: Archive },
-  { label: 'Approval Workflow', href: '/super-admin/approval-workflow', icon: Blocks },
-  { label: 'Automation Rules', href: '/super-admin/automation-rules', icon: RefreshCw },
-  { label: 'System-Wide Search', href: '/super-admin/system-wide-search', icon: Search },
-  { label: 'Sensitive Data Protection', href: '/super-admin/sensitive-data-protection', icon: ShieldAlert },
-  { label: 'Login / Identity Settings', href: '/super-admin/login-identity-settings', icon: KeyRound },
-  { label: 'Terms & Privacy', href: '/super-admin/terms-privacy-consent', icon: FileCheck2 },
-  { label: 'Module Enable / Disable', href: '/super-admin/module-enable-disable', icon: ToggleLeft },
-  { label: 'School Branding', href: '/super-admin/school-branding', icon: Palette },
-  { label: 'Super Admin Export Center', href: '/super-admin/super-admin-export-center', icon: HardDriveDownload },
-  { label: 'Emergency Controls', href: '/super-admin/super-admin-emergency-controls', icon: ShieldAlert },
-  { label: 'Configuration Change History', href: '/super-admin/configuration-change-history', icon: History },
-  { label: 'Super Admin Profile', href: '/super-admin/super-admin-profile', icon: User },
+const MENU_STRUCTURE = [
+  {
+    title: "01. Dashboard",
+    href: "/super-admin",
+    items: []
+  },
+  {
+    title: "02. Organization Management",
+    items: ["School", "Branches", "Campuses", "Buildings", "Floors", "Rooms", "Organization Structure"]
+  },
+  {
+    title: "03. Academic Setup",
+    items: ["Academic Sessions", "Financial Years", "Classes", "Sections", "Departments", "Houses", "Wings", "Streams", "Subjects", "Subject Categories", "Curriculum", "Academic Calendar", "Working Days", "Holidays", "Academic Masters"]
+  },
+  {
+    title: "04. Users & Access",
+    items: ["Users", "Roles", "Permissions", "Data Access Scope", "User Sessions", "Devices", "Login History", "Account Security", "Emergency Access Control"]
+  },
+  {
+    title: "05. System Settings",
+    items: ["General Settings", "Localization", "Language", "Date & Time", "Currency", "Numbering / Sequences", "Branding", "Documents", "Certificates", "File Storage", "Module Settings", "Data Retention"]
+  },
+  {
+    title: "06. Communication",
+    items: ["SMS", "Email", "WhatsApp", "Push Notifications", "Notification Templates", "Notification Rules", "Notification History", "Communication Logs"]
+  },
+  {
+    title: "07. Finance Configuration",
+    items: ["Payment Gateway", "Payment Methods", "Fee Masters", "Fine Rules", "Discount Rules", "Scholarship Types", "Refund Rules", "Receipt Numbering", "Invoice Numbering", "Finance Masters"]
+  },
+  {
+    title: "08. HR Configuration",
+    items: ["Employee Types", "Departments", "Designations", "Employment Types", "Leave Types", "Leave Policies", "Attendance Rules", "Holiday Rules", "Salary Components"]
+  },
+  {
+    title: "09. Library Configuration",
+    items: ["Book Categories", "Member Types", "Issue Rules", "Renewal Rules", "Fine Rules", "Barcode / QR Settings"]
+  },
+  {
+    title: "10. Transport Configuration",
+    items: ["Vehicle Types", "Route Types", "Stop Types", "Transport Fee Categories", "Driver Categories", "GPS Configuration"]
+  },
+  {
+    title: "11. Hostel Configuration",
+    items: ["Hostel Types", "Room Types", "Bed Types", "Hostel Fee Types", "Allocation Rules", "Leave Rules", "Visitor Rules"]
+  },
+  {
+    title: "12. Documents & Certificates",
+    items: ["Document Types", "Required Documents", "Document Verification", "Certificate Types", "Certificate Templates", "Serial Numbering", "QR Verification", "Digital Signature", "File Rules"]
+  },
+  {
+    title: "13. Integrations",
+    items: ["APIs", "API Keys", "Webhooks", "Biometric", "GPS", "Cloud Storage", "Payment Services", "SMS Services", "Email Services", "WhatsApp Services", "External Services"]
+  },
+  {
+    title: "14. Data Management",
+    items: ["Import", "Export", "Import Templates", "Import Validation", "Import History", "Export History", "Backup", "Restore", "Archive", "Data Retention", "Recycle Bin"]
+  },
+  {
+    title: "15. Approval Workflow",
+    items: ["Workflow Builder", "Leave Approval", "Admission Approval", "Fee Concession", "Refund", "Purchase", "Expense", "TC", "Certificate", "Student Transfer"]
+  },
+  {
+    title: "16. Automation",
+    items: ["Automation Rules", "Scheduled Jobs", "Fee Reminders", "Attendance Alerts", "Exam Reminders", "Result Notifications", "Birthday Notifications", "Document Expiry Alerts", "Automatic Reports", "Automation Logs"]
+  },
+  {
+    title: "17. Reports & Analytics",
+    items: ["System Reports", "User Reports", "Login Reports", "Activity Reports", "Student Summary", "Staff Summary", "Attendance Summary", "Fee Summary", "Admission Summary", "Notification Reports", "Payment Reports", "Export Center"]
+  },
+  {
+    title: "18. Audit & Security",
+    items: ["Audit Logs", "Login Logs", "Failed Login Logs", "Activity Logs", "Security Logs", "Permission Change Logs", "Configuration History", "Data Change History", "IP / Device Logs", "Security Alerts"]
+  },
+  {
+    title: "19. System Health",
+    items: ["Server Status", "Database Status", "Storage", "Backup Status", "Queue Status", "API Status", "Notification Services", "Payment Services", "Error Logs", "Application Version"]
+  },
+  {
+    title: "20. Support & Helpdesk",
+    items: ["Support Tickets", "Bug Reports", "Technical Issues", "Ticket Assignment", "Priority", "Status", "Attachments", "Resolution History"]
+  },
+  {
+    title: "21. System Announcements",
+    items: ["Maintenance Notice", "Emergency Announcement", "System Update", "User Targeting"]
+  },
+  {
+    title: "22. Maintenance Mode",
+    items: ["Enable / Disable", "Schedule", "Custom Message", "Maintenance History"]
+  },
+  {
+    title: "23. Module Management",
+    items: ["Enable Module", "Disable Module", "Module Configuration", "Module Dependencies"]
+  },
+  {
+    title: "24. Deleted Data / Recovery",
+    items: ["Deleted Records", "Restore", "Permanent Delete", "Deletion History"]
+  },
+  {
+    title: "25. My Profile",
+    items: ["Profile", "Password", "2FA", "Active Sessions", "Login History", "Security Settings"]
+  },
+  {
+    title: "26. Logout",
+    href: "#",
+    items: []
+  }
 ];
 
 export default function SuperAdminSidebar() {
   const pathname = usePathname();
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>(
+    MENU_STRUCTURE.reduce((acc, curr) => {
+      acc[curr.title] = true;
+      return acc;
+    }, {} as Record<string, boolean>)
+  );
+
+  const toggleSection = (title: string) => {
+    setOpenSections(prev => ({
+      ...prev,
+      [title]: !prev[title]
+    }));
+  };
 
   return (
-    <aside 
-      className={cn(
-        "fixed left-0 top-0 z-20 h-screen bg-sidebar border-r border-border transition-all duration-300 flex flex-col",
-        isCollapsed ? "w-[60px]" : "w-[240px]"
-      )}
-    >
-      <div className="h-16 flex items-center justify-between px-4 border-b border-border bg-header/80 backdrop-blur-md">
-        {!isCollapsed && (
-          <span className="font-bold text-primary truncate text-lg">School ERP 360</span>
-        )}
-        <button 
-          onClick={() => setIsCollapsed(!isCollapsed)}
-          className="p-1.5 rounded-md hover:bg-primary-subtle text-text-secondary hover:text-primary transition-colors"
-          aria-label="Toggle Sidebar"
-        >
-          <Menu size={20} />
-        </button>
-      </div>
+    <aside className="w-72 flex-shrink-0 bg-sidebar border-r border-border h-[calc(100vh-64px)] overflow-y-auto hidden md:block">
+      <nav className="p-4 flex flex-col gap-2 pb-12">
+        
+        <div className="text-sm font-bold text-text-primary px-3 mb-2 tracking-wider">
+          SUPER ADMIN
+        </div>
 
-      <nav className="flex-1 overflow-y-auto py-4 custom-scrollbar">
-        <ul className="space-y-1 px-2">
-          {SIDEBAR_LINKS.map((link) => {
-            const isActive = pathname.startsWith(link.href);
-            const Icon = link.icon;
-
-            return (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={cn(
-                    "flex items-center gap-3 px-3 py-2.5 rounded-md transition-all duration-200 group",
-                    isActive 
-                      ? "bg-primary-subtle text-primary border-l-4 border-primary shadow-[0_0_15px_rgba(30,58,138,0.15)]" 
-                      : "text-text-secondary hover:bg-primary-subtle hover:text-primary border-l-4 border-transparent"
-                  )}
-                  title={isCollapsed ? link.label : undefined}
+        {MENU_STRUCTURE.map((category) => {
+          const hasItems = category.items && category.items.length > 0;
+          const isOpen = openSections[category.title];
+          
+          return (
+            <div key={category.title} className="flex flex-col">
+              {hasItems ? (
+                <button
+                  onClick={() => toggleSection(category.title)}
+                  className="flex items-center justify-between w-full p-2.5 rounded-lg text-sm text-text-secondary hover:bg-sidebar-hover hover:text-primary transition-colors text-left"
                 >
-                  <Icon 
-                    size={18} 
-                    strokeWidth={2}
-                    className={cn(
-                      "shrink-0 transition-colors duration-200",
-                      isActive ? "text-primary" : "text-text-secondary group-hover:text-primary"
-                    )}
-                  />
-                  {!isCollapsed && (
-                    <span className="text-sm font-medium truncate">
-                      {link.label}
-                    </span>
-                  )}
+                  <span className="font-medium truncate">{category.title}</span>
+                  {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                </button>
+              ) : (
+                <Link
+                  href={category.href || "#"}
+                  className="flex items-center w-full p-2.5 rounded-lg text-sm text-text-secondary hover:bg-sidebar-hover hover:text-primary transition-colors text-left"
+                >
+                  <span className="font-medium truncate">{category.title}</span>
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+              )}
 
-      <div className="p-4 border-t border-border">
-        <button className="flex items-center gap-3 px-3 py-2.5 rounded-md w-full text-danger hover:bg-danger-bg transition-colors group">
-          <LogOut size={18} className="shrink-0" />
-          {!isCollapsed && <span className="text-sm font-medium">Log out</span>}
-        </button>
-      </div>
+              {hasItems && isOpen && (
+                <div className="ml-4 pl-3 border-l-2 border-border/50 flex flex-col gap-1 mt-1 mb-2">
+                  {category.items.map((item) => (
+                    <Link
+                      key={item}
+                      href="#"
+                      className="p-2 text-xs text-text-secondary hover:text-primary hover:bg-sidebar-hover rounded-md transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </nav>
     </aside>
   );
 }

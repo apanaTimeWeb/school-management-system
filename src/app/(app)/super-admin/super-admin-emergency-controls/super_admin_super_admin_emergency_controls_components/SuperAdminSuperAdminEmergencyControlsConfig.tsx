@@ -47,7 +47,7 @@ export default function SuperAdminSuperAdminEmergencyControlsConfig() {
           <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Block suspicious IP/device</label>
+          <label className="text-xs font-bold text-text-secondary whitespace-pre">Block suspicious IP/device full code kijiye sab me </label>
           <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
         </div>
       </div>
