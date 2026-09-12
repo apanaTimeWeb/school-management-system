@@ -1,45 +1,58 @@
-import React from "react";
-import AdminStudentReportsConfig from "./reports_components/AdminStudentReportsConfig";
-import AdminAdmissionReportsConfig from "./reports_components/AdminAdmissionReportsConfig";
-import AdminAttendanceReportsConfig from "./reports_components/AdminAttendanceReportsConfig";
-import AdminFeeReportsConfig from "./reports_components/AdminFeeReportsConfig";
-import AdminExamReportsConfig from "./reports_components/AdminExamReportsConfig";
-import AdminStaffReportsConfig from "./reports_components/AdminStaffReportsConfig";
-import AdminLeaveReportsConfig from "./reports_components/AdminLeaveReportsConfig";
-import AdminLibraryReportsConfig from "./reports_components/AdminLibraryReportsConfig";
-import AdminTransportReportsConfig from "./reports_components/AdminTransportReportsConfig";
-import AdminInventoryReportsConfig from "./reports_components/AdminInventoryReportsConfig";
-import AdminExpenseReportsConfig from "./reports_components/AdminExpenseReportsConfig";
-import AdminEventReportsConfig from "./reports_components/AdminEventReportsConfig";
-import AdminCertificateReportsConfig from "./reports_components/AdminCertificateReportsConfig";
-import AdminCustomReportsConfig from "./reports_components/AdminCustomReportsConfig";
-import AdminExportExcelPDFConfig from "./reports_components/AdminExportExcelPDFConfig";
+"use client";
 
-export default function AdminPage() {
+import React, { useState } from "react";
+import AcademicReports from "./reports_components/AcademicReports";
+import FinanceReports from "./reports_components/FinanceReports";
+import StaffAdminReports from "./reports_components/StaffAdminReports";
+import OperationsReports from "./reports_components/OperationsReports";
+import { FileBarChart, IndianRupee, Users, PackageOpen } from "lucide-react";
+import clsx from "clsx";
+
+const tabs = [
+  { id: "academic", label: "Academic Reports", icon: FileBarChart },
+  { id: "finance", label: "Financial Reports", icon: IndianRupee },
+  { id: "staff", label: "Staff & Admin", icon: Users },
+  { id: "operations", label: "Operations (Lib/Inv/Trp)", icon: PackageOpen },
+];
+
+export default function ReportsAnalyticsPage() {
+  const [activeTab, setActiveTab] = useState("academic");
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
+      {/* Header & Tabs */}
+      <div className="flex flex-col gap-4 mb-2">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">Reports Dashboard</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage all features related to Reports</p>
+          <h1 className="text-2xl font-bold text-text-primary">Reports & Analytics Engine</h1>
+          <p className="text-sm text-text-secondary mt-1">Generate, view, and export comprehensive reports across all modules.</p>
+        </div>
+        
+        <div className="flex bg-card border border-border rounded-lg p-1 w-fit shadow-sm overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "bg-primary text-white shadow-sm" 
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <AdminStudentReportsConfig />
-      <AdminAdmissionReportsConfig />
-      <AdminAttendanceReportsConfig />
-      <AdminFeeReportsConfig />
-      <AdminExamReportsConfig />
-      <AdminStaffReportsConfig />
-      <AdminLeaveReportsConfig />
-      <AdminLibraryReportsConfig />
-      <AdminTransportReportsConfig />
-      <AdminInventoryReportsConfig />
-      <AdminExpenseReportsConfig />
-      <AdminEventReportsConfig />
-      <AdminCertificateReportsConfig />
-      <AdminCustomReportsConfig />
-      <AdminExportExcelPDFConfig />
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
+        {activeTab === "academic" && <AcademicReports />}
+        {activeTab === "finance" && <FinanceReports />}
+        {activeTab === "staff" && <StaffAdminReports />}
+        {activeTab === "operations" && <OperationsReports />}
+      </div>
     </div>
   );
 }
