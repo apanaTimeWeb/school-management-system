@@ -1,37 +1,55 @@
-import AdminDashboardKPIs from "./dashboard_components/AdminDashboardKPIs";
-import AdminQuickActions from "./dashboard_components/AdminQuickActions";
-import AdminDashboardCharts from "./dashboard_components/AdminDashboardCharts";
+import React from "react";
+import AdminTotalStudentsConfig from "./dashboard_components/AdminTotalStudentsConfig";
+import AdminTotalStaffConfig from "./dashboard_components/AdminTotalStaffConfig";
+import AdminTotalTeachersConfig from "./dashboard_components/AdminTotalTeachersConfig";
+import AdminNewAdmissionsConfig from "./dashboard_components/AdminNewAdmissionsConfig";
+import AdminPendingAdmissionsConfig from "./dashboard_components/AdminPendingAdmissionsConfig";
+import AdminTodaysAttendanceConfig from "./dashboard_components/AdminTodaysAttendanceConfig";
+import AdminAbsentStudentsConfig from "./dashboard_components/AdminAbsentStudentsConfig";
+import AdminAbsentStaffConfig from "./dashboard_components/AdminAbsentStaffConfig";
+import AdminFeeCollectionTodayConfig from "./dashboard_components/AdminFeeCollectionTodayConfig";
+import AdminPendingFeesConfig from "./dashboard_components/AdminPendingFeesConfig";
+import AdminUpcomingExamsConfig from "./dashboard_components/AdminUpcomingExamsConfig";
+import AdminUpcomingEventsConfig from "./dashboard_components/AdminUpcomingEventsConfig";
+import AdminLeaveRequestsConfig from "./dashboard_components/AdminLeaveRequestsConfig";
+import AdminComplaintsGrievancesConfig from "./dashboard_components/AdminComplaintsGrievancesConfig";
+import AdminNotificationsConfig from "./dashboard_components/AdminNotificationsConfig";
+import AdminImportantAlertsConfig from "./dashboard_components/AdminImportantAlertsConfig";
+import AdminQuickActionsConfig from "./dashboard_components/AdminQuickActionsConfig";
+import AdminAdmissionFeeChartsConfig from "./dashboard_components/AdminAdmissionFeeChartsConfig";
+import AdminAttendanceAnalyticsConfig from "./dashboard_components/AdminAttendanceAnalyticsConfig";
+import AdminAcademicPerformanceSummaryConfig from "./dashboard_components/AdminAcademicPerformanceSummaryConfig";
 
-export default function AdminDashboardPage() {
+export default function AdminPage() {
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto">
-      
-      {/* Header Section */}
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">Dashboard</h1>
-          <p className="text-sm text-text-secondary mt-1">Overview of school administration and management.</p>
+          <h1 className="text-2xl font-bold text-text-primary">Dashboard Dashboard</h1>
+          <p className="text-sm text-text-secondary mt-1">Manage all features related to Dashboard</p>
         </div>
       </div>
 
-      {/* KPI Metrics */}
-      <AdminDashboardKPIs />
-
-      {/* Main Content Grid: Charts and Actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
-        {/* Left Column: Charts (2/3 width on large screens) */}
-        <div className="lg:col-span-2 flex flex-col gap-6">
-          <AdminDashboardCharts />
-        </div>
-
-        {/* Right Column: Quick Actions & Alerts (1/3 width on large screens) */}
-        <div className="flex flex-col gap-6">
-          <AdminQuickActions />
-        </div>
-
-      </div>
-
+      <AdminTotalStudentsConfig />
+      <AdminTotalStaffConfig />
+      <AdminTotalTeachersConfig />
+      <AdminNewAdmissionsConfig />
+      <AdminPendingAdmissionsConfig />
+      <AdminTodaysAttendanceConfig />
+      <AdminAbsentStudentsConfig />
+      <AdminAbsentStaffConfig />
+      <AdminFeeCollectionTodayConfig />
+      <AdminPendingFeesConfig />
+      <AdminUpcomingExamsConfig />
+      <AdminUpcomingEventsConfig />
+      <AdminLeaveRequestsConfig />
+      <AdminComplaintsGrievancesConfig />
+      <AdminNotificationsConfig />
+      <AdminImportantAlertsConfig />
+      <AdminQuickActionsConfig />
+      <AdminAdmissionFeeChartsConfig />
+      <AdminAttendanceAnalyticsConfig />
+      <AdminAcademicPerformanceSummaryConfig />
     </div>
   );
 }
