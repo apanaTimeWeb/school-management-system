@@ -58,13 +58,13 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           {/* Mobile Search Icon */}
           <button 
             onClick={() => setIsSearchOpen(true)}
-            className="md:hidden p-2 rounded-full hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors"
+            className="md:hidden p-2 rounded-full cursor-pointer hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors"
           >
             <Search size={20} />
           </button>
 
           {/* Notifications */}
-          <button className="relative p-2 rounded-full hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors">
+          <button className="relative p-2 rounded-full cursor-pointer hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors">
             <Bell size={20} />
             <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
           </button>
@@ -75,7 +75,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           <div className="relative">
             <button 
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-2 p-1.5 md:p-2 rounded-md hover:bg-secondary/10 transition-colors group"
+              className="flex items-center gap-2 p-1.5 md:p-2 rounded-md cursor-pointer hover:bg-secondary/10 transition-colors group"
             >
               <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-secondary transition-colors" />
               <div className="hidden md:flex flex-col items-start leading-tight">
