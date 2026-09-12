@@ -28,7 +28,8 @@ export default function SuperAdminSystemActivityLogsTable() {
         <thead className="bg-primary-subtle text-text-secondary uppercase text-[11px] font-semibold">
           <tr>
             <th className="px-4 py-3 border-b border-border w-[180px]">Timestamp</th>
-            <th className="px-4 py-3 border-b border-border w-[150px]">User & Role</th>
+            <th className="px-4 py-3 border-b border-border w-[150px]">User</th>
+            <th className="px-4 py-3 border-b border-border w-[120px]">Role</th>
             <th className="px-4 py-3 border-b border-border w-[200px]">Activity Type</th>
             <th className="px-4 py-3 border-b border-border">Details</th>
             <th className="px-4 py-3 border-b border-border w-[120px]">IP Address</th>
@@ -39,10 +40,10 @@ export default function SuperAdminSystemActivityLogsTable() {
             <tr key={log.id} className="hover:bg-bg-page transition-colors">
               <td className="px-4 py-3 text-xs text-text-secondary">{log.timestamp}</td>
               <td className="px-4 py-3">
-                <div className="flex flex-col">
-                  <span className="font-semibold text-text-primary">{log.user}</span>
-                  <span className="text-[10px] text-text-secondary">{log.role}</span>
-                </div>
+                <span className="font-semibold text-text-primary">{log.user}</span>
+              </td>
+              <td className="px-4 py-3">
+                <span className="text-xs text-text-secondary">{log.role}</span>
               </td>
               <td className="px-4 py-3 font-semibold text-text-primary">
                 {/* Render exact checklist string */}
