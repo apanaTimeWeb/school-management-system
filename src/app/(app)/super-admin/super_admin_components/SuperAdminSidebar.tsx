@@ -72,6 +72,8 @@ const SIDEBAR_LINKS = [
   { label: 'School Branding', href: '/super-admin/school-branding', icon: Palette },
   { label: 'Super Admin Export Center', href: '/super-admin/super-admin-export-center', icon: HardDriveDownload },
   { label: 'Emergency Controls', href: '/super-admin/super-admin-emergency-controls', icon: ShieldAlert },
+  { label: 'Configuration Change History', href: '/super-admin/configuration-change-history', icon: History },
+  { label: 'Super Admin Profile', href: '/super-admin/super-admin-profile', icon: User },
 ];
 
 export default function SuperAdminSidebar() {
