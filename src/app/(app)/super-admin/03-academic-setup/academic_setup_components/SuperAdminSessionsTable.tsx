@@ -77,22 +77,22 @@ export default function SuperAdminSessionsTable() {
                 </span>
               </td>
               <td className="px-4 py-3 text-right">
-                <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                  <button className="p-1.5 text-text-secondary hover:text-info transition-colors" title="Edit Session">
+                <div className="flex items-center justify-end gap-2">
+                  <button className="p-1.5 text-info hover:bg-info/10 rounded transition-colors" title="Edit Session">
                     <Edit size={16} />
                   </button>
                   {session.status !== 'Current' && session.status !== 'Archived' && (
-                    <button className="p-1.5 text-text-secondary hover:text-success transition-colors" title="Activate as Current">
+                    <button className="p-1.5 text-success hover:bg-success/10 rounded transition-colors" title="Activate as Current">
                       <Power size={16} />
                     </button>
                   )}
                   {session.status === 'Current' && (
-                    <button className="p-1.5 text-text-secondary hover:text-warning transition-colors" title="Close Session">
+                    <button className="p-1.5 text-warning hover:bg-warning/10 rounded transition-colors" title="Close Session">
                       <PowerOff size={16} />
                     </button>
                   )}
                   {session.status === 'Previous' && (
-                    <button className="p-1.5 text-text-secondary hover:text-danger transition-colors" title="Archive Session">
+                    <button className="p-1.5 text-danger hover:bg-danger/10 rounded transition-colors" title="Archive Session">
                       <Archive size={16} />
                     </button>
                   )}

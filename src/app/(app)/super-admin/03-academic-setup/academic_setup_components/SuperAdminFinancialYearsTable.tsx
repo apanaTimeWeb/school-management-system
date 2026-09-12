@@ -70,12 +70,12 @@ export default function SuperAdminFinancialYearsTable() {
                 </span>
               </td>
               <td className="px-4 py-3 text-right">
-                <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
+                <div className="flex items-center justify-end gap-2">
                   
                   {/* Financial Reports Action */}
                   <Link 
                     href={`/super-admin/financial-years/reports/${fy.id}`}
-                    className="p-1.5 text-text-secondary hover:text-primary transition-colors" 
+                    className="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors"
                     title="View Financial Reports"
                   >
                     <FileText size={16} />
@@ -83,28 +83,28 @@ export default function SuperAdminFinancialYearsTable() {
 
                   {/* Edit Action - Only if not locked */}
                   {fy.status !== 'Locked' && (
-                    <button className="p-1.5 text-text-secondary hover:text-info transition-colors" title="Edit FY Details">
+                    <button className="p-1.5 text-info hover:bg-info/10 rounded transition-colors" title="Edit FY Details">
                       <Edit size={16} />
                     </button>
                   )}
 
                   {/* Close Action */}
                   {fy.status === 'Active' && (
-                    <button className="p-1.5 text-text-secondary hover:text-warning transition-colors" title="Close Financial Year">
+                    <button className="p-1.5 text-warning hover:bg-warning/10 rounded transition-colors" title="Close Financial Year">
                       <PowerOff size={16} />
                     </button>
                   )}
 
                   {/* Lock Action */}
                   {(fy.status === 'Active' || fy.status === 'Closed') && (
-                    <button className="p-1.5 text-text-secondary hover:text-danger transition-colors" title="Lock Financial Year (Irreversible without permission)">
+                    <button className="p-1.5 text-danger hover:bg-danger/10 rounded transition-colors" title="Lock Financial Year (Irreversible without permission)">
                       <Lock size={16} />
                     </button>
                   )}
 
                   {/* Reopen Action (with permission) */}
                   {fy.status === 'Locked' && (
-                    <button className="p-1.5 text-text-secondary hover:text-warning transition-colors" title="Reopen with Permission">
+                    <button className="p-1.5 text-warning hover:bg-warning/10 rounded transition-colors" title="Reopen with Permission">
                       <Unlock size={16} />
                     </button>
                   )}
