@@ -34,7 +34,7 @@ export default function AdminDashboardKPIs() {
         return (
           <div key={index} className="bg-card border border-border rounded-lg p-5 flex items-center justify-between hover:border-primary transition-colors group">
             <div className="flex flex-col">
-              <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider mb-1">{kpi.label}</span>
+              <span className="text-xs font-semibold text-text-secondary tracking-wider mb-1">{kpi.label}</span>
               <span className="text-2xl font-bold text-text-primary">{kpi.value}</span>
             </div>
             <div className={`p-3 rounded-md ${kpi.bg}`}>

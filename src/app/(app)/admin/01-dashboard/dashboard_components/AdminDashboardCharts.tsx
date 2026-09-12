@@ -12,7 +12,7 @@ export default function AdminDashboardCharts() {
         {/* Admission & Fee Charts */}
         <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4 border-b border-border pb-2">
-            <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider">Admission & Fee Charts</h3>
+            <h3 className="text-sm font-bold text-text-primary tracking-wider">Admission & Fee Charts</h3>
             <BarChart3 size={18} className="text-text-secondary" />
           </div>
           <div className="h-48 flex items-center justify-center bg-bg-page border border-dashed border-border rounded">
@@ -23,7 +23,7 @@ export default function AdminDashboardCharts() {
               <div className="w-8 bg-warning rounded-t-sm h-[90%]"></div>
             </div>
           </div>
-          <div className="flex justify-between mt-3 text-[10px] text-text-secondary uppercase">
+          <div className="flex justify-between mt-3 text-[10px] text-text-secondary">
             <span>Q1</span>
             <span>Q2</span>
             <span>Q3</span>
@@ -34,7 +34,7 @@ export default function AdminDashboardCharts() {
         {/* Attendance Analytics */}
         <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4 border-b border-border pb-2">
-            <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider">Attendance Analytics</h3>
+            <h3 className="text-sm font-bold text-text-primary tracking-wider">Attendance Analytics</h3>
             <PieChart size={18} className="text-text-secondary" />
           </div>
           <div className="h-48 flex flex-col items-center justify-center bg-bg-page border border-dashed border-border rounded">
@@ -51,7 +51,7 @@ export default function AdminDashboardCharts() {
       {/* Bottom Row: Academic Performance Summary */}
       <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
         <div className="flex items-center justify-between mb-4 border-b border-border pb-2">
-          <h3 className="text-sm font-bold text-text-primary uppercase tracking-wider">Academic Performance Summary</h3>
+          <h3 className="text-sm font-bold text-text-primary tracking-wider">Academic Performance Summary</h3>
           <TrendingUp size={18} className="text-text-secondary" />
         </div>
         <div className="h-48 flex items-center justify-center bg-bg-page border border-dashed border-border rounded relative overflow-hidden">

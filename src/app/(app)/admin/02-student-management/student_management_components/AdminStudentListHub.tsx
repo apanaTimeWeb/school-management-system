@@ -11,28 +11,27 @@ export default function AdminStudentListHub() {
       <div className="bg-primary/5 border-b border-border p-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h2 className="text-lg font-bold text-text-primary flex items-center gap-2">
           <Users className="text-primary" size={20} />
-          Student List & Search
+          Student List
         </h2>
         <div className="flex items-center gap-2">
           {/* Bulk Import/Export */}
           <button className="flex items-center gap-2 px-3 py-1.5 border border-border bg-bg-page rounded-md text-sm font-semibold hover:border-primary transition">
-            <Upload size={16} /> Import
-          </button>
-          <button className="flex items-center gap-2 px-3 py-1.5 border border-border bg-bg-page rounded-md text-sm font-semibold hover:border-primary transition">
-            <Download size={16} /> Export
+            <Upload size={16} /> Bulk Import/Export
           </button>
         </div>
       </div>
 
       {/* Student Search/Filters */}
-      <div className="p-4 border-b border-border bg-bg-page flex flex-wrap gap-4 items-end">
-        <div className="flex flex-col gap-1.5 flex-1 min-w-[200px]">
-          <label className="text-xs font-semibold text-text-secondary">Search by Name/ID</label>
-          <div className="relative">
-            <Search className="absolute left-3 top-2.5 text-text-secondary" size={16} />
-            <input type="text" placeholder="e.g. Rahul or ADM/2026/001" className="w-full pl-9 pr-3 py-2 bg-input border border-border rounded-md text-sm focus:border-primary outline-none" />
+      <div className="p-4 border-b border-border bg-bg-page flex flex-col gap-4">
+        <h3 className="text-sm font-bold text-text-primary">Student Search/Filters</h3>
+        <div className="flex flex-wrap gap-4 items-end">
+          <div className="flex flex-col gap-1.5 flex-1 min-w-[200px]">
+            <label className="text-xs font-semibold text-text-secondary">Search by Name/ID</label>
+            <div className="relative">
+              <Search className="absolute left-3 top-2.5 text-text-secondary" size={16} />
+              <input type="text" placeholder="e.g. Rahul or ADM/2026/001" className="w-full pl-9 pr-3 py-2 bg-input border border-border rounded-md text-sm focus:border-primary outline-none" />
+            </div>
           </div>
-        </div>
         <div className="flex flex-col gap-1.5 min-w-[150px]">
           <label className="text-xs font-semibold text-text-secondary">Class</label>
           <select className="px-3 py-2 bg-input border border-border rounded-md text-sm focus:border-primary outline-none">
@@ -50,12 +49,13 @@ export default function AdminStudentListHub() {
         <button className="px-4 py-2 bg-secondary text-white rounded-md text-sm font-bold flex items-center gap-2 hover:bg-secondary-hover">
           <Filter size={16} /> Apply Filters
         </button>
+        </div>
       </div>
 
       {/* Student List Table */}
       <div className="overflow-x-auto p-4">
         <table className="w-full text-left text-sm">
-          <thead className="bg-bg-page border-y border-border text-text-secondary uppercase text-[10px] tracking-wider">
+          <thead className="bg-bg-page border-y border-border text-text-secondary text-[10px] tracking-wider">
             <tr>
               <th className="py-3 px-4 font-semibold">Student ID</th>
               <th className="py-3 px-4 font-semibold">Name</th>

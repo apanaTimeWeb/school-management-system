@@ -49,7 +49,7 @@ export default function AdminAdmissionProcess() {
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="bg-bg-page border-y border-border text-text-secondary uppercase text-[10px] tracking-wider">
+            <thead className="bg-bg-page border-y border-border text-text-secondary text-[10px] tracking-wider">
               <tr>
                 <th className="py-3 px-4 font-semibold">Applicant</th>
                 <th className="py-3 px-4 font-semibold">Class</th>

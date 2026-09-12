@@ -14,7 +14,7 @@ export default function AdminQuickActions() {
 
   return (
     <div className="bg-card border border-border rounded-lg p-6 shadow-sm">
-      <h2 className="text-base font-bold text-text-primary uppercase tracking-wider mb-4 border-b border-border pb-2">Quick Actions</h2>
+      <h2 className="text-base font-bold text-text-primary tracking-wider mb-4 border-b border-border pb-2">Quick Actions</h2>
       
       <div className="grid grid-cols-2 gap-3">
         {actions.map((action, idx) => {
