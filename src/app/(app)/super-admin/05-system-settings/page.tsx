@@ -1,4 +1,8 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import { Settings, Globe, Hash, AlertCircle } from 'lucide-react';
 
 import SuperAdminCategoryMasterDataConfig from './system_settings_components/SuperAdminCategoryMasterDataConfig';
 import SuperAdminGeneralSettingsForm from './system_settings_components/SuperAdminGeneralSettingsForm';
@@ -7,34 +11,78 @@ import SuperAdminNumberingSequenceConfig from './system_settings_components/Supe
 import SuperAdminSchoolBrandingConfig from './system_settings_components/SuperAdminSchoolBrandingConfig';
 import SuperAdminTranslationTools from './system_settings_components/SuperAdminTranslationTools';
 
-export default function systemsettingsPage() {
+const TABS = [
+  { id: 'general', label: 'General System Settings', icon: Settings },
+  { id: 'language', label: 'Language Management', icon: Globe },
+  { id: 'numbering', label: 'Master Data & Numbering', icon: Hash },
+];
+
+export default function SystemSettingsPage() {
+  const [activeTab, setActiveTab] = useState('general');
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">05-SYSTEM-SETTINGS</h1>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">CategoryMasterData</h2>
-        <SuperAdminCategoryMasterDataConfig />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">GeneralSettingsForm</h2>
-        <SuperAdminGeneralSettingsForm />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">LanguageTable</h2>
-        <SuperAdminLanguageTable />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">NumberingSequence</h2>
-        <SuperAdminNumberingSequenceConfig />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">SchoolBranding</h2>
-        <SuperAdminSchoolBrandingConfig />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">TranslationTools</h2>
-        <SuperAdminTranslationTools />
-      </section>
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
+      
+      {/* Header Area */}
+      <div className="flex justify-between items-center mb-2">
+        <div>
+          <h1 className="text-2xl font-bold text-text-primary">System Settings</h1>
+          <p className="text-sm text-text-secondary mt-1">Configure global ERP settings, regional formats, language translations, and branding.</p>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex overflow-x-auto hide-scrollbar border-b border-border">
+        <div className="flex gap-2">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap",
+                activeTab === tab.id
+                  ? "border-primary text-primary"
+                  : "border-transparent text-text-secondary hover:text-primary hover:bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="mt-4">
+        {activeTab === 'general' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminSchoolBrandingConfig />
+            <SuperAdminGeneralSettingsForm />
+          </div>
+        )}
+
+        {activeTab === 'language' && (
+          <div className="flex flex-col gap-6">
+            <div className="flex items-start gap-3 p-3 bg-info-bg/50 border border-info/30 rounded-md text-info">
+              <AlertCircle size={18} className="shrink-0 mt-0.5" />
+              <p className="text-xs font-bold leading-relaxed">
+                Note: Translations affect the Public and User-facing ERP interfaces. The Super Admin/Admin panel is maintained strictly in English for consistency and support purposes.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <SuperAdminLanguageTable />
+              <SuperAdminTranslationTools />
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'numbering' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminNumberingSequenceConfig />
+            <SuperAdminCategoryMasterDataConfig />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
