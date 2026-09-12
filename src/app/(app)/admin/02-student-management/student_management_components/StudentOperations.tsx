@@ -81,11 +81,81 @@ export default function StudentOperations() {
                 </div>
               </>
             )}
+
+            {activeTab === 'promotion' && (
+              <>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Current Academic Year</label>
+                  <input type="text" disabled value="2025-2026" className="bg-bg-page border border-border rounded-md px-4 py-2.5 text-sm text-text-disabled" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Promote To Class *</label>
+                  <select className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none">
+                    <option value="">Select Next Class</option>
+                    <option value="11">Class XI</option>
+                  </select>
+                </div>
+                <div className="flex flex-col gap-1.5 md:col-span-2">
+                  <label className="text-sm font-semibold text-text-secondary">Promotion Remarks (Optional)</label>
+                  <input type="text" className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none" placeholder="e.g. Promoted with Distinction" />
+                </div>
+              </>
+            )}
             
             {(activeTab === 'tc' || activeTab === 'withdrawal') && (
+              <>
+                <div className="flex flex-col gap-1.5 md:col-span-2">
+                  <label className="text-sm font-semibold text-text-secondary">Reason for {activeTab === 'tc' ? 'Transfer' : 'Withdrawal'} *</label>
+                  <textarea className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none min-h-[100px]" placeholder="Enter reason here..."></textarea>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Effective Date *</label>
+                  <input type="date" className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none" />
+                </div>
+              </>
+            )}
+
+            {activeTab === 'readmission' && (
+              <>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Previous Admission No.</label>
+                  <input type="text" disabled value="10452" className="bg-bg-page border border-border rounded-md px-4 py-2.5 text-sm text-text-disabled" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Re-admission Date *</label>
+                  <input type="date" className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none" />
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Re-admit to Class *</label>
+                  <select className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none">
+                    <option value="">Select Class</option>
+                    <option value="10">Class X</option>
+                  </select>
+                </div>
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold text-text-secondary">Re-admit to Section *</label>
+                  <select className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none">
+                    <option value="">Select Section</option>
+                    <option value="a">A</option>
+                  </select>
+                </div>
+              </>
+            )}
+
+            {activeTab === 'archive' && (
               <div className="flex flex-col gap-1.5 md:col-span-2">
-                <label className="text-sm font-semibold text-text-secondary">Reason *</label>
-                <textarea className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none min-h-[100px]" placeholder="Enter reason here..."></textarea>
+                <div className="p-4 bg-warning-bg/50 border border-warning/20 rounded-md text-sm text-text-secondary mb-4">
+                  <p className="font-bold text-warning mb-1">Warning</p>
+                  Archiving a student will remove them from all active lists and reports. Their historical data will be preserved in the archive.
+                </div>
+                <label className="text-sm font-semibold text-text-secondary">Archival Reason *</label>
+                <select className="bg-bg-input border border-border rounded-md px-4 py-2.5 text-sm focus:border-primary outline-none">
+                  <option value="">Select Reason</option>
+                  <option value="graduated">Graduated / Alumni</option>
+                  <option value="left">Left School</option>
+                  <option value="expelled">Expelled</option>
+                  <option value="other">Other</option>
+                </select>
               </div>
             )}
           </div>
