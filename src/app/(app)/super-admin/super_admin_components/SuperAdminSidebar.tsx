@@ -68,6 +68,7 @@ const SIDEBAR_LINKS = [
   { label: 'Sensitive Data Protection', href: '/super-admin/sensitive-data-protection', icon: ShieldAlert },
   { label: 'Login / Identity Settings', href: '/super-admin/login-identity-settings', icon: KeyRound },
   { label: 'Terms & Privacy', href: '/super-admin/terms-privacy-consent', icon: FileCheck2 },
+  { label: 'Module Enable / Disable', href: '/super-admin/module-enable-disable', icon: ToggleLeft },
 ];
 
 export default function SuperAdminSidebar() {
