@@ -91,3 +91,37 @@ export function AttendanceAnalyticsChart() {
     </div>
   );
 }
+
+const performanceData = [
+  { term: 'Term 1', 'Class IX': 78, 'Class X': 82, 'Class XI': 75, 'Class XII': 85 },
+  { term: 'Term 2', 'Class IX': 81, 'Class X': 85, 'Class XI': 78, 'Class XII': 88 },
+  { term: 'Finals', 'Class IX': 85, 'Class X': 89, 'Class XI': 82, 'Class XII': 91 },
+];
+
+export function AcademicPerformanceChart() {
+  return (
+    <div className="bg-card border border-border rounded-xl p-6 shadow-sm h-[400px] flex flex-col">
+      <div className="mb-4 flex justify-between items-center">
+        <div>
+          <h3 className="text-lg font-bold text-text-primary">Academic Performance Summary</h3>
+          <p className="text-sm text-text-secondary">Average scores across terms</p>
+        </div>
+      </div>
+      <div className="flex-1 min-h-0">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={performanceData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--border)" />
+            <XAxis dataKey="term" axisLine={false} tickLine={false} tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} dy={10} />
+            <YAxis axisLine={false} tickLine={false} tick={{ fill: 'var(--text-secondary)', fontSize: 12 }} domain={[60, 100]} />
+            <Tooltip 
+              contentStyle={{ backgroundColor: 'var(--bg-popover)', border: '1px solid var(--border)', borderRadius: '8px', color: 'var(--text-primary)' }}
+            />
+            <Legend wrapperStyle={{ paddingTop: '20px' }} />
+            <Line type="monotone" dataKey="Class X" stroke="var(--primary)" strokeWidth={3} />
+            <Line type="monotone" dataKey="Class XII" stroke="var(--secondary)" strokeWidth={3} />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </div>
+  );
+}

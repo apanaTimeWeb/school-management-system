@@ -78,3 +78,46 @@ export function UpcomingEventsList() {
     </div>
   );
 }
+
+export function ExamsAndGrievancesList() {
+  return (
+    <div className="bg-card border border-border rounded-xl p-6 shadow-sm flex flex-col h-full">
+      <div className="flex justify-between items-center mb-6">
+        <h3 className="text-lg font-bold text-text-primary flex items-center gap-2">
+          <AlertCircle className="text-danger" size={20} />
+          Exams & Grievances
+        </h3>
+      </div>
+      
+      <div className="flex flex-col gap-6 flex-1">
+        <div>
+          <h4 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-3">Upcoming Exams</h4>
+          <div className="flex flex-col gap-3">
+            <div className="flex justify-between items-center p-3 rounded-lg bg-bg-page border border-border/50">
+              <span className="font-semibold text-sm text-text-primary">Mid-Term: Class X</span>
+              <span className="text-xs font-bold text-info bg-info-bg px-2 py-1 rounded">Starts in 3 Days</span>
+            </div>
+            <div className="flex justify-between items-center p-3 rounded-lg bg-bg-page border border-border/50">
+              <span className="font-semibold text-sm text-text-primary">Weekly Unit Tests</span>
+              <span className="text-xs font-bold text-text-secondary">Every Friday</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h4 className="text-sm font-bold text-text-secondary uppercase tracking-wider mb-3">Recent Complaints / Grievances</h4>
+          <div className="flex flex-col gap-3">
+            <div className="p-3 rounded-lg bg-danger-bg/50 border border-danger/20 border-l-4 border-l-danger text-sm">
+              <p className="font-bold text-danger mb-1">Bus Route 4 Delay Issue</p>
+              <p className="text-xs text-text-secondary">Reported by 5 parents. Status: Unresolved</p>
+            </div>
+            <div className="p-3 rounded-lg bg-warning-bg/50 border border-warning/20 border-l-4 border-l-warning text-sm">
+              <p className="font-bold text-warning mb-1">Cafeteria Hygiene Check</p>
+              <p className="text-xs text-text-secondary">Reported by Student Council. Status: In Review</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
