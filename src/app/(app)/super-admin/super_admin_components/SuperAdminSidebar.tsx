@@ -63,6 +63,9 @@ const SIDEBAR_LINKS = [
   { label: 'Recycle Bin', href: '/super-admin/recycle-bin', icon: Trash2 },
   { label: 'Data Retention & Archiving', href: '/super-admin/data-retention-archiving', icon: Archive },
   { label: 'Approval Workflow', href: '/super-admin/approval-workflow', icon: Blocks },
+  { label: 'Automation Rules', href: '/super-admin/automation-rules', icon: RefreshCw },
+  { label: 'System-Wide Search', href: '/super-admin/system-wide-search', icon: Search },
+  { label: 'Sensitive Data Protection', href: '/super-admin/sensitive-data-protection', icon: ShieldAlert },
 ];
 
 export default function SuperAdminSidebar() {
