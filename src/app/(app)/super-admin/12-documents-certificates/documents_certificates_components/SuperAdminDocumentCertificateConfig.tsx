@@ -167,9 +167,9 @@ export default function SuperAdminDocumentCertificateConfig() {
               <div className="flex flex-col gap-4 p-4 border border-border rounded-lg bg-bg-page">
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs font-bold text-text-secondary">Maximum file size (per document)</label>
-                  <select className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none">
+                  <select defaultValue="5" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none">
                     <option value="2">2 MB</option>
-                    <option value="5" selected>5 MB</option>
+                    <option value="5">5 MB</option>
                     <option value="10">10 MB</option>
                   </select>
                 </div>
