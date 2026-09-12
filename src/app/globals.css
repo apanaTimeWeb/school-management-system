@@ -8,14 +8,30 @@
   --color-secondary: var(--secondary);
   --color-secondary-hover: var(--secondary-hover);
   
+  /* Support both bg-page and bg-bg-page classes */
   --color-page: var(--bg-page);
+  --color-bg-page: var(--bg-page);
+  
   --color-card: var(--bg-card);
+  --color-bg-card: var(--bg-card);
+  
   --color-sidebar: var(--bg-sidebar);
+  --color-bg-sidebar: var(--bg-sidebar);
+  
   --color-header: var(--bg-header);
+  --color-bg-header: var(--bg-header);
+  
   --color-input: var(--bg-input);
+  --color-bg-input: var(--bg-input);
+  
   --color-floating: var(--bg-floating);
+  --color-bg-floating: var(--bg-floating);
+  
   --color-overlay: var(--bg-overlay);
+  --color-bg-overlay: var(--bg-overlay);
+  
   --color-popover: var(--bg-popover);
+  --color-bg-popover: var(--bg-popover);
   
   --color-border: var(--border);
   --color-border-focus: var(--border-focus);
@@ -54,7 +70,8 @@
   --secondary: #C9A227; /* Soft Gold */
   --secondary-hover: #D4B241;
   
-  --bg-page: #F8F9FC; /* Soft White */
+  /* Increased contrast for page background so pure white cards POP! */
+  --bg-page: #F1F5F9; /* Slate-100 (Slightly darker grey/blue) */
   --bg-card: #FFFFFF; /* Pure White */
   
   /* Sidebar and Header are Deep Navy */
@@ -63,10 +80,11 @@
   
   --bg-input: #FFFFFF;
   --bg-floating: #FFFFFF;
-  --bg-overlay: #F8F9FC;
+  --bg-overlay: rgba(15, 23, 42, 0.4); /* Slate-900 with opacity for modals */
   --bg-popover: #FFFFFF;
   
-  --border: #E2E8F0; /* Light Grey */
+  /* Darker border for clearer box boundaries */
+  --border: #CBD5E1; /* Slate-300 */
   --border-focus: #C9A227; /* Soft Gold focus */
   
   --text-primary: #1E293B; /* Charcoal */
@@ -114,7 +132,7 @@
     --bg-header: #0B1C2C;
     --bg-input: #0F172A;
     --bg-floating: #1E293B;
-    --bg-overlay: #334155;
+    --bg-overlay: rgba(15, 23, 42, 0.8);
     --bg-popover: #334155;
     
     --border: #334155;

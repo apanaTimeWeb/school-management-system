@@ -42,7 +42,12 @@ export default function AdminSidebar() {
   return (
     <aside className="fixed top-0 left-0 z-20 h-screen w-[280px] bg-sidebar border-r border-border flex flex-col transition-all duration-300">
       <div className="h-16 flex items-center px-6 border-b border-border/20 bg-sidebar">
-        <h1 className="text-xl font-bold text-sidebar-text tracking-tight">Admin<span className="text-secondary">ERP</span></h1>
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-primary font-extrabold text-xl">
+            S
+          </div>
+          <h1 className="text-xl font-bold text-sidebar-text tracking-tight">School<span className="text-secondary">ERP</span></h1>
+        </div>
       </div>
 
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 hide-scrollbar">
