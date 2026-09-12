@@ -1,47 +1,61 @@
-import React from "react";
-import AdminAdmissionEnquiryConfig from "./admission_management_components/AdminAdmissionEnquiryConfig";
-import AdminApplicationFormConfig from "./admission_management_components/AdminApplicationFormConfig";
-import AdminOnlineAdmissionConfig from "./admission_management_components/AdminOnlineAdmissionConfig";
-import AdminOfflineAdmissionConfig from "./admission_management_components/AdminOfflineAdmissionConfig";
-import AdminApplicationVerificationConfig from "./admission_management_components/AdminApplicationVerificationConfig";
-import AdminDocumentVerificationConfig from "./admission_management_components/AdminDocumentVerificationConfig";
-import AdminAdmissionTestConfig from "./admission_management_components/AdminAdmissionTestConfig";
-import AdminInterviewConfig from "./admission_management_components/AdminInterviewConfig";
-import AdminSelectionConfig from "./admission_management_components/AdminSelectionConfig";
-import AdminRejectionConfig from "./admission_management_components/AdminRejectionConfig";
-import AdminWaitlistConfig from "./admission_management_components/AdminWaitlistConfig";
-import AdminAdmissionApprovalConfig from "./admission_management_components/AdminAdmissionApprovalConfig";
-import AdminAdmissionFeeConfig from "./admission_management_components/AdminAdmissionFeeConfig";
-import AdminAdmissionNumberGenerationConfig from "./admission_management_components/AdminAdmissionNumberGenerationConfig";
-import AdminEnrollmentConfig from "./admission_management_components/AdminEnrollmentConfig";
-import AdminAdmissionReportsConfig from "./admission_management_components/AdminAdmissionReportsConfig";
+"use client";
 
-export default function AdminPage() {
+import React, { useState } from "react";
+import AdmissionEnquiries from "./admission_management_components/AdmissionEnquiries";
+import AdmissionProcessing from "./admission_management_components/AdmissionProcessing";
+import AdmissionDecisions from "./admission_management_components/AdmissionDecisions";
+import EnrollmentFinance from "./admission_management_components/EnrollmentFinance";
+import AdmissionReports from "./admission_management_components/AdmissionReports";
+import { UserPlus, Settings2, FileCheck, CreditCard, BarChart2 } from "lucide-react";
+import clsx from "clsx";
+
+const tabs = [
+  { id: "enquiries", label: "Enquiries & Apps", icon: UserPlus },
+  { id: "processing", label: "Verification & Tests", icon: Settings2 },
+  { id: "decisions", label: "Decisions & Approval", icon: FileCheck },
+  { id: "enrollment", label: "Fee & Enrollment", icon: CreditCard },
+  { id: "reports", label: "Admission Reports", icon: BarChart2 },
+];
+
+export default function AdmissionManagementPage() {
+  const [activeTab, setActiveTab] = useState("enquiries");
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
+      {/* Header & Tabs */}
+      <div className="flex flex-col gap-4 mb-2">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">ADMISSION MANAGEMENT</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage all features related to admission_management</p>
+          <h1 className="text-2xl font-bold text-text-primary">Admission Management</h1>
+          <p className="text-sm text-text-secondary mt-1">End-to-end pipeline from initial enquiry to final enrollment.</p>
+        </div>
+        
+        <div className="flex bg-card border border-border rounded-lg p-1 w-fit shadow-sm overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "bg-primary text-white shadow-sm" 
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <AdminAdmissionEnquiryConfig />
-      <AdminApplicationFormConfig />
-      <AdminOnlineAdmissionConfig />
-      <AdminOfflineAdmissionConfig />
-      <AdminApplicationVerificationConfig />
-      <AdminDocumentVerificationConfig />
-      <AdminAdmissionTestConfig />
-      <AdminInterviewConfig />
-      <AdminSelectionConfig />
-      <AdminRejectionConfig />
-      <AdminWaitlistConfig />
-      <AdminAdmissionApprovalConfig />
-      <AdminAdmissionFeeConfig />
-      <AdminAdmissionNumberGenerationConfig />
-      <AdminEnrollmentConfig />
-      <AdminAdmissionReportsConfig />
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
+        {activeTab === "enquiries" && <AdmissionEnquiries />}
+        {activeTab === "processing" && <AdmissionProcessing />}
+        {activeTab === "decisions" && <AdmissionDecisions />}
+        {activeTab === "enrollment" && <EnrollmentFinance />}
+        {activeTab === "reports" && <AdmissionReports />}
+      </div>
     </div>
   );
 }
