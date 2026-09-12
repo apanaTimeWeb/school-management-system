@@ -113,6 +113,24 @@ export default function SuperAdminAddBranchDrawer({ isOpen, onClose }: DrawerPro
               {errors.address && <span className="text-xs text-danger">{errors.address.message}</span>}
             </div>
 
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm font-medium text-text-primary">Facilities (Comma Separated)</label>
+              <input 
+                {...register("facilities")} 
+                className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                placeholder="e.g. Library, Science Lab, Sports Ground"
+              />
+            </div>
+
+            <div className="flex flex-col gap-1.5">
+              <label className="text-sm font-medium text-text-primary">Branch Specific Settings</label>
+              <input 
+                {...register("branchSettings")} 
+                className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                placeholder="e.g. Requires Special Transport Logic"
+              />
+            </div>
+
             <div className="flex items-center gap-2 mt-2">
               <input 
                 type="checkbox" 

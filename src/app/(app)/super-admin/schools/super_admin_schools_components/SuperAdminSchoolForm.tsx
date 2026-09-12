@@ -41,6 +41,17 @@ export default function SuperAdminSchoolForm() {
           <h3 className="text-sm font-semibold text-text-primary mb-4 border-b border-border pb-2">Basic Information</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             
+            <div className="flex flex-col gap-1.5 md:col-span-2">
+              <label className="text-sm font-medium text-text-primary">School Logo</label>
+              <input 
+                type="file"
+                accept="image/*"
+                {...register("logo")} 
+                className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all w-full max-w-sm"
+              />
+              <span className="text-xs text-text-secondary">Upload PNG or JPG (max 2MB).</span>
+            </div>
+
             <div className="flex flex-col gap-1.5">
               <label className="text-sm font-medium text-text-primary">School Name <span className="text-danger">*</span></label>
               <input 

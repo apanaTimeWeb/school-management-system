@@ -3,6 +3,7 @@ import { z } from 'zod';
 export const SchoolSchema = z.object({
   schoolCode: z.string().min(1, 'School Code is required'),
   schoolName: z.string().min(1, 'School Name is required'),
+  logo: z.any().optional(), // Added Logo field
   principalName: z.string().min(1, 'Principal Name is required'),
   address: z.string().min(1, 'Address is required'),
   contact: z.string().min(10, 'Contact must be at least 10 digits'),
@@ -27,7 +28,8 @@ export const BranchSchema = z.object({
   address: z.string().min(1, 'Address is required'),
   contact: z.string().min(10, 'Contact must be at least 10 digits'),
   branchHead: z.string().min(1, 'Branch Head Name is required'),
-  facilities: z.array(z.string()).optional(),
+  facilities: z.string().optional(), // Added Facilities field (comma separated for now)
+  branchSettings: z.string().optional(), // Added Branch-specific settings field
   isActive: z.boolean().default(true),
 });
 
