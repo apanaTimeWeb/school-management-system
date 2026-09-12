@@ -77,6 +77,12 @@ const adminCategories = [
     title: "12. Timetable",
     icon: LayoutDashboard,
     href: "/admin/12-timetable",
+  },
+  {
+    id: "transport-management",
+    title: "13. Transport Management",
+    icon: LayoutDashboard,
+    href: "/admin/13-transport-management",
   }
 ];
 
