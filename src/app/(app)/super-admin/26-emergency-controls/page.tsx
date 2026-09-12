@@ -1,20 +1,58 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import { AlertTriangle } from 'lucide-react';
 
 import SuperAdminSuperAdminEmergencyControlsConfig from './emergency_controls_components/SuperAdminSuperAdminEmergencyControlsConfig';
-import SuperAdminSystemWideSearchConfig from './emergency_controls_components/SuperAdminSystemWideSearchConfig';
 
-export default function emergencycontrolsPage() {
+const TABS = [
+  { id: 'emergency', label: 'Emergency Controls', icon: AlertTriangle },
+];
+
+export default function EmergencyControlsPage() {
+  const [activeTab, setActiveTab] = useState('emergency');
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">26-EMERGENCY-CONTROLS</h1>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">SuperAdminEmergencyControls</h2>
-        <SuperAdminSuperAdminEmergencyControlsConfig />
-      </section>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">SystemWideSearch</h2>
-        <SuperAdminSystemWideSearchConfig />
-      </section>
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
+      
+      {/* Header Area */}
+      <div className="flex justify-between items-center mb-2">
+        <div>
+          <h1 className="text-2xl font-bold text-text-primary">Emergency Controls</h1>
+          <p className="text-sm text-text-secondary mt-1">Highly sensitive actions to secure the system in case of an attack or emergency.</p>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex overflow-x-auto hide-scrollbar border-b border-border">
+        <div className="flex gap-2">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap",
+                activeTab === tab.id
+                  ? "border-danger text-danger"
+                  : "border-transparent text-text-secondary hover:text-danger hover:bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="mt-4">
+        {activeTab === 'emergency' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminSuperAdminEmergencyControlsConfig />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
