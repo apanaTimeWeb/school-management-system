@@ -113,6 +113,12 @@ const adminCategories = [
     title: "18. Documents & Certificates",
     icon: LayoutDashboard,
     href: "/admin/18-documents-certificates",
+  },
+  {
+    id: "discipline-grievance",
+    title: "19. Discipline & Grievance",
+    icon: LayoutDashboard,
+    href: "/admin/19-discipline-grievance",
   }
 ];
 
