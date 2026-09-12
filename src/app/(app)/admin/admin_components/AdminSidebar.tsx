@@ -131,6 +131,12 @@ const adminCategories = [
     title: "21. Website / Public Content",
     icon: LayoutDashboard,
     href: "/admin/21-website-public-content",
+  },
+  {
+    id: "reports",
+    title: "22. Reports",
+    icon: LayoutDashboard,
+    href: "/admin/22-reports",
   }
 ];
 
