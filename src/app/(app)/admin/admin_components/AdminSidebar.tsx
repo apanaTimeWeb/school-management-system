@@ -26,12 +26,15 @@ const adminCategories = [
   { id: "documents", title: "18. Documents & Certificates", icon: LayoutDashboard, href: "/admin/18-documents-certificates" },
   { id: "discipline", title: "19. Discipline & Grievance", icon: LayoutDashboard, href: "/admin/19-discipline-grievance" },
   { id: "health", title: "20. Health & Medical", icon: LayoutDashboard, href: "/admin/20-health-medical" },
-  { id: "website", title: "21. Website / Public Content", icon: LayoutDashboard, href: "/admin/21-website-public-content" },
+  { id: "website", title: "21. Website / Public Content", icon: LayoutDashboard, href: "/admin/21-website-content" },
   { id: "reports", title: "22. Reports & Analytics", icon: LayoutDashboard, href: "/admin/22-reports" },
   { id: "approval", title: "23. Approval Center", icon: LayoutDashboard, href: "/admin/23-approval-center" },
-  { id: "hostel", title: "24. Hostel", icon: LayoutDashboard, href: "/admin/18-hostel" },
+  { id: "search", title: "24. Search & Filters", icon: LayoutDashboard, href: "/admin/24-search-filters" },
   { id: "settings", title: "25. Settings", icon: LayoutDashboard, href: "/admin/25-settings" },
-  { id: "profile", title: "26. My Profile", icon: User, href: "/admin/my-profile" }
+  { id: "security", title: "26. Security", icon: LayoutDashboard, href: "/admin/26-security" },
+  { id: "audit", title: "27. Audit Ledger", icon: LayoutDashboard, href: "/admin/27-audit" },
+  { id: "hostel", title: "28. Hostel", icon: LayoutDashboard, href: "/admin/28-hostel" },
+  { id: "profile", title: "29. My Profile", icon: User, href: "/admin/my-profile" }
 ];
 
 interface AdminSidebarProps {
