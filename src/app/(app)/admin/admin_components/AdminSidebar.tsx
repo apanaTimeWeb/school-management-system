@@ -17,6 +17,12 @@ const adminCategories = [
     title: "2. Student Management",
     icon: LayoutDashboard, // I'll just reuse LayoutDashboard or import Users
     href: "/admin/02-student-management",
+  },
+  {
+    id: "admission-management",
+    title: "3. Admission Management",
+    icon: LayoutDashboard,
+    href: "/admin/03-admission-management",
   }
 ];
 
