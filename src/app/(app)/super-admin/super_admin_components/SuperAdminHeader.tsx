@@ -11,6 +11,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [isNotificationsOpen, setIsNotificationsOpen] = useState(false);
 
   const searchResults = [
     { type: 'Student', icon: GraduationCap, title: 'Rahul Kumar (Class 10-A)', subtitle: 'Admission No: 2024001', permission: 'Allowed' },
@@ -64,10 +65,47 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           </button>
 
           {/* Notifications */}
-          <button className="relative p-2 rounded-full cursor-pointer hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors">
-            <Bell size={20} />
-            <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
-          </button>
+          <div className="relative">
+            <button 
+              onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
+              className="relative p-2 rounded-full cursor-pointer hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors"
+            >
+              <Bell size={20} />
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
+            </button>
+
+            {/* Notifications Dropdown */}
+            {isNotificationsOpen && (
+              <>
+                <div className="fixed inset-0 z-40" onClick={() => setIsNotificationsOpen(false)}></div>
+                <div className="absolute right-0 top-full mt-2 w-80 bg-card border border-border rounded-lg shadow-lg py-1 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="px-4 py-3 border-b border-border flex justify-between items-center bg-bg-page">
+                    <span className="text-sm font-bold text-text-primary">Notifications</span>
+                    <button className="text-xs font-bold text-primary hover:underline">Mark all as read</button>
+                  </div>
+                  <div className="max-h-[300px] overflow-y-auto">
+                    <div className="p-4 border-b border-border hover:bg-bg-page cursor-pointer transition-colors">
+                      <div className="flex justify-between items-start mb-1">
+                        <span className="text-sm font-bold text-text-primary">System Backup Complete</span>
+                        <span className="text-[10px] text-text-secondary">2 mins ago</span>
+                      </div>
+                      <span className="text-xs text-text-secondary">Weekly automated backup was successful.</span>
+                    </div>
+                    <div className="p-4 border-b border-border hover:bg-bg-page cursor-pointer transition-colors bg-primary/5">
+                      <div className="flex justify-between items-start mb-1">
+                        <span className="text-sm font-bold text-danger">Failed Login Attempt</span>
+                        <span className="text-[10px] text-text-secondary">15 mins ago</span>
+                      </div>
+                      <span className="text-xs text-text-secondary">Multiple failed attempts from IP 192.168.1.45.</span>
+                    </div>
+                  </div>
+                  <div className="px-4 py-2 border-t border-border text-center bg-bg-page">
+                    <button className="text-xs font-bold text-primary hover:underline">View All Alerts</button>
+                  </div>
+                </div>
+              </>
+            )}
+          </div>
 
           <div className="h-6 w-px bg-border/20 hidden md:block"></div>
 
@@ -94,7 +132,10 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                     <UserCircle size={16} /> My Profile
                   </a>
                   <div className="h-px bg-border my-1"></div>
-                  <button className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger-bg hover:text-danger-strong transition-colors text-left">
+                  <button 
+                    onClick={() => window.location.href = '/'}
+                    className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger-bg hover:text-danger-strong transition-colors text-left"
+                  >
                     <LogOut size={16} /> Logout
                   </button>
                 </div>
