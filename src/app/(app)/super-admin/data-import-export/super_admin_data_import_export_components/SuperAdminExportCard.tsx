@@ -19,33 +19,39 @@ export default function SuperAdminExportCard() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
         
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-bold text-text-primary">Select Module to Export</label>
-          <select 
-            value={selectedEntity}
-            onChange={(e) => setSelectedEntity(e.target.value)}
-            className="bg-input border border-border rounded-md px-3 py-2.5 text-sm text-text-primary focus:border-primary outline-none w-full"
-          >
+        <div className="flex flex-col gap-3">
+          <label className="text-sm font-bold text-text-primary uppercase">Select Module to Export</label>
+          <div className="flex flex-wrap gap-2">
             {IMPORT_EXPORT_ENTITIES.map(entity => (
-              <option key={entity} value={entity}>{entity}</option>
+              <button 
+                key={entity}
+                onClick={() => setSelectedEntity(entity)}
+                className={`px-3 py-1.5 text-[11px] font-bold border rounded-md transition-colors ${
+                  selectedEntity === entity 
+                    ? 'bg-primary text-white border-primary' 
+                    : 'bg-bg-page text-text-secondary border-border hover:bg-card hover:text-primary'
+                }`}
+              >
+                {entity}
+              </button>
             ))}
-          </select>
-          <p className="text-xs text-text-secondary mt-1">Select the entity to export its entire dataset.</p>
+          </div>
+          <p className="text-[11px] text-text-secondary mt-1">Select the entity to export its entire dataset.</p>
         </div>
 
         <div className="flex flex-col gap-3">
           <h3 className="text-xs font-bold text-text-secondary uppercase">Export Format Options</h3>
           
           <div className="flex flex-wrap items-center gap-3">
-            {/* Exact checklist export options */}
+            {/* Exact checklist export options, explicitly labeled */}
             <button className="flex items-center gap-2 px-6 py-2.5 bg-success-bg text-success text-sm font-bold border border-success/20 rounded-md hover:bg-success hover:text-white transition-colors shadow-sm">
-              <FileSpreadsheet size={16} /> Excel
+              <FileSpreadsheet size={16} /> Export Excel
             </button>
             <button className="flex items-center gap-2 px-6 py-2.5 bg-info-bg text-info text-sm font-bold border border-info/20 rounded-md hover:bg-info hover:text-white transition-colors shadow-sm">
-              <FileText size={16} /> CSV
+              <FileText size={16} /> Export CSV
             </button>
             <button className="flex items-center gap-2 px-6 py-2.5 bg-danger-bg text-danger text-sm font-bold border border-danger/20 rounded-md hover:bg-danger hover:text-white transition-colors shadow-sm">
-              <FileJson size={16} /> PDF
+              <FileJson size={16} /> Export PDF
             </button>
           </div>
         </div>

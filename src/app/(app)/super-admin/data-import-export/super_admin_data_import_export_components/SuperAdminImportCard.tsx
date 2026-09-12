@@ -21,18 +21,24 @@ export default function SuperAdminImportCard() {
         
         {/* Left Side: Entities & Templates */}
         <div className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-bold text-text-primary">Select Module to Import</label>
-            <select 
-              value={selectedEntity}
-              onChange={(e) => setSelectedEntity(e.target.value)}
-              className="bg-input border border-border rounded-md px-3 py-2.5 text-sm text-text-primary focus:border-primary outline-none w-full"
-            >
-              {/* Exact checklist entities */}
+          <div className="flex flex-col gap-3">
+            <label className="text-sm font-bold text-text-primary uppercase">Select Module to Import</label>
+            <div className="flex flex-wrap gap-2">
+              {/* Explicitly rendering every checklist entity so none are hidden in a dropdown */}
               {IMPORT_EXPORT_ENTITIES.map(entity => (
-                <option key={entity} value={entity}>{entity}</option>
+                <button 
+                  key={entity}
+                  onClick={() => setSelectedEntity(entity)}
+                  className={`px-3 py-1.5 text-[11px] font-bold border rounded-md transition-colors ${
+                    selectedEntity === entity 
+                      ? 'bg-primary text-white border-primary' 
+                      : 'bg-bg-page text-text-secondary border-border hover:bg-card hover:text-primary'
+                  }`}
+                >
+                  {entity}
+                </button>
               ))}
-            </select>
+            </div>
           </div>
 
           <div className="flex flex-col gap-3">
