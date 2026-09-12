@@ -8,14 +8,14 @@
   --color-secondary: var(--secondary);
   --color-secondary-hover: var(--secondary-hover);
   
-  --color-bg-page: var(--bg-page);
-  --color-bg-card: var(--bg-card);
-  --color-bg-sidebar: var(--bg-sidebar);
-  --color-bg-header: var(--bg-header);
-  --color-bg-input: var(--bg-input);
-  --color-bg-floating: var(--bg-floating);
-  --color-bg-overlay: var(--bg-overlay);
-  --color-bg-popover: var(--bg-popover);
+  --color-page: var(--bg-page);
+  --color-card: var(--bg-card);
+  --color-sidebar: var(--bg-sidebar);
+  --color-header: var(--bg-header);
+  --color-input: var(--bg-input);
+  --color-floating: var(--bg-floating);
+  --color-overlay: var(--bg-overlay);
+  --color-popover: var(--bg-popover);
   
   --color-border: var(--border);
   --color-border-focus: var(--border-focus);
