@@ -66,6 +66,7 @@ const SIDEBAR_LINKS = [
   { label: 'Automation Rules', href: '/super-admin/automation-rules', icon: RefreshCw },
   { label: 'System-Wide Search', href: '/super-admin/system-wide-search', icon: Search },
   { label: 'Sensitive Data Protection', href: '/super-admin/sensitive-data-protection', icon: ShieldAlert },
+  { label: 'Login / Identity Settings', href: '/super-admin/login-identity-settings', icon: KeyRound },
 ];
 
 export default function SuperAdminSidebar() {

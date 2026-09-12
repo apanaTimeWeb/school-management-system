@@ -10,57 +10,65 @@ export default function SuperAdminSystemWideSearchConfig() {
       </div>
 
       <div className="flex flex-col gap-5 max-w-[600px] pl-2 mt-[-10px]">
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">User</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        {/* Actual Search Bar as requested by "खोज सके" */}
+        <div className="flex flex-col gap-1.5 mb-4">
+          <label className="text-sm font-bold text-text-primary">Global Search Bar</label>
+          <input type="text" placeholder="Search Users, Students, Payments..." className="bg-input border border-border rounded-md px-3 py-3 text-sm text-text-primary focus:border-primary outline-none" />
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Student</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+
+        <div className="font-bold text-text-primary border-b border-border pb-2 mt-2">Search Filters:</div>
+
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">User</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Parent</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Student</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Teacher</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Parent</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Staff</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Teacher</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Admission</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Staff</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Payment</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Admission</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Receipt</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Payment</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Certificate</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Receipt</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Book</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Certificate</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Vehicle</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Book</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Ticket</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Vehicle</label>
         </div>
-        <div className="flex flex-col gap-1.5">
-          <label className="text-xs font-bold text-text-secondary">Log</label>
-          <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Ticket</label>
+        </div>
+        <div className="flex items-center gap-3">
+          <input type="checkbox" defaultChecked className="w-4 h-4 cursor-pointer" />
+          <label className="text-sm font-bold text-text-secondary">Log</label>
         </div>
       </div>
 
