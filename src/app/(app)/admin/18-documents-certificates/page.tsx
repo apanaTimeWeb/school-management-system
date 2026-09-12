@@ -1,41 +1,58 @@
-import React from "react";
-import AdminStudentDocumentsConfig from "./documents_certificates_components/AdminStudentDocumentsConfig";
-import AdminStaffDocumentsConfig from "./documents_certificates_components/AdminStaffDocumentsConfig";
-import AdminDocumentVerificationConfig from "./documents_certificates_components/AdminDocumentVerificationConfig";
-import AdminBonafideCertificateConfig from "./documents_certificates_components/AdminBonafideCertificateConfig";
-import AdminCharacterCertificateConfig from "./documents_certificates_components/AdminCharacterCertificateConfig";
-import AdminTransferCertificateConfig from "./documents_certificates_components/AdminTransferCertificateConfig";
-import AdminStudyCertificateConfig from "./documents_certificates_components/AdminStudyCertificateConfig";
-import AdminLeavingCertificateConfig from "./documents_certificates_components/AdminLeavingCertificateConfig";
-import AdminCustomCertificatesConfig from "./documents_certificates_components/AdminCustomCertificatesConfig";
-import AdminCertificateTemplatesConfig from "./documents_certificates_components/AdminCertificateTemplatesConfig";
-import AdminSerialNumberConfig from "./documents_certificates_components/AdminSerialNumberConfig";
-import AdminQRVerificationConfig from "./documents_certificates_components/AdminQRVerificationConfig";
-import AdminPDFGenerationConfig from "./documents_certificates_components/AdminPDFGenerationConfig";
+"use client";
 
-export default function AdminPage() {
+import React, { useState } from "react";
+import DocumentVault from "./documents_components/DocumentVault";
+import CertificateGenerator from "./documents_components/CertificateGenerator";
+import TemplateBuilder from "./documents_components/TemplateBuilder";
+import QRVerification from "./documents_components/QRVerification";
+import { FolderOpen, Award, Palette, Scan } from "lucide-react";
+import clsx from "clsx";
+
+const tabs = [
+  { id: "documents", label: "Document Vault", icon: FolderOpen },
+  { id: "generator", label: "Certificate Generator", icon: Award },
+  { id: "templates", label: "Custom Templates", icon: Palette },
+  { id: "qr", label: "QR Verification", icon: Scan },
+];
+
+export default function DocumentsCertificatesPage() {
+  const [activeTab, setActiveTab] = useState("documents");
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
+      {/* Header & Tabs */}
+      <div className="flex flex-col gap-4 mb-2">
         <div>
-          <h1 className="text-2xl font-bold text-text-primary">Documents & Certificates Dashboard</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage all features related to Documents & Certificates</p>
+          <h1 className="text-2xl font-bold text-text-primary">Documents & Certificates</h1>
+          <p className="text-sm text-text-secondary mt-1">Manage KYC documents, generate certificates, and verify authenticity.</p>
+        </div>
+        
+        <div className="flex bg-card border border-border rounded-lg p-1 w-fit shadow-sm overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
+                activeTab === tab.id 
+                  ? "bg-primary text-white shadow-sm" 
+                  : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <AdminStudentDocumentsConfig />
-      <AdminStaffDocumentsConfig />
-      <AdminDocumentVerificationConfig />
-      <AdminBonafideCertificateConfig />
-      <AdminCharacterCertificateConfig />
-      <AdminTransferCertificateConfig />
-      <AdminStudyCertificateConfig />
-      <AdminLeavingCertificateConfig />
-      <AdminCustomCertificatesConfig />
-      <AdminCertificateTemplatesConfig />
-      <AdminSerialNumberConfig />
-      <AdminQRVerificationConfig />
-      <AdminPDFGenerationConfig />
+      {/* Main Content Area */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
+        {activeTab === "documents" && <DocumentVault />}
+        {activeTab === "generator" && <CertificateGenerator />}
+        {activeTab === "templates" && <TemplateBuilder />}
+        {activeTab === "qr" && <QRVerification />}
+      </div>
     </div>
   );
 }
