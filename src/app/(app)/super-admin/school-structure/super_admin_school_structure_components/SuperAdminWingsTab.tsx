@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
+
 import { Plus, Edit, Trash2, PowerOff, Power } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { WingType } from "../super_admin_school_structure_types/super_admin_school_structure.types";
+import SuperAdminWingDrawer from "./SuperAdminWingDrawer";
 
 export default function SuperAdminWingsTab() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const wings: WingType[] = [
     { id: "w1", wingName: "Primary", headOfWing: "Mrs. S. Khanna", isActive: true },
     { id: "w2", wingName: "Middle", headOfWing: "Mr. R. Verma", isActive: true },
@@ -16,7 +20,7 @@ export default function SuperAdminWingsTab() {
     <div className="flex flex-col gap-4 max-w-4xl">
       <div className="flex items-center justify-between">
         <h2 className="text-base font-semibold text-text-primary">School Wings</h2>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors">
+        <button onClick={() => setIsDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
           <Plus size={14} /> Add Wing
         </button>
       </div>
@@ -55,6 +59,7 @@ export default function SuperAdminWingsTab() {
           </tbody>
         </table>
       </div>
+      <SuperAdminWingDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
     </div>
   );
 }

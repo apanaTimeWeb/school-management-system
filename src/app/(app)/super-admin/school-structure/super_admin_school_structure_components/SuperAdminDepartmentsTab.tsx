@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
+
 import { Plus, Edit, Trash2, PowerOff, Power } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { DepartmentType } from "../super_admin_school_structure_types/super_admin_school_structure.types";
+import SuperAdminDepartmentDrawer from "./SuperAdminDepartmentDrawer";
 
 export default function SuperAdminDepartmentsTab() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const departments: DepartmentType[] = [
     { id: "d1", deptName: "Academic", description: "Teaching and faculty staff", headOfDept: "Dr. A. Sharma", isActive: true },
     { id: "d2", deptName: "Administration", description: "School admin office", headOfDept: "Mr. J. Doe", isActive: true },
@@ -17,7 +21,7 @@ export default function SuperAdminDepartmentsTab() {
     <div className="flex flex-col gap-4 max-w-5xl">
       <div className="flex items-center justify-between">
         <h2 className="text-base font-semibold text-text-primary">Departments</h2>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors">
+        <button onClick={() => setIsDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
           <Plus size={14} /> Add Department
         </button>
       </div>
@@ -58,6 +62,7 @@ export default function SuperAdminDepartmentsTab() {
           </tbody>
         </table>
       </div>
+      <SuperAdminDepartmentDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
     </div>
   );
 }

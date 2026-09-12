@@ -1,10 +1,14 @@
 "use client";
 
+import { useState } from "react";
+
 import { Plus, Edit, Trash2, PowerOff, Power } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { HouseType } from "../super_admin_school_structure_types/super_admin_school_structure.types";
+import SuperAdminHouseDrawer from "./SuperAdminHouseDrawer";
 
 export default function SuperAdminHousesTab() {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const houses: HouseType[] = [
     { id: "h1", houseName: "Red House", houseColor: "#ef4444", houseCaptain: "Aryan S.", houseTeacher: "Mr. Verma", isActive: true },
     { id: "h2", houseName: "Blue House", houseColor: "#3b82f6", houseCaptain: "Rahul M.", houseTeacher: "Mrs. Gupta", isActive: true },
@@ -16,7 +20,7 @@ export default function SuperAdminHousesTab() {
     <div className="flex flex-col gap-4 max-w-5xl">
       <div className="flex items-center justify-between">
         <h2 className="text-base font-semibold text-text-primary">Houses</h2>
-        <button className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors">
+        <button onClick={() => setIsDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
           <Plus size={14} /> Add House
         </button>
       </div>
@@ -60,6 +64,7 @@ export default function SuperAdminHousesTab() {
           </tbody>
         </table>
       </div>
+      <SuperAdminHouseDrawer isOpen={isDrawerOpen} onClose={() => setIsDrawerOpen(false)} />
     </div>
   );
 }

@@ -1,11 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Plus, Edit, Trash2, Power, PowerOff } from "lucide-react";
+import { Plus, Edit, Trash2, PowerOff, Power } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ClassType, SectionType } from "../super_admin_school_structure_types/super_admin_school_structure.types";
+import SuperAdminClassDrawer from "./SuperAdminClassDrawer";
+import SuperAdminSectionDrawer from "./SuperAdminSectionDrawer";
 
 export default function SuperAdminClassesSectionsTab() {
+  const [isClassDrawerOpen, setIsClassDrawerOpen] = useState(false);
+  const [isSectionDrawerOpen, setIsSectionDrawerOpen] = useState(false);
+
   const classes: ClassType[] = [
     { id: "c1", className: "Class 10", classCode: "CLS-10", classOrder: 10, isActive: true },
     { id: "c2", className: "Class 11", classCode: "CLS-11", classOrder: 11, isActive: true },
@@ -23,7 +28,7 @@ export default function SuperAdminClassesSectionsTab() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Classes</h2>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors">
+          <button onClick={() => setIsClassDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
             <Plus size={14} /> Add Class
           </button>
         </div>
@@ -70,7 +75,7 @@ export default function SuperAdminClassesSectionsTab() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Sections</h2>
-          <button className="flex items-center gap-1.5 px-3 py-1.5 bg-bg-page border border-border text-text-primary text-xs font-medium rounded hover:text-primary hover:border-primary transition-colors">
+          <button onClick={() => setIsSectionDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-bg-page border border-border text-text-primary text-xs font-medium rounded hover:text-primary hover:border-primary transition-colors">
             <Plus size={14} /> Add Section
           </button>
         </div>
@@ -113,6 +118,8 @@ export default function SuperAdminClassesSectionsTab() {
         </div>
       </div>
 
+      <SuperAdminClassDrawer isOpen={isClassDrawerOpen} onClose={() => setIsClassDrawerOpen(false)} />
+      <SuperAdminSectionDrawer isOpen={isSectionDrawerOpen} onClose={() => setIsSectionDrawerOpen(false)} />
     </div>
   );
 }
