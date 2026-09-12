@@ -1,15 +1,58 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
+import clsx from 'clsx';
+import { Zap } from 'lucide-react';
 
 import SuperAdminAutomationRulesConfig from './automation_components/SuperAdminAutomationRulesConfig';
 
-export default function automationPage() {
+const TABS = [
+  { id: 'automation', label: 'Automation Rules', icon: Zap },
+];
+
+export default function AutomationPage() {
+  const [activeTab, setActiveTab] = useState('automation');
+
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-6">16-AUTOMATION</h1>
-      <section className="mb-10">
-        <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">AutomationRules</h2>
-        <SuperAdminAutomationRulesConfig />
-      </section>
+    <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10">
+      
+      {/* Header Area */}
+      <div className="flex justify-between items-center mb-2">
+        <div>
+          <h1 className="text-2xl font-bold text-text-primary">Automation Rules</h1>
+          <p className="text-sm text-text-secondary mt-1">Configure automated triggers and actions for repetitive system tasks.</p>
+        </div>
+      </div>
+
+      {/* Tabs */}
+      <div className="flex overflow-x-auto hide-scrollbar border-b border-border">
+        <div className="flex gap-2">
+          {TABS.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={clsx(
+                "flex items-center gap-2 px-4 py-3 text-sm font-semibold border-b-2 transition-colors whitespace-nowrap",
+                activeTab === tab.id
+                  ? "border-primary text-primary"
+                  : "border-transparent text-text-secondary hover:text-primary hover:bg-page"
+              )}
+            >
+              <tab.icon size={16} />
+              {tab.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Content Area */}
+      <div className="mt-4">
+        {activeTab === 'automation' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminAutomationRulesConfig />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
