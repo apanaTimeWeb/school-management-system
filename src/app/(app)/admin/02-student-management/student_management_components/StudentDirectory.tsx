@@ -28,9 +28,12 @@ export default function StudentDirectory() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="flex gap-2 w-full sm:w-auto">
+        <div className="flex gap-2 w-full sm:w-auto flex-wrap">
           <button className="flex items-center gap-2 px-4 py-2 bg-bg-page border border-border rounded-md text-sm font-semibold hover:bg-border/50 transition flex-1 sm:flex-none justify-center">
             <Filter size={16} /> Filters
+          </button>
+          <button className="flex items-center gap-2 px-4 py-2 bg-bg-page border border-border rounded-md text-sm font-semibold hover:bg-border/50 transition flex-1 sm:flex-none justify-center">
+            <Download className="rotate-180" size={16} /> Import
           </button>
           <button className="flex items-center gap-2 px-4 py-2 bg-secondary text-white rounded-md text-sm font-semibold hover:bg-secondary-hover transition flex-1 sm:flex-none justify-center">
             <Download size={16} /> Export

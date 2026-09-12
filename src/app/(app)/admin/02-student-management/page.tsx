@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import StudentDirectory from "./student_management_components/StudentDirectory";
 import StudentRegistrationForm from "./student_management_components/StudentRegistrationForm";
 import StudentOperations from "./student_management_components/StudentOperations";
-import { Users, UserPlus, Settings2 } from "lucide-react";
+import StudentProfileView from "./student_management_components/StudentProfileView";
+import { Users, UserPlus, Settings2, UserCircle } from "lucide-react";
 import clsx from "clsx";
 
 const tabs = [
   { id: "directory", label: "Student Directory", icon: Users },
   { id: "registration", label: "New Registration", icon: UserPlus },
+  { id: "profile", label: "Student Profile", icon: UserCircle },
   { id: "operations", label: "Operations & Actions", icon: Settings2 },
 ];
 
@@ -48,6 +50,7 @@ export default function StudentManagementPage() {
       <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
         {activeTab === "directory" && <StudentDirectory />}
         {activeTab === "registration" && <StudentRegistrationForm />}
+        {activeTab === "profile" && <StudentProfileView />}
         {activeTab === "operations" && <StudentOperations />}
       </div>
     </div>
