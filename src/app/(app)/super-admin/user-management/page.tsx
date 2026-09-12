@@ -31,7 +31,7 @@ export default function SuperAdminUserManagementPage() {
 
       {/* Main Content Area - Table */}
       <div className="pt-2">
-        <SuperAdminUsersTable />
+        <SuperAdminUsersTable onEdit={(user) => setIsDrawerOpen(true)} />
       </div>
 
       {/* Drawers */}
