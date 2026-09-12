@@ -5,6 +5,9 @@
   --color-primary-hover: var(--primary-hover);
   --color-primary-subtle: var(--primary-subtle);
   
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  
   --color-bg-page: var(--bg-page);
   --color-bg-card: var(--bg-card);
   --color-bg-sidebar: var(--bg-sidebar);
@@ -20,6 +23,9 @@
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-disabled: var(--text-disabled);
+  
+  --color-sidebar-text: var(--sidebar-text);
+  --color-sidebar-text-muted: var(--sidebar-text-muted);
   
   --color-success: var(--success);
   --color-success-bg: var(--success-bg);
@@ -40,26 +46,36 @@
 }
 
 :root {
-  /* Light Mode - Slate / Blue */
-  --primary: #1E3A8A; /* Blue-900 */
-  --primary-hover: #1E40AF; /* Blue-800 */
-  --primary-subtle: rgba(30, 58, 138, 0.1);
+  /* No.1 Premium Look */
+  --primary: #0B1C2C; /* Deep Navy */
+  --primary-hover: #132D47; 
+  --primary-subtle: rgba(11, 28, 44, 0.1);
   
-  --bg-page: #F8FAFC;
-  --bg-card: #FFFFFF;
-  --bg-sidebar: #F1F5F9;
-  --bg-header: #FFFFFF;
+  --secondary: #C9A227; /* Soft Gold */
+  --secondary-hover: #D4B241;
+  
+  --bg-page: #F8F9FC; /* Soft White */
+  --bg-card: #FFFFFF; /* Pure White */
+  
+  /* Sidebar and Header are Deep Navy */
+  --bg-sidebar: #0B1C2C;
+  --bg-header: #0B1C2C;
+  
   --bg-input: #FFFFFF;
   --bg-floating: #FFFFFF;
-  --bg-overlay: #F8FAFC;
+  --bg-overlay: #F8F9FC;
   --bg-popover: #FFFFFF;
   
-  --border: #E2E8F0;
-  --border-focus: #1E3A8A;
+  --border: #E2E8F0; /* Light Grey */
+  --border-focus: #C9A227; /* Soft Gold focus */
   
-  --text-primary: #0F172A;
+  --text-primary: #1E293B; /* Charcoal */
   --text-secondary: #64748B;
   --text-disabled: #94A3B8;
+  
+  /* Sidebar Text Colors (Light on Dark) */
+  --sidebar-text: #FFFFFF;
+  --sidebar-text-muted: #94A3B8;
   
   --skeleton-base: #E2E8F0;
   --skeleton-highlight: #F1F5F9;
@@ -84,26 +100,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Dark Mode - Slate / Blue */
-    --primary: #3B82F6; /* Blue-500 */
-    --primary-hover: #60A5FA; /* Blue-400 */
-    --primary-subtle: rgba(59, 130, 246, 0.15);
+    /* Kept dark mode slightly darker shades of premium */
+    --primary: #0B1C2C; 
+    --primary-hover: #132D47;
+    --primary-subtle: rgba(201, 162, 39, 0.15); /* Gold tint */
+    
+    --secondary: #C9A227;
+    --secondary-hover: #D4B241;
     
     --bg-page: #0F172A; /* Slate-900 */
     --bg-card: #1E293B; /* Slate-800 */
-    --bg-sidebar: #0F172A;
-    --bg-header: #1E293B;
+    --bg-sidebar: #0B1C2C;
+    --bg-header: #0B1C2C;
     --bg-input: #0F172A;
     --bg-floating: #1E293B;
-    --bg-overlay: #334155; /* Slate-700 */
+    --bg-overlay: #334155;
     --bg-popover: #334155;
     
     --border: #334155;
-    --border-focus: #3B82F6;
+    --border-focus: #C9A227;
     
     --text-primary: #F8FAFC;
     --text-secondary: #94A3B8;
     --text-disabled: #475569;
+    
+    --sidebar-text: #FFFFFF;
+    --sidebar-text-muted: #94A3B8;
     
     --skeleton-base: #1E293B;
     --skeleton-highlight: #334155;
@@ -133,7 +155,7 @@ body {
   height: 6px; 
 }
 ::-webkit-scrollbar-thumb {
-  background-color: var(--border);
+  background-color: var(--secondary);
   border-radius: var(--radius-full);
 }
 ::-webkit-scrollbar-track {

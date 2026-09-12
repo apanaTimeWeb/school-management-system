@@ -41,8 +41,8 @@ export default function AdminSidebar() {
 
   return (
     <aside className="fixed top-0 left-0 z-20 h-screen w-[280px] bg-sidebar border-r border-border flex flex-col transition-all duration-300">
-      <div className="h-16 flex items-center px-6 border-b border-border bg-sidebar-header">
-        <h1 className="text-xl font-bold text-text-primary tracking-tight">Admin<span className="text-primary">ERP</span></h1>
+      <div className="h-16 flex items-center px-6 border-b border-border/20 bg-sidebar">
+        <h1 className="text-xl font-bold text-sidebar-text tracking-tight">Admin<span className="text-secondary">ERP</span></h1>
       </div>
 
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 hide-scrollbar">
@@ -58,11 +58,11 @@ export default function AdminSidebar() {
                   className={clsx(
                     "flex items-center gap-3 px-3 py-2.5 rounded-md text-[13px] font-semibold transition-colors duration-200",
                     isActive
-                      ? "bg-primary text-white"
-                      : "text-text-secondary hover:bg-sidebar-hover hover:text-text-primary"
+                      ? "bg-secondary text-primary"
+                      : "text-sidebar-text-muted hover:bg-secondary/10 hover:text-sidebar-text"
                   )}
                 >
-                  <Icon size={16} className={clsx(isActive ? "text-white" : "text-text-secondary")} />
+                  <Icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
                   <span className="whitespace-nowrap">{category.title}</span>
                 </Link>
               </div>
