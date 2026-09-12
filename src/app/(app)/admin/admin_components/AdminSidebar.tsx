@@ -95,6 +95,12 @@ const adminCategories = [
     title: "15. Inventory / Assets",
     icon: LayoutDashboard,
     href: "/admin/15-inventory-assets",
+  },
+  {
+    id: "purchase-expense",
+    title: "16. Purchase & Expense",
+    icon: LayoutDashboard,
+    href: "/admin/16-purchase-expense",
   }
 ];
 
