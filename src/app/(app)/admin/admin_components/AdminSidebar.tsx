@@ -53,6 +53,18 @@ const adminCategories = [
     title: "8. Fee Management",
     icon: LayoutDashboard,
     href: "/admin/08-fee-management",
+  },
+  {
+    id: "staff-management",
+    title: "9. Staff Management",
+    icon: LayoutDashboard,
+    href: "/admin/09-staff-management",
+  },
+  {
+    id: "leave-management",
+    title: "10. Leave Management",
+    icon: LayoutDashboard,
+    href: "/admin/10-leave-management",
   }
 ];
 
