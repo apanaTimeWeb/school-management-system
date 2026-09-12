@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Building2, MapPin, Network, Layers, GitMerge, LayoutGrid, Home, Plus, ArrowLeft } from 'lucide-react';
+import { Building2, MapPin, Network, Layers, GitMerge, LayoutGrid, Home, Plus, ArrowLeft, Palette } from 'lucide-react';
 
 import SuperAdminSchoolsTable from './organization_management_components/SuperAdminSchoolsTable';
 import SuperAdminSchoolForm from './organization_management_components/SuperAdminSchoolForm';
@@ -12,6 +12,7 @@ import SuperAdminDepartmentsTab from './organization_management_components/Super
 import SuperAdminWingsTab from './organization_management_components/SuperAdminWingsTab';
 import SuperAdminClassesSectionsTab from './organization_management_components/SuperAdminClassesSectionsTab';
 import SuperAdminHousesTab from './organization_management_components/SuperAdminHousesTab';
+import SuperAdminSchoolBrandingConfig from './organization_management_components/SuperAdminSchoolBrandingConfig';
 
 import SuperAdminAddBranchDrawer from './organization_management_components/SuperAdminAddBranchDrawer';
 import SuperAdminDepartmentDrawer from './organization_management_components/SuperAdminDepartmentDrawer';
@@ -22,6 +23,7 @@ import SuperAdminHouseDrawer from './organization_management_components/SuperAdm
 const TABS = [
   { id: 'schools', label: 'Schools', icon: Building2 },
   { id: 'branches', label: 'Branches / Campuses', icon: MapPin },
+  { id: 'branding', label: 'School Branding', icon: Palette },
   { id: 'structure', label: 'Org Structure', icon: Network },
   { id: 'departments', label: 'Departments', icon: Layers },
   { id: 'wings', label: 'Wings / Blocks', icon: GitMerge },
@@ -38,20 +40,22 @@ export default function OrganizationManagementPage() {
       <div className="flex justify-between items-center mb-2">
         <div>
           <h1 className="text-2xl font-bold text-text-primary">Organization Management</h1>
-          <p className="text-sm text-text-secondary mt-1">Manage schools, branches, campuses, and structural hierarchy</p>
+          <p className="text-sm text-text-secondary mt-1">Manage schools, branches, branding, and structural hierarchy</p>
         </div>
         
         {/* Dynamic Action Button */}
-        <button 
-          onClick={() => setIsAddingNew(!isAddingNew)}
-          className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors"
-        >
-          {isAddingNew ? (
-            <><ArrowLeft size={16} /> Back to List</>
-          ) : (
-            <><Plus size={16} /> Add New {activeTab === 'schools' ? 'School' : activeTab === 'branches' ? 'Branch' : activeTab === 'departments' ? 'Department' : activeTab === 'wings' ? 'Wing' : activeTab === 'classes' ? 'Class' : activeTab === 'houses' ? 'House' : 'Entry'}</>
-          )}
-        </button>
+        {activeTab !== 'branding' && activeTab !== 'structure' && (
+          <button 
+            onClick={() => setIsAddingNew(!isAddingNew)}
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors"
+          >
+            {isAddingNew ? (
+              <><ArrowLeft size={16} /> Back to List</>
+            ) : (
+              <><Plus size={16} /> Add New {activeTab === 'schools' ? 'School' : activeTab === 'branches' ? 'Branch' : activeTab === 'departments' ? 'Department' : activeTab === 'wings' ? 'Wing' : activeTab === 'classes' ? 'Class' : activeTab === 'houses' ? 'House' : 'Entry'}</>
+            )}
+          </button>
+        )}
       </div>
 
       {/* Tabs */}
@@ -89,6 +93,7 @@ export default function OrganizationManagementPage() {
             <SuperAdminAddBranchDrawer isOpen={isAddingNew} onClose={() => setIsAddingNew(false)} />
           </>
         )}
+        {activeTab === 'branding' && <SuperAdminSchoolBrandingConfig />}
         {activeTab === 'structure' && <SuperAdminOrgStructureTree />}
         {activeTab === 'departments' && (
           <>
