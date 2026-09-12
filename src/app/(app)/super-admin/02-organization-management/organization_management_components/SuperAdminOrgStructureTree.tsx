@@ -51,7 +51,7 @@ export default function SuperAdminOrgStructureTree() {
                     <span className="text-[10px] text-text-secondary uppercase tracking-wider">{node.type}</span>
                   </div>
                 </div>
-                <button className="text-xs text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity px-2 py-1 bg-primary-subtle rounded">
+                <button className="text-xs text-primary font-medium px-2 py-1 bg-primary-subtle rounded">
                   + Add Child
                 </button>
               </div>

@@ -56,10 +56,10 @@ export default function SuperAdminClassesSectionsTab() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                      <button className="p-1 text-text-secondary hover:text-info" title="Edit"><Edit size={14} /></button>
-                      <button className="p-1 text-text-secondary hover:text-danger" title="Delete"><Trash2 size={14} /></button>
-                      <button className="p-1 text-text-secondary hover:text-warning" title={cls.isActive ? "Deactivate" : "Activate"}>
+                    <div className="flex items-center justify-end gap-2">
+                      <button className="p-1 text-info hover:bg-info/10 rounded transition-colors" title="Edit"><Edit size={14} /></button>
+                      <button className="p-1 text-danger hover:bg-danger/10 rounded transition-colors" title="Delete"><Trash2 size={14} /></button>
+                      <button className={cn("p-1 rounded transition-colors", cls.isActive ? "text-warning hover:bg-warning/10" : "text-success hover:bg-success/10")} title={cls.isActive ? "Deactivate" : "Activate"}>
                         {cls.isActive ? <PowerOff size={14} /> : <Power size={14} />}
                       </button>
                     </div>
@@ -75,7 +75,7 @@ export default function SuperAdminClassesSectionsTab() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Sections</h2>
-          <button onClick={() => setIsSectionDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-bg-page border border-border text-text-primary text-xs font-medium rounded hover:text-primary hover:border-primary transition-colors">
+          <button onClick={() => setIsSectionDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
             <Plus size={14} /> Add Section
           </button>
         </div>
@@ -103,10 +103,10 @@ export default function SuperAdminClassesSectionsTab() {
                     </span>
                   </td>
                   <td className="px-4 py-3 text-right">
-                    <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                      <button className="p-1 text-text-secondary hover:text-info" title="Edit"><Edit size={14} /></button>
-                      <button className="p-1 text-text-secondary hover:text-danger" title="Delete"><Trash2 size={14} /></button>
-                      <button className="p-1 text-text-secondary hover:text-warning" title={sec.isActive ? "Deactivate" : "Activate"}>
+                    <div className="flex items-center justify-end gap-2">
+                      <button className="p-1 text-info hover:bg-info/10 rounded transition-colors" title="Edit"><Edit size={14} /></button>
+                      <button className="p-1 text-danger hover:bg-danger/10 rounded transition-colors" title="Delete"><Trash2 size={14} /></button>
+                      <button className={cn("p-1 rounded transition-colors", sec.isActive ? "text-warning hover:bg-warning/10" : "text-success hover:bg-success/10")} title={sec.isActive ? "Deactivate" : "Activate"}>
                         {sec.isActive ? <PowerOff size={14} /> : <Power size={14} />}
                       </button>
                     </div>

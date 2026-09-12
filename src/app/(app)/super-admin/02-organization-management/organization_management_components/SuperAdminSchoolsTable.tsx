@@ -65,16 +65,16 @@ export default function SuperAdminSchoolsTable() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-right">
-                  <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity">
-                    <button className="p-1.5 text-text-secondary hover:text-primary transition-colors" title="View Details">
+                  <div className="flex items-center justify-end gap-2">
+                    <button className="p-1.5 text-primary hover:bg-primary/10 rounded transition-colors" title="View Details">
                       <Eye size={16} />
                     </button>
-                    <button className="p-1.5 text-text-secondary hover:text-info transition-colors" title="Edit">
+                    <button className="p-1.5 text-info hover:bg-info/10 rounded transition-colors" title="Edit">
                       <Edit size={16} />
                     </button>
                     <button className={cn(
-                      "p-1.5 transition-colors",
-                      school.isActive ? "text-text-secondary hover:text-danger" : "text-text-secondary hover:text-success"
+                      "p-1.5 rounded transition-colors",
+                      school.isActive ? "text-warning hover:bg-warning/10" : "text-success hover:bg-success/10"
                     )} title={school.isActive ? "Deactivate" : "Activate"}>
                       {school.isActive ? <PowerOff size={16} /> : <Power size={16} />}
                     </button>
