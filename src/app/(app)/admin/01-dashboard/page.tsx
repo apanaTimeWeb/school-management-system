@@ -4,7 +4,7 @@ import React from "react";
 import MetricCard from "./dashboard_components/MetricCard";
 import { FeeCollectionChart, AttendanceAnalyticsChart } from "./dashboard_components/DashboardCharts";
 import { AlertsAndNotifications, UpcomingEventsList } from "./dashboard_components/DashboardLists";
-import { Users, UserCheck, GraduationCap, IndianRupee, ClipboardList, TrendingUp } from "lucide-react";
+import { Users, UserCheck, GraduationCap, IndianRupee, ClipboardList, TrendingUp, AlertCircle } from "lucide-react";
 
 export default function AdminDashboardPage() {
   return (
