@@ -31,8 +31,7 @@ const adminCategories = [
   { id: "approval", title: "23. Approval Center", icon: LayoutDashboard, href: "/admin/23-approval-center" },
   { id: "hostel", title: "24. Hostel", icon: LayoutDashboard, href: "/admin/18-hostel" },
   { id: "settings", title: "25. Settings", icon: LayoutDashboard, href: "/admin/25-settings" },
-  { id: "profile", title: "26. My Profile", icon: User, href: "/admin/my-profile" },
-  { id: "logout", title: "27. Logout", icon: LogOut, href: "/logout" }
+  { id: "profile", title: "26. My Profile", icon: User, href: "/admin/my-profile" }
 ];
 
 interface AdminSidebarProps {
