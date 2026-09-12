@@ -49,6 +49,8 @@ const SIDEBAR_LINKS = [
   { label: 'Library Master', href: '/super-admin/library-master-settings', icon: BookOpen },
   { label: 'Transport Master', href: '/super-admin/transport-master-settings', icon: Bus },
   { label: 'Hostel Master', href: '/super-admin/hostel-master-settings', icon: Building2 },
+  { label: 'Document & Certificate', href: '/super-admin/document-certificate-settings', icon: FileText },
+  { label: 'Numbering / Sequence', href: '/super-admin/numbering-sequence', icon: Hash },
 ];
 
 export default function SuperAdminSidebar() {
