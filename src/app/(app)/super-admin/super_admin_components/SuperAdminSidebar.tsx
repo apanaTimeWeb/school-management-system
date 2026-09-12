@@ -70,6 +70,8 @@ const SIDEBAR_LINKS = [
   { label: 'Terms & Privacy', href: '/super-admin/terms-privacy-consent', icon: FileCheck2 },
   { label: 'Module Enable / Disable', href: '/super-admin/module-enable-disable', icon: ToggleLeft },
   { label: 'School Branding', href: '/super-admin/school-branding', icon: Palette },
+  { label: 'Super Admin Export Center', href: '/super-admin/super-admin-export-center', icon: HardDriveDownload },
+  { label: 'Emergency Controls', href: '/super-admin/super-admin-emergency-controls', icon: ShieldAlert },
 ];
 
 export default function SuperAdminSidebar() {
