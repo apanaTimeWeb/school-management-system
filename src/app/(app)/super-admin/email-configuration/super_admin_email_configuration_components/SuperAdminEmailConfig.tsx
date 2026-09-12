@@ -6,46 +6,42 @@ export default function SuperAdminEmailConfig() {
       
       {/* SMTP Section */}
       <div className="flex flex-col gap-5">
-        <h2 className="text-base font-bold text-text-primary uppercase border-b border-border pb-2">SMTP</h2>
+        <h2 className="text-base font-bold text-text-primary border-b border-border pb-2">SMTP</h2>
         
         <div className="flex flex-col gap-4 max-w-[600px] pl-2">
           
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Sender name</label>
-            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" placeholder="e.g. ApanaTime ERP" />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Sender email</label>
-            <input type="email" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" placeholder="e.g. no-reply@apanatime.com" />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Host</label>
-            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" placeholder="smtp.gmail.com" />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Port</label>
-            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" placeholder="465 or 587" />
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Encryption</label>
-            <select className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none">
-              <option>SSL</option>
-              <option>TLS</option>
-              <option>None</option>
-            </select>
-          </div>
-
-          <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Username</label>
+            <label className="text-xs font-bold text-text-secondary">Sender name</label>
             <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
           </div>
 
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs font-bold text-text-secondary uppercase">Password</label>
+            <label className="text-xs font-bold text-text-secondary">Sender email</label>
+            <input type="email" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-text-secondary">Host</label>
+            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-text-secondary">Port</label>
+            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-text-secondary">Encryption</label>
+            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-text-secondary">Username</label>
+            <input type="text" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
+          </div>
+
+          <div className="flex flex-col gap-1.5">
+            <label className="text-xs font-bold text-text-secondary">Password</label>
             <input type="password" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
           </div>
 
