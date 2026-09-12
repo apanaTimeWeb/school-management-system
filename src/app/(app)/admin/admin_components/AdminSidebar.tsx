@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, LogOut, User } from "lucide-react";
+import { LayoutDashboard, LogOut, User, X } from "lucide-react";
 import clsx from "clsx";
 
 const adminCategories = [
@@ -36,18 +36,34 @@ const adminCategories = [
   { id: "logout", title: "28. Logout", icon: LogOut, href: "/logout" }
 ];
 
-export default function AdminSidebar() {
+interface AdminSidebarProps {
+  isOpen: boolean;
+  setIsOpen: (isOpen: boolean) => void;
+}
+
+export default function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
   const pathname = usePathname();
 
   return (
-    <aside className="fixed top-0 left-0 z-20 h-screen w-[280px] bg-sidebar border-r border-border flex flex-col transition-all duration-300">
-      <div className="h-16 flex items-center px-6 border-b border-border/20 bg-sidebar">
+    <aside 
+      className={clsx(
+        "fixed top-0 left-0 z-30 h-screen w-[280px] bg-sidebar border-r border-border flex flex-col transition-transform duration-300",
+        isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
+      )}
+    >
+      <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-sidebar">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-primary font-extrabold text-xl">
             S
           </div>
           <h1 className="text-xl font-bold text-sidebar-text tracking-tight">School<span className="text-secondary">ERP</span></h1>
         </div>
+        <button 
+          className="md:hidden text-sidebar-text-muted hover:text-sidebar-text"
+          onClick={() => setIsOpen(false)}
+        >
+          <X size={24} />
+        </button>
       </div>
 
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 hide-scrollbar">
@@ -60,6 +76,7 @@ export default function AdminSidebar() {
               <div key={category.id} className="flex flex-col mb-1">
                 <Link
                   href={category.href}
+                  onClick={() => setIsOpen(false)}
                   className={clsx(
                     "flex items-center gap-3 px-3 py-2.5 rounded-md text-[13px] font-semibold transition-colors duration-200",
                     isActive

@@ -1,13 +1,23 @@
 "use client";
 
-import { Bell, ChevronDown, UserCircle } from "lucide-react";
+import { Bell, ChevronDown, UserCircle, Menu } from "lucide-react";
 
-export default function AdminHeader() {
+interface AdminHeaderProps {
+  onMenuClick: () => void;
+}
+
+export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
   return (
-    <header className="fixed top-0 right-0 left-0 lg:left-[240px] z-10 h-16 bg-header/80 backdrop-blur-md border-b border-border flex items-center justify-between px-6 transition-all duration-300">
+    <header className="fixed top-0 right-0 left-0 md:left-[280px] z-10 h-16 bg-header/80 backdrop-blur-md border-b border-border flex items-center justify-between px-4 md:px-6 transition-all duration-300">
       
       {/* Left side: Page Title / Breadcrumbs can go here */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-3">
+        <button 
+          className="md:hidden p-2 -ml-2 rounded-md text-text-secondary hover:bg-primary-subtle hover:text-primary transition-colors"
+          onClick={onMenuClick}
+        >
+          <Menu size={24} />
+        </button>
         <h2 className="text-lg font-semibold text-text-primary hidden sm:block">School Admin Portal</h2>
       </div>
 
