@@ -1,6 +1,6 @@
 "use client";
 
-import React, from 'react';
+import React from 'react';
 import { BookOpen, Users, Phone, MapPin, FileText, School, HeartPulse, Flag, Users2, Home } from 'lucide-react';
 
 export default function AdminStudentDetailedInfo() {
@@ -30,7 +30,7 @@ export default function AdminStudentDetailedInfo() {
           {tabs.map((tab, idx) => {
             const Icon = tab.icon;
             return (
-              <button key={idx} className={\`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-semibold transition-colors text-left \${idx === 0 ? 'bg-primary/10 text-primary' : 'text-text-secondary hover:bg-border/50 hover:text-text-primary'}\`}>
+              <button key={idx} className={`flex items-center gap-3 px-3 py-2.5 rounded-md text-sm font-semibold transition-colors text-left ${idx === 0 ? 'bg-primary/10 text-primary' : 'text-text-secondary hover:bg-border/50 hover:text-text-primary'}`}>
                 <Icon size={16} className={idx === 0 ? "text-primary" : tab.color} />
                 <span>{tab.title}</span>
               </button>

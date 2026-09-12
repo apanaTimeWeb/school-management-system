@@ -29,8 +29,8 @@ export default function AdminAdmissionProcess() {
           return (
             <div key={idx} className="border border-border rounded-lg p-4 hover:border-primary transition cursor-pointer group bg-bg-page">
               <div className="flex justify-between items-start mb-3">
-                <div className={\`p-2 rounded-md \${step.bg}\`}>
-                  <Icon size={20} className={\`\${step.color} group-hover:scale-110 transition-transform\`} />
+                <div className={`p-2 rounded-md ${step.bg}`}>
+                  <Icon size={20} className={`${step.color} group-hover:scale-110 transition-transform`} />
                 </div>
                 <span className="text-xl font-bold text-text-primary">{step.count}</span>
               </div>
