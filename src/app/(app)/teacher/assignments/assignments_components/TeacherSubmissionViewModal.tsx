@@ -5,7 +5,7 @@ import { useTeacherAssignmentsStore } from '../assignments_store/useTeacherAssig
 import { TEACHER_SUBMISSIONS_MOCK } from '../assignments_constants/TeacherAssignmentsMockData';
 
 export default function TeacherSubmissionViewModal() {
-  const { isSubmissionModalOpen, closeSubmissionModal, selectedHomework } = useTeacherAssignmentsStore();
+  const { isSubmissionModalOpen, closeSubmissionModal, selectedHomework, openReviewModal } = useTeacherAssignmentsStore();
   const [activeTab, setActiveTab] = useState<'completed' | 'pending'>('completed');
 
   if (!isSubmissionModalOpen || !selectedHomework) return null;
@@ -64,7 +64,7 @@ export default function TeacherSubmissionViewModal() {
                        <span className="block text-[10px] text-text-secondary uppercase">Grade</span>
                        <span className={`text-[14px] font-bold ${sub.grade.includes('Pending') ? 'text-warning' : 'text-success'}`}>{sub.grade}</span>
                      </div>
-                     <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Evaluate submission module.' }))} className="px-3 py-1.5 bg-success/20 text-success text-[12px] font-bold rounded hover:bg-success hover:text-black transition-colors">Review</button>
+                     <button onClick={() => openReviewModal(sub)} className="px-3 py-1.5 bg-success/20 text-success text-[12px] font-bold rounded hover:bg-success hover:text-black transition-colors">Review</button>
                    </div>
                  </div>
                ))}

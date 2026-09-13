@@ -20,9 +20,11 @@ interface TeacherAssignmentsState {
   // Modals
   isFormModalOpen: boolean;
   isSubmissionModalOpen: boolean;
+  isReviewModalOpen: boolean;
   
   // Data
   selectedHomework: HomeworkData | null;
+  selectedSubmissionForReview: any | null;
   
   // Actions
   openCreateModal: () => void;
@@ -30,12 +32,16 @@ interface TeacherAssignmentsState {
   closeFormModal: () => void;
   openSubmissionModal: (hw: HomeworkData) => void;
   closeSubmissionModal: () => void;
+  openReviewModal: (submission: any) => void;
+  closeReviewModal: () => void;
 }
 
 export const useTeacherAssignmentsStore = create<TeacherAssignmentsState>((set) => ({
   isFormModalOpen: false,
   isSubmissionModalOpen: false,
+  isReviewModalOpen: false,
   selectedHomework: null,
+  selectedSubmissionForReview: null,
 
   openCreateModal: () => set({ selectedHomework: null, isFormModalOpen: true }),
   openEditModal: (hw) => set({ selectedHomework: hw, isFormModalOpen: true }),
@@ -43,4 +49,7 @@ export const useTeacherAssignmentsStore = create<TeacherAssignmentsState>((set) 
   
   openSubmissionModal: (hw) => set({ selectedHomework: hw, isSubmissionModalOpen: true }),
   closeSubmissionModal: () => set({ selectedHomework: null, isSubmissionModalOpen: false }),
+  
+  openReviewModal: (submission) => set({ selectedSubmissionForReview: submission, isReviewModalOpen: true }),
+  closeReviewModal: () => set({ selectedSubmissionForReview: null, isReviewModalOpen: false }),
 }));

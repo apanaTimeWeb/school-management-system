@@ -5,6 +5,7 @@ import { useTeacherAssignmentsStore, HomeworkData } from '../assignments_store/u
 import { TEACHER_HOMEWORK_LIST } from '../assignments_constants/TeacherAssignmentsMockData';
 import TeacherHomeworkFormModal from './TeacherHomeworkFormModal';
 import TeacherSubmissionViewModal from './TeacherSubmissionViewModal';
+import TeacherReviewSubmissionModal from './TeacherReviewSubmissionModal';
 
 export default function TeacherAssignmentsMain() {
   const { openCreateModal, openEditModal, openSubmissionModal } = useTeacherAssignmentsStore();
@@ -102,6 +103,7 @@ export default function TeacherAssignmentsMain() {
 
       <TeacherHomeworkFormModal />
       <TeacherSubmissionViewModal />
+      <TeacherReviewSubmissionModal />
     </div>
   );
 }
