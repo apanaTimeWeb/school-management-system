@@ -90,6 +90,7 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
             const hasItems = category.items && category.items.length > 0;
             const isOpenSection = openSections[category.title];
             const isActive = pathname.startsWith(category.href);
+            const Icon = category.icon;
             
             return (
               <div key={category.title} className="flex flex-col mb-1">
@@ -105,7 +106,7 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
                       isActive ? "text-primary" : "text-sidebar-text-muted hover:text-sidebar-text"
                     )}
                   >
-                    <category.icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
+                    {Icon && <Icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />}
                     <span className="whitespace-nowrap">{category.title}</span>
                   </Link>
                   {hasItems && (
