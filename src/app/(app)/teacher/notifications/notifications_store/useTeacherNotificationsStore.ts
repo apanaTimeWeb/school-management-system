@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { TEACHER_NOTIFICATIONS_MOCK } from '../notifications_constants/TeacherNotificationsMockData';
 
 export type NotificationCategory = 'System' | 'Class' | 'Homework' | 'Assignment' | 'Exam' | 'Result' | 'Attendance';
 
@@ -12,17 +13,17 @@ export interface NotificationData {
 }
 
 interface TeacherNotificationsState {
+  notificationsList: NotificationData[];
   markAsRead: (id: string) => void;
   markAllAsRead: () => void;
 }
 
 export const useTeacherNotificationsStore = create<TeacherNotificationsState>((set) => ({
-  markAsRead: (id) => {
-    // Intentionally left as stub for mock logic
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Notification marked as read.' }));
-  },
-  markAllAsRead: () => {
-    // Intentionally left as stub for mock logic
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'All notifications marked as read.' }));
-  }
+  notificationsList: TEACHER_NOTIFICATIONS_MOCK,
+  markAsRead: (id) => set((state) => ({
+    notificationsList: state.notificationsList.map(n => n.id === id ? { ...n, isRead: true } : n)
+  })),
+  markAllAsRead: () => set((state) => ({
+    notificationsList: state.notificationsList.map(n => ({ ...n, isRead: true }))
+  }))
 }));

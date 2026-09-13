@@ -2,13 +2,12 @@
 import React, { useState } from 'react';
 import { Bell, CheckCircle2, Server, BookOpen, CalendarCheck, FileText, Activity, MessageSquare } from 'lucide-react';
 import { useTeacherNotificationsStore, NotificationCategory } from '../notifications_store/useTeacherNotificationsStore';
-import { TEACHER_NOTIFICATIONS_MOCK } from '../notifications_constants/TeacherNotificationsMockData';
 
 export default function TeacherNotificationsMain() {
-  const { markAsRead, markAllAsRead } = useTeacherNotificationsStore();
+  const { markAsRead, markAllAsRead, notificationsList } = useTeacherNotificationsStore();
   const [filterCategory, setFilterCategory] = useState<'All' | NotificationCategory>('All');
 
-  const filteredNotifications = TEACHER_NOTIFICATIONS_MOCK.filter(notif => {
+  const filteredNotifications = notificationsList.filter(notif => {
     if (filterCategory === 'All') return true;
     return notif.category === filterCategory;
   });
