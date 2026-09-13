@@ -21,6 +21,7 @@ const MENU_ITEMS = [
   { href: '/principal/academics', label: 'Academic Management', icon: <BookOpen size={20} /> },
   { href: '/principal/attendance', label: 'Attendance', icon: <CalendarCheck size={20} /> },
   { href: '/principal/timetable', label: 'Timetable', icon: <Clock size={20} /> },
+  { href: '/principal/examinations', label: 'Examinations', icon: <BookOpen size={20} /> },
 ];
 
 export default function PrincipalSidebar() {
