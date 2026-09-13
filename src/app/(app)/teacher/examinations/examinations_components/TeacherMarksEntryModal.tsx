@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { X, Save, Send, AlertTriangle } from 'lucide-react';
+import { X, Save, Send, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import { useTeacherExaminationsStore } from '../examinations_store/useTeacherExaminationsStore';
 import { TEACHER_STUDENTS_MARKS } from '../examinations_constants/TeacherExaminationsMockData';
 
@@ -9,11 +9,13 @@ export default function TeacherMarksEntryModal() {
   
   // Create a local state to hold marks input by the teacher
   const [marksData, setMarksData] = useState(TEACHER_STUDENTS_MARKS.map(s => ({...s})));
+  const [successMessage, setSuccessMessage] = useState('');
 
   // Reset local state if exam changes (to simulate fresh data load)
   useEffect(() => {
     if (isMarksEntryOpen) {
       setMarksData(TEACHER_STUDENTS_MARKS.map(s => ({...s, theory: '', practical: '', internal: ''})));
+      setSuccessMessage('');
     }
   }, [isMarksEntryOpen, selectedExam]);
 
@@ -24,13 +26,19 @@ export default function TeacherMarksEntryModal() {
   };
 
   const handleSaveDraft = () => {
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Marks saved as draft. You can continue later.' }));
-    closeMarksEntry();
+    setSuccessMessage('Marks saved as draft. You can continue later.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeMarksEntry();
+    }, 2500);
   };
 
   const handleSubmit = () => {
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Marks submitted successfully. Correction requests will be needed for future edits.' }));
-    closeMarksEntry();
+    setSuccessMessage('Marks submitted successfully. Correction requests will be needed for future edits.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeMarksEntry();
+    }, 2500);
   };
 
   return (
@@ -122,14 +130,19 @@ export default function TeacherMarksEntryModal() {
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-border flex justify-end gap-3 bg-card shrink-0">
-          <button onClick={closeMarksEntry} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
+        <div className="p-4 border-t border-border flex justify-end gap-3 items-center bg-card shrink-0">
+          {successMessage ? (
+            <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in flex items-center gap-2">
+              <CheckCircle2 size={16} /> {successMessage}
+            </div>
+          ) : null}
+          <button onClick={closeMarksEntry} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
             Cancel
           </button>
-          <button onClick={handleSaveDraft} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2">
+          <button onClick={handleSaveDraft} disabled={!!successMessage} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
             <Save size={18} /> Save as Draft
           </button>
-          <button onClick={handleSubmit} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+          <button onClick={handleSubmit} disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
             <Send size={18} /> Submit Marks
           </button>
         </div>

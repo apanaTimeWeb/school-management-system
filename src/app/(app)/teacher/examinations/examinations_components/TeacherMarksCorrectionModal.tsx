@@ -6,13 +6,17 @@ import { useTeacherExaminationsStore } from '../examinations_store/useTeacherExa
 export default function TeacherMarksCorrectionModal() {
   const { isCorrectionModalOpen, closeCorrectionModal, selectedExam } = useTeacherExaminationsStore();
   const [reason, setReason] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isCorrectionModalOpen || !selectedExam) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Marks correction request sent to Principal.' }));
-    closeCorrectionModal();
+    setSuccessMessage('Marks correction request sent to Principal.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeCorrectionModal();
+    }, 2500);
   };
 
   return (
@@ -51,19 +55,25 @@ export default function TeacherMarksCorrectionModal() {
             <p className="text-[11px] text-warning mt-2">Note: Submitting this will send an unlock request to the Principal.</p>
           </div>
 
-          <div className="pt-2 flex justify-end gap-3">
+          <div className="pt-4 border-t border-border flex justify-end gap-3 items-center">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
             <button 
               type="button" 
               onClick={closeCorrectionModal}
-              className="px-4 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded hover:bg-white/5 transition-colors"
+              className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors"
             >
               Cancel
             </button>
             <button 
               type="submit" 
-              className="px-4 py-2 bg-primary text-black font-bold text-[13px] rounded hover:bg-primary/90 flex items-center gap-2 transition-colors"
+              disabled={!!successMessage}
+              className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <Send size={16} /> Submit Request
+              <Send size={18} /> Submit Request
             </button>
           </div>
         </form>
