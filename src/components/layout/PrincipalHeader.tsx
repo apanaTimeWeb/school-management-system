@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 export default function PrincipalHeader() {
   const { toggleMobileSidebar } = useLayoutStore();
-  
+
   const [showNotifications, setShowNotifications] = useState(false);
   const [showProfileMenu, setShowProfileMenu] = useState(false);
 
@@ -19,6 +19,7 @@ export default function PrincipalHeader() {
       if (notifRef.current && !notifRef.current.contains(event.target as Node)) {
         setShowNotifications(false);
       }
+
       if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
         setShowProfileMenu(false);
       }
@@ -39,7 +40,7 @@ export default function PrincipalHeader() {
     <header className="h-16 bg-header/90 backdrop-blur-md border-b border-border sticky top-0 z-30 flex items-center justify-between px-4 lg:px-8 transition-all duration-300">
       {/* Left side: Hamburger (Mobile) & Title */}
       <div className="flex items-center gap-3">
-        <button 
+        <button
           onClick={toggleMobileSidebar}
           className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
         >
@@ -50,20 +51,20 @@ export default function PrincipalHeader() {
 
       {/* Right side: Actions */}
       <div className="flex items-center gap-4 relative">
-        
+
         {/* Global Search */}
         <div className="hidden md:flex items-center gap-2 bg-black/20 border border-white/10 rounded-md px-3 py-1.5 focus-within:border-secondary/50 transition-colors w-64">
           <Search size={16} className="text-sidebar-text-muted" />
-          <input 
-            type="text" 
-            placeholder="Search portal..." 
+          <input
+            type="text"
+            placeholder="Search portal..."
             className="bg-transparent border-none outline-none text-[13px] text-sidebar-text w-full placeholder:text-sidebar-text-muted"
           />
         </div>
 
         {/* Notifications */}
         <div ref={notifRef} className="relative">
-          <button 
+          <button
             onClick={() => {
               setShowNotifications(!showNotifications);
               setShowProfileMenu(false);
@@ -82,32 +83,32 @@ export default function PrincipalHeader() {
           {/* Notifications Dropdown */}
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
-               <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
-                 <h3 className="font-bold text-sm text-text-primary">Notifications</h3>
-                 <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all as read</span>
-               </div>
-               <div className="max-h-80 overflow-y-auto flex flex-col">
-                 {notifications.map(notif => (
-                    <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-primary/5")}>
-                       <div className={clsx("mt-0.5", notif.type === 'info' ? 'text-info' : notif.type === 'alert' ? 'text-danger' : 'text-success')}>
-                         {notif.type === 'info' && <Info size={16}/>}
-                         {notif.type === 'alert' && <AlertCircle size={16}/>}
-                         {notif.type === 'success' && <CheckCircle size={16}/>}
-                       </div>
-                       <div className="flex flex-col flex-1">
-                         <div className="flex justify-between items-start gap-2">
-                           <span className={clsx("text-sm font-bold text-text-primary", !notif.read && "text-primary")}>{notif.title}</span>
-                           {!notif.read && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1"></span>}
-                         </div>
-                         <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
-                         <span className="text-[10px] font-bold text-text-secondary/60 mt-1">{notif.time}</span>
-                       </div>
+              <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
+                <h3 className="font-bold text-sm text-text-primary">Notifications</h3>
+                <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all as read</span>
+              </div>
+              <div className="max-h-80 overflow-y-auto flex flex-col">
+                {notifications.map(notif => (
+                  <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-primary/5")}>
+                    <div className={clsx("mt-0.5", notif.type === 'info' ? 'text-info' : notif.type === 'alert' ? 'text-danger' : 'text-success')}>
+                      {notif.type === 'info' && <Info size={16} />}
+                      {notif.type === 'alert' && <AlertCircle size={16} />}
+                      {notif.type === 'success' && <CheckCircle size={16} />}
                     </div>
-                 ))}
-               </div>
-               <div className="p-2 border-t border-border bg-bg-page text-center">
-                 <button className="text-xs font-bold text-primary hover:underline">View All Activity</button>
-               </div>
+                    <div className="flex flex-col flex-1">
+                      <div className="flex justify-between items-start gap-2">
+                        <span className={clsx("text-sm font-bold text-text-primary", !notif.read && "text-primary")}>{notif.title}</span>
+                        {!notif.read && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1"></span>}
+                      </div>
+                      <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
+                      <span className="text-[10px] font-bold text-text-secondary/60 mt-1">{notif.time}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2 border-t border-border bg-bg-page text-center">
+                <button className="text-xs font-bold text-primary hover:underline">View All Activity</button>
+              </div>
             </div>
           )}
         </div>
@@ -116,7 +117,7 @@ export default function PrincipalHeader() {
 
         {/* Profile */}
         <div ref={profileRef} className="relative">
-          <button 
+          <button
             onClick={() => {
               setShowProfileMenu(!showProfileMenu);
               setShowNotifications(false);
@@ -137,16 +138,16 @@ export default function PrincipalHeader() {
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
-               <div className="px-4 py-2 border-b border-border mb-1 block sm:hidden">
-                 <p className="text-sm font-bold text-text-primary truncate">Dr. A. Sharma</p>
-                 <p className="text-xs text-text-secondary truncate">Principal</p>
-               </div>
-               <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-primary/10 transition">
-                 <UserCircle size={16}/> My Profile
-               </Link>
-               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
-                 <LogOut size={16}/> Logout
-               </Link>
+              <div className="px-4 py-2 border-b border-border mb-1 block sm:hidden">
+                <p className="text-sm font-bold text-text-primary truncate">Dr. A. Sharma</p>
+                <p className="text-xs text-text-secondary truncate">Principal</p>
+              </div>
+              <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-primary/10 transition">
+                <UserCircle size={16} /> My Profile
+              </Link>
+              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+                <LogOut size={16} /> Logout
+              </Link>
             </div>
           )}
         </div>
