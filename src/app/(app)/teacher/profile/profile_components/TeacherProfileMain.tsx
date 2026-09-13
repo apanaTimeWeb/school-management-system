@@ -181,6 +181,13 @@ function AcademicDetailsTab() {
 function SecurityTab() {
   const { security } = TEACHER_PROFILE_MOCK;
   const [is2FA, setIs2FA] = useState(security.is2FAEnabled);
+  const [passwordMsg, setPasswordMsg] = useState('');
+  
+  const handleUpdatePassword = (e: React.FormEvent) => {
+    e.preventDefault();
+    setPasswordMsg('Password updated successfully!');
+    setTimeout(() => setPasswordMsg(''), 3000);
+  };
 
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
@@ -189,22 +196,23 @@ function SecurityTab() {
         <div className="px-6 py-4 border-b border-border bg-black/10">
           <h2 className="text-[16px] font-bold text-text-primary">Change Password</h2>
         </div>
-        <form className="p-6 space-y-4 max-w-md" onSubmit={e => e.preventDefault()}>
+        <form className="p-6 space-y-4 max-w-md" onSubmit={handleUpdatePassword}>
            <div>
              <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Current Password</label>
-             <input type="password" placeholder="••••••••" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" />
+             <input type="password" placeholder="••••••••" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" required />
            </div>
            <div>
              <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">New Password</label>
-             <input type="password" placeholder="Enter new password" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" />
+             <input type="password" placeholder="Enter new password" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" required />
            </div>
            <div>
              <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Confirm New Password</label>
-             <input type="password" placeholder="Re-enter new password" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" />
+             <input type="password" placeholder="Re-enter new password" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" required />
            </div>
            <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors mt-2">
              <Key size={16} /> Update Password
            </button>
+           {passwordMsg && <p className="text-success text-[13px] font-bold mt-2 animate-in fade-in">{passwordMsg}</p>}
         </form>
       </div>
 
@@ -239,16 +247,28 @@ function SecurityTab() {
 // ----------------------------------------------------
 function SessionsTab() {
   const { sessions } = TEACHER_PROFILE_MOCK;
+  const [activeSessions, setActiveSessions] = useState(sessions.active);
+
+  const handleRevokeAll = () => {
+    setActiveSessions(activeSessions.filter(s => s.isCurrent));
+  };
+
+  const handleLogout = (idx: number) => {
+    setActiveSessions(activeSessions.filter((_, i) => i !== idx));
+  };
+
   return (
     <div className="space-y-6 animate-in fade-in slide-in-from-bottom-2 duration-300">
       
       <div className="bg-card border border-border rounded-xl overflow-hidden">
         <div className="px-6 py-4 border-b border-border bg-black/10 flex items-center justify-between">
           <h2 className="text-[16px] font-bold text-text-primary">Active Sessions</h2>
-          <button className="text-[12px] font-bold text-danger hover:underline">Revoke All</button>
+          {activeSessions.length > 1 && (
+            <button onClick={handleRevokeAll} className="text-[12px] font-bold text-danger hover:underline">Revoke All</button>
+          )}
         </div>
         <div className="p-0 divide-y divide-border">
-          {sessions.active.map((ses, idx) => (
+          {activeSessions.map((ses, idx) => (
             <div key={idx} className="flex flex-col sm:flex-row sm:items-center justify-between p-6 hover:bg-page transition-colors gap-4">
                <div className="flex items-start gap-4">
                  <div className="w-10 h-10 rounded-xl bg-input border border-border flex items-center justify-center text-text-secondary shrink-0">
@@ -264,12 +284,15 @@ function SessionsTab() {
                  </div>
                </div>
                {!ses.isCurrent && (
-                 <button className="px-4 py-2 bg-page border border-danger/30 text-danger hover:bg-danger/10 font-bold text-[12px] rounded-lg transition-colors whitespace-nowrap self-start sm:self-auto">
+                 <button onClick={() => handleLogout(idx)} className="px-4 py-2 bg-page border border-danger/30 text-danger hover:bg-danger/10 font-bold text-[12px] rounded-lg transition-colors whitespace-nowrap self-start sm:self-auto">
                    Log Out
                  </button>
                )}
             </div>
           ))}
+          {activeSessions.length === 0 && (
+            <div className="p-6 text-center text-text-secondary">No active sessions found.</div>
+          )}
         </div>
       </div>
 
