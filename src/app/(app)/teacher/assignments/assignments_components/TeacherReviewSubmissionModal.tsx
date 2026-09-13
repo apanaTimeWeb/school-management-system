@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { X, Save, RotateCcw, FileText, CheckCircle2 } from 'lucide-react';
+import { X, Save, RotateCcw, FileText, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { useTeacherAssignmentsStore } from '../assignments_store/useTeacherAssignmentsStore';
 
 export default function TeacherReviewSubmissionModal() {
@@ -9,6 +9,7 @@ export default function TeacherReviewSubmissionModal() {
   const [marks, setMarks] = useState(selectedSubmissionForReview?.grade === 'Pending Review' ? '' : selectedSubmissionForReview?.grade || '');
   const [feedback, setFeedback] = useState('Good effort, but please check question 3 again.');
   const [isResubmissionRequested, setIsResubmissionRequested] = useState(false);
+  const [isPlagChecked, setIsPlagChecked] = useState(false);
 
   if (!isReviewModalOpen || !selectedSubmissionForReview) return null;
 
@@ -45,6 +46,19 @@ export default function TeacherReviewSubmissionModal() {
                 <h3 className="text-[14px] font-bold text-text-primary flex items-center gap-2"><FileText size={16}/> Student Uploads</h3>
                 <span className="text-[12px] text-text-secondary">Submitted: {selectedSubmissionForReview.submittedOn}</span>
              </div>
+
+             <div className="mb-4 bg-black/20 border border-white/5 rounded-lg p-3 flex justify-between items-center">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck size={16} className={isPlagChecked ? "text-success" : "text-info"} />
+                  <span className="text-[13px] font-bold text-text-primary">Plagiarism & AI Check</span>
+                </div>
+                {isPlagChecked ? (
+                  <span className="text-[12px] font-bold text-success bg-success/10 px-2 py-1 rounded border border-success/20">Originality: 94% (Safe)</span>
+                ) : (
+                  <button type="button" onClick={() => setIsPlagChecked(true)} className="text-[12px] font-bold text-black bg-info px-3 py-1.5 rounded hover:bg-info/90 transition-colors">Run Scan</button>
+                )}
+             </div>
+
              <div className="flex items-center gap-4">
                 <div className="p-3 border border-border rounded-lg bg-card flex flex-col items-center justify-center cursor-pointer hover:border-info/50 transition-colors">
                   <FileText size={24} className="text-info mb-1" />

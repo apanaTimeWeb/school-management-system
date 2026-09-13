@@ -87,7 +87,7 @@ export default function TeacherSubmissionViewModal() {
              <div className="space-y-4">
                <div className="flex justify-between items-center bg-warning/5 border border-warning/20 p-3 rounded-lg">
                  <div>
-                   <h4 className="text-[14px] font-bold text-text-primary">Homework Defaulters</h4>
+                   <h4 className="text-[14px] font-bold text-text-primary">Assignment Defaulters</h4>
                    <p className="text-[12px] text-text-secondary">Students who haven't submitted yet.</p>
                  </div>
                  <button 

@@ -13,22 +13,31 @@ export default function TeacherAssignmentsMain() {
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_HOMEWORK_LIST.map(h => h.class)))];
   
+  const [list, setList] = useState(TEACHER_HOMEWORK_LIST);
+
   const filteredList = filterClass === 'All' 
-    ? TEACHER_HOMEWORK_LIST 
-    : TEACHER_HOMEWORK_LIST.filter(h => h.class === filterClass);
+    ? list 
+    : list.filter(h => h.class === filterClass);
 
   const handleDelete = (id: string) => {
-    // Mock delete
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Homework deleted successfully.' }));
+    setList(list.filter(h => h.id !== id));
   };
 
   return (
     <div className="flex flex-col h-full w-full max-w-7xl mx-auto">
       <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-[22px] font-bold text-text-primary">Homework & Assignments</h1>
-          <p className="text-[14px] text-text-secondary mt-1">Create, manage, and review student submissions.</p>
+          <h1 className="text-[22px] font-bold text-text-primary">Assignments & Projects</h1>
+          <p className="text-[14px] text-text-secondary mt-1">Create assignments, review submissions, and generate reports.</p>
         </div>
+        
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Downloading Assignment Report PDF...' }))}
+            className="flex items-center gap-2 px-4 py-2 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors"
+          >
+            <FileText size={18} /> Assignment Report
+          </button>
         
         <div className="flex items-center gap-3">
           <select 
