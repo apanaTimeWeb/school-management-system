@@ -141,6 +141,9 @@ export default function PrincipalHeader() {
                  <p className="text-sm font-bold text-text-primary truncate">Dr. A. Sharma</p>
                  <p className="text-xs text-text-secondary truncate">Principal</p>
                </div>
+               <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-primary/10 transition">
+                 <UserCircle size={16}/> My Profile
+               </Link>
                <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                  <LogOut size={16}/> Logout
                </Link>
