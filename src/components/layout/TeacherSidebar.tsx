@@ -20,6 +20,7 @@ import { useTeacherLayoutStore } from './useTeacherLayoutStore';
 
 const MENU_ITEMS = [
   { href: '/teacher/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
+  { href: '/teacher/students', label: 'Student Management', icon: <Users size={20} /> },
   { href: '/teacher/classes', label: 'My Classes', icon: <Users size={20} /> },
   { href: '/teacher/attendance', label: 'Student Attendance', icon: <CalendarCheck size={20} /> },
   { href: '/teacher/academics', label: 'Academics & Timetable', icon: <BookOpen size={20} /> },
