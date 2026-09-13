@@ -29,7 +29,8 @@ import {
   PackageSearch,
   BarChart3,
   CheckSquare,
-  PieChart
+  PieChart,
+  UserCircle
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -60,6 +61,7 @@ const MENU_ITEMS = [
   { href: '/principal/analytics', label: 'Principal Analytics', icon: <PieChart size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
+  { href: '/principal/profile', label: 'My Profile', icon: <UserCircle size={20} /> },
 ];
 
 export default function PrincipalSidebar() {
