@@ -24,7 +24,8 @@ import {
   IndianRupee,
   Library,
   Bus,
-  Home
+  Home,
+  HeartPulse
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -48,6 +49,7 @@ const MENU_ITEMS = [
   { href: '/principal/library', label: 'Library Usage', icon: <Library size={20} /> },
   { href: '/principal/transport', label: 'Transport Monitoring', icon: <Bus size={20} /> },
   { href: '/principal/hostel', label: 'Hostel Monitoring', icon: <Home size={20} /> },
+  { href: '/principal/health', label: 'Health & Medical', icon: <HeartPulse size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
