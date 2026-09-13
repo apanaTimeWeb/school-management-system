@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from 'react';
-import { X, Save, Send } from 'lucide-react';
+import { X, Save, Paperclip, CheckCircle } from 'lucide-react';
 import { useTeacherClassworkStore } from '../classwork_store/useTeacherClassworkStore';
 
 export default function TeacherClassworkFormModal() {
@@ -14,6 +14,8 @@ export default function TeacherClassworkFormModal() {
     topic: '',
     description: '',
     notes: '',
+    attachment: '',
+    isPublished: true,
     isCompleted: true
   });
 
@@ -27,12 +29,14 @@ export default function TeacherClassworkFormModal() {
         topic: selectedClasswork.topic,
         description: selectedClasswork.description,
         notes: selectedClasswork.notes,
+        attachment: selectedClasswork.attachment || '',
+        isPublished: selectedClasswork.isPublished !== false,
         isCompleted: selectedClasswork.isCompleted
       });
     } else {
       setFormData({ 
         date: new Date().toISOString().split('T')[0], 
-        class: '', subject: '', chapter: '', topic: '', description: '', notes: '', isCompleted: true 
+        class: '', subject: '', chapter: '', topic: '', description: '', notes: '', attachment: '', isPublished: true, isCompleted: true 
       });
     }
   }, [selectedClasswork, isFormModalOpen]);
@@ -113,6 +117,24 @@ export default function TeacherClassworkFormModal() {
           <div>
             <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Teacher's Private Notes (Optional)</label>
             <textarea value={formData.notes} onChange={e => setFormData({...formData, notes: e.target.value})} className="w-full h-16 bg-page border border-border rounded-lg px-4 py-3 text-[13px] text-text-primary focus:border-primary focus:outline-none resize-none" placeholder="Notes for your own reference (e.g. students struggled with X, need to revise Y tomorrow)."></textarea>
+          </div>
+
+          <div className="flex items-center gap-4 border-t border-border pt-4">
+            <div className="flex-1">
+              <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Board Photos / Materials</label>
+              <div className="w-full border-2 border-dashed border-border rounded-lg p-4 flex flex-col items-center justify-center text-text-secondary hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-pointer">
+                 <Paperclip size={20} className="mb-2" />
+                 <span className="text-[12px] font-medium">{formData.attachment || 'Click to upload board photos/PDF'}</span>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 mt-4 px-4 py-3 bg-page border border-border rounded-lg">
+               <span className="text-[13px] font-bold text-text-primary">Publish to Students?</span>
+               <label className="relative inline-flex items-center cursor-pointer">
+                 <input type="checkbox" checked={formData.isPublished} onChange={e => setFormData({...formData, isPublished: e.target.checked})} className="sr-only peer" />
+                 <div className="w-11 h-6 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-success"></div>
+               </label>
+            </div>
           </div>
 
           <div className="pt-4 border-t border-border flex justify-end gap-3">

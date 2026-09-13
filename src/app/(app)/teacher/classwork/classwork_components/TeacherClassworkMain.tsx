@@ -4,26 +4,28 @@ import { Plus, Edit2, Trash2, Calendar, BookOpen, FileText, CheckCircle2, Clock 
 import { useTeacherClassworkStore } from '../classwork_store/useTeacherClassworkStore';
 import { TEACHER_CLASSWORK_LIST } from '../classwork_constants/TeacherClassworkMockData';
 import TeacherClassworkFormModal from './TeacherClassworkFormModal';
+import TeacherClassworkFeedbackModal from './TeacherClassworkFeedbackModal';
 
 export default function TeacherClassworkMain() {
-  const { openCreateModal, openEditModal } = useTeacherClassworkStore();
+  const { openCreateModal, openEditModal, openFeedbackModal } = useTeacherClassworkStore();
   const [filterDate, setFilterDate] = useState('');
   const [filterClass, setFilterClass] = useState('All');
+  const [list, setList] = useState(TEACHER_CLASSWORK_LIST);
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_CLASSWORK_LIST.map(c => c.class)))];
   
-  const filteredList = TEACHER_CLASSWORK_LIST.filter(cw => {
+  const filteredList = list.filter(cw => {
     const matchClass = filterClass === 'All' || cw.class === filterClass;
     const matchDate = filterDate === '' || cw.date === filterDate;
     return matchClass && matchDate;
   }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by newest first
 
   const handleDelete = (id: string) => {
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Classwork log deleted successfully.' }));
+    setList(list.filter(cw => cw.id !== id));
   };
 
   const handleToggleComplete = (id: string) => {
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Classwork status updated.' }));
+    setList(list.map(cw => cw.id === id ? { ...cw, isCompleted: !cw.isCompleted } : cw));
   };
 
   return (
@@ -102,6 +104,9 @@ export default function TeacherClassworkMain() {
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2">
                   <div>
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-2 inline-block ${cw.isPublished !== false ? 'bg-success/20 text-success' : 'bg-warning/20 text-warning'}`}>
+                      {cw.isPublished !== false ? 'Published to Students' : 'Draft'}
+                    </span>
                     <h3 className="text-[16px] font-bold text-text-primary group-hover:text-primary transition-colors">{cw.topic}</h3>
                     <p className="text-[12px] text-text-secondary mt-0.5 flex items-center gap-1"><BookOpen size={14}/> {cw.subject} • {cw.chapter}</p>
                   </div>
@@ -123,6 +128,12 @@ export default function TeacherClassworkMain() {
                     </div>
                   )}
                 </div>
+                
+                <div className="mt-4 pt-4 border-t border-border flex items-center justify-between">
+                  <button onClick={() => openFeedbackModal(cw as any)} className="text-[12px] font-bold text-primary hover:underline flex items-center gap-1">
+                    Feedback / Remarks
+                  </button>
+                </div>
               </div>
 
             </div>
@@ -131,6 +142,7 @@ export default function TeacherClassworkMain() {
       </div>
 
       <TeacherClassworkFormModal />
+      <TeacherClassworkFeedbackModal />
     </div>
   );
 }
