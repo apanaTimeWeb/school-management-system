@@ -3,36 +3,42 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Shield, X } from 'lucide-react';
+import { 
+  ChevronDown, ChevronRight, X, LayoutDashboard, Building2, BookOpen, 
+  Users, Settings, MessageSquare, IndianRupee, Briefcase, Library, 
+  Bus, Building, FileText, Link as LinkIcon, Database, CheckCircle, 
+  Zap, BarChart3, ShieldAlert, Activity, LifeBuoy, Bell, Wrench, 
+  Blocks, Trash2, User, AlertOctagon
+} from 'lucide-react';
 import clsx from 'clsx';
 
 const MENU_STRUCTURE = [
-  { title: "01. Dashboard", href: "/super-admin/01-dashboard", items: [] },
-  { title: "02. Organization Management", href: "/super-admin/02-organization-management", items: ["School", "Branches", "Campuses"] },
-  { title: "03. Academic Setup", href: "/super-admin/03-academic-setup", items: ["Sessions", "Classes", "Subjects"] },
-  { title: "04. Users & Access", href: "/super-admin/04-users-access", items: ["Users", "Roles", "Permissions"] },
-  { title: "05. System Settings", href: "/super-admin/05-system-settings", items: ["General", "Localization"] },
-  { title: "06. Communication", href: "/super-admin/06-communication", items: ["SMS", "Email", "Templates"] },
-  { title: "07. Finance Config", href: "/super-admin/07-finance-configuration", items: ["Payment Gateway", "Fee Masters"] },
-  { title: "08. HR Config", href: "/super-admin/08-hr-configuration", items: ["Employee Types", "Leave Policies"] },
-  { title: "09. Library Config", href: "/super-admin/09-library-configuration", items: ["Categories", "Rules"] },
-  { title: "10. Transport Config", href: "/super-admin/10-transport-configuration", items: ["Vehicles", "Routes"] },
-  { title: "11. Hostel Config", href: "/super-admin/11-hostel-configuration", items: ["Hostels", "Rooms"] },
-  { title: "12. Docs & Certificates", href: "/super-admin/12-documents-certificates", items: ["Types", "Templates"] },
-  { title: "13. Integrations", href: "/super-admin/13-integrations", items: ["APIs", "Webhooks"] },
-  { title: "14. Data Management", href: "/super-admin/14-data-management", items: ["Import", "Export", "Backup"] },
-  { title: "15. Approval Workflow", href: "/super-admin/15-approval-workflow", items: ["Builder", "Rules"] },
-  { title: "16. Automation", href: "/super-admin/16-automation", items: ["Rules", "Jobs"] },
-  { title: "17. Reports & Analytics", href: "/super-admin/17-reports-analytics", items: ["System", "Activity"] },
-  { title: "18. Audit & Security", href: "/super-admin/18-audit-security", items: ["Audit Logs", "Security Alerts"] },
-  { title: "19. System Health", href: "/super-admin/19-system-health", items: ["Server", "Database"] },
-  { title: "20. Support Helpdesk", href: "/super-admin/20-support-helpdesk", items: ["Tickets", "Issues"] },
-  { title: "21. System Announcements", href: "/super-admin/21-system-announcements", items: ["Maintenance", "Notices"] },
-  { title: "22. Maintenance Mode", href: "/super-admin/22-maintenance-mode", items: ["Schedule", "History"] },
-  { title: "23. Module Management", href: "/super-admin/23-module-management", items: ["Enable", "Disable"] },
-  { title: "24. Deleted Data", href: "/super-admin/24-deleted-data-recovery", items: ["Restore", "Permanent Delete"] },
-  { title: "25. My Profile", href: "/super-admin/25-my-profile", items: ["Profile", "Security"] },
-  { title: "26. Emergency Controls", href: "/super-admin/26-emergency-controls", items: ["Lockdown", "Reset"] },
+  { title: "01. Dashboard", icon: LayoutDashboard, href: "/super-admin/01-dashboard", items: [] },
+  { title: "02. Organization Management", icon: Building2, href: "/super-admin/02-organization-management", items: ["School", "Branches", "Campuses"] },
+  { title: "03. Academic Setup", icon: BookOpen, href: "/super-admin/03-academic-setup", items: ["Sessions", "Classes", "Subjects"] },
+  { title: "04. Users & Access", icon: Users, href: "/super-admin/04-users-access", items: ["Users", "Roles", "Permissions"] },
+  { title: "05. System Settings", icon: Settings, href: "/super-admin/05-system-settings", items: ["General", "Localization"] },
+  { title: "06. Communication", icon: MessageSquare, href: "/super-admin/06-communication", items: ["SMS", "Email", "Templates"] },
+  { title: "07. Finance Config", icon: IndianRupee, href: "/super-admin/07-finance-configuration", items: ["Payment Gateway", "Fee Masters"] },
+  { title: "08. HR Config", icon: Briefcase, href: "/super-admin/08-hr-configuration", items: ["Employee Types", "Leave Policies"] },
+  { title: "09. Library Config", icon: Library, href: "/super-admin/09-library-configuration", items: ["Categories", "Rules"] },
+  { title: "10. Transport Config", icon: Bus, href: "/super-admin/10-transport-configuration", items: ["Vehicles", "Routes"] },
+  { title: "11. Hostel Config", icon: Building, href: "/super-admin/11-hostel-configuration", items: ["Hostels", "Rooms"] },
+  { title: "12. Docs & Certificates", icon: FileText, href: "/super-admin/12-documents-certificates", items: ["Types", "Templates"] },
+  { title: "13. Integrations", icon: LinkIcon, href: "/super-admin/13-integrations", items: ["APIs", "Webhooks"] },
+  { title: "14. Data Management", icon: Database, href: "/super-admin/14-data-management", items: ["Import", "Export", "Backup"] },
+  { title: "15. Approval Workflow", icon: CheckCircle, href: "/super-admin/15-approval-workflow", items: ["Builder", "Rules"] },
+  { title: "16. Automation", icon: Zap, href: "/super-admin/16-automation", items: ["Rules", "Jobs"] },
+  { title: "17. Reports & Analytics", icon: BarChart3, href: "/super-admin/17-reports-analytics", items: ["System", "Activity"] },
+  { title: "18. Audit & Security", icon: ShieldAlert, href: "/super-admin/18-audit-security", items: ["Audit Logs", "Security Alerts"] },
+  { title: "19. System Health", icon: Activity, href: "/super-admin/19-system-health", items: ["Server", "Database"] },
+  { title: "20. Support Helpdesk", icon: LifeBuoy, href: "/super-admin/20-support-helpdesk", items: ["Tickets", "Issues"] },
+  { title: "21. System Announcements", icon: Bell, href: "/super-admin/21-system-announcements", items: ["Maintenance", "Notices"] },
+  { title: "22. Maintenance Mode", icon: Wrench, href: "/super-admin/22-maintenance-mode", items: ["Schedule", "History"] },
+  { title: "23. Module Management", icon: Blocks, href: "/super-admin/23-module-management", items: ["Enable", "Disable"] },
+  { title: "24. Deleted Data", icon: Trash2, href: "/super-admin/24-deleted-data-recovery", items: ["Restore", "Permanent Delete"] },
+  { title: "25. My Profile", icon: User, href: "/super-admin/25-my-profile", items: ["Profile", "Security"] },
+  { title: "26. Emergency Controls", icon: AlertOctagon, href: "/super-admin/26-emergency-controls", items: ["Lockdown", "Reset"] },
 ];
 
 interface SuperAdminSidebarProps {
@@ -99,7 +105,7 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
                       isActive ? "text-primary" : "text-sidebar-text-muted hover:text-sidebar-text"
                     )}
                   >
-                    <Shield size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
+                    <category.icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />
                     <span className="whitespace-nowrap">{category.title}</span>
                   </Link>
                   {hasItems && (

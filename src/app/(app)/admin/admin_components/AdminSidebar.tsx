@@ -2,38 +2,45 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, LogOut, User, X } from "lucide-react";
+import { 
+  LayoutDashboard, LogOut, User, X, 
+  Users, UserPlus, BookOpen, CalendarCheck, FileCheck, 
+  IndianRupee, Briefcase, FileSpreadsheet, MessageSquare, 
+  Clock, Bus, Library, Package, ShoppingCart, Calendar, 
+  FileText, Scale, HeartPulse, Globe, BarChart3, ShieldCheck, 
+  Search, Settings, Shield, History, Building
+} from "lucide-react";
 import clsx from "clsx";
 
 const adminCategories = [
   { id: "dashboard", title: "01. Dashboard", icon: LayoutDashboard, href: "/admin/01-dashboard" },
-  { id: "students", title: "02. Students", icon: LayoutDashboard, href: "/admin/02-student-management" },
-  { id: "admissions", title: "03. Admissions", icon: LayoutDashboard, href: "/admin/03-admission-management" },
-  { id: "parents", title: "04. Parents & Guardians", icon: LayoutDashboard, href: "/admin/04-parent-management" },
-  { id: "academics", title: "05. Academics", icon: LayoutDashboard, href: "/admin/05-academic-management" },
-  { id: "attendance", title: "06. Attendance", icon: LayoutDashboard, href: "/admin/06-attendance-management" },
-  { id: "examinations", title: "07. Examinations & Results", icon: LayoutDashboard, href: "/admin/07-examination-management" },
-  { id: "fees", title: "08. Fees & Finance", icon: LayoutDashboard, href: "/admin/08-fee-management" },
-  { id: "staff", title: "09. Staff & HR", icon: LayoutDashboard, href: "/admin/09-staff-management" },
-  { id: "leave", title: "10. Leave Management", icon: LayoutDashboard, href: "/admin/10-leave-management" },
-  { id: "communication", title: "11. Communication", icon: LayoutDashboard, href: "/admin/11-communication" },
-  { id: "timetable", title: "12. Timetable", icon: LayoutDashboard, href: "/admin/12-timetable" },
-  { id: "transport", title: "13. Transport Management", icon: LayoutDashboard, href: "/admin/13-transport-management" },
-  { id: "library", title: "14. Library", icon: LayoutDashboard, href: "/admin/14-library" },
-  { id: "inventory", title: "15. Inventory & Assets", icon: LayoutDashboard, href: "/admin/15-inventory-assets" },
-  { id: "purchase", title: "16. Purchase & Expenses", icon: LayoutDashboard, href: "/admin/16-purchase-expense" },
-  { id: "events", title: "17. Events & Activities", icon: LayoutDashboard, href: "/admin/17-events-activities" },
-  { id: "documents", title: "18. Documents & Certificates", icon: LayoutDashboard, href: "/admin/18-documents-certificates" },
-  { id: "discipline", title: "19. Discipline & Grievance", icon: LayoutDashboard, href: "/admin/19-discipline-grievance" },
-  { id: "health", title: "20. Health & Medical", icon: LayoutDashboard, href: "/admin/20-health-medical" },
-  { id: "website", title: "21. Website / Public Content", icon: LayoutDashboard, href: "/admin/21-website-content" },
-  { id: "reports", title: "22. Reports & Analytics", icon: LayoutDashboard, href: "/admin/22-reports" },
-  { id: "approval", title: "23. Approval Center", icon: LayoutDashboard, href: "/admin/23-approval-center" },
-  { id: "search", title: "24. Search & Filters", icon: LayoutDashboard, href: "/admin/24-search-filters" },
-  { id: "settings", title: "25. Settings", icon: LayoutDashboard, href: "/admin/25-settings" },
-  { id: "security", title: "26. Security", icon: LayoutDashboard, href: "/admin/26-security" },
-  { id: "audit", title: "27. Audit Ledger", icon: LayoutDashboard, href: "/admin/27-audit" },
-  { id: "hostel", title: "28. Hostel", icon: LayoutDashboard, href: "/admin/28-hostel" },
+  { id: "students", title: "02. Students", icon: Users, href: "/admin/02-student-management" },
+  { id: "admissions", title: "03. Admissions", icon: UserPlus, href: "/admin/03-admission-management" },
+  { id: "parents", title: "04. Parents & Guardians", icon: Users, href: "/admin/04-parent-management" },
+  { id: "academics", title: "05. Academics", icon: BookOpen, href: "/admin/05-academic-management" },
+  { id: "attendance", title: "06. Attendance", icon: CalendarCheck, href: "/admin/06-attendance-management" },
+  { id: "examinations", title: "07. Examinations & Results", icon: FileCheck, href: "/admin/07-examination-management" },
+  { id: "fees", title: "08. Fees & Finance", icon: IndianRupee, href: "/admin/08-fee-management" },
+  { id: "staff", title: "09. Staff & HR", icon: Briefcase, href: "/admin/09-staff-management" },
+  { id: "leave", title: "10. Leave Management", icon: FileSpreadsheet, href: "/admin/10-leave-management" },
+  { id: "communication", title: "11. Communication", icon: MessageSquare, href: "/admin/11-communication" },
+  { id: "timetable", title: "12. Timetable", icon: Clock, href: "/admin/12-timetable" },
+  { id: "transport", title: "13. Transport Management", icon: Bus, href: "/admin/13-transport-management" },
+  { id: "library", title: "14. Library", icon: Library, href: "/admin/14-library" },
+  { id: "inventory", title: "15. Inventory & Assets", icon: Package, href: "/admin/15-inventory-assets" },
+  { id: "purchase", title: "16. Purchase & Expenses", icon: ShoppingCart, href: "/admin/16-purchase-expense" },
+  { id: "events", title: "17. Events & Activities", icon: Calendar, href: "/admin/17-events-activities" },
+  { id: "documents", title: "18. Documents & Certificates", icon: FileText, href: "/admin/18-documents-certificates" },
+  { id: "discipline", title: "19. Discipline & Grievance", icon: Scale, href: "/admin/19-discipline-grievance" },
+  { id: "health", title: "20. Health & Medical", icon: HeartPulse, href: "/admin/20-health-medical" },
+  { id: "website", title: "21. Website / Public Content", icon: Globe, href: "/admin/21-website-content" },
+  { id: "reports", title: "22. Reports & Analytics", icon: BarChart3, href: "/admin/22-reports" },
+  { id: "approval", title: "23. Approval Center", icon: ShieldCheck, href: "/admin/23-approval-center" },
+  { id: "search", title: "24. Search & Filters", icon: Search, href: "/admin/24-search-filters" },
+  { id: "settings", title: "25. Settings", icon: Settings, href: "/admin/25-settings" },
+  { id: "security", title: "26. Security", icon: Shield, href: "/admin/26-security" },
+  { id: "audit", title: "27. Audit Ledger", icon: History, href: "/admin/27-audit" },
+  { id: "hostel", title: "28. Hostel", icon: Building, href: "/admin/28-hostel" },
   { id: "profile", title: "29. My Profile", icon: User, href: "/admin/my-profile" }
 ];
 
