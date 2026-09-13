@@ -4,7 +4,7 @@ import { X, Save, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { useTeacherMeetingsStore } from '../meetings_store/useTeacherMeetingsStore';
 
 export default function TeacherMeetingActionModal() {
-  const { isActionModalOpen, closeActionModal, selectedMeeting } = useTeacherMeetingsStore();
+  const { isActionModalOpen, closeActionModal, selectedMeeting, completeMeeting } = useTeacherMeetingsStore();
   
   const [formData, setFormData] = useState({
     notes: '',
@@ -30,7 +30,12 @@ export default function TeacherMeetingActionModal() {
 
   const handleSave = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Meeting marked as completed & notes saved.' }));
+    completeMeeting(selectedMeeting.id, {
+      notes: formData.notes,
+      parentFeedback: formData.parentFeedback,
+      teacherRemarks: formData.teacherRemarks,
+      followUpDate: formData.followUpDate
+    });
     closeActionModal();
   };
 

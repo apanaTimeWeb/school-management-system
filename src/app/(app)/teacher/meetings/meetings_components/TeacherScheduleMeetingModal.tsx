@@ -4,7 +4,7 @@ import { X, Send, Users } from 'lucide-react';
 import { useTeacherMeetingsStore } from '../meetings_store/useTeacherMeetingsStore';
 
 export default function TeacherScheduleMeetingModal() {
-  const { isScheduleModalOpen, closeScheduleModal } = useTeacherMeetingsStore();
+  const { isScheduleModalOpen, closeScheduleModal, scheduleMeeting } = useTeacherMeetingsStore();
   
   const [formData, setFormData] = useState({
     studentName: '',
@@ -18,7 +18,17 @@ export default function TeacherScheduleMeetingModal() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Meeting invite sent to Parents successfully.' }));
+    const newMeeting = {
+      id: `MEET-${Date.now()}`,
+      studentName: formData.studentName,
+      parentName: "Unknown Parent",
+      class: formData.class,
+      date: formData.date,
+      time: formData.time,
+      reason: formData.reason,
+      status: 'Scheduled' as const,
+    };
+    scheduleMeeting(newMeeting);
     closeScheduleModal();
   };
 

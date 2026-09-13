@@ -2,15 +2,14 @@
 import React, { useState } from 'react';
 import { Plus, Users, Calendar, Clock, CheckCircle2, ChevronRight, MessageSquare, AlertCircle } from 'lucide-react';
 import { useTeacherMeetingsStore, MeetingStatus } from '../meetings_store/useTeacherMeetingsStore';
-import { TEACHER_MEETINGS_MOCK } from '../meetings_constants/TeacherMeetingsMockData';
 import TeacherScheduleMeetingModal from './TeacherScheduleMeetingModal';
 import TeacherMeetingActionModal from './TeacherMeetingActionModal';
 
 export default function TeacherMeetingsMain() {
-  const { openScheduleModal, openActionModal } = useTeacherMeetingsStore();
+  const { openScheduleModal, openActionModal, meetingsList } = useTeacherMeetingsStore();
   const [activeTab, setActiveTab] = useState<'Upcoming' | 'Completed'>('Upcoming');
 
-  const filteredMeetings = TEACHER_MEETINGS_MOCK.filter(m => {
+  const filteredMeetings = meetingsList.filter(m => {
     if (activeTab === 'Upcoming') return m.status === 'Scheduled';
     if (activeTab === 'Completed') return m.status === 'Completed' || m.status === 'Cancelled';
     return true;
