@@ -34,6 +34,7 @@ const MENU_ITEMS = [
   { href: '/teacher/online-tests', label: 'Online Tests', icon: <FileText size={20} /> },
   { href: '/teacher/performance', label: 'Student Performance', icon: <Activity size={20} /> },
   { href: '/teacher/leaves', label: 'Leave Requests', icon: <CalendarOff size={20} /> },
+  { href: '/teacher/substitutes', label: 'Substitutes', icon: <Users size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <Bell size={20} /> },
   { href: '/teacher/profile', label: 'My Profile', icon: <UserCircle size={20} /> },
