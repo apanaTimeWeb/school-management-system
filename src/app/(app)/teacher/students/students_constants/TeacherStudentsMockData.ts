@@ -14,6 +14,18 @@ export const TEACHER_ADVANCED_STUDENT_MOCK = {
     email: 'student@example.com',
     history: 'Joined in Grade 6. No major disciplinary issues. Consistent performer.'
   },
+  medical: {
+    allergies: 'None',
+    medicalCondition: 'Asthma (Mild)',
+    emergencyContactName: 'Rajesh Sharma',
+    emergencyContactPhone: '9876543210'
+  },
+  fees: {
+    status: 'Paid',
+    lastPaymentDate: '10-Oct-2023',
+    amountDue: '₹0',
+    remarks: 'No outstanding dues.'
+  },
   academicPerformance: [
     { exam: 'Term 1', math: 85, physics: 88, chemistry: 79, english: 92 },
     { exam: 'Unit Test 2', math: 90, physics: 85, chemistry: 82, english: 88 },

@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { X, UserCircle, Phone, MapPin, Activity, GraduationCap, ClipboardCheck, BookOpen, AlertTriangle } from 'lucide-react';
+import { X, UserCircle, Phone, MapPin, Activity, GraduationCap, ClipboardCheck, BookOpen, AlertTriangle, HeartPulse, Wallet } from 'lucide-react';
 import { useTeacherStudentsStore } from '../students_store/useTeacherStudentsStore';
 import { TEACHER_ASSIGNED_STUDENTS, TEACHER_ADVANCED_STUDENT_MOCK } from '../students_constants/TeacherStudentsMockData';
 
@@ -16,6 +16,7 @@ export default function TeacherStudentProfileModal() {
 
   const tabs = [
     { id: 'profile', label: 'Profile & History', icon: <UserCircle size={16} /> },
+    { id: 'medical_fee', label: 'Medical & Fee Status', icon: <HeartPulse size={16} /> },
     { id: 'academic', label: 'Academic / Marks', icon: <GraduationCap size={16} /> },
     { id: 'attendance', label: 'Attendance', icon: <ClipboardCheck size={16} /> },
     { id: 'assignments', label: 'Homework / Assignments', icon: <BookOpen size={16} /> },
@@ -106,6 +107,55 @@ export default function TeacherStudentProfileModal() {
               <div className="bg-card border border-border rounded-xl p-5">
                 <h3 className="text-[14px] font-bold text-text-primary mb-4 border-b border-border pb-2">Student History / Notes</h3>
                 <p className="text-[14px] text-text-secondary leading-relaxed">{mockExtData.profile.history}</p>
+              </div>
+            </div>
+          )}
+
+          {activeProfileTab === 'medical_fee' as string && (
+            <div className="space-y-6">
+              <div className="bg-card border border-border rounded-xl overflow-hidden">
+                 <div className="p-4 border-b border-border bg-black/20 flex items-center gap-2">
+                   <HeartPulse size={18} className="text-danger" />
+                   <h3 className="text-[14px] font-bold text-text-primary">Medical Information</h3>
+                 </div>
+                 <div className="p-5 grid grid-cols-1 md:grid-cols-2 gap-6 text-[13px]">
+                   <div><span className="text-text-secondary block mb-1">Blood Group</span><span className="font-bold text-danger bg-danger/10 px-2 py-0.5 rounded">{mockExtData.profile.bloodGroup}</span></div>
+                   <div><span className="text-text-secondary block mb-1">Allergies</span><span className="font-bold text-text-primary">{mockExtData.medical.allergies}</span></div>
+                   <div><span className="text-text-secondary block mb-1">Medical Condition</span><span className="font-bold text-text-primary">{mockExtData.medical.medicalCondition}</span></div>
+                   <div>
+                     <span className="text-text-secondary block mb-1">Emergency Contact</span>
+                     <span className="font-bold text-text-primary block">{mockExtData.medical.emergencyContactName}</span>
+                     <span className="font-bold text-info">{mockExtData.medical.emergencyContactPhone}</span>
+                   </div>
+                 </div>
+              </div>
+
+              <div className="bg-card border border-border rounded-xl overflow-hidden">
+                 <div className="p-4 border-b border-border bg-black/20 flex items-center justify-between">
+                   <div className="flex items-center gap-2">
+                     <Wallet size={18} className="text-warning" />
+                     <h3 className="text-[14px] font-bold text-text-primary">Fee Status (Monitoring Only)</h3>
+                   </div>
+                   <span className="text-[10px] uppercase font-bold tracking-wider text-text-secondary border border-border px-2 py-1 rounded">Read Only</span>
+                 </div>
+                 <div className="p-5 grid grid-cols-2 sm:grid-cols-4 gap-4 text-[13px] text-center">
+                   <div className="bg-page border border-border rounded-lg p-3">
+                     <span className="text-text-secondary block mb-1 text-[11px] uppercase">Status</span>
+                     <span className="font-bold text-success bg-success/10 px-2 py-0.5 rounded">{mockExtData.fees.status}</span>
+                   </div>
+                   <div className="bg-page border border-border rounded-lg p-3">
+                     <span className="text-text-secondary block mb-1 text-[11px] uppercase">Amount Due</span>
+                     <span className="font-bold text-text-primary">{mockExtData.fees.amountDue}</span>
+                   </div>
+                   <div className="bg-page border border-border rounded-lg p-3">
+                     <span className="text-text-secondary block mb-1 text-[11px] uppercase">Last Payment</span>
+                     <span className="font-bold text-text-primary">{mockExtData.fees.lastPaymentDate}</span>
+                   </div>
+                   <div className="bg-page border border-border rounded-lg p-3 flex flex-col justify-center">
+                     <span className="text-text-secondary block mb-1 text-[11px] uppercase">Remarks</span>
+                     <span className="font-bold text-text-primary text-[12px]">{mockExtData.fees.remarks}</span>
+                   </div>
+                 </div>
               </div>
             </div>
           )}
