@@ -78,7 +78,7 @@ export default function PrincipalAdmissionsList({ applications, loading }: Princ
                   </span>
                 </td>
                 <td className="p-4 text-center">
-                  <button className="p-2 bg-page border border-border rounded-md text-text-secondary group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-colors">
+                  <button className="p-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary hover:text-black hover:border-primary transition-colors shadow-sm">
                     <Eye size={16} />
                   </button>
                 </td>

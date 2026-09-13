@@ -37,10 +37,10 @@ export default function PrincipalDashboardOperations({
   }
 
   const tabs = [
-    { id: 'notices', label: 'Notices', icon: <Bell size={14} />, count: notices.length },
-    { id: 'alerts', label: 'Alerts', icon: <AlertTriangle size={14} />, count: alerts.length },
-    { id: 'leaves', label: 'Leave Req', icon: <FileText size={14} />, count: leaves.length },
-    { id: 'events', label: 'Events', icon: <Calendar size={14} />, count: events.length },
+    { id: 'notices', label: 'Notices', icon: <Bell size={14} className="text-info" />, count: notices.length },
+    { id: 'alerts', label: 'Alerts', icon: <AlertTriangle size={14} className="text-danger" />, count: alerts.length },
+    { id: 'leaves', label: 'Leave Req', icon: <FileText size={14} className="text-warning" />, count: leaves.length },
+    { id: 'events', label: 'Events', icon: <Calendar size={14} className="text-success" />, count: events.length },
   ];
 
   return (

@@ -76,6 +76,11 @@ export default function PrincipalStudentsList({ students, isLoading }: Principal
                   <td className="p-4 text-[14px] font-medium text-text-secondary group-hover:text-primary transition-colors">
                     {student.rollNo}
                   </td>
+                  <td className="p-4 text-center">
+                    <button className="p-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary hover:text-black hover:border-primary transition-colors shadow-sm">
+                      <Eye size={16} />
+                    </button>
+                  </td>
                   <td className="p-4">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-full bg-white/5 border border-border flex items-center justify-center text-[12px] font-bold text-text-secondary">
