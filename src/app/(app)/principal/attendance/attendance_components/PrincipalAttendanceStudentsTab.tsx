@@ -83,7 +83,7 @@ export default function PrincipalAttendanceStudentsTab() {
                   </div>
                 </td>
                 <td className="p-4 text-center">
-                  <button className="p-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary hover:text-black hover:border-primary transition-colors shadow-sm">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="p-2 bg-primary/10 border border-primary/30 rounded-md text-primary hover:bg-primary hover:text-black hover:border-primary transition-colors shadow-sm">
                     <Eye size={16} />
                   </button>
                 </td>

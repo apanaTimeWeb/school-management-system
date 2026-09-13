@@ -49,7 +49,7 @@ export default function PrincipalEventsCertificatesTab() {
               className="bg-transparent border-none outline-none text-[13px] text-text-primary w-full sm:w-48 placeholder:text-text-secondary/50"
             />
           </div>
-          <button className="flex items-center justify-center gap-2 px-4 py-1.5 bg-page hover:bg-white/5 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors">
+          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="flex items-center justify-center gap-2 px-4 py-1.5 bg-page hover:bg-white/5 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors">
             <Filter size={14} /> Filter
           </button>
         </div>
@@ -98,7 +98,7 @@ export default function PrincipalEventsCertificatesTab() {
                   )}
                 </td>
                 <td className="p-4 text-right">
-                  <button className="px-3 py-1.5 rounded bg-page hover:bg-white/10 border border-border text-[12px] font-bold text-text-primary transition-colors flex items-center justify-end gap-2 ml-auto">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 rounded bg-page hover:bg-white/10 border border-border text-[12px] font-bold text-text-primary transition-colors flex items-center justify-end gap-2 ml-auto">
                     <Download size={14}/> PDF
                   </button>
                 </td>

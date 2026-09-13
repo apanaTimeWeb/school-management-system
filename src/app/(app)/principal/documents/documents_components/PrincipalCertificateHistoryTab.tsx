@@ -46,7 +46,7 @@ export default function PrincipalCertificateHistoryTab() {
               className="bg-transparent border-none outline-none text-[13px] text-text-primary w-full sm:w-48 placeholder:text-text-secondary/50"
             />
           </div>
-          <button className="flex items-center justify-center gap-2 px-4 py-1.5 bg-page hover:bg-white/5 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors">
+          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="flex items-center justify-center gap-2 px-4 py-1.5 bg-page hover:bg-white/5 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors">
             <Filter size={14} /> Filter
           </button>
         </div>
@@ -87,11 +87,11 @@ export default function PrincipalCertificateHistoryTab() {
                 </td>
                 <td className="p-4 text-right">
                   <div className="flex items-center justify-end gap-2">
-                    <button className="px-3 py-1.5 rounded bg-page hover:bg-white/10 border border-border text-[12px] font-bold text-text-primary transition-colors flex items-center gap-1.5">
+                    <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 rounded bg-page hover:bg-white/10 border border-border text-[12px] font-bold text-text-primary transition-colors flex items-center gap-1.5">
                       Log
                     </button>
                     {(req.status === 'Approved' || req.status === 'Issued') && (
-                      <button className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-black text-[12px] font-bold transition-colors flex items-center gap-1.5">
+                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-black text-[12px] font-bold transition-colors flex items-center gap-1.5">
                         <Download size={14}/> PDF
                       </button>
                     )}

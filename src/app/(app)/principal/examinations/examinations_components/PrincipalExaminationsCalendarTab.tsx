@@ -68,7 +68,7 @@ export default function PrincipalExaminationsCalendarTab() {
               </div>
             </div>
 
-            <button className="w-full py-2 bg-page hover:bg-white/10 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors mt-auto">
+            <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="w-full py-2 bg-page hover:bg-white/10 border border-border rounded-md text-[13px] font-bold text-text-primary transition-colors mt-auto">
               View Detailed Schedule
             </button>
           </div>

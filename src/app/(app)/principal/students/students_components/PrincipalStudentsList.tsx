@@ -103,10 +103,10 @@ export default function PrincipalStudentsList({ students, isLoading }: Principal
           Showing <strong className="text-text-primary">{students.length}</strong> results
         </span>
         <div className="flex gap-2">
-          <button className="p-1.5 rounded bg-page border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors disabled:opacity-50">
+          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="p-1.5 rounded bg-page border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors disabled:opacity-50">
             <ChevronLeft size={16} />
           </button>
-          <button className="p-1.5 rounded bg-page border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors disabled:opacity-50">
+          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="p-1.5 rounded bg-page border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary transition-colors disabled:opacity-50">
             <ChevronRight size={16} />
           </button>
         </div>

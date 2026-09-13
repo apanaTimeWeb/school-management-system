@@ -75,7 +75,7 @@ export default function AdmissionsDocumentsTab({ documents }: AdmissionsDocument
               >
                 Reject
               </button>
-              <button className="px-3 py-1.5 rounded bg-page border border-border text-text-primary text-[12px] hover:bg-white/5 transition-colors">
+              <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 rounded bg-page border border-border text-text-primary text-[12px] hover:bg-white/5 transition-colors">
                 View
               </button>
             </div>

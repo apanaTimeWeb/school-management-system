@@ -1,6 +1,7 @@
 import React from 'react';
 import PrincipalSidebar from '@/components/layout/PrincipalSidebar';
 import PrincipalHeader from '@/components/layout/PrincipalHeader';
+import PrincipalComingSoonModal from '@/components/layout/PrincipalComingSoonModal';
 
 export default function PrincipalLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export default function PrincipalLayout({ children }: { children: React.ReactNod
           {children}
         </main>
       </div>
+      <PrincipalComingSoonModal />
     </div>
   );
 }
