@@ -14,18 +14,25 @@ export default function TeacherReportGeneratorModal() {
   });
 
   const [isGenerating, setIsGenerating] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isGeneratorModalOpen || !selectedReportType) return null;
 
   const handleGenerate = (e: React.FormEvent) => {
     e.preventDefault();
     setIsGenerating(true);
+    setSuccessMessage('');
     
     // Simulate generation delay
     setTimeout(() => {
       setIsGenerating(false);
-      window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: `${selectedReportType} has been generated and downloaded.` }));
-      closeGeneratorModal();
+      setSuccessMessage(`${selectedReportType} has been successfully generated and saved to your device in ${formData.format} format.`);
+      
+      // Auto close after showing success message for 3 seconds
+      setTimeout(() => {
+        closeGeneratorModal();
+        setSuccessMessage('');
+      }, 3000);
     }, 1500);
   };
 
@@ -106,16 +113,24 @@ export default function TeacherReportGeneratorModal() {
                </div>
              </div>
            </form>
+
+           {successMessage && (
+             <div className="mt-4 p-3 bg-success/10 border border-success/20 rounded-lg text-success text-[13px] font-bold text-center animate-in fade-in zoom-in duration-300">
+               {successMessage}
+             </div>
+           )}
         </div>
 
         {/* Footer */}
         <div className="px-6 py-4 border-t border-border bg-card flex justify-end gap-3 shrink-0">
-           <button type="button" onClick={closeGeneratorModal} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
+           <button type="button" onClick={() => { closeGeneratorModal(); setSuccessMessage(''); }} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
              Cancel
            </button>
-           <button type="submit" form="report-form" disabled={isGenerating} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+           <button type="submit" form="report-form" disabled={isGenerating || !!successMessage} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
              {isGenerating ? (
                <span className="flex items-center gap-2"><span className="animate-spin h-4 w-4 border-2 border-black border-t-transparent rounded-full"></span> Generating...</span>
+             ) : successMessage ? (
+               <>Generated!</>
              ) : (
                <><Download size={16} /> Generate Report</>
              )}
