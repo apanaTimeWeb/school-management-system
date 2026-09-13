@@ -4,20 +4,20 @@ import { X, Check, FileText, AlertTriangle } from 'lucide-react';
 import { useTeacherSubstitutesStore } from '../substitutes_store/useTeacherSubstitutesStore';
 
 export default function TeacherSubstituteActionModal() {
-  const { isActionModalOpen, closeActionModal, selectedSubstitute } = useTeacherSubstitutesStore();
+  const { isActionModalOpen, closeActionModal, selectedSubstitute, updateSubstituteStatus } = useTeacherSubstitutesStore();
   const [rejectReason, setRejectReason] = useState('');
   const [showRejectForm, setShowRejectForm] = useState(false);
 
   if (!isActionModalOpen || !selectedSubstitute) return null;
 
   const handleAcknowledge = () => {
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Replacement class acknowledged successfully.' }));
+    updateSubstituteStatus(selectedSubstitute.id, 'Accepted');
     closeActionModal();
   };
 
   const handleRejectSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Reassignment request sent to Admin.' }));
+    updateSubstituteStatus(selectedSubstitute.id, 'Rejected', rejectReason);
     closeActionModal();
     setShowRejectForm(false);
   };

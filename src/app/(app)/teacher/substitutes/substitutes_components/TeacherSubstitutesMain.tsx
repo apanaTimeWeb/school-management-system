@@ -2,14 +2,13 @@
 import React, { useState } from 'react';
 import { Users, Clock, Calendar, CheckCircle2, AlertTriangle, ArrowRight, BookOpen, MapPin } from 'lucide-react';
 import { useTeacherSubstitutesStore } from '../substitutes_store/useTeacherSubstitutesStore';
-import { TEACHER_SUBSTITUTES_MOCK } from '../substitutes_constants/TeacherSubstitutesMockData';
 import TeacherSubstituteActionModal from './TeacherSubstituteActionModal';
 
 export default function TeacherSubstitutesMain() {
-  const { openActionModal } = useTeacherSubstitutesStore();
+  const { openActionModal, substitutesList } = useTeacherSubstitutesStore();
   const [activeTab, setActiveTab] = useState<'Upcoming' | 'History'>('Upcoming');
 
-  const filteredSubstitutes = TEACHER_SUBSTITUTES_MOCK.filter(sub => {
+  const filteredSubstitutes = substitutesList.filter(sub => {
     if (activeTab === 'Upcoming') return sub.status === 'Pending Acknowledgment' || sub.status === 'Accepted';
     if (activeTab === 'History') return sub.status === 'Completed' || sub.status === 'Rejected';
     return true;
