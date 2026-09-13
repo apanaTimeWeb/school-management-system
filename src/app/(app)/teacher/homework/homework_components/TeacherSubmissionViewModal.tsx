@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from 'react';
 import { X, CheckCircle, Clock, FileText, UserCircle } from 'lucide-react';
-import { useTeacherAssignmentsStore } from '../assignments_store/useTeacherAssignmentsStore';
-import { TEACHER_SUBMISSIONS_MOCK } from '../assignments_constants/TeacherAssignmentsMockData';
+import { useTeacherHomeworkStore } from '../homework_store/useTeacherHomeworkStore';
+import { TEACHER_SUBMISSIONS_MOCK } from '../homework_constants/TeacherHomeworkMockData';
 
 export default function TeacherSubmissionViewModal() {
-  const { isSubmissionModalOpen, closeSubmissionModal, selectedHomework, openReviewModal } = useTeacherAssignmentsStore();
+  const { isSubmissionModalOpen, closeSubmissionModal, selectedHomework, openReviewModal } = useTeacherHomeworkStore();
   const [activeTab, setActiveTab] = useState<'completed' | 'pending'>('completed');
   const [remindedStudents, setRemindedStudents] = useState<string[]>([]);
 
