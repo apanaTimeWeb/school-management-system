@@ -7,12 +7,17 @@ export default function TeacherSyllabusUploadModal() {
   const { isUploadModalOpen, closeUploadModal } = useTeacherSyllabusStore();
   const [file, setFile] = useState<File | null>(null);
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   if (!isUploadModalOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Syllabus uploaded successfully.' }));
-    closeUploadModal();
+    setSuccessMessage('Syllabus uploaded successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeUploadModal();
+    }, 2500);
   };
 
   return (
@@ -77,8 +82,16 @@ export default function TeacherSyllabusUploadModal() {
             </div>
           </div>
 
-          <div className="pt-2 border-t border-border flex justify-end gap-3">
-            <button type="submit" className="w-full px-5 py-3 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors">
+          <div className="pt-4 border-t border-border flex justify-end gap-3">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold self-center animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
+            <button type="button" onClick={closeUploadModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
+              Cancel
+            </button>
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
               <UploadCloud size={18} /> Upload Syllabus
             </button>
           </div>

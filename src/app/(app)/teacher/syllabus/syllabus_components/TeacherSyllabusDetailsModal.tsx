@@ -7,6 +7,7 @@ export default function TeacherSyllabusDetailsModal() {
   const { isDetailsModalOpen, closeDetailsModal, selectedSyllabus } = useTeacherSyllabusStore();
   const [expandedChapter, setExpandedChapter] = useState<string | null>(null);
   const [localSyllabus, setLocalSyllabus] = useState<typeof selectedSyllabus>(null);
+  const [successMsgTopicId, setSuccessMsgTopicId] = useState<string | null>(null);
 
   React.useEffect(() => {
     setLocalSyllabus(selectedSyllabus);
@@ -33,9 +34,10 @@ export default function TeacherSyllabusDetailsModal() {
     setLocalSyllabus(updatedSyllabus);
   };
 
-  const handleSaveRemarks = (e: React.FormEvent) => {
+  const handleSaveRemarks = (e: React.FormEvent, topicId: string) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Remarks and Date saved locally.' }));
+    setSuccessMsgTopicId(topicId);
+    setTimeout(() => setSuccessMsgTopicId(null), 2500);
   };
 
   return (
@@ -105,8 +107,13 @@ export default function TeacherSyllabusDetailsModal() {
 
                       {/* Edit Meta (Date & Remarks) */}
                       {topic.isCompleted && (
-                        <div className="w-full sm:w-1/2 shrink-0 bg-page border border-border rounded-lg p-3">
-                          <form onSubmit={handleSaveRemarks} className="space-y-3">
+                        <div className="w-full sm:w-1/2 shrink-0 bg-page border border-border rounded-lg p-3 relative overflow-hidden">
+                          {successMsgTopicId === topic.id ? (
+                            <div className="absolute inset-0 bg-success/10 backdrop-blur-sm flex items-center justify-center animate-in fade-in z-10">
+                              <span className="text-success text-[13px] font-bold">Saved Successfully!</span>
+                            </div>
+                          ) : null}
+                          <form onSubmit={(e) => handleSaveRemarks(e, topic.id)} className="space-y-3 relative z-0">
                             <div className="flex items-center gap-2">
                               <Calendar size={14} className="text-text-secondary" />
                               <input 

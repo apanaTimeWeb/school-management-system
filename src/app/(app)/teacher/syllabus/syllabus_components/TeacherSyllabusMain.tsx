@@ -157,8 +157,8 @@ export default function TeacherSyllabusMain() {
               </div>
 
               <div className="pt-4 border-t border-border flex justify-between items-center">
-                <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Viewing lesson plan details...' }))} className="text-[12px] font-bold text-primary hover:underline">
-                  View Details
+                <button onClick={openLessonPlanModal} className="text-[12px] font-bold text-primary hover:underline">
+                  View / Edit Details
                 </button>
               </div>
             </div>

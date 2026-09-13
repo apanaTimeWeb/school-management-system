@@ -6,12 +6,17 @@ import { useTeacherSyllabusStore } from '../syllabus_store/useTeacherSyllabusSto
 export default function TeacherLessonPlanFormModal() {
   const { isLessonPlanModalOpen, closeLessonPlanModal } = useTeacherSyllabusStore();
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   if (!isLessonPlanModalOpen) return null;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Lesson Plan submitted for approval.' }));
-    closeLessonPlanModal();
+    setSuccessMessage('Lesson Plan submitted successfully for approval.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeLessonPlanModal();
+    }, 2500);
   };
 
   return (
@@ -71,10 +76,15 @@ export default function TeacherLessonPlanFormModal() {
           </div>
 
           <div className="pt-4 border-t border-border flex justify-end gap-3">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold self-center animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
             <button type="button" onClick={closeLessonPlanModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
               Cancel
             </button>
-            <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
               <Save size={18} /> Submit for Approval
             </button>
           </div>
