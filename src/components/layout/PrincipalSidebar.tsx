@@ -13,7 +13,8 @@ import {
   X,
   LineChart,
   Briefcase,
-  CalendarOff
+  CalendarOff,
+  Scale
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -28,6 +29,7 @@ const MENU_ITEMS = [
   { href: '/principal/results', label: 'Results & Performance', icon: <LineChart size={20} /> },
   { href: '/principal/staff', label: 'Staff & HR', icon: <Briefcase size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
+  { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
 
 export default function PrincipalSidebar() {
