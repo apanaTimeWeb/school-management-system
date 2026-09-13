@@ -2,11 +2,15 @@ import React from 'react';
 import { PrincipalStudentLifecycle } from '../../students_types/PrincipalStudents.types';
 import { Share, TrendingUp, UserMinus, ShieldAlert } from 'lucide-react';
 
+import { usePrincipalStudentsStore } from '../../students_store/usePrincipalStudentsStore';
+
 interface LifecycleTabProps {
   data: PrincipalStudentLifecycle;
 }
 
 export default function LifecycleTab({ data }: LifecycleTabProps) {
+  const { setTransferModalOpen, setPromotionModalOpen, setWithdrawalModalOpen } = usePrincipalStudentsStore();
+  
   return (
     <div className="space-y-6">
       
@@ -37,6 +41,7 @@ export default function LifecycleTab({ data }: LifecycleTabProps) {
           </div>
           <button 
             disabled={data.promotionStatus !== 'Eligible'}
+            onClick={() => setPromotionModalOpen(true)}
             className="w-full py-2.5 rounded bg-page border border-border text-[13px] font-medium text-text-primary hover:bg-white/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Request Promotion
@@ -60,6 +65,7 @@ export default function LifecycleTab({ data }: LifecycleTabProps) {
           </div>
           <button 
             disabled={data.transferStatus !== 'Not Requested'}
+            onClick={() => setTransferModalOpen(true)}
             className="w-full py-2.5 rounded bg-primary text-black text-[13px] font-semibold hover:bg-primary-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Initiate Transfer
@@ -83,6 +89,7 @@ export default function LifecycleTab({ data }: LifecycleTabProps) {
           </div>
           <button 
             disabled={data.withdrawalStatus !== 'Active'}
+            onClick={() => setWithdrawalModalOpen(true)}
             className="w-full py-2.5 rounded bg-danger/20 border border-danger/30 text-danger text-[13px] font-semibold hover:bg-danger/30 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Mark as Withdrawn

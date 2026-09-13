@@ -7,7 +7,10 @@ import { PrincipalStudent } from '../students_types/PrincipalStudents.types';
 
 import PrincipalStudentsFilters from './PrincipalStudentsFilters';
 import PrincipalStudentsList from './PrincipalStudentsList';
-import PrincipalStudentProfileModal from './PrincipalStudentProfileModal'; // To be created
+import PrincipalStudentProfileModal from './PrincipalStudentProfileModal'; 
+import PrincipalStudentTransferModal from './PrincipalStudentTransferModal';
+import PrincipalStudentPromotionModal from './PrincipalStudentPromotionModal';
+import PrincipalStudentWithdrawalModal from './PrincipalStudentWithdrawalModal';
 
 export default function PrincipalStudentsMain() {
   const { filters, isProfileModalOpen } = usePrincipalStudentsStore();
@@ -44,6 +47,11 @@ export default function PrincipalStudentsMain() {
 
       {/* Render the modal overlay if open */}
       {isProfileModalOpen && <PrincipalStudentProfileModal />}
+      
+      {/* Action Modals */}
+      <PrincipalStudentTransferModal />
+      <PrincipalStudentPromotionModal />
+      <PrincipalStudentWithdrawalModal />
     </div>
   );
 }

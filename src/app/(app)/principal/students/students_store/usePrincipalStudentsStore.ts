@@ -12,11 +12,20 @@ interface PrincipalStudentsState {
   selectedStudentId: string | null;
   isProfileModalOpen: boolean;
   activeProfileTab: string;
+  isTransferModalOpen: boolean;
+  isPromotionModalOpen: boolean;
+  isWithdrawalModalOpen: boolean;
   
   // Actions
   openProfileModal: (studentId: string) => void;
   closeProfileModal: () => void;
   setActiveProfileTab: (tabId: string) => void;
+  setTransferModalOpen: (isOpen: boolean) => void;
+  setPromotionModalOpen: (isOpen: boolean) => void;
+  setWithdrawalModalOpen: (isOpen: boolean) => void;
+  
+  // Mock Data Mutators
+  updateLifecycleStatus: (studentId: string, updates: Partial<any>) => void;
 }
 
 const initialFilters: PrincipalStudentsFilters = {
@@ -40,6 +49,9 @@ export const usePrincipalStudentsStore = create<PrincipalStudentsState>((set) =>
   selectedStudentId: null,
   isProfileModalOpen: false,
   activeProfileTab: 'overview',
+  isTransferModalOpen: false,
+  isPromotionModalOpen: false,
+  isWithdrawalModalOpen: false,
   
   openProfileModal: (studentId) => 
     set(() => ({ 
@@ -51,9 +63,21 @@ export const usePrincipalStudentsStore = create<PrincipalStudentsState>((set) =>
   closeProfileModal: () => 
     set(() => ({ 
       isProfileModalOpen: false, 
-      selectedStudentId: null 
+      selectedStudentId: null,
+      isTransferModalOpen: false,
+      isPromotionModalOpen: false,
+      isWithdrawalModalOpen: false,
     })),
     
   setActiveProfileTab: (tabId) => 
     set(() => ({ activeProfileTab: tabId })),
+
+  setTransferModalOpen: (isOpen) => set(() => ({ isTransferModalOpen: isOpen })),
+  setPromotionModalOpen: (isOpen) => set(() => ({ isPromotionModalOpen: isOpen })),
+  setWithdrawalModalOpen: (isOpen) => set(() => ({ isWithdrawalModalOpen: isOpen })),
+  
+  updateLifecycleStatus: (studentId, updates) => {
+    // In a real app, this would optimistic update or wait for API
+    console.log(`Updating lifecycle for ${studentId}:`, updates);
+  }
 }));
