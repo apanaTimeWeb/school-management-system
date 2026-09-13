@@ -16,6 +16,7 @@ export default function TeacherMaterialFormModal() {
     attachment: '',
     isPublished: true
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (selectedMaterial) {
@@ -38,8 +39,11 @@ export default function TeacherMaterialFormModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: selectedMaterial ? 'Study Material updated successfully.' : 'Study Material published successfully.' }));
-    closeFormModal();
+    setSuccessMessage(selectedMaterial ? 'Study Material updated successfully.' : 'Study Material published successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeFormModal();
+    }, 2500);
   };
 
   return (
@@ -133,10 +137,15 @@ export default function TeacherMaterialFormModal() {
           </div>
 
           <div className="pt-4 border-t border-border flex justify-end gap-3">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold self-center animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
             <button type="button" onClick={closeFormModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
               Cancel
             </button>
-            <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
               {formData.isPublished ? <><Send size={18} /> Publish Material</> : <><Save size={18} /> Save as Draft</>}
             </button>
           </div>

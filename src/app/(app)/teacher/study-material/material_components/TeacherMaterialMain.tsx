@@ -12,6 +12,7 @@ export default function TeacherMaterialMain() {
   const [filterSubject, setFilterSubject] = useState('All');
   const [search, setSearch] = useState('');
   const [materialList, setMaterialList] = useState(TEACHER_MATERIAL_LIST);
+  const [downloadingId, setDownloadingId] = useState<string | null>(null);
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_MATERIAL_LIST.map(m => m.class)))];
   const uniqueSubjects = ['All', ...Array.from(new Set(TEACHER_MATERIAL_LIST.map(m => m.subject)))];
@@ -123,8 +124,15 @@ export default function TeacherMaterialMain() {
                 <div className="flex justify-between items-center text-[11px] text-text-secondary pt-4 border-t border-border">
                   <span>Uploaded: {mat.uploadedAt}</span>
                   <div className="flex gap-3">
-                    <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Opening material...' }))} className="font-bold text-primary hover:underline">
-                      {mat.type === 'Link' ? 'Open Link' : 'Download'}
+                    <button 
+                      onClick={() => {
+                        setDownloadingId(mat.id);
+                        setTimeout(() => setDownloadingId(null), 1500);
+                      }} 
+                      disabled={downloadingId === mat.id}
+                      className="font-bold text-primary hover:underline disabled:opacity-50 disabled:no-underline disabled:cursor-not-allowed flex items-center gap-1"
+                    >
+                      {downloadingId === mat.id ? 'Opening...' : (mat.type === 'Link' ? 'Open Link' : 'Download')}
                     </button>
                     <button onClick={() => openAnalyticsModal(mat as any)} className="font-bold text-info hover:underline">
                       Track Views
