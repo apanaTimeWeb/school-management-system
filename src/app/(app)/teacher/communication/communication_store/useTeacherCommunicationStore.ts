@@ -15,33 +15,41 @@ export interface ChatMessage {
   timestamp: string;
 }
 
+export interface ChatContactData {
+  id: string;
+  name: string;
+  subText?: string;
+  type: 'admin' | 'parent' | 'group';
+  isApproved?: boolean;
+}
+
 interface TeacherCommunicationState {
   isNewMessageModalOpen: boolean;
   isQuickNotificationModalOpen: boolean;
+  quickNotificationType: 'Homework' | 'Attendance' | 'Exam' | 'Announcement' | null;
   
-  selectedParentForChat: ParentContactData | null;
-  notificationType: 'Homework' | 'Attendance' | 'Exam' | 'Announcement' | null;
+  selectedChat: ChatContactData | null;
   
   openNewMessageModal: () => void;
   closeNewMessageModal: () => void;
   
   openQuickNotification: (type: 'Homework' | 'Attendance' | 'Exam' | 'Announcement') => void;
   closeQuickNotification: () => void;
-
-  selectParentChat: (parent: ParentContactData) => void;
+  
+  selectChat: (chat: ChatContactData) => void;
 }
 
 export const useTeacherCommunicationStore = create<TeacherCommunicationState>((set) => ({
   isNewMessageModalOpen: false,
   isQuickNotificationModalOpen: false,
-  selectedParentForChat: null,
-  notificationType: null,
+  quickNotificationType: null,
+  selectedChat: null,
 
   openNewMessageModal: () => set({ isNewMessageModalOpen: true }),
   closeNewMessageModal: () => set({ isNewMessageModalOpen: false }),
 
-  openQuickNotification: (type) => set({ notificationType: type, isQuickNotificationModalOpen: true }),
-  closeQuickNotification: () => set({ notificationType: null, isQuickNotificationModalOpen: false }),
+  openQuickNotification: (type) => set({ isQuickNotificationModalOpen: true, quickNotificationType: type }),
+  closeQuickNotification: () => set({ isQuickNotificationModalOpen: false, quickNotificationType: null }),
 
-  selectParentChat: (parent) => set({ selectedParentForChat: parent }),
+  selectChat: (chat) => set({ selectedChat: chat }),
 }));

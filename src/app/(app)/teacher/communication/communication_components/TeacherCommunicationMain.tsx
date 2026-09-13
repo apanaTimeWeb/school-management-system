@@ -1,8 +1,8 @@
 "use client";
 import React, { useState } from 'react';
-import { MessageSquare, Users, Bell, FileText, CalendarCheck, Megaphone, Send, Search } from 'lucide-react';
+import { MessageSquare, Users, Bell, FileText, CalendarCheck, Megaphone, Send, Search, Shield, BookOpen } from 'lucide-react';
 import { useTeacherCommunicationStore } from '../communication_store/useTeacherCommunicationStore';
-import { TEACHER_PARENTS_LIST, TEACHER_CHAT_MESSAGES, TEACHER_ANNOUNCEMENTS } from '../communication_constants/TeacherCommunicationMockData';
+import { TEACHER_PARENTS_LIST, TEACHER_CHAT_MESSAGES, TEACHER_ANNOUNCEMENTS, TEACHER_ADMIN_LIST, TEACHER_STUDENT_GROUPS } from '../communication_constants/TeacherCommunicationMockData';
 import TeacherNewMessageModal from './TeacherNewMessageModal';
 import TeacherQuickNotificationModal from './TeacherQuickNotificationModal';
 
@@ -10,23 +10,43 @@ export default function TeacherCommunicationMain() {
   const { 
     openNewMessageModal, 
     openQuickNotification, 
-    selectedParentForChat, 
-    selectParentChat 
+    selectedChat, 
+    selectChat 
   } = useTeacherCommunicationStore();
   
   const [activeTab, setActiveTab] = useState<'Chats' | 'Announcements' | 'Notifications'>('Chats');
-  const [searchParent, setSearchParent] = useState('');
+  const [chatFilter, setChatFilter] = useState<'admin' | 'parent' | 'group'>('parent');
+  const [searchQuery, setSearchQuery] = useState('');
   const [messageInput, setMessageInput] = useState('');
+  const [localMessages, setLocalMessages] = useState(TEACHER_CHAT_MESSAGES);
 
-  const filteredParents = TEACHER_PARENTS_LIST.filter(p => 
-    p.parentName.toLowerCase().includes(searchParent.toLowerCase()) || 
-    p.studentName.toLowerCase().includes(searchParent.toLowerCase())
-  );
+  const getFilteredContacts = () => {
+    let list: any[] = [];
+    if (chatFilter === 'admin') {
+      list = TEACHER_ADMIN_LIST.map(a => ({ id: a.id, name: a.name, subText: a.role, type: 'admin' }));
+    } else if (chatFilter === 'parent') {
+      list = TEACHER_PARENTS_LIST.map(p => ({ id: p.id, name: p.parentName, subText: `Parent of: ${p.studentName} (${p.class})`, type: 'parent', isApproved: p.isApproved }));
+    } else {
+      list = TEACHER_STUDENT_GROUPS.map(g => ({ id: g.id, name: g.name, subText: g.type, type: 'group' }));
+    }
+    
+    return list.filter(item => item.name.toLowerCase().includes(searchQuery.toLowerCase()) || (item.subText && item.subText.toLowerCase().includes(searchQuery.toLowerCase())));
+  };
+
+  const filteredContacts = getFilteredContacts();
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!messageInput.trim()) return;
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Message sent to parent securely.' }));
+    if (!messageInput.trim() || !selectedChat) return;
+    
+    const newMsg = {
+      id: `MSG-${Date.now()}`,
+      sender: 'Teacher',
+      text: messageInput,
+      timestamp: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) + ', Today'
+    };
+    
+    setLocalMessages([...localMessages, newMsg]);
     setMessageInput('');
   };
 
@@ -66,31 +86,47 @@ export default function TeacherCommunicationMain() {
           <div className="flex w-full h-full">
             {/* Left Col: Contacts */}
             <div className="w-full md:w-1/3 border-r border-border flex flex-col h-[600px]">
-               <div className="p-4 border-b border-border flex items-center justify-between">
-                 <h3 className="font-bold text-[14px]">Conversations</h3>
-                 <button onClick={openNewMessageModal} className="text-primary hover:text-primary/80 transition-colors"><MessageSquare size={18}/></button>
+               <div className="p-4 border-b border-border flex flex-col gap-3">
+                 <div className="flex items-center justify-between">
+                   <h3 className="font-bold text-[14px]">Conversations</h3>
+                   <button onClick={openNewMessageModal} className="text-primary hover:text-primary/80 transition-colors"><MessageSquare size={18}/></button>
+                 </div>
+                 
+                 <div className="flex bg-input rounded-lg overflow-hidden border border-border p-1 gap-1">
+                   <button onClick={() => { setChatFilter('admin'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'admin' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Admin</button>
+                   <button onClick={() => { setChatFilter('parent'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'parent' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Parents</button>
+                   <button onClick={() => { setChatFilter('group'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'group' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Groups</button>
+                 </div>
                </div>
                <div className="p-3 border-b border-border">
                  <div className="relative">
                    <Search size={14} className="absolute left-3 top-2.5 text-text-secondary" />
                    <input 
                      type="text" 
-                     placeholder="Search parent or student..." 
-                     value={searchParent}
-                     onChange={(e) => setSearchParent(e.target.value)}
+                     placeholder="Search contact..." 
+                     value={searchQuery}
+                     onChange={(e) => setSearchQuery(e.target.value)}
                      className="w-full bg-input border border-border rounded-lg pl-9 pr-3 py-1.5 text-[13px] text-text-primary focus:outline-none focus:border-primary"
                    />
                  </div>
                </div>
                <div className="flex-1 overflow-y-auto custom-scrollbar">
-                 {filteredParents.map((parent) => (
+                 {filteredContacts.map((contact) => (
                    <div 
-                     key={parent.id} 
-                     onClick={() => selectParentChat(parent)}
-                     className={`p-4 border-b border-border/50 cursor-pointer transition-colors hover:bg-primary/5 ${selectedParentForChat?.id === parent.id ? 'bg-primary/10 border-l-2 border-l-primary' : ''}`}
+                     key={contact.id} 
+                     onClick={() => selectChat(contact)}
+                     className={`p-4 border-b border-border/50 cursor-pointer transition-colors hover:bg-primary/5 ${selectedChat?.id === contact.id ? 'bg-primary/10 border-l-2 border-l-primary' : ''}`}
                    >
-                     <p className="text-[14px] font-bold text-text-primary flex items-center gap-2"><Users size={14} className="text-primary"/> {parent.parentName}</p>
-                     <p className="text-[12px] text-text-secondary mt-1">Parent of: {parent.studentName} ({parent.class})</p>
+                     <p className="text-[14px] font-bold text-text-primary flex items-center gap-2">
+                        {contact.type === 'admin' && <Shield size={14} className="text-info"/>}
+                        {contact.type === 'parent' && <Users size={14} className="text-primary"/>}
+                        {contact.type === 'group' && <BookOpen size={14} className="text-success"/>}
+                        {contact.name}
+                     </p>
+                     <p className="text-[12px] text-text-secondary mt-1">{contact.subText}</p>
+                     {contact.type === 'parent' && !contact.isApproved && (
+                       <span className="text-[10px] text-danger bg-danger/10 px-1.5 py-0.5 rounded mt-1 inline-block">Approval Pending</span>
+                     )}
                    </div>
                  ))}
                </div>
@@ -98,36 +134,51 @@ export default function TeacherCommunicationMain() {
 
             {/* Right Col: Chat Area */}
             <div className="hidden md:flex flex-col w-2/3 h-[600px] bg-page relative">
-               {selectedParentForChat ? (
+               {selectedChat ? (
                  <>
                    <div className="p-4 border-b border-border bg-card">
-                     <p className="text-[16px] font-bold text-text-primary">{selectedParentForChat.parentName}</p>
-                     <p className="text-[12px] text-info">Contact restricted to ERP portal only.</p>
+                     <p className="text-[16px] font-bold text-text-primary">{selectedChat.name}</p>
+                     {selectedChat.type === 'parent' && <p className="text-[12px] text-info">Contact restricted to ERP portal only.</p>}
+                     {selectedChat.type === 'group' && <p className="text-[12px] text-warning">Students can only read broadcast messages here.</p>}
                    </div>
-                   <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
-                     {TEACHER_CHAT_MESSAGES.map((msg) => (
-                       <div key={msg.id} className={`flex flex-col ${msg.sender === 'Teacher' ? 'items-end' : 'items-start'}`}>
-                         <span className="text-[10px] text-text-secondary mb-1">{msg.sender === 'Teacher' ? 'You' : selectedParentForChat.parentName} • {msg.timestamp}</span>
-                         <div className={`p-3 max-w-[70%] rounded-xl text-[13px] ${msg.sender === 'Teacher' ? 'bg-primary text-black rounded-tr-none' : 'bg-card border border-border text-text-primary rounded-tl-none'}`}>
-                           {msg.text}
-                         </div>
-                       </div>
-                     ))}
-                   </div>
-                   <div className="p-4 border-t border-border bg-card">
-                     <form onSubmit={handleSendMessage} className="flex items-center gap-3">
-                       <input 
-                         type="text" 
-                         value={messageInput}
-                         onChange={(e) => setMessageInput(e.target.value)}
-                         placeholder="Type your message..." 
-                         className="flex-1 bg-input border border-border rounded-lg px-4 py-2 text-[14px] focus:outline-none focus:border-primary"
-                       />
-                       <button type="submit" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black hover:bg-primary/90 transition-colors shrink-0">
-                         <Send size={18} className="ml-[-2px]"/>
+                   
+                   {selectedChat.type === 'parent' && !selectedChat.isApproved ? (
+                     <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
+                       <Shield size={48} className="text-danger mb-4 opacity-50"/>
+                       <h3 className="text-[16px] font-bold text-text-primary mb-2">Communication Locked</h3>
+                       <p className="text-[13px] text-text-secondary max-w-sm">You need approval from the Principal to initiate a direct chat with this parent. Please request access.</p>
+                       <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Request sent to Principal.' }))} className="mt-4 px-4 py-2 bg-page border border-border text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
+                         Request Access
                        </button>
-                     </form>
-                   </div>
+                     </div>
+                   ) : (
+                     <>
+                       <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
+                         {localMessages.map((msg) => (
+                           <div key={msg.id} className={`flex flex-col ${msg.sender === 'Teacher' ? 'items-end' : 'items-start'}`}>
+                             <span className="text-[10px] text-text-secondary mb-1">{msg.sender === 'Teacher' ? 'You' : selectedChat.name} • {msg.timestamp}</span>
+                             <div className={`p-3 max-w-[70%] rounded-xl text-[13px] ${msg.sender === 'Teacher' ? 'bg-primary text-black rounded-tr-none' : 'bg-card border border-border text-text-primary rounded-tl-none'}`}>
+                               {msg.text}
+                             </div>
+                           </div>
+                         ))}
+                       </div>
+                       <div className="p-4 border-t border-border bg-card">
+                         <form onSubmit={handleSendMessage} className="flex items-center gap-3">
+                           <input 
+                             type="text" 
+                             value={messageInput}
+                             onChange={(e) => setMessageInput(e.target.value)}
+                             placeholder="Type your message..." 
+                             className="flex-1 bg-input border border-border rounded-lg px-4 py-2 text-[14px] focus:outline-none focus:border-primary"
+                           />
+                           <button type="submit" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black hover:bg-primary/90 transition-colors shrink-0">
+                             <Send size={18} className="ml-[-2px]"/>
+                           </button>
+                         </form>
+                       </div>
+                     </>
+                   )}
                  </>
                ) : (
                  <div className="flex-1 flex flex-col items-center justify-center text-text-secondary opacity-50">
