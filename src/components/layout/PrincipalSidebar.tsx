@@ -26,7 +26,8 @@ import {
   Bus,
   Home,
   HeartPulse,
-  PackageSearch
+  PackageSearch,
+  BarChart3
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -52,6 +53,7 @@ const MENU_ITEMS = [
   { href: '/principal/hostel', label: 'Hostel Monitoring', icon: <Home size={20} /> },
   { href: '/principal/health', label: 'Health & Medical', icon: <HeartPulse size={20} /> },
   { href: '/principal/inventory', label: 'Inventory & Assets', icon: <PackageSearch size={20} /> },
+  { href: '/principal/reports', label: 'Reports & Analytics', icon: <BarChart3 size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
