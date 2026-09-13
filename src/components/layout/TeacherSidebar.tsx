@@ -24,6 +24,7 @@ const MENU_ITEMS = [
   { href: '/teacher/classes', label: 'My Classes', icon: <Users size={20} /> },
   { href: '/teacher/attendance', label: 'Student Attendance', icon: <CalendarCheck size={20} /> },
   { href: '/teacher/academics', label: 'Academics & Timetable', icon: <BookOpen size={20} /> },
+  { href: '/teacher/classwork', label: 'Classwork', icon: <BookOpen size={20} /> },
   { href: '/teacher/study-material', label: 'Study Material', icon: <FileText size={20} /> },
   { href: '/teacher/assignments', label: 'Assignments', icon: <FileText size={20} /> },
   { href: '/teacher/examinations', label: 'Examinations & Marks', icon: <LineChart size={20} /> },
