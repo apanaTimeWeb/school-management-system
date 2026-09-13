@@ -6,21 +6,36 @@ import { useTeacherSyllabusStore, ChapterData } from '../syllabus_store/useTeach
 export default function TeacherSyllabusDetailsModal() {
   const { isDetailsModalOpen, closeDetailsModal, selectedSyllabus } = useTeacherSyllabusStore();
   const [expandedChapter, setExpandedChapter] = useState<string | null>(null);
+  const [localSyllabus, setLocalSyllabus] = useState<typeof selectedSyllabus>(null);
 
-  if (!isDetailsModalOpen || !selectedSyllabus) return null;
+  React.useEffect(() => {
+    setLocalSyllabus(selectedSyllabus);
+  }, [selectedSyllabus]);
+
+  if (!isDetailsModalOpen || !localSyllabus) return null;
 
   const toggleChapter = (chapterId: string) => {
     setExpandedChapter(prev => prev === chapterId ? null : chapterId);
   };
 
-  const handleToggleTopic = (e: React.MouseEvent, topicName: string) => {
+  const handleToggleTopic = (e: React.MouseEvent, chapterId: string, topicId: string) => {
     e.stopPropagation();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: `Status updated for topic: ${topicName}` }));
+    if (!localSyllabus) return;
+    
+    const updatedSyllabus = { ...localSyllabus };
+    const chapterIndex = updatedSyllabus.chapters.findIndex(c => c.id === chapterId);
+    if (chapterIndex === -1) return;
+    
+    const topicIndex = updatedSyllabus.chapters[chapterIndex].topics.findIndex(t => t.id === topicId);
+    if (topicIndex === -1) return;
+    
+    updatedSyllabus.chapters[chapterIndex].topics[topicIndex].isCompleted = !updatedSyllabus.chapters[chapterIndex].topics[topicIndex].isCompleted;
+    setLocalSyllabus(updatedSyllabus);
   };
 
   const handleSaveRemarks = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Remarks and Date saved successfully.' }));
+    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Remarks and Date saved locally.' }));
   };
 
   return (
@@ -31,8 +46,8 @@ export default function TeacherSyllabusDetailsModal() {
         <div className="px-6 py-5 bg-card border-b border-border flex items-start justify-between shrink-0">
           <div>
             <span className="px-2 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-primary/20 text-primary mb-2 inline-block">Syllabus Tracker</span>
-            <h2 className="text-[20px] font-bold text-text-primary line-clamp-1">{selectedSyllabus.subject}</h2>
-            <p className="text-[13px] text-text-secondary mt-1">{selectedSyllabus.class} • Overall Progress: <span className="text-success font-bold">{selectedSyllabus.overallProgress}%</span></p>
+            <h2 className="text-[20px] font-bold text-text-primary line-clamp-1">{localSyllabus.subject}</h2>
+            <p className="text-[13px] text-text-secondary mt-1">{localSyllabus.class} • Overall Progress: <span className="text-success font-bold">{localSyllabus.overallProgress}%</span></p>
           </div>
           <button onClick={closeDetailsModal} className="p-2 rounded-full bg-page hover:bg-white/10 text-text-secondary hover:text-white transition-colors">
             <X size={20} />
@@ -42,7 +57,7 @@ export default function TeacherSyllabusDetailsModal() {
         {/* Content */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-6 space-y-4">
           
-          {selectedSyllabus.chapters.map((chapter) => (
+          {localSyllabus.chapters.map((chapter) => (
             <div key={chapter.id} className="bg-card border border-border rounded-xl overflow-hidden transition-all duration-300">
               
               {/* Chapter Header (Accordion Toggle) */}
@@ -73,7 +88,7 @@ export default function TeacherSyllabusDetailsModal() {
                       {/* Topic Info & Toggle */}
                       <div className="flex items-start gap-3 flex-1">
                         <button 
-                          onClick={(e) => handleToggleTopic(e, topic.name)}
+                          onClick={(e) => handleToggleTopic(e, chapter.id, topic.id)}
                           className={`mt-0.5 rounded-full transition-colors ${topic.isCompleted ? 'text-success hover:text-success/80' : 'text-text-secondary hover:text-warning'}`}
                         >
                           {topic.isCompleted ? <CheckCircle2 size={20} /> : <Circle size={20} />}

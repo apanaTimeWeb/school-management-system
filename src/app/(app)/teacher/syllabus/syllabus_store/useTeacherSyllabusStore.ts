@@ -25,16 +25,32 @@ export interface SyllabusData {
 
 interface TeacherSyllabusState {
   isDetailsModalOpen: boolean;
+  isUploadModalOpen: boolean;
+  isLessonPlanModalOpen: boolean;
   selectedSyllabus: SyllabusData | null;
   
   openDetailsModal: (syllabus: SyllabusData) => void;
   closeDetailsModal: () => void;
+  
+  openUploadModal: () => void;
+  closeUploadModal: () => void;
+  
+  openLessonPlanModal: () => void;
+  closeLessonPlanModal: () => void;
 }
 
 export const useTeacherSyllabusStore = create<TeacherSyllabusState>((set) => ({
   isDetailsModalOpen: false,
+  isUploadModalOpen: false,
+  isLessonPlanModalOpen: false,
   selectedSyllabus: null,
 
   openDetailsModal: (syllabus) => set({ selectedSyllabus: syllabus, isDetailsModalOpen: true }),
   closeDetailsModal: () => set({ selectedSyllabus: null, isDetailsModalOpen: false }),
+
+  openUploadModal: () => set({ isUploadModalOpen: true }),
+  closeUploadModal: () => set({ isUploadModalOpen: false }),
+
+  openLessonPlanModal: () => set({ isLessonPlanModalOpen: true }),
+  closeLessonPlanModal: () => set({ isLessonPlanModalOpen: false }),
 }));
