@@ -4,17 +4,19 @@ import { Plus, Edit2, Trash2, FileText, Video, Link as LinkIcon, FileCheck, Sear
 import { useTeacherMaterialStore } from '../material_store/useTeacherMaterialStore';
 import { TEACHER_MATERIAL_LIST } from '../material_constants/TeacherMaterialMockData';
 import TeacherMaterialFormModal from './TeacherMaterialFormModal';
+import TeacherMaterialAnalyticsModal from './TeacherMaterialAnalyticsModal';
 
 export default function TeacherMaterialMain() {
-  const { openCreateModal, openEditModal } = useTeacherMaterialStore();
+  const { openCreateModal, openEditModal, openAnalyticsModal } = useTeacherMaterialStore();
   const [filterClass, setFilterClass] = useState('All');
   const [filterSubject, setFilterSubject] = useState('All');
   const [search, setSearch] = useState('');
+  const [materialList, setMaterialList] = useState(TEACHER_MATERIAL_LIST);
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_MATERIAL_LIST.map(m => m.class)))];
   const uniqueSubjects = ['All', ...Array.from(new Set(TEACHER_MATERIAL_LIST.map(m => m.subject)))];
   
-  const filteredList = TEACHER_MATERIAL_LIST.filter(m => {
+  const filteredList = materialList.filter(m => {
     const matchClass = filterClass === 'All' || m.class === filterClass;
     const matchSubject = filterSubject === 'All' || m.subject === filterSubject;
     const matchSearch = m.title.toLowerCase().includes(search.toLowerCase()) || m.chapter.toLowerCase().includes(search.toLowerCase());
@@ -22,8 +24,7 @@ export default function TeacherMaterialMain() {
   });
 
   const handleDelete = (id: string) => {
-    // Mock delete
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Material deleted successfully.' }));
+    setMaterialList(materialList.filter(m => m.id !== id));
   };
 
   const getIcon = (type: string) => {
@@ -121,9 +122,14 @@ export default function TeacherMaterialMain() {
                 
                 <div className="flex justify-between items-center text-[11px] text-text-secondary pt-4 border-t border-border">
                   <span>Uploaded: {mat.uploadedAt}</span>
-                  <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Preview/Download feature.' }))} className="font-bold text-primary hover:underline">
-                    {mat.type === 'Link' ? 'Open Link' : 'View File'}
-                  </button>
+                  <div className="flex gap-3">
+                    <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Opening material...' }))} className="font-bold text-primary hover:underline">
+                      {mat.type === 'Link' ? 'Open Link' : 'Download'}
+                    </button>
+                    <button onClick={() => openAnalyticsModal(mat as any)} className="font-bold text-info hover:underline">
+                      Track Views
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -133,6 +139,7 @@ export default function TeacherMaterialMain() {
       </div>
 
       <TeacherMaterialFormModal />
+      <TeacherMaterialAnalyticsModal />
     </div>
   );
 }
