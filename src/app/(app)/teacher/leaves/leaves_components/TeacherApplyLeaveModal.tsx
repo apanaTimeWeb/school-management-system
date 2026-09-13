@@ -4,7 +4,7 @@ import { X, Send, UploadCloud, CalendarOff } from 'lucide-react';
 import { useTeacherLeavesStore, LeaveType } from '../leaves_store/useTeacherLeavesStore';
 
 export default function TeacherApplyLeaveModal() {
-  const { isApplyLeaveModalOpen, closeApplyLeaveModal } = useTeacherLeavesStore();
+  const { isApplyLeaveModalOpen, closeApplyLeaveModal, addLeave } = useTeacherLeavesStore();
   
   const [formData, setFormData] = useState({
     type: 'Casual Leave' as LeaveType,
@@ -18,7 +18,17 @@ export default function TeacherApplyLeaveModal() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Leave application submitted successfully for Principal approval.' }));
+    const newLeave = {
+      id: `LEAVE-${Date.now()}`,
+      type: formData.type,
+      fromDate: formData.fromDate,
+      toDate: formData.toDate,
+      reason: formData.reason,
+      status: 'Pending' as const,
+      appliedOn: new Date().toLocaleDateString('en-GB'),
+      attachment: formData.file ? formData.file.name : undefined
+    };
+    addLeave(newLeave);
     closeApplyLeaveModal();
   };
 
