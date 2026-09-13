@@ -15,7 +15,8 @@ import {
   Briefcase,
   CalendarOff,
   Scale,
-  Contact
+  Contact,
+  MessageSquare
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -30,6 +31,7 @@ const MENU_ITEMS = [
   { href: '/principal/examinations', label: 'Examinations', icon: <BookOpen size={20} /> },
   { href: '/principal/results', label: 'Results & Performance', icon: <LineChart size={20} /> },
   { href: '/principal/staff', label: 'Staff & HR', icon: <Briefcase size={20} /> },
+  { href: '/principal/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
