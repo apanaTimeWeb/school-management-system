@@ -16,7 +16,8 @@ import {
   CalendarOff,
   Scale,
   Contact,
-  MessageSquare
+  MessageSquare,
+  CalendarHeart
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -32,6 +33,7 @@ const MENU_ITEMS = [
   { href: '/principal/results', label: 'Results & Performance', icon: <LineChart size={20} /> },
   { href: '/principal/staff', label: 'Staff & HR', icon: <Briefcase size={20} /> },
   { href: '/principal/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
+  { href: '/principal/events', label: 'Events & Activities', icon: <CalendarHeart size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
