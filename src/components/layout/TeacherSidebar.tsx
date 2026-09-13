@@ -40,6 +40,7 @@ const MENU_ITEMS = [
   { href: '/teacher/remarks', label: 'Student Remarks', icon: <MessageSquare size={20} /> },
   { href: '/teacher/meetings', label: 'Parent Meetings', icon: <Users size={20} /> },
   { href: '/teacher/documents', label: 'Documents', icon: <FileText size={20} /> },
+  { href: '/teacher/notifications', label: 'Notifications', icon: <Bell size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <Bell size={20} /> },
   { href: '/teacher/profile', label: 'My Profile', icon: <UserCircle size={20} /> },
