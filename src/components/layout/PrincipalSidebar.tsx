@@ -18,7 +18,8 @@ import {
   Contact,
   MessageSquare,
   CalendarHeart,
-  Presentation
+  Presentation,
+  MessageSquareWarning
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -36,6 +37,7 @@ const MENU_ITEMS = [
   { href: '/principal/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/principal/events', label: 'Events & Activities', icon: <CalendarHeart size={20} /> },
   { href: '/principal/meetings', label: 'Meetings', icon: <Presentation size={20} /> },
+  { href: '/principal/complaints', label: 'Complaints & Grievance', icon: <MessageSquareWarning size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
