@@ -14,7 +14,8 @@ import {
   MessageSquare,
   Settings, 
   X,
-  UserCircle
+  UserCircle,
+  Activity
 } from 'lucide-react';
 import { useTeacherLayoutStore } from './useTeacherLayoutStore';
 
@@ -31,6 +32,7 @@ const MENU_ITEMS = [
   { href: '/teacher/examinations', label: 'Examinations', icon: <LineChart size={20} /> },
   { href: '/teacher/results', label: 'Results & Analytics', icon: <LineChart size={20} /> },
   { href: '/teacher/online-tests', label: 'Online Tests', icon: <FileText size={20} /> },
+  { href: '/teacher/performance', label: 'Student Performance', icon: <Activity size={20} /> },
   { href: '/teacher/leaves', label: 'Leave Requests', icon: <CalendarOff size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <Bell size={20} /> },
