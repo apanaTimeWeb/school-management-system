@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { TEACHER_DOCUMENTS_MOCK } from '../documents_constants/TeacherDocumentsMockData';
 
 export type DocumentCategory = 'Lesson Plan' | 'Notes' | 'Study Material' | 'Assigned Document';
 
@@ -16,14 +17,19 @@ export interface DocumentData {
 
 interface TeacherDocumentsState {
   isUploadModalOpen: boolean;
+  documentsList: DocumentData[];
   
   openUploadModal: () => void;
   closeUploadModal: () => void;
+  addDocument: (doc: DocumentData) => void;
 }
 
 export const useTeacherDocumentsStore = create<TeacherDocumentsState>((set) => ({
   isUploadModalOpen: false,
+  documentsList: TEACHER_DOCUMENTS_MOCK,
 
   openUploadModal: () => set({ isUploadModalOpen: true }),
   closeUploadModal: () => set({ isUploadModalOpen: false }),
+
+  addDocument: (doc) => set((state) => ({ documentsList: [doc, ...state.documentsList] })),
 }));

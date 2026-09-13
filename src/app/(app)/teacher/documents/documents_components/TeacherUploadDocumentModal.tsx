@@ -4,7 +4,7 @@ import { X, UploadCloud, FileText } from 'lucide-react';
 import { useTeacherDocumentsStore, DocumentCategory } from '../documents_store/useTeacherDocumentsStore';
 
 export default function TeacherUploadDocumentModal() {
-  const { isUploadModalOpen, closeUploadModal } = useTeacherDocumentsStore();
+  const { isUploadModalOpen, closeUploadModal, addDocument } = useTeacherDocumentsStore();
   
   const [formData, setFormData] = useState({
     title: '',
@@ -22,7 +22,26 @@ export default function TeacherUploadDocumentModal() {
       alert("Please select a file to upload.");
       return;
     }
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Document uploaded successfully to the vault.' }));
+    
+    // Simulate file type extraction from filename
+    let fType: 'PDF' | 'DOCX' | 'PPTX' | 'XLSX' | 'ZIP' = 'PDF';
+    const ext = formData.file.name.split('.').pop()?.toUpperCase();
+    if (ext && ['PDF', 'DOCX', 'PPTX', 'XLSX', 'ZIP'].includes(ext)) {
+      fType = ext as 'PDF' | 'DOCX' | 'PPTX' | 'XLSX' | 'ZIP';
+    }
+
+    const newDoc = {
+      id: `DOC-${Date.now()}`,
+      title: formData.title,
+      category: formData.category,
+      class: formData.class,
+      subject: formData.subject,
+      uploadDate: new Date().toLocaleDateString('en-GB'),
+      fileSize: `${(formData.file.size / 1024 / 1024).toFixed(1)} MB`,
+      fileType: fType,
+    };
+    
+    addDocument(newDoc);
     closeUploadModal();
   };
 

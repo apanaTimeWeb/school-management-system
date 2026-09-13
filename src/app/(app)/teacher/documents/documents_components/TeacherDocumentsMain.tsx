@@ -2,15 +2,14 @@
 import React, { useState } from 'react';
 import { FileText, Plus, Search, BookOpen, Layers, File, FileDown, Lock, ShieldAlert } from 'lucide-react';
 import { useTeacherDocumentsStore, DocumentCategory } from '../documents_store/useTeacherDocumentsStore';
-import { TEACHER_DOCUMENTS_MOCK } from '../documents_constants/TeacherDocumentsMockData';
 import TeacherUploadDocumentModal from './TeacherUploadDocumentModal';
 
 export default function TeacherDocumentsMain() {
-  const { openUploadModal } = useTeacherDocumentsStore();
+  const { openUploadModal, documentsList } = useTeacherDocumentsStore();
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState<'All' | DocumentCategory | 'Confidential'>('All');
 
-  const filteredDocs = TEACHER_DOCUMENTS_MOCK.filter(doc => {
+  const filteredDocs = documentsList.filter(doc => {
     if (filterCategory === 'Confidential') return false; // Handled separately
     const matchSearch = doc.title.toLowerCase().includes(search.toLowerCase()) || doc.subject.toLowerCase().includes(search.toLowerCase());
     const matchCat = filterCategory === 'All' || doc.category === filterCategory;
