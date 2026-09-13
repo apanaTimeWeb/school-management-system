@@ -7,6 +7,7 @@ import { TEACHER_CLASSES_LIST } from '../classes_constants/TeacherClassesMockDat
 export default function TeacherClassDetailsModal() {
   const { isClassDetailsModalOpen, closeClassDetailsModal, selectedClassId, openStudentProfileModal } = useTeacherClassesStore();
   const [activeTab, setActiveTab] = useState<'students' | 'timetable' | 'announcements' | 'performance'>('students');
+  const [exporting, setExporting] = useState(false);
 
   if (!isClassDetailsModalOpen || !selectedClassId) return null;
 
@@ -63,8 +64,17 @@ export default function TeacherClassDetailsModal() {
                    <Search className="absolute left-3 top-2.5 text-text-secondary" size={16} />
                    <input type="text" placeholder="Search student..." className="w-full bg-input border border-border rounded-md pl-9 pr-3 py-2 text-[13px] text-text-primary focus:outline-none focus:border-info" />
                  </div>
-                 <button onClick={(e) => { window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Export feature is coming soon' }))}} className="px-4 py-2 bg-page border border-border rounded text-[13px] text-text-primary hover:bg-white/5 font-semibold">
-                   Export List
+                 <button 
+                   onClick={(e) => {
+                     setExporting(true);
+                     setTimeout(() => setExporting(false), 2000);
+                   }} 
+                   disabled={exporting}
+                   className="px-4 py-2 bg-page border border-border rounded text-[13px] text-text-primary hover:bg-white/5 font-semibold disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                 >
+                   {exporting ? (
+                     <><span className="animate-spin h-3 w-3 border-2 border-primary border-t-transparent rounded-full"></span> Exporting...</>
+                   ) : 'Export CSV'}
                  </button>
               </div>
 

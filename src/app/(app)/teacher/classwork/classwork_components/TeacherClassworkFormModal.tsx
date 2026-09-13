@@ -18,6 +18,7 @@ export default function TeacherClassworkFormModal() {
     isPublished: true,
     isCompleted: true
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (selectedClasswork) {
@@ -45,8 +46,11 @@ export default function TeacherClassworkFormModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: selectedClasswork ? 'Classwork updated successfully.' : 'Classwork logged successfully.' }));
-    closeFormModal();
+    setSuccessMessage(selectedClasswork ? 'Classwork updated successfully.' : 'Classwork logged successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeFormModal();
+    }, 2500);
   };
 
   return (
@@ -137,12 +141,17 @@ export default function TeacherClassworkFormModal() {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-border flex justify-end gap-3">
+          <div className="pt-4 border-t border-border flex justify-end gap-3 items-center">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
             <button type="button" onClick={closeFormModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
               Cancel
             </button>
-            <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
-              <Save size={18} /> Save Classwork Log
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              <Save size={18} /> {selectedClasswork ? 'Update Classwork' : 'Log Classwork'}
             </button>
           </div>
         </form>

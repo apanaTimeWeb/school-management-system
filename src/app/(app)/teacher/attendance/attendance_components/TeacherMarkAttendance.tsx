@@ -14,10 +14,14 @@ export default function TeacherMarkAttendance() {
     setAttendanceState(prev => ({ ...prev, [studentId]: status }));
   };
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleSubmit = () => {
-    // Mock submit
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Attendance submitted successfully.' }));
-    setSelectedClassId(null);
+    setSuccessMessage('Attendance submitted successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      setSelectedClassId(null);
+    }, 2500);
   };
 
   if (!selectedClassId) {
@@ -71,6 +75,11 @@ export default function TeacherMarkAttendance() {
         </div>
         
         <div className="flex items-center gap-3">
+          {successMessage && (
+            <div className="text-success text-[13px] font-bold animate-in fade-in mr-2">
+              {successMessage}
+            </div>
+          )}
           <div className="relative">
             <Calendar className="absolute left-3 top-2.5 text-text-secondary" size={16} />
             <input 
@@ -80,7 +89,7 @@ export default function TeacherMarkAttendance() {
               className="bg-input border border-border rounded-lg pl-9 pr-3 py-2 text-[13px] text-text-primary focus:outline-none focus:border-primary"
             />
           </div>
-          <button onClick={handleSubmit} className="px-4 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2">
+          <button onClick={handleSubmit} disabled={!!successMessage} className="px-4 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
             <Save size={16} /> Submit
           </button>
         </div>

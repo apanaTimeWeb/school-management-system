@@ -10,6 +10,8 @@ import TeacherReviewSubmissionModal from './TeacherReviewSubmissionModal';
 export default function TeacherHomeworkMain() {
   const { openCreateModal, openEditModal, openSubmissionModal } = useTeacherHomeworkStore();
   const [filterClass, setFilterClass] = useState('All');
+  const [filterStatus, setFilterStatus] = useState('All');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_HOMEWORK_LIST.map(h => h.class)))];
   
@@ -18,8 +20,8 @@ export default function TeacherHomeworkMain() {
     : TEACHER_HOMEWORK_LIST.filter(h => h.class === filterClass);
 
   const handleDelete = (id: string) => {
-    // Mock delete
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Homework deleted successfully.' }));
+    setSuccessMessage('Homework deleted successfully.');
+    setTimeout(() => setSuccessMessage(''), 2500);
   };
 
   return (
@@ -27,10 +29,15 @@ export default function TeacherHomeworkMain() {
       <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h1 className="text-[22px] font-bold text-text-primary">Homework Management</h1>
-          <p className="text-[14px] text-text-secondary mt-1">Create, manage, and review student submissions.</p>
+          <p className="text-[14px] text-text-secondary mt-1">Create, track, and evaluate student homework assignments.</p>
         </div>
         
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          {successMessage && (
+            <div className="px-4 py-2 bg-success/10 border border-success/20 text-success text-[13px] font-bold rounded-lg animate-in fade-in">
+              {successMessage}
+            </div>
+          )}
           <select 
             value={filterClass}
             onChange={(e) => setFilterClass(e.target.value)}
@@ -40,7 +47,6 @@ export default function TeacherHomeworkMain() {
           </select>
           <button 
             onClick={openCreateModal}
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm"
           >
             <Plus size={18} /> Create New
           </button>
