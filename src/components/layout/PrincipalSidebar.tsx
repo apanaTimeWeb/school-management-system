@@ -67,17 +67,14 @@ export default function PrincipalSidebar() {
           </button>
         </div>
 
-        {/* User Info (Optional) */}
-        <div className="p-4 border-b border-border/20 bg-black/20">
-          <p className="text-[12px] font-bold text-sidebar-text-muted uppercase tracking-wider mb-1">Role</p>
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-info/20 border border-info/30 flex items-center justify-center text-info font-bold">
-              PR
-            </div>
-            <div>
-              <p className="text-[14px] font-bold text-sidebar-text">Dr. A. Sharma</p>
-              <p className="text-[12px] text-secondary">Principal</p>
-            </div>
+        {/* User Info */}
+        <div className="p-5 border-b border-border/20 bg-black/10 flex items-center gap-3">
+          <div className="w-12 h-12 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold text-[18px]">
+            PR
+          </div>
+          <div className="flex flex-col">
+            <span className="text-[15px] font-bold text-sidebar-text leading-tight">Dr. A. Sharma</span>
+            <span className="text-[12px] font-semibold text-secondary mt-0.5">Principal</span>
           </div>
         </div>
 

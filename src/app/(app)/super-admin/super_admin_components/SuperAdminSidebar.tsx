@@ -99,24 +99,30 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
                     isActive ? "bg-secondary" : "hover:bg-secondary/10"
                 )}>
                   <Link
-                    href={category.href}
-                    onClick={() => setIsOpen && setIsOpen(false)}
+                    href={hasItems ? "#" : category.href}
+                    onClick={(e) => {
+                      if (hasItems) {
+                        e.preventDefault();
+                        toggleSection(category.title, e);
+                      } else {
+                        if (setIsOpen) setIsOpen(false);
+                      }
+                    }}
                     className={clsx(
-                      "flex-1 px-3 py-2.5 text-[13px] font-semibold flex items-center gap-3",
+                      "flex-1 px-3 py-2.5 text-[13px] font-semibold flex items-center justify-between gap-3 w-full",
                       isActive ? "text-primary" : "text-sidebar-text-muted hover:text-sidebar-text"
                     )}
                   >
-                    {Icon && <Icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />}
-                    <span className="whitespace-nowrap">{category.title}</span>
+                    <div className="flex items-center gap-3">
+                      {Icon && <Icon size={16} className={clsx(isActive ? "text-primary" : "text-sidebar-text-muted group-hover:text-sidebar-text")} />}
+                      <span className="whitespace-nowrap">{category.title}</span>
+                    </div>
+                    {hasItems && (
+                      <div className={clsx("p-1 rounded-md transition-colors", isActive ? "text-primary" : "text-sidebar-text-muted")}>
+                        {isOpenSection ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
+                      </div>
+                    )}
                   </Link>
-                  {hasItems && (
-                    <button 
-                      onClick={(e) => toggleSection(category.title, e)}
-                      className={clsx("p-2 rounded-r-md transition-colors", isActive ? "text-primary hover:bg-black/10" : "text-sidebar-text-muted hover:text-sidebar-text")}
-                    >
-                      {isOpenSection ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                    </button>
-                  )}
                 </div>
 
                 {hasItems && isOpenSection && (
