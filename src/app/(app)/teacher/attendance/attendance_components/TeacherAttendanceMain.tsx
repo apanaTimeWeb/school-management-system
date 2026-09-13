@@ -5,6 +5,7 @@ import { useTeacherAttendanceStore } from '../attendance_store/useTeacherAttenda
 import TeacherMarkAttendance from './TeacherMarkAttendance';
 import TeacherAttendanceHistory from './TeacherAttendanceHistory';
 import TeacherAttendanceCorrectionModal from './TeacherAttendanceCorrectionModal';
+import TeacherAttendanceLeaves from './TeacherAttendanceLeaves';
 import { LOW_ATTENDANCE_ALERTS } from '../attendance_constants/TeacherAttendanceMockData';
 
 export default function TeacherAttendanceMain() {
@@ -32,6 +33,12 @@ export default function TeacherAttendanceMain() {
           >
             <History size={16} /> History & Summary
           </button>
+          <button 
+            onClick={() => setActiveTab('leaves')}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'leaves' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+          >
+            <CalendarCheck size={16} /> Leave Applications
+          </button>
         </div>
       </div>
 
@@ -56,7 +63,9 @@ export default function TeacherAttendanceMain() {
 
       {/* Main Content Area */}
       <div className="flex-1">
-        {activeTab === 'mark' ? <TeacherMarkAttendance /> : <TeacherAttendanceHistory />}
+        {activeTab === 'mark' && <TeacherMarkAttendance />}
+        {activeTab === 'history' && <TeacherAttendanceHistory />}
+        {activeTab === 'leaves' && <TeacherAttendanceLeaves />}
       </div>
 
       <TeacherAttendanceCorrectionModal />

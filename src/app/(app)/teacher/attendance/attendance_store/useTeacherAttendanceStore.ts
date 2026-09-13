@@ -1,13 +1,13 @@
 import { create } from 'zustand';
 
 interface TeacherAttendanceState {
-  activeTab: 'mark' | 'history';
+  activeTab: 'mark' | 'history' | 'leaves';
   selectedClassId: string | null;
   selectedDate: string;
   isCorrectionModalOpen: boolean;
   correctionRecordId: string | null;
 
-  setActiveTab: (tab: 'mark' | 'history') => void;
+  setActiveTab: (tab: 'mark' | 'history' | 'leaves') => void;
   setSelectedClassId: (classId: string | null) => void;
   setSelectedDate: (date: string) => void;
   openCorrectionModal: (recordId: string) => void;

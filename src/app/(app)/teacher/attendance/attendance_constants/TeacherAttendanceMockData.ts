@@ -21,3 +21,9 @@ export const LOW_ATTENDANCE_ALERTS = [
   { studentId: 'STU-03', name: 'Kabir Das', class: 'Class 10 A', percentage: 68, threshold: 75 },
   { studentId: 'STU-05', name: 'Rahul Singh', class: 'Class 10 A', percentage: 72, threshold: 75 },
 ];
+
+export const STUDENT_LEAVES_MOCK = [
+  { id: 'LV-001', studentName: 'Aarav Sharma', rollNo: 1, class: '10 A', type: 'Sick Leave', fromDate: '2023-11-01', toDate: '2023-11-02', reason: 'Viral Fever', status: 'Pending' },
+  { id: 'LV-002', studentName: 'Sriya Patel', rollNo: 2, class: '9 B', type: 'Casual Leave', fromDate: '2023-11-05', toDate: '2023-11-05', reason: 'Family Function', status: 'Approved' },
+  { id: 'LV-003', studentName: 'Vikram Joshi', rollNo: 1, class: '11 Sci', type: 'Sick Leave', fromDate: '2023-10-20', toDate: '2023-10-21', reason: 'Headache', status: 'Rejected' },
+];
