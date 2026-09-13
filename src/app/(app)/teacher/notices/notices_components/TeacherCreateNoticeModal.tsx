@@ -4,7 +4,7 @@ import { X, Send, Save, UploadCloud } from 'lucide-react';
 import { useTeacherNoticesStore, NoticeType } from '../notices_store/useTeacherNoticesStore';
 
 export default function TeacherCreateNoticeModal() {
-  const { isCreateNoticeOpen, closeCreateNotice, selectedNotice } = useTeacherNoticesStore();
+  const { isCreateNoticeOpen, closeCreateNotice, selectedNotice, addNotice, updateNotice } = useTeacherNoticesStore();
   
   const [formData, setFormData] = useState({
     type: 'Class Notice' as NoticeType,
@@ -32,7 +32,23 @@ export default function TeacherCreateNoticeModal() {
 
   const handleSend = (e: React.FormEvent, isDraft: boolean) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: isDraft ? 'Notice saved as draft.' : `Class ${formData.type} sent successfully.` }));
+    const newNotice = {
+      id: selectedNotice ? selectedNotice.id : `NOTICE-${Date.now()}`,
+      type: formData.type,
+      title: formData.title,
+      description: formData.description,
+      targetClass: formData.targetClass,
+      dateSent: new Date().toLocaleDateString('en-GB'),
+      hasAttachment: !!formData.file,
+      status: isDraft ? 'Draft' as const : 'Sent' as const
+    };
+    
+    if (selectedNotice) {
+      updateNotice(selectedNotice.id, newNotice);
+    } else {
+      addNotice(newNotice);
+    }
+    
     closeCreateNotice();
   };
 
