@@ -115,7 +115,7 @@ export default function TeacherHeader() {
                  <p className="text-sm font-bold text-text-primary truncate">Mr. R. Kumar</p>
                  <p className="text-xs text-text-secondary truncate">Mathematics</p>
                </div>
-               <Link href="/teacher/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-info/10 transition" onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Profile coming soon.' }))}>
+               <Link href="/teacher/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-info/10 transition">
                  <UserCircle size={16}/> My Profile
                </Link>
                <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">

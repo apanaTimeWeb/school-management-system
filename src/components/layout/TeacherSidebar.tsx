@@ -52,12 +52,7 @@ export default function TeacherSidebar() {
   const { isMobileSidebarOpen, setMobileSidebarOpen } = useTeacherLayoutStore();
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href !== '/teacher/dashboard') {
-      e.preventDefault();
-      window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'This module is scheduled for the next development phase.' }));
-    } else {
-      setMobileSidebarOpen(false);
-    }
+    setMobileSidebarOpen(false);
   };
 
   return (
