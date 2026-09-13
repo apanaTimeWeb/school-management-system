@@ -9,6 +9,7 @@ import TeacherTestAnalyticsModal from './TeacherTestAnalyticsModal';
 export default function TeacherTestsMain() {
   const { openCreateModal, openEditModal, openAnalyticsModal } = useTeacherTestsStore();
   const [activeTab, setActiveTab] = useState<'All' | 'Active' | 'Completed' | 'Draft'>('All');
+  const [openingLiveTest, setOpeningLiveTest] = useState<string | null>(null);
 
   const filteredTests = TEACHER_ONLINE_TESTS.filter(test => {
     if (activeTab === 'All') return true;
@@ -111,10 +112,14 @@ export default function TeacherTestsMain() {
                 </button>
               ) : test.status === 'Active' ? (
                 <button 
-                  onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Live Quiz Monitor opening...' }))}
-                  className="px-4 py-2 bg-success text-black text-[13px] font-bold rounded hover:bg-success/90 flex items-center gap-2 transition-colors w-full justify-center animate-pulse"
+                  onClick={() => {
+                    setOpeningLiveTest(test.id);
+                    setTimeout(() => setOpeningLiveTest(null), 2000);
+                  }}
+                  disabled={openingLiveTest === test.id}
+                  className={`px-4 py-2 ${openingLiveTest === test.id ? 'bg-success/50' : 'bg-success hover:bg-success/90 animate-pulse'} text-black text-[13px] font-bold rounded flex items-center gap-2 transition-colors w-full justify-center disabled:cursor-not-allowed`}
                 >
-                  <PlayCircle size={16} /> Monitor Live Test
+                  {openingLiveTest === test.id ? 'Opening...' : <><PlayCircle size={16} /> Monitor Live Test</>}
                 </button>
               ) : (
                 <button 

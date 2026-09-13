@@ -7,12 +7,14 @@ import { TEACHER_STUDENT_RESULTS_MOCK } from '../results_constants/TeacherResult
 export default function TeacherClassPerformanceModal() {
   const { isPerformanceModalOpen, closePerformanceModal, selectedClassResult } = useTeacherResultsStore();
   const [selectedStudent, setSelectedStudent] = useState<StudentResultData | null>(null);
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isPerformanceModalOpen || !selectedClassResult) return null;
 
   const handleUpdateRemarks = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Remarks updated successfully.' }));
+    setSuccessMessage('Remarks updated successfully.');
+    setTimeout(() => setSuccessMessage(''), 2500);
   };
 
   return (
@@ -112,9 +114,14 @@ export default function TeacherClassPerformanceModal() {
                 </div>
 
                 {/* Remarks Form */}
-                <div className="bg-card border border-border rounded-xl p-5">
+                <div className="bg-card border border-border rounded-xl p-5 relative overflow-hidden">
+                  {successMessage ? (
+                    <div className="absolute inset-0 bg-success/10 backdrop-blur-sm flex items-center justify-center animate-in fade-in z-10">
+                      <span className="text-success text-[14px] font-bold flex items-center gap-2"><CheckCircle2 size={18}/> {successMessage}</span>
+                    </div>
+                  ) : null}
                   <h4 className="text-[13px] font-bold text-text-primary mb-3 flex items-center gap-2"><MessageSquare size={16}/> Teacher's Remarks</h4>
-                  <form onSubmit={handleUpdateRemarks}>
+                  <form onSubmit={handleUpdateRemarks} className="relative z-0">
                     <textarea 
                       defaultValue={selectedStudent.remarks}
                       className="w-full h-24 bg-input border border-border rounded-lg p-3 text-[13px] text-text-primary focus:outline-none focus:border-primary resize-none custom-scrollbar mb-3"

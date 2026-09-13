@@ -19,6 +19,7 @@ export default function TeacherTestFormModal() {
   const [questions, setQuestions] = useState([
     { type: 'MCQ', text: '', marks: 1 }
   ]);
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (selectedTest) {
@@ -44,8 +45,11 @@ export default function TeacherTestFormModal() {
 
   const handleSubmit = (e: React.FormEvent, isPublish: boolean) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: isPublish ? 'Quiz scheduled and published.' : 'Quiz saved as draft.' }));
-    closeFormModal();
+    setSuccessMessage(isPublish ? 'Quiz scheduled and published.' : 'Quiz saved as draft.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeFormModal();
+    }, 2500);
   };
 
   return (
@@ -140,14 +144,19 @@ export default function TeacherTestFormModal() {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-border flex justify-end gap-3 bg-card shrink-0">
+        <div className="px-6 py-4 border-t border-border flex justify-end gap-3 bg-card shrink-0 items-center">
+          {successMessage ? (
+            <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+              {successMessage}
+            </div>
+          ) : null}
           <button type="button" onClick={closeFormModal} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
             Cancel
           </button>
-          <button type="button" onClick={(e) => handleSubmit(e, false)} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2">
+          <button type="button" onClick={(e) => handleSubmit(e, false)} disabled={!!successMessage} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
             <Save size={18} /> Save as Draft
           </button>
-          <button type="button" onClick={(e) => handleSubmit(e, true)} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+          <button type="button" onClick={(e) => handleSubmit(e, true)} disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
             <Send size={18} /> Publish Quiz
           </button>
         </div>
