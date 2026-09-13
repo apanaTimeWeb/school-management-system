@@ -23,7 +23,7 @@ export const TEACHER_DISCIPLINE_MOCK: DisciplineData[] = [
     description: 'Caught with a cheat sheet during the Mid-Term Mathematics Examination.',
     severity: 'High',
     date: '2023-11-15',
-    actionTaken: 'Exam Cancelled for the subject',
+    actionTaken: 'Confiscated paper, escalated to Principal',
     escalatedToPrincipal: true,
     parentNotified: true
   },

@@ -107,7 +107,7 @@ export default function TeacherLogIncidentModal() {
            </div>
 
            <div>
-             <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Initial Action Taken</label>
+             <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Initial Remark / Action Taken</label>
              <input 
                type="text" 
                value={formData.actionTaken}
@@ -115,6 +115,7 @@ export default function TeacherLogIncidentModal() {
                className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-danger focus:outline-none" required 
                placeholder="e.g. Verbal warning given, shifted seat."
              />
+             <p className="text-[10px] text-info mt-1 font-bold">Note: Serious disciplinary actions are reserved for the Principal. You can only log, warn, and escalate.</p>
            </div>
 
            <div className="bg-page border border-border rounded-lg p-4 flex flex-col gap-3">
