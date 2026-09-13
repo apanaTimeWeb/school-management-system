@@ -38,6 +38,7 @@ const MENU_ITEMS = [
   { href: '/teacher/substitutes', label: 'Substitutes', icon: <Users size={20} /> },
   { href: '/teacher/discipline', label: 'Discipline', icon: <AlertTriangle size={20} /> },
   { href: '/teacher/remarks', label: 'Student Remarks', icon: <MessageSquare size={20} /> },
+  { href: '/teacher/meetings', label: 'Parent Meetings', icon: <Users size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <MessageSquare size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <Bell size={20} /> },
   { href: '/teacher/profile', label: 'My Profile', icon: <UserCircle size={20} /> },
