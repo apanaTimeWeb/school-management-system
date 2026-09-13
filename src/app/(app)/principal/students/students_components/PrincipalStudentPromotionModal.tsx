@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { X, TrendingUp } from 'lucide-react';
-import { usePrincipalStudentsStore } from '../../students_store/usePrincipalStudentsStore';
+import { usePrincipalStudentsStore } from '../students_store/usePrincipalStudentsStore';
 
 export default function PrincipalStudentPromotionModal() {
   const { isPromotionModalOpen, setPromotionModalOpen, selectedStudentId, updateLifecycleStatus } = usePrincipalStudentsStore();

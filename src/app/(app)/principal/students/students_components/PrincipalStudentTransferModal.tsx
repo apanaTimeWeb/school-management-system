@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { X, Share } from 'lucide-react';
-import { usePrincipalStudentsStore } from '../../students_store/usePrincipalStudentsStore';
+import { usePrincipalStudentsStore } from '../students_store/usePrincipalStudentsStore';
 
 export default function PrincipalStudentTransferModal() {
   const { isTransferModalOpen, setTransferModalOpen, selectedStudentId, updateLifecycleStatus } = usePrincipalStudentsStore();

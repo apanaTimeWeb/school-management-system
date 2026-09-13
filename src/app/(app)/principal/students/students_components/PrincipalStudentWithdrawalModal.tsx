@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { X, UserMinus } from 'lucide-react';
-import { usePrincipalStudentsStore } from '../../students_store/usePrincipalStudentsStore';
+import { usePrincipalStudentsStore } from '../students_store/usePrincipalStudentsStore';
 
 export default function PrincipalStudentWithdrawalModal() {
   const { isWithdrawalModalOpen, setWithdrawalModalOpen, selectedStudentId, updateLifecycleStatus } = usePrincipalStudentsStore();
