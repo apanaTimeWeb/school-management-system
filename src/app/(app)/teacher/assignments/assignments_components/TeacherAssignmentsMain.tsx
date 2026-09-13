@@ -10,6 +10,7 @@ import TeacherReviewSubmissionModal from './TeacherReviewSubmissionModal';
 export default function TeacherAssignmentsMain() {
   const { openCreateModal, openEditModal, openSubmissionModal } = useTeacherAssignmentsStore();
   const [filterClass, setFilterClass] = useState('All');
+  const [downloadingReport, setDownloadingReport] = useState(false);
 
   const uniqueClasses = ['All', ...Array.from(new Set(TEACHER_HOMEWORK_LIST.map(h => h.class)))];
   
@@ -33,13 +34,19 @@ export default function TeacherAssignmentsMain() {
         
         <div className="flex items-center gap-3">
           <button 
-            onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Downloading Assignment Report PDF...' }))}
-            className="flex items-center gap-2 px-4 py-2 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors"
+            onClick={() => {
+              setDownloadingReport(true);
+              setTimeout(() => setDownloadingReport(false), 2000);
+            }}
+            disabled={downloadingReport}
+            className="flex items-center gap-2 px-4 py-2 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            <FileText size={18} /> Assignment Report
+            {downloadingReport ? (
+              <span className="flex items-center gap-2"><span className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full"></span> Downloading...</span>
+            ) : (
+              <><FileDown size={18} /> Download Report</>
+            )}
           </button>
-        
-        <div className="flex items-center gap-3">
           <select 
             value={filterClass}
             onChange={(e) => setFilterClass(e.target.value)}

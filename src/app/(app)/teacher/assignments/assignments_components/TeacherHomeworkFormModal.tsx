@@ -12,8 +12,10 @@ export default function TeacherHomeworkFormModal() {
     class: '',
     description: '',
     dueDate: '',
-    isPublished: true
+    isPublished: true,
+    attachment: ''
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (selectedHomework) {
@@ -23,10 +25,11 @@ export default function TeacherHomeworkFormModal() {
         class: selectedHomework.class,
         description: selectedHomework.description,
         dueDate: selectedHomework.dueDate,
-        isPublished: selectedHomework.isPublished
+        isPublished: selectedHomework.isPublished,
+        attachment: selectedHomework.attachment || ''
       });
     } else {
-      setFormData({ title: '', subject: '', class: '', description: '', dueDate: '', isPublished: true });
+      setFormData({ title: '', subject: '', class: '', description: '', dueDate: '', isPublished: true, attachment: '' });
     }
   }, [selectedHomework, isFormModalOpen]);
 
@@ -34,8 +37,11 @@ export default function TeacherHomeworkFormModal() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: selectedHomework ? 'Homework updated successfully.' : 'New homework created successfully.' }));
-    closeFormModal();
+    setSuccessMessage(selectedHomework ? 'Homework updated successfully.' : 'New homework created successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeFormModal();
+    }, 2500);
   };
 
   return (
@@ -93,7 +99,7 @@ export default function TeacherHomeworkFormModal() {
               <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Attachment (Optional)</label>
               <div className="w-full border-2 border-dashed border-border rounded-lg p-4 flex flex-col items-center justify-center text-text-secondary hover:border-primary/50 hover:bg-primary/5 transition-colors cursor-pointer">
                  <Paperclip size={20} className="mb-2" />
-                 <span className="text-[12px] font-medium">{selectedHomework?.attachment || 'Click to upload file'}</span>
+                 <span className="text-[12px] font-medium">{formData.attachment || selectedHomework?.attachment || 'Click to upload file'}</span>
               </div>
             </div>
             
@@ -107,11 +113,16 @@ export default function TeacherHomeworkFormModal() {
           </div>
 
           <div className="pt-4 border-t border-border flex justify-end gap-3">
+            {successMessage ? (
+              <div className="flex-1 text-success text-[13px] font-bold self-center animate-in fade-in">
+                {successMessage}
+              </div>
+            ) : null}
             <button type="button" onClick={closeFormModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
               Cancel
             </button>
-            <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
-              {formData.isPublished ? <><Send size={18} /> Publish Homework</> : <><Save size={18} /> Save as Draft</>}
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              <Save size={18} /> {selectedHomework ? 'Update Homework' : 'Create Homework'}
             </button>
           </div>
         </form>

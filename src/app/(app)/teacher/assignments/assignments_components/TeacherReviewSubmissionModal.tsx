@@ -10,14 +10,22 @@ export default function TeacherReviewSubmissionModal() {
   const [feedback, setFeedback] = useState('Good effort, but please check question 3 again.');
   const [isResubmissionRequested, setIsResubmissionRequested] = useState(false);
   const [isPlagChecked, setIsPlagChecked] = useState(false);
+  const [successAction, setSuccessAction] = useState('');
 
   if (!isReviewModalOpen || !selectedSubmissionForReview) return null;
+
+  const handleAction = (action: string) => {
+    setSuccessAction(action);
+    setTimeout(() => {
+      setSuccessAction('');
+      closeReviewModal();
+    }, 2500);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const action = isResubmissionRequested ? 'Resubmission requested.' : 'Marks and feedback saved successfully.';
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: action }));
-    closeReviewModal();
+    handleAction(action);
   };
 
   return (
@@ -110,15 +118,22 @@ export default function TeacherReviewSubmissionModal() {
             ></textarea>
           </div>
 
-          <div className="pt-4 border-t border-border flex justify-end gap-3">
-            <button type="button" onClick={closeReviewModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
-              Cancel
-            </button>
-            <button type="submit" className={`px-5 py-2.5 text-black font-bold text-[14px] rounded-lg transition-colors flex items-center gap-2 ${
-              isResubmissionRequested ? 'bg-warning hover:bg-warning/90' : 'bg-success hover:bg-success/90'
-            }`}>
-              {isResubmissionRequested ? <><RotateCcw size={18} /> Request Resubmission</> : <><CheckCircle2 size={18} /> Save Evaluation</>}
-            </button>
+          <div className="px-6 py-4 border-t border-border bg-card flex justify-between items-center shrink-0 -mx-6 -mb-6 mt-6">
+            {successAction ? (
+              <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                {successAction} successfully.
+              </div>
+            ) : (
+              <div className="flex-1"></div>
+            )}
+            <div className="flex gap-3">
+              <button type="button" disabled={!!successAction} onClick={() => handleAction('Returned for Revision')} className="px-4 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors disabled:opacity-50">
+                Return for Revision
+              </button>
+              <button type="button" disabled={!!successAction} onClick={() => handleAction('Approved & Graded')} className="px-4 py-2 bg-success text-black font-bold text-[13px] rounded-lg hover:bg-success/90 flex items-center gap-2 transition-colors disabled:opacity-50">
+                <CheckCircle2 size={16} /> Approve & Mark Graded
+              </button>
+            </div>
           </div>
         </form>
 
