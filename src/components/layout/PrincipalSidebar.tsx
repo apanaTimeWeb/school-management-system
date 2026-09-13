@@ -14,7 +14,8 @@ import {
   LineChart,
   Briefcase,
   CalendarOff,
-  Scale
+  Scale,
+  Contact
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -22,6 +23,7 @@ const MENU_ITEMS = [
   { href: '/principal/dashboard', label: 'Dashboard', icon: <LayoutDashboard size={20} /> },
   { href: '/principal/students', label: 'Student Management', icon: <Users size={20} /> },
   { href: '/principal/admissions', label: 'Admissions', icon: <UserPlus size={20} /> },
+  { href: '/principal/parents', label: 'Parents & Guardians', icon: <Contact size={20} /> },
   { href: '/principal/academics', label: 'Academic Management', icon: <BookOpen size={20} /> },
   { href: '/principal/attendance', label: 'Attendance', icon: <CalendarCheck size={20} /> },
   { href: '/principal/timetable', label: 'Timetable', icon: <Clock size={20} /> },
