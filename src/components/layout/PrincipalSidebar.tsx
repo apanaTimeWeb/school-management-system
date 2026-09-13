@@ -28,7 +28,8 @@ import {
   HeartPulse,
   PackageSearch,
   BarChart3,
-  CheckSquare
+  CheckSquare,
+  PieChart
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -56,6 +57,7 @@ const MENU_ITEMS = [
   { href: '/principal/inventory', label: 'Inventory & Assets', icon: <PackageSearch size={20} /> },
   { href: '/principal/reports', label: 'Reports & Analytics', icon: <BarChart3 size={20} /> },
   { href: '/principal/approvals', label: 'Approval Center', icon: <CheckSquare size={20} /> },
+  { href: '/principal/analytics', label: 'Principal Analytics', icon: <PieChart size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
