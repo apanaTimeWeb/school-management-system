@@ -11,7 +11,8 @@ import {
   Clock, 
   Settings, 
   X,
-  LineChart
+  LineChart,
+  Briefcase
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -24,6 +25,7 @@ const MENU_ITEMS = [
   { href: '/principal/timetable', label: 'Timetable', icon: <Clock size={20} /> },
   { href: '/principal/examinations', label: 'Examinations', icon: <BookOpen size={20} /> },
   { href: '/principal/results', label: 'Results & Performance', icon: <LineChart size={20} /> },
+  { href: '/principal/staff', label: 'Staff & HR', icon: <Briefcase size={20} /> },
 ];
 
 export default function PrincipalSidebar() {
