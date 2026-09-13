@@ -20,7 +20,8 @@ import {
   CalendarHeart,
   Presentation,
   MessageSquareWarning,
-  ScrollText
+  ScrollText,
+  IndianRupee
 } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
 
@@ -40,6 +41,7 @@ const MENU_ITEMS = [
   { href: '/principal/meetings', label: 'Meetings', icon: <Presentation size={20} /> },
   { href: '/principal/complaints', label: 'Complaints & Grievance', icon: <MessageSquareWarning size={20} /> },
   { href: '/principal/documents', label: 'Documents & Certs', icon: <ScrollText size={20} /> },
+  { href: '/principal/fees', label: 'Fees Monitoring', icon: <IndianRupee size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <CalendarOff size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <Scale size={20} /> },
 ];
