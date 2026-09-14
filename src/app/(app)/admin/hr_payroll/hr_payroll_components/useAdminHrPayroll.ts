@@ -15,6 +15,8 @@ export function useAdminHrPayroll() {
   const [statusFilter, setStatusFilter] = useState("All");
   const [searchFilter, setSearchFilter] = useState("");
 
+  const [hasPaymentAuthority, setHasPaymentAuthority] = useState(false); // Mock RBAC Permission
+
   const [selectedRecord, setSelectedRecord] = useState<EmployeePayrollRecord | null>(null);
 
   const loadData = async () => {
@@ -59,6 +61,7 @@ export function useAdminHrPayroll() {
     periodFilter, setPeriodFilter,
     statusFilter, setStatusFilter,
     searchFilter, setSearchFilter,
+    hasPaymentAuthority, setHasPaymentAuthority,
     selectedRecord, openRecord, closeRecord,
     updatePayrollStatus
   };

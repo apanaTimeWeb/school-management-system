@@ -14,12 +14,26 @@ export default function AdminHrPayrollMain() {
     periodFilter, setPeriodFilter,
     statusFilter, setStatusFilter,
     searchFilter, setSearchFilter,
+    hasPaymentAuthority, setHasPaymentAuthority,
     selectedRecord, openRecord, closeRecord,
     updatePayrollStatus
   } = useAdminHrPayroll();
 
   return (
     <div className="flex flex-col w-full">
+      <div className="flex justify-between items-center mb-4 bg-primary/10 border border-primary/20 p-4 rounded-xl">
+        <div>
+          <h3 className="text-sm font-bold text-foreground">RBAC Simulation: Payment Authority</h3>
+          <p className="text-xs text-muted-foreground">Toggle to simulate whether the current logged-in user has permission to process salary payments.</p>
+        </div>
+        <button 
+          onClick={() => setHasPaymentAuthority(!hasPaymentAuthority)}
+          className={`px-4 py-2 rounded-md text-xs font-bold transition-colors ${hasPaymentAuthority ? 'bg-success text-white' : 'bg-input text-muted-foreground'}`}
+        >
+          {hasPaymentAuthority ? 'Authority Granted' : 'Authority Revoked'}
+        </button>
+      </div>
+
       <AdminHrPayrollTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
       {isLoading ? (
@@ -47,6 +61,7 @@ export default function AdminHrPayrollMain() {
         record={selectedRecord}
         close={closeRecord}
         updateStatus={updatePayrollStatus}
+        hasPaymentAuthority={hasPaymentAuthority}
       />
     </div>
   );

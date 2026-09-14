@@ -7,9 +7,10 @@ interface AdminHrPayrollDetailModalProps {
   record: EmployeePayrollRecord | null;
   close: () => void;
   updateStatus: (id: string, s: PayrollStatus) => void;
+  hasPaymentAuthority: boolean;
 }
 
-export default function AdminHrPayrollDetailModal({ record, close, updateStatus }: AdminHrPayrollDetailModalProps) {
+export default function AdminHrPayrollDetailModal({ record, close, updateStatus, hasPaymentAuthority }: AdminHrPayrollDetailModalProps) {
   if (!record) return null;
 
   return (
@@ -90,6 +91,14 @@ export default function AdminHrPayrollDetailModal({ record, close, updateStatus 
               {record.status === 'Processed' ? (
                 <div className="w-full py-3 bg-success/10 text-success border border-success/30 font-bold text-sm rounded-md text-center flex items-center justify-center gap-2">
                   <CheckCircle size={18} /> Payroll Processed
+                </div>
+              ) : !hasPaymentAuthority ? (
+                <div className="w-full p-4 bg-danger/10 border border-danger/20 rounded-lg flex items-start gap-3">
+                  <AlertTriangle size={20} className="text-danger flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="text-sm font-bold text-danger">Action Locked</p>
+                    <p className="text-xs text-muted-foreground mt-1">You do not have the <span className="font-bold text-foreground">PAYMENT_AUTHORITY</span> permission required to process salaries.</p>
+                  </div>
                 </div>
               ) : (
                 <div className="flex flex-col gap-3">
