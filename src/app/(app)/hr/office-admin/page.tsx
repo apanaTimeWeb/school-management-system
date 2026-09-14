@@ -1,4 +1,4 @@
-import HrOfficeMain from "./office_admin_components/HrOfficeMain";
+import HrOfficeMain from "./office_Hr_components/HrOfficeMain";
 
 export const metadata = {
   title: "Office Administration | Smart Gym 360",
