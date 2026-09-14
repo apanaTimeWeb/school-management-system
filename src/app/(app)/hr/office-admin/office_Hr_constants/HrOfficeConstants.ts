@@ -1,4 +1,4 @@
-import type { OfficeNotice, OfficeTask, OfficeDocument } from "../office_admin_types/HrOfficeTypes";
+import type { OfficeNotice, OfficeTask, OfficeDocument } from "../office_Hr_types/HrOfficeTypes";
 
 export const MOCK_NOTICES: OfficeNotice[] = [
   { id: "not-1", title: "Upcoming Diwali Holidays", type: "Notice", datePublished: "2024-10-20", targetAudience: "All Staff", content: "The school will remain closed from Oct 24th to Oct 28th.", priority: "Normal" },

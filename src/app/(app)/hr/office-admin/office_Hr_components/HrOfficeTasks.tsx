@@ -1,7 +1,7 @@
 "use client";
 
 import { Book, UserCheck, Calendar } from "lucide-react";
-import type { OfficeTask } from "../office_admin_types/HrOfficeTypes";
+import type { OfficeTask } from "../office_Hr_types/HrOfficeTypes";
 
 interface HrOfficeTasksProps {
   tasks: OfficeTask[];

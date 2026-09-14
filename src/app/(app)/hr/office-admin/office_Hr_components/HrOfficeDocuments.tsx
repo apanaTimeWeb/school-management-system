@@ -1,7 +1,7 @@
 "use client";
 
 import { FileText, Download, Upload } from "lucide-react";
-import type { OfficeDocument } from "../office_admin_types/HrOfficeTypes";
+import type { OfficeDocument } from "../office_Hr_types/HrOfficeTypes";
 
 interface HrOfficeDocumentsProps {
   documents: OfficeDocument[];

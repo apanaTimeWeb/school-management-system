@@ -1,5 +1,5 @@
-import type { OfficeNotice, OfficeTask, OfficeDocument, FetchOfficeParams, OfficeResponse } from '../office_admin_types/HrOfficeTypes';
-import { MOCK_NOTICES, MOCK_TASKS, MOCK_DOCUMENTS } from '../office_admin_constants/HrOfficeConstants';
+import type { OfficeNotice, OfficeTask, OfficeDocument, FetchOfficeParams, OfficeResponse } from '../office_Hr_types/HrOfficeTypes';
+import { MOCK_NOTICES, MOCK_TASKS, MOCK_DOCUMENTS } from '../office_Hr_constants/HrOfficeConstants';
 
 export async function fetchNotices(params?: FetchOfficeParams): Promise<OfficeResponse<OfficeNotice[]>> {
   await new Promise(resolve => setTimeout(resolve, 300));

@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, Plus, Megaphone, Edit3 } from "lucide-react";
-import type { OfficeNotice } from "../office_admin_types/HrOfficeTypes";
+import type { OfficeNotice } from "../office_Hr_types/HrOfficeTypes";
 
 interface HrOfficeNoticesProps {
   notices: OfficeNotice[];

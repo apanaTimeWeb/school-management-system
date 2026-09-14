@@ -2,7 +2,7 @@
 
 import { X, Send } from "lucide-react";
 import { useState, useEffect } from "react";
-import type { OfficeNotice } from "../office_admin_types/HrOfficeTypes";
+import type { OfficeNotice } from "../office_Hr_types/HrOfficeTypes";
 
 interface HrOfficeNoticeModalProps {
   notice: OfficeNotice | null;

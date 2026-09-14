@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchNotices, fetchTasks, fetchDocuments } from "../office_admin_api/HrOfficeApi";
-import type { OfficeNotice, OfficeTask, OfficeDocument } from "../office_admin_types/HrOfficeTypes";
+import { fetchNotices, fetchTasks, fetchDocuments } from "../office_Hr_api/HrOfficeApi";
+import type { OfficeNotice, OfficeTask, OfficeDocument } from "../office_Hr_types/HrOfficeTypes";
 
 export function useHrOffice() {
   const [activeTab, setActiveTab] = useState<'Notices' | 'Tasks' | 'Documents'>('Notices');
