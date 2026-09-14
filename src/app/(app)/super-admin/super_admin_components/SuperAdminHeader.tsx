@@ -115,14 +115,16 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           <div className="relative">
             <button 
               onClick={() => setIsProfileOpen(!isProfileOpen)}
-              className="flex items-center gap-2 p-1.5 md:p-2 rounded-md cursor-pointer hover:bg-secondary/10 transition-colors group"
+              className={`flex items-center gap-2 p-1.5 md:p-2 rounded-lg transition-all duration-200 ease-in-out group ${
+                isProfileOpen ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
+              }`}
             >
-              <UserCircle size={28} className="text-sidebar-text-muted group-hover:text-secondary transition-colors" />
+              <UserCircle size={28} className={`transition-colors ${isProfileOpen ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary"}`} />
               <div className="hidden md:flex flex-col items-start leading-tight">
-                <span className="text-sm font-bold text-sidebar-text">System Admin</span>
+                <span className={`text-sm font-semibold transition-colors ${isProfileOpen ? "text-primary" : "text-sidebar-text group-hover:text-primary"}`}>System Admin</span>
                 <span className="text-xs text-sidebar-text-muted">super@erp360.com</span>
               </div>
-              <ChevronDown size={16} className="text-sidebar-text-muted ml-1 hidden md:block group-hover:text-secondary" />
+              <ChevronDown size={16} className={`ml-1 hidden md:block transition-colors ${isProfileOpen ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary"}`} />
             </button>
 
             {/* Dropdown Menu */}

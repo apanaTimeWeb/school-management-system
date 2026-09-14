@@ -97,15 +97,15 @@ export default function TeacherHeader() {
             }}
             className={clsx(
               "flex items-center gap-2 p-1.5 pr-2 rounded-lg transition-all duration-200 ease-in-out group",
-              showProfileMenu ? "bg-info/20 shadow-sm" : "bg-transparent hover:bg-info/20"
+              showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-info" : "text-sidebar-text-muted group-hover:text-info")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-info" : "text-sidebar-text group-hover:text-info")}>Mr. R. Kumar</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Mr. R. Kumar</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">Mathematics</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-info" : "text-sidebar-text-muted group-hover:text-info")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
           </button>
 
           {/* Profile Dropdown */}

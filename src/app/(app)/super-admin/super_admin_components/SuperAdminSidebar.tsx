@@ -47,7 +47,6 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
 
   const toggleSection = (title: string, e: React.MouseEvent) => {
-    e.preventDefault();
     setOpenSections(prev => ({
       ...prev,
       [title]: !prev[title]
