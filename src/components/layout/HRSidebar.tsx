@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Settings, X, LayoutDashboard, Users, GraduationCap, UserCheck, CalendarOff, UserPlus, UserCog, FolderOpen, FileSignature, TrendingUp, UserMinus, Banknote, BarChart3, Briefcase, Badge, Building, MessageSquare, Video, Monitor, PieChart, History } from 'lucide-react';
+import { Settings, X, LayoutDashboard, Users, GraduationCap, UserCheck, CalendarOff, UserPlus, UserCog, FolderOpen, FileSignature, TrendingUp, UserMinus, Banknote, BarChart3, Briefcase, Badge, Building, MessageSquare, Video, Monitor, PieChart, History, Search, UserCircle } from 'lucide-react';
 import { useHRLayoutStore } from './useHRLayoutStore';
 
 const MENU_ITEMS = [
@@ -27,6 +27,8 @@ const MENU_ITEMS = [
   { href: '/admin/hr_assets', label: 'Employee Assets', icon: <Monitor size={20} className="text-indigo-600" /> },
   { href: '/admin/hr_reports', label: 'HR Reports', icon: <PieChart size={20} className="text-purple-600" /> },
   { href: '/admin/hr_audit', label: 'Audit & History', icon: <History size={20} className="text-rose-600" /> },
+  { href: '/admin/hr_search', label: 'Search & Filters', icon: <Search size={20} className="text-sky-600" /> },
+  { href: '/admin/hr_my_profile', label: 'My Profile', icon: <UserCircle size={20} className="text-fuchsia-600" /> },
 ];
 
 export default function HRSidebar() {
