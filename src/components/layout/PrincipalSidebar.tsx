@@ -73,7 +73,7 @@ export default function PrincipalSidebar() {
         {/* Navigation Menu */}
         <nav className="p-4 space-y-1.5 overflow-y-auto h-[calc(100vh-140px)] custom-scrollbar">
           <p className="text-[11px] font-bold text-sidebar-text-muted uppercase tracking-wider mb-3 px-2">Main Menu</p>
-          {MENU_ITEMS.map((item) => {
+          {MENU_ITEMS.map((item, index) => {
             const isActive = pathname.startsWith(item.href);
             return (
               <Link 
@@ -90,7 +90,7 @@ export default function PrincipalSidebar() {
                 <span className={isActive ? 'text-primary' : 'text-sidebar-text-muted group-hover:text-sidebar-text'}>
                   {item.icon}
                 </span>
-                {item.label}
+                {String(index + 1).padStart(2, '0')} - {item.label}
               </Link>
             );
           })}
@@ -107,3 +107,4 @@ export default function PrincipalSidebar() {
     </>
   );
 }
+
