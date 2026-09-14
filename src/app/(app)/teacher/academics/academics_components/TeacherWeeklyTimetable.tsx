@@ -50,7 +50,7 @@ export default function TeacherWeeklyTimetable() {
                         </>
                       )}
                       {period.type === 'substitute' && (
-                        <span className="text-[9px] bg-warning text-black px-1 mt-1 rounded uppercase font-bold tracking-widest">Sub</span>
+                        <span className="text-[9px] bg-warning text-white px-1 mt-1 rounded uppercase font-bold tracking-widest">Sub</span>
                       )}
                     </div>
                   </td>

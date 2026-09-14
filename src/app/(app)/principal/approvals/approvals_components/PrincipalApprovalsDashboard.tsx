@@ -54,7 +54,7 @@ export default function PrincipalApprovalsDashboard() {
               className="bg-card border border-border p-5 rounded-xl shadow-sm hover:border-primary/50 hover:bg-white/5 transition-all text-center flex flex-col items-center group relative overflow-hidden h-full"
             >
               {item.pendingCount > 0 && (
-                <div className="absolute top-2 right-2 w-6 h-6 bg-danger text-black text-[11px] font-bold rounded-full flex items-center justify-center">
+                <div className="absolute top-2 right-2 w-6 h-6 bg-danger text-white text-[11px] font-bold rounded-full flex items-center justify-center">
                   {item.pendingCount}
                 </div>
               )}

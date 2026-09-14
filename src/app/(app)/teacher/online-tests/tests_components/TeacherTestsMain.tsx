@@ -18,10 +18,10 @@ export default function TeacherTestsMain() {
 
   const getStatusColor = (status: string) => {
     switch(status) {
-      case 'Active': return 'bg-success text-black';
-      case 'Upcoming': return 'bg-info text-black';
+      case 'Active': return 'bg-success text-white';
+      case 'Upcoming': return 'bg-info text-white';
       case 'Completed': return 'bg-primary text-white';
-      case 'Draft': return 'bg-warning text-black';
+      case 'Draft': return 'bg-warning text-white';
       default: return 'bg-page text-text-primary';
     }
   };

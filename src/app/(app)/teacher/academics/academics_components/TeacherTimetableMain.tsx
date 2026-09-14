@@ -22,13 +22,13 @@ export default function TeacherTimetableMain() {
         <div className="flex items-center bg-black/20 p-1 rounded-lg border border-white/5">
           <button 
             onClick={() => setActiveTab('daily')}
-            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'daily' ? 'bg-info text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'daily' ? 'bg-info text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             <Calendar size={16} /> Daily View
           </button>
           <button 
             onClick={() => setActiveTab('weekly')}
-            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'weekly' ? 'bg-info text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'weekly' ? 'bg-info text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             <LayoutGrid size={16} /> Weekly View
           </button>

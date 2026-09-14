@@ -48,9 +48,9 @@ export default function TeacherSubstitutesMain() {
              {/* Header */}
              <div className="p-5 border-b border-border bg-black/10 relative">
                <span className={`absolute top-4 right-[-30px] w-[120px] text-center text-[10px] font-bold uppercase tracking-wider py-1 transform rotate-45 ${
-                 sub.status === 'Pending Acknowledgment' ? 'bg-warning text-black animate-pulse' : 
-                 sub.status === 'Accepted' ? 'bg-info text-black' : 
-                 sub.status === 'Completed' ? 'bg-success text-black' : 'bg-danger text-white'
+                 sub.status === 'Pending Acknowledgment' ? 'bg-warning text-white animate-pulse' : 
+                 sub.status === 'Accepted' ? 'bg-info text-white' : 
+                 sub.status === 'Completed' ? 'bg-success text-white' : 'bg-danger text-white'
                }`}>
                  {sub.status === 'Pending Acknowledgment' ? 'Action Req.' : sub.status}
                </span>
@@ -93,7 +93,7 @@ export default function TeacherSubstitutesMain() {
                    className={`w-full py-2 flex items-center justify-center gap-2 text-[13px] font-bold rounded transition-colors ${
                      sub.status === 'Pending Acknowledgment' 
                      ? 'bg-primary text-white hover:bg-primary/90' 
-                     : 'bg-page border border-info text-info hover:bg-info hover:text-black'
+                     : 'bg-page border border-info text-info hover:bg-info hover:text-white'
                    }`}
                  >
                    {sub.status === 'Pending Acknowledgment' ? 'Review & Acknowledge' : 'View Instructions'} <ArrowRight size={16} />

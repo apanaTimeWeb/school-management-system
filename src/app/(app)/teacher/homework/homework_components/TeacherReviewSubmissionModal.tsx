@@ -113,7 +113,7 @@ export default function TeacherReviewSubmissionModal() {
               <button type="button" disabled={!!successAction} onClick={() => handleAction('Returned for Revision')} className="px-4 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                 Return for Revision
               </button>
-              <button type="button" disabled={!!successAction} onClick={() => handleAction('Approved & Graded')} className="px-4 py-2 bg-success text-black font-bold text-[13px] rounded-lg hover:bg-success/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+              <button type="button" disabled={!!successAction} onClick={() => handleAction('Approved & Graded')} className="px-4 py-2 bg-success text-white font-bold text-[13px] rounded-lg hover:bg-success/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                 <CheckCircle2 size={16} /> Approve & Mark Graded
               </button>
             </div>

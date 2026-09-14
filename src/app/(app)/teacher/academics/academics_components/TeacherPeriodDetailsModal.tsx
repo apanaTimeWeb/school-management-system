@@ -18,9 +18,9 @@ export default function TeacherPeriodDetailsModal() {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <span className={`text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                selectedPeriod.type === 'substitute' ? 'bg-warning text-black' : 
+                selectedPeriod.type === 'substitute' ? 'bg-warning text-white' : 
                 selectedPeriod.type === 'free' ? 'bg-black/30 text-text-secondary' : 
-                'bg-info text-black'
+                'bg-info text-white'
               }`}>
                 {selectedPeriod.type === 'substitute' ? 'Substitute Period' : selectedPeriod.type === 'free' ? 'Free Period' : 'Regular Class'}
               </span>
@@ -73,7 +73,7 @@ export default function TeacherPeriodDetailsModal() {
                   setTimeout(() => setNavigating(false), 2000);
                 }} 
                 disabled={navigating}
-                className="px-3 py-1.5 bg-info text-black text-[12px] font-bold rounded hover:bg-info/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px]"
+                className="px-3 py-1.5 bg-info text-white text-[12px] font-bold rounded hover:bg-info/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px]"
               >
                 {navigating ? 'Opening...' : 'Take Attendance'}
               </button>

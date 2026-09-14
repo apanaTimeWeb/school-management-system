@@ -75,7 +75,7 @@ export default function TeacherAttendanceCorrectionModal() {
             <button 
               type="submit" 
               disabled={!!successMessage}
-              className="px-5 py-2.5 bg-warning text-black font-bold text-[14px] rounded-lg hover:bg-warning/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="px-5 py-2.5 bg-warning text-white font-bold text-[14px] rounded-lg hover:bg-warning/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Send size={18} /> Submit Request
             </button>

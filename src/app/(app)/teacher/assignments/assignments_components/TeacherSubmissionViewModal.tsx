@@ -76,7 +76,7 @@ export default function TeacherSubmissionViewModal() {
                        <span className="block text-[10px] text-text-secondary uppercase">Grade</span>
                        <span className={`text-[14px] font-bold ${sub.grade.includes('Pending') ? 'text-warning' : 'text-success'}`}>{sub.grade}</span>
                      </div>
-                     <button onClick={() => openReviewModal(sub)} className="px-3 py-1.5 bg-success/20 text-success text-[12px] font-bold rounded hover:bg-success hover:text-black transition-colors">Review</button>
+                     <button onClick={() => openReviewModal(sub)} className="px-3 py-1.5 bg-success/20 text-success text-[12px] font-bold rounded hover:bg-success hover:text-white transition-colors">Review</button>
                    </div>
                  </div>
                ))}
@@ -92,7 +92,7 @@ export default function TeacherSubmissionViewModal() {
                  </div>
                  <button 
                    onClick={handleRemindAll} 
-                   className="px-4 py-2 bg-warning/20 text-warning text-[12px] font-bold rounded-lg hover:bg-warning hover:text-black transition-colors"
+                   className="px-4 py-2 bg-warning/20 text-warning text-[12px] font-bold rounded-lg hover:bg-warning hover:text-white transition-colors"
                  >
                    Alert All Parents
                  </button>

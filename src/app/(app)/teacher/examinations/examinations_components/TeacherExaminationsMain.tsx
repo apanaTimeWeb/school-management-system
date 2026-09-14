@@ -47,8 +47,8 @@ export default function TeacherExaminationsMain() {
             <div className="p-5 border-b border-border bg-black/20 relative overflow-hidden">
                {/* Status Badge Ribbon */}
                <div className={`absolute top-4 right-[-30px] w-[120px] text-center text-[10px] font-bold uppercase tracking-wider py-1 transform rotate-45 ${
-                 exam.status === 'Marks Entry Open' ? 'bg-warning text-black' : 
-                 exam.status === 'Submitted' ? 'bg-success text-black' : 'bg-info text-black'
+                 exam.status === 'Marks Entry Open' ? 'bg-warning text-white' : 
+                 exam.status === 'Submitted' ? 'bg-success text-white' : 'bg-info text-white'
                }`}>
                  {exam.status === 'Marks Entry Open' ? 'Entry Open' : exam.status}
                </div>

@@ -108,7 +108,7 @@ export default function TeacherLeavesMain() {
               <button 
                 onClick={punchOut}
                 disabled={!canPunchOut}
-                className={`flex items-center gap-2 px-4 py-2 font-bold text-[13px] rounded-lg transition-colors ${canPunchOut ? 'bg-warning text-black hover:bg-warning/90' : 'bg-input text-text-secondary cursor-not-allowed'}`}
+                className={`flex items-center gap-2 px-4 py-2 font-bold text-[13px] rounded-lg transition-colors ${canPunchOut ? 'bg-warning text-white hover:bg-warning/90' : 'bg-input text-text-secondary cursor-not-allowed'}`}
               >
                 <LogOut size={16} /> Punch Out
               </button>

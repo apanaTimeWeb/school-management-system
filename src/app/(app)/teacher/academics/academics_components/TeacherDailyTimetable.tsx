@@ -28,7 +28,7 @@ export default function TeacherDailyTimetable() {
           className={`border rounded-xl p-5 cursor-pointer transition-all duration-200 group relative overflow-hidden ${getCardStyle(period.type)}`}
         >
           {period.type === 'substitute' && (
-             <div className="absolute top-0 right-0 bg-warning text-black text-[10px] font-bold px-2 py-1 rounded-bl-lg">SUBSTITUTE</div>
+             <div className="absolute top-0 right-0 bg-warning text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg">SUBSTITUTE</div>
           )}
           
           <div className="flex justify-between items-start mb-4">

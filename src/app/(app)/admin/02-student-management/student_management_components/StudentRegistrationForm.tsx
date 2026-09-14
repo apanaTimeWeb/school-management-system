@@ -32,7 +32,7 @@ export default function StudentRegistrationForm() {
               <div key={step.id} className="flex flex-col items-center gap-2">
                 <div className={clsx(
                   "w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors",
-                  isActive ? "bg-primary border-primary text-black" :
+                  isActive ? "bg-primary border-primary text-white" :
                   isCompleted ? "bg-success border-success text-white" :
                   "bg-bg-page border-border text-text-disabled"
                 )}>

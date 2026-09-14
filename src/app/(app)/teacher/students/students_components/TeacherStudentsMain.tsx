@@ -96,7 +96,7 @@ export default function TeacherStudentsMain() {
                     <td className="p-4 text-right">
                        <button 
                          onClick={() => openStudentProfileModal(student.id)} 
-                         className="px-4 py-2 bg-info/10 text-info text-[13px] font-bold rounded-lg hover:bg-info hover:text-black transition-colors"
+                         className="px-4 py-2 bg-info/10 text-info text-[13px] font-bold rounded-lg hover:bg-info hover:text-white transition-colors"
                        >
                          View Details
                        </button>

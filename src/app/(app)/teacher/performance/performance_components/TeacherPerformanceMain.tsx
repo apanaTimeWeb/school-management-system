@@ -75,7 +75,7 @@ export default function TeacherPerformanceMain() {
                   </div>
                   <button 
                     onClick={() => openPerformanceModal(student)}
-                    className="w-full py-2 bg-page border border-danger/30 text-danger text-[13px] font-bold rounded flex items-center justify-center gap-2 hover:bg-danger hover:text-black transition-colors"
+                    className="w-full py-2 bg-page border border-danger/30 text-danger text-[13px] font-bold rounded flex items-center justify-center gap-2 hover:bg-danger hover:text-white transition-colors"
                   >
                     View Analytics <ArrowRight size={16} />
                   </button>

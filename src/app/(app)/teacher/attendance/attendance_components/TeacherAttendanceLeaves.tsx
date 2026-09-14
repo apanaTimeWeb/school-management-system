@@ -65,7 +65,7 @@ export default function TeacherAttendanceLeaves() {
 
                  {leave.status === 'Pending' && (
                    <div className="flex items-center gap-2">
-                     <button onClick={() => handleAction(leave.id, 'Approved')} className="flex items-center gap-1.5 px-4 py-2 bg-success/10 text-success border border-success/30 hover:bg-success hover:text-black rounded-lg text-[13px] font-bold transition-colors">
+                     <button onClick={() => handleAction(leave.id, 'Approved')} className="flex items-center gap-1.5 px-4 py-2 bg-success/10 text-success border border-success/30 hover:bg-success hover:text-white rounded-lg text-[13px] font-bold transition-colors">
                        <CheckCircle size={16}/> Approve
                      </button>
                      <button onClick={() => handleAction(leave.id, 'Rejected')} className="flex items-center gap-1.5 px-4 py-2 bg-danger/10 text-danger border border-danger/30 hover:bg-danger hover:text-white rounded-lg text-[13px] font-bold transition-colors">

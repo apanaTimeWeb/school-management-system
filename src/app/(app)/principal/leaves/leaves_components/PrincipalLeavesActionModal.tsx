@@ -121,7 +121,7 @@ export default function PrincipalLeavesActionModal() {
             <button
               onClick={() => handleAction('Rejected')}
               disabled={loading}
-              className="px-6 py-2 rounded-md bg-danger/10 border border-danger/30 hover:bg-danger hover:text-black text-danger text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+              className="px-6 py-2 rounded-md bg-danger/10 border border-danger/30 hover:bg-danger hover:text-white text-danger text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
             >
               {loading ? "Processing..." : <><XCircle size={16}/> Reject</>}
             </button>
