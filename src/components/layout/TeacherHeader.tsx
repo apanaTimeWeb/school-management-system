@@ -62,7 +62,7 @@ export default function TeacherHeader() {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-info/20 text-info shadow-sm" : "bg-transparent hover:bg-info/20 text-sidebar-text-muted hover:text-info"
+              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
             )}
           >
             <Bell size={20} />

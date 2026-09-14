@@ -68,7 +68,9 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           <div className="relative">
             <button 
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
-              className="relative p-2 rounded-full cursor-pointer hover:bg-secondary/10 text-sidebar-text-muted hover:text-secondary transition-colors"
+              className={`relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105 ${
+                isNotificationsOpen ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+              }`}
             >
               <Bell size={20} />
               <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
