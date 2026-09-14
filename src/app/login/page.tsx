@@ -90,7 +90,7 @@ export default function LoginSelectionPage() {
             <Building2 className="text-indigo-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">HR / OFFICE</h2>
-          <p className="text-text-secondary text-[13px] font-medium mb-8">Staff, Payroll & Admin Operations</p>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Staff, Payroll & HR Operations</p>
           <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold bg-indigo-500/5 px-6 py-2.5 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>

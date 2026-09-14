@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import type { DailyAttendanceRecord, AttendanceStatus } from "../hr_staff_attendance_types/AdminHrStaffAttendanceTypes";
 
 interface AdminHrStaffAttendanceDailyProps {

@@ -88,7 +88,7 @@ export default function AdminHrSecurityTab({ profile, handle2FAToggle }: AdminHr
         ) : (
            <div className="mt-4 p-4 bg-warning/5 border border-warning/20 rounded-lg flex items-start gap-3">
              <ShieldAlert className="text-warning mt-0.5" size={16}/>
-             <p className="text-sm font-semibold text-warning">Two-factor authentication is OFF. We highly recommend enabling it for Admin accounts.</p>
+             <p className="text-sm font-semibold text-warning">Two-factor authentication is OFF. We highly recommend enabling it for your account.</p>
            </div>
         )}
 

@@ -37,7 +37,6 @@ export default function AdminHrLeaveTabs({ activeTab, setActiveTab }: AdminHrLea
           </button>
         ))}
       </div>
-      </div>
       <button 
         onClick={handleExport}
         disabled={isExporting}

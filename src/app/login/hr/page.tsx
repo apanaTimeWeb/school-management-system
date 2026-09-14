@@ -29,7 +29,7 @@ export default function HRLogin() {
             <Building2 className="text-indigo-600" size={32} />
           </div>
           <h1 className="text-2xl font-bold text-text-primary">HR / Office</h1>
-          <p className="text-text-secondary mt-1 text-sm">Staff, Payroll & Admin Operations</p>
+          <p className="text-text-secondary mt-1 text-sm">Staff, Payroll & HR Operations</p>
         </div>
 
         <div className="p-8">
