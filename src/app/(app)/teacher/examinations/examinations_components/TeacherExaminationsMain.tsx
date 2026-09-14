@@ -26,13 +26,13 @@ export default function TeacherExaminationsMain() {
         <div className="flex items-center bg-black/20 p-1 rounded-lg border border-white/5">
           <button 
             onClick={() => setActiveTab('all')}
-            className={`px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'all' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'all' ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             All Assigned Exams
           </button>
           <button 
             onClick={() => setActiveTab('pending')}
-            className={`px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'pending' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'pending' ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             Pending Marks Entry
           </button>

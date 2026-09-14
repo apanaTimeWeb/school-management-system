@@ -80,7 +80,7 @@ export default function TeacherLeavesMain() {
               onClick={() => setActiveTab(tab as any)}
               className={`px-5 py-2 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap ${
                 activeTab === tab 
-                ? 'bg-primary text-black shadow-sm' 
+                ? 'bg-primary text-white shadow-sm' 
                 : 'bg-page border border-border text-text-secondary hover:text-text-primary hover:bg-white/5'
               }`}
             >

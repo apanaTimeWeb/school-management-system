@@ -63,7 +63,7 @@ export default function TeacherNoticesMain() {
               onClick={() => setActiveTab(tab as any)}
               className={`px-4 py-2 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap ${
                 activeTab === tab 
-                ? 'bg-primary text-black' 
+                ? 'bg-primary text-white' 
                 : 'bg-page border border-border text-text-secondary hover:text-text-primary'
               }`}
             >

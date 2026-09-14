@@ -39,7 +39,7 @@ export default function TimetableViewer() {
               <button 
                 key={v.id} 
                 onClick={() => { setViewType(v.id); setSelectedValue(''); }}
-                className={clsx("flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all", viewType === v.id ? "bg-primary text-black" : "bg-card border border-border text-text-secondary hover:text-primary")}
+                className={clsx("flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all", viewType === v.id ? "bg-primary text-white" : "bg-card border border-border text-text-secondary hover:text-primary")}
               >
                 <v.icon size={16}/> {v.label}
               </button>

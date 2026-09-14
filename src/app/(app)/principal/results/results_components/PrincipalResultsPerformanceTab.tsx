@@ -69,7 +69,7 @@ export default function PrincipalResultsPerformanceTab() {
               <tr key={student.id} className="border-b border-border/50 hover:bg-white/5 transition-colors group">
                 <td className="p-4 text-center">
                   <span className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-[12px] font-bold ${
-                    student.rank === 1 ? 'bg-primary text-black' :
+                    student.rank === 1 ? 'bg-primary text-white' :
                     student.rank <= 3 ? 'bg-info text-black' :
                     'bg-page text-text-secondary border border-border'
                   }`}>

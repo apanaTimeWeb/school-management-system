@@ -20,7 +20,7 @@ export default function TeacherTestsMain() {
     switch(status) {
       case 'Active': return 'bg-success text-black';
       case 'Upcoming': return 'bg-info text-black';
-      case 'Completed': return 'bg-primary text-black';
+      case 'Completed': return 'bg-primary text-white';
       case 'Draft': return 'bg-warning text-black';
       default: return 'bg-page text-text-primary';
     }
@@ -49,7 +49,7 @@ export default function TeacherTestsMain() {
             onClick={() => setActiveTab(tab as any)}
             className={`px-4 py-2 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap ${
               activeTab === tab 
-              ? 'bg-primary text-black' 
+              ? 'bg-primary text-white' 
               : 'bg-card border border-border text-text-secondary hover:text-text-primary'
             }`}
           >

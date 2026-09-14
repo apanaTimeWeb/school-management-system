@@ -52,7 +52,7 @@ export default function SuperAdminModuleEnableDisableConfig() {
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2.5 rounded-lg ${mod.enabled ? 'bg-primary text-black' : 'bg-sidebar text-sidebar-text-muted'}`}>
+                  <div className={`p-2.5 rounded-lg ${mod.enabled ? 'bg-primary text-white' : 'bg-sidebar text-sidebar-text-muted'}`}>
                     <mod.icon size={24} />
                   </div>
                   <h4 className={`text-sm font-bold ${mod.enabled ? 'text-primary' : 'text-text-secondary'}`}>{mod.name}</h4>

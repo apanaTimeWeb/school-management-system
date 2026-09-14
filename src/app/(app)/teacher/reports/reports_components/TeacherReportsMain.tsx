@@ -58,7 +58,7 @@ export default function TeacherReportsMain() {
               onClick={() => setActiveCategory(cat as any)}
               className={`px-4 py-1.5 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap ${
                 activeCategory === cat 
-                ? 'bg-primary text-black' 
+                ? 'bg-primary text-white' 
                 : 'bg-page border border-border text-text-secondary hover:text-text-primary'
               }`}
             >

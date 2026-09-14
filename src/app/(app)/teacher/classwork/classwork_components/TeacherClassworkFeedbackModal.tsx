@@ -43,7 +43,7 @@ export default function TeacherClassworkFeedbackModal() {
            {mockFeedbacks.map(fb => (
              <div key={fb.id} className={`flex flex-col max-w-[85%] ${fb.role === 'teacher' ? 'ml-auto items-end' : 'mr-auto items-start'}`}>
                 <span className="text-[11px] text-text-secondary mb-1 font-bold px-1">{fb.author} • {fb.date}</span>
-                <div className={`p-3 rounded-2xl ${fb.role === 'teacher' ? 'bg-primary text-black rounded-tr-sm' : 'bg-card border border-border text-text-primary rounded-tl-sm'}`}>
+                <div className={`p-3 rounded-2xl ${fb.role === 'teacher' ? 'bg-primary text-white rounded-tr-sm' : 'bg-card border border-border text-text-primary rounded-tl-sm'}`}>
                   <p className="text-[14px] leading-relaxed">{fb.text}</p>
                 </div>
              </div>

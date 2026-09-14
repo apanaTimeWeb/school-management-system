@@ -94,9 +94,9 @@ export default function TeacherCommunicationMain() {
                  </div>
                  
                  <div className="flex bg-input rounded-lg overflow-hidden border border-border p-1 gap-1">
-                   <button onClick={() => { setChatFilter('admin'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'admin' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Admin</button>
-                   <button onClick={() => { setChatFilter('parent'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'parent' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Parents</button>
-                   <button onClick={() => { setChatFilter('group'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'group' ? 'bg-primary text-black' : 'text-text-secondary hover:text-text-primary'}`}>Groups</button>
+                   <button onClick={() => { setChatFilter('admin'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'admin' ? 'bg-primary text-white' : 'text-text-secondary hover:text-text-primary'}`}>Admin</button>
+                   <button onClick={() => { setChatFilter('parent'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'parent' ? 'bg-primary text-white' : 'text-text-secondary hover:text-text-primary'}`}>Parents</button>
+                   <button onClick={() => { setChatFilter('group'); selectChat(null as any); }} className={`flex-1 py-1 text-[11px] font-bold rounded-md transition-colors ${chatFilter === 'group' ? 'bg-primary text-white' : 'text-text-secondary hover:text-text-primary'}`}>Groups</button>
                  </div>
                </div>
                <div className="p-3 border-b border-border">
@@ -165,7 +165,7 @@ export default function TeacherCommunicationMain() {
                          {localMessages.map((msg) => (
                            <div key={msg.id} className={`flex flex-col ${msg.sender === 'Teacher' ? 'items-end' : 'items-start'}`}>
                              <span className="text-[10px] text-text-secondary mb-1">{msg.sender === 'Teacher' ? 'You' : selectedChat.name} • {msg.timestamp}</span>
-                             <div className={`p-3 max-w-[70%] rounded-xl text-[13px] ${msg.sender === 'Teacher' ? 'bg-primary text-black rounded-tr-none' : 'bg-card border border-border text-text-primary rounded-tl-none'}`}>
+                             <div className={`p-3 max-w-[70%] rounded-xl text-[13px] ${msg.sender === 'Teacher' ? 'bg-primary text-white rounded-tr-none' : 'bg-card border border-border text-text-primary rounded-tl-none'}`}>
                                {msg.text}
                              </div>
                            </div>

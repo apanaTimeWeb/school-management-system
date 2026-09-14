@@ -37,10 +37,10 @@ export default function TeacherNewMessageModal() {
         <form onSubmit={handleSend} className="p-6 space-y-5">
            
            <div className="flex bg-page p-1 rounded-lg border border-border">
-             <button type="button" onClick={() => setRecipientType('Individual')} className={`flex-1 py-1.5 text-[13px] font-bold rounded ${recipientType === 'Individual' ? 'bg-primary text-black' : 'text-text-secondary'}`}>
+             <button type="button" onClick={() => setRecipientType('Individual')} className={`flex-1 py-1.5 text-[13px] font-bold rounded ${recipientType === 'Individual' ? 'bg-primary text-white' : 'text-text-secondary'}`}>
                Individual Parent
              </button>
-             <button type="button" onClick={() => setRecipientType('Class')} className={`flex-1 py-1.5 text-[13px] font-bold rounded ${recipientType === 'Class' ? 'bg-primary text-black' : 'text-text-secondary'}`}>
+             <button type="button" onClick={() => setRecipientType('Class')} className={`flex-1 py-1.5 text-[13px] font-bold rounded ${recipientType === 'Class' ? 'bg-primary text-white' : 'text-text-secondary'}`}>
                Entire Class
              </button>
            </div>

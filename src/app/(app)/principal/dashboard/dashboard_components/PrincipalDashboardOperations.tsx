@@ -59,7 +59,7 @@ export default function PrincipalDashboardOperations({
             {tab.icon}
             {tab.label}
             <span className={`px-1.5 py-0.5 rounded-full text-[10px] ${
-              activeTab === tab.id ? 'bg-primary text-black' : 'bg-white/10 text-text-secondary'
+              activeTab === tab.id ? 'bg-primary text-white' : 'bg-white/10 text-text-secondary'
             }`}>
               {tab.count}
             </span>

@@ -68,7 +68,7 @@ export default function SendCommunication() {
                   <button 
                     key={type}
                     onClick={() => setAudienceType(type)}
-                    className={clsx("px-4 py-1.5 rounded-full text-xs font-bold transition-all capitalize", audienceType === type ? "bg-primary text-black" : "bg-bg-page border border-border text-text-secondary hover:bg-card")}
+                    className={clsx("px-4 py-1.5 rounded-full text-xs font-bold transition-all capitalize", audienceType === type ? "bg-primary text-white" : "bg-bg-page border border-border text-text-secondary hover:bg-card")}
                   >
                     {type}-wise
                   </button>

@@ -31,7 +31,7 @@ export default function SuperAdminImportCard() {
                   onClick={() => setSelectedEntity(entity)}
                   className={`px-3 py-1.5 text-[11px] font-bold border rounded-md transition-colors ${
                     selectedEntity === entity 
-                      ? 'bg-primary text-black border-primary' 
+                      ? 'bg-primary text-white border-primary' 
                       : 'bg-bg-page text-text-secondary border-border hover:bg-card hover:text-primary'
                   }`}
                 >

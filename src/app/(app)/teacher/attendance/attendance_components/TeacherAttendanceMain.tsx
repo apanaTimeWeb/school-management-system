@@ -23,19 +23,19 @@ export default function TeacherAttendanceMain() {
         <div className="flex items-center bg-black/20 p-1 rounded-lg border border-white/5">
           <button 
             onClick={() => setActiveTab('mark')}
-            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'mark' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'mark' ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             <CalendarCheck size={16} /> Mark Attendance
           </button>
           <button 
             onClick={() => setActiveTab('history')}
-            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'history' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'history' ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             <History size={16} /> History & Summary
           </button>
           <button 
             onClick={() => setActiveTab('leaves')}
-            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'leaves' ? 'bg-primary text-black shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
+            className={`flex items-center gap-2 px-4 py-2 text-[13px] font-bold rounded-md transition-colors ${activeTab === 'leaves' ? 'bg-primary text-white shadow-sm' : 'text-text-secondary hover:text-text-primary'}`}
           >
             <CalendarCheck size={16} /> Leave Applications
           </button>

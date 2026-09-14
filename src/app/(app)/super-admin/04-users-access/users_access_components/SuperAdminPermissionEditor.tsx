@@ -81,7 +81,7 @@ export default function SuperAdminPermissionEditor({ role }: EditorProps) {
               className={cn(
                 "w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
                 activeModule === mod 
-                  ? "bg-primary text-black shadow-sm" 
+                  ? "bg-primary text-white shadow-sm" 
                   : "text-text-secondary hover:bg-card hover:text-text-primary"
               )}
             >

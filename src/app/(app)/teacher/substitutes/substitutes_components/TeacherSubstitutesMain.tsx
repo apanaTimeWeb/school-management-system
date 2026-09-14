@@ -31,7 +31,7 @@ export default function TeacherSubstitutesMain() {
               onClick={() => setActiveTab(tab as any)}
               className={`px-5 py-2 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap ${
                 activeTab === tab 
-                ? 'bg-primary text-black shadow-sm' 
+                ? 'bg-primary text-white shadow-sm' 
                 : 'bg-page border border-border text-text-secondary hover:text-text-primary hover:bg-white/5'
               }`}
             >
@@ -92,7 +92,7 @@ export default function TeacherSubstitutesMain() {
                    onClick={() => openActionModal(sub)}
                    className={`w-full py-2 flex items-center justify-center gap-2 text-[13px] font-bold rounded transition-colors ${
                      sub.status === 'Pending Acknowledgment' 
-                     ? 'bg-primary text-black hover:bg-primary/90' 
+                     ? 'bg-primary text-white hover:bg-primary/90' 
                      : 'bg-page border border-info text-info hover:bg-info hover:text-black'
                    }`}
                  >
