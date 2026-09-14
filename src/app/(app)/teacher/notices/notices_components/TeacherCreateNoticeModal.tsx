@@ -13,6 +13,7 @@ export default function TeacherCreateNoticeModal() {
     description: '',
     file: null as File | null
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (selectedNotice) {
@@ -49,7 +50,11 @@ export default function TeacherCreateNoticeModal() {
       addNotice(newNotice);
     }
     
-    closeCreateNotice();
+    setSuccessMessage(isDraft ? 'Draft saved successfully.' : 'Notice broadcasted successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeCreateNotice();
+    }, 2500);
   };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -135,14 +140,19 @@ export default function TeacherCreateNoticeModal() {
              </div>
            </div>
 
-           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4">
+           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4 items-center">
+             {successMessage ? (
+               <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                 {successMessage}
+               </div>
+             ) : null}
              <button type="button" onClick={closeCreateNotice} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
                Cancel
              </button>
-             <button type="button" onClick={(e) => handleSend(e, true)} className="px-5 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2">
+             <button type="button" onClick={(e) => handleSend(e, true)} disabled={!!successMessage} className="px-5 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                <Save size={16} /> Save as Draft
              </button>
-             <button type="submit" className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Broadcast Message
              </button>
            </div>

@@ -2,15 +2,14 @@
 import React, { useState } from 'react';
 import { Plus, Search, MessageSquare, TrendingUp, BookOpen, UserCheck, Calendar, Users, Star, AlertCircle, Info } from 'lucide-react';
 import { useTeacherRemarksStore, RemarkCategory, RemarkSentiment } from '../remarks_store/useTeacherRemarksStore';
-import { TEACHER_REMARKS_MOCK } from '../remarks_constants/TeacherRemarksMockData';
 import TeacherAddRemarkModal from './TeacherAddRemarkModal';
 
 export default function TeacherRemarksMain() {
-  const { openAddRemarkModal } = useTeacherRemarksStore();
+  const { openAddRemarkModal, remarksList } = useTeacherRemarksStore();
   const [search, setSearch] = useState('');
   const [filterCategory, setFilterCategory] = useState<'All' | RemarkCategory>('All');
 
-  const filteredRemarks = TEACHER_REMARKS_MOCK.filter(rem => {
+  const filteredRemarks = remarksList.filter(rem => {
     const matchSearch = rem.studentName.toLowerCase().includes(search.toLowerCase()) || rem.rollNo.includes(search);
     const matchCat = filterCategory === 'All' || rem.category === filterCategory;
     return matchSearch && matchCat;

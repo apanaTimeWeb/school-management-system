@@ -13,6 +13,7 @@ export default function TeacherScheduleMeetingModal() {
     time: '',
     reason: ''
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isScheduleModalOpen) return null;
 
@@ -29,7 +30,11 @@ export default function TeacherScheduleMeetingModal() {
       status: 'Scheduled' as const,
     };
     scheduleMeeting(newMeeting);
-    closeScheduleModal();
+    setSuccessMessage('Meeting invite sent successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeScheduleModal();
+    }, 2500);
   };
 
   return (
@@ -106,11 +111,16 @@ export default function TeacherScheduleMeetingModal() {
              ></textarea>
            </div>
 
-           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4">
+           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4 items-center">
+             {successMessage ? (
+               <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                 {successMessage}
+               </div>
+             ) : null}
              <button type="button" onClick={closeScheduleModal} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
                Cancel
              </button>
-             <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Send Invite
              </button>
            </div>

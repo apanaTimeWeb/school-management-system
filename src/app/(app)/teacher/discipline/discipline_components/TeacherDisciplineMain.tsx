@@ -2,15 +2,14 @@
 import React, { useState } from 'react';
 import { Plus, Search, AlertTriangle, User, Calendar, MessageSquare, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { useTeacherDisciplineStore, IncidentSeverity } from '../discipline_store/useTeacherDisciplineStore';
-import { TEACHER_DISCIPLINE_MOCK } from '../discipline_constants/TeacherDisciplineMockData';
 import TeacherLogIncidentModal from './TeacherLogIncidentModal';
 
 export default function TeacherDisciplineMain() {
-  const { openLogIncidentModal } = useTeacherDisciplineStore();
+  const { openLogIncidentModal, incidentsList } = useTeacherDisciplineStore();
   const [search, setSearch] = useState('');
   const [filterSeverity, setFilterSeverity] = useState<'All' | IncidentSeverity>('All');
 
-  const filteredIncidents = TEACHER_DISCIPLINE_MOCK.filter(inc => {
+  const filteredIncidents = incidentsList.filter(inc => {
     const matchSearch = inc.studentName.toLowerCase().includes(search.toLowerCase()) || inc.rollNo.includes(search);
     const matchSeverity = filterSeverity === 'All' || inc.severity === filterSeverity;
     return matchSearch && matchSeverity;

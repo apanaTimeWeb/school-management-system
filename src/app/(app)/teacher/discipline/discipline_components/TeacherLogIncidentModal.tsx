@@ -4,7 +4,7 @@ import { X, Send, AlertTriangle } from 'lucide-react';
 import { useTeacherDisciplineStore, IncidentSeverity } from '../discipline_store/useTeacherDisciplineStore';
 
 export default function TeacherLogIncidentModal() {
-  const { isLogIncidentModalOpen, closeLogIncidentModal } = useTeacherDisciplineStore();
+  const { isLogIncidentModalOpen, closeLogIncidentModal, addIncident } = useTeacherDisciplineStore();
   
   const [formData, setFormData] = useState({
     studentName: '',
@@ -22,10 +22,35 @@ export default function TeacherLogIncidentModal() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
+
+    addIncident({
+      id: `INC-${Date.now()}`,
+      studentName: formData.studentName,
+      rollNo: "TBD", // Auto-fetched normally
+      class: formData.class,
+      incidentType: formData.incidentType,
+      description: formData.description,
+      severity: formData.severity,
+      date: new Date().toLocaleDateString('en-GB'),
+      actionTaken: formData.actionTaken,
+      parentNotified: formData.parentNotified,
+      escalatedToPrincipal: formData.escalatedToPrincipal
+    });
+
     setSuccessMessage('Incident logged successfully and respective parties notified.');
     setTimeout(() => {
       setSuccessMessage('');
       closeLogIncidentModal();
+      setFormData({
+        studentName: '',
+        class: '',
+        incidentType: '',
+        description: '',
+        severity: 'Low' as IncidentSeverity,
+        actionTaken: '',
+        parentNotified: false,
+        escalatedToPrincipal: false
+      });
     }, 2500);
   };
 

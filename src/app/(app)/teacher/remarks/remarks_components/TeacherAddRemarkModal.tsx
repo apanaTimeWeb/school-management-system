@@ -4,7 +4,7 @@ import { X, Send, MessageSquare } from 'lucide-react';
 import { useTeacherRemarksStore, RemarkCategory, RemarkSentiment } from '../remarks_store/useTeacherRemarksStore';
 
 export default function TeacherAddRemarkModal() {
-  const { isAddRemarkModalOpen, closeAddRemarkModal } = useTeacherRemarksStore();
+  const { isAddRemarkModalOpen, closeAddRemarkModal, addRemark } = useTeacherRemarksStore();
   
   const [formData, setFormData] = useState({
     studentName: '',
@@ -20,10 +20,31 @@ export default function TeacherAddRemarkModal() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    addRemark({
+      id: `REM-${Date.now()}`,
+      studentName: formData.studentName,
+      rollNo: "TBD", // Normally fetched based on selected student
+      class: formData.class,
+      category: formData.category,
+      sentiment: formData.sentiment,
+      description: formData.description,
+      date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+      sharedWithParents: formData.sharedWithParents
+    });
+
     setSuccessMessage('Remark added successfully to student profile.');
     setTimeout(() => {
       setSuccessMessage('');
       closeAddRemarkModal();
+      setFormData({
+        studentName: '',
+        class: '',
+        category: 'Academic' as RemarkCategory,
+        sentiment: 'Neutral' as RemarkSentiment,
+        description: '',
+        sharedWithParents: false
+      });
     }, 2500);
   };
 
