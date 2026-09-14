@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { FileText, Scale, Settings, CalendarDays, Download } from "lucide-react";
 
 interface AdminHrLeaveTabsProps {
@@ -8,7 +9,13 @@ interface AdminHrLeaveTabsProps {
 }
 
 export default function AdminHrLeaveTabs({ activeTab, setActiveTab }: AdminHrLeaveTabsProps) {
-  
+  const [isExporting, setIsExporting] = useState(false);
+
+  const handleExport = () => {
+    setIsExporting(true);
+    setTimeout(() => setIsExporting(false), 2000);
+  };
+
   const tabs = [
     { id: 'Applications', icon: <FileText size={16} />, label: "Leave Applications" },
     { id: 'Balances', icon: <Scale size={16} />, label: "Leave Balances" },
@@ -30,8 +37,14 @@ export default function AdminHrLeaveTabs({ activeTab, setActiveTab }: AdminHrLea
           </button>
         ))}
       </div>
-      <button className="flex items-center gap-2 px-4 py-2 bg-input border border-border text-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all active:scale-95 text-sm shadow-sm whitespace-nowrap mb-2 md:mb-0" onClick={() => alert('Exporting Leave Reports...')}>
-        <Download size={16} /> Export Reports
+      </div>
+      <button 
+        onClick={handleExport}
+        disabled={isExporting}
+        className="flex items-center gap-2 px-4 py-2 bg-input border border-border text-foreground font-bold rounded-md hover:border-primary hover:text-primary transition-all active:scale-95 text-sm shadow-sm whitespace-nowrap mb-2 md:mb-0 disabled:opacity-50 disabled:pointer-events-none" 
+      >
+        {isExporting ? <div className="w-4 h-4 border-2 border-muted-foreground border-t-transparent rounded-full animate-spin"></div> : <Download size={16} />} 
+        {isExporting ? 'Exporting...' : 'Export Reports'}
       </button>
     </div>
   );

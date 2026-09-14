@@ -48,14 +48,14 @@ export function useAdminHrLeave() {
     return () => clearTimeout(timer);
   }, [activeTab, appStatus, appType, appSearch]);
 
-  const approveApplication = (id: string) => {
+  const approveApplication = (id: string, remarks?: string) => {
     setApplications(prev => prev.map(app => app.id === id ? { ...app, status: 'Approved' } : app));
-    alert(`Leave Application ${id} Approved Successfully!`);
+    console.log(`Leave Application ${id} Approved Successfully! Remarks: ${remarks}`);
   };
 
-  const rejectApplication = (id: string) => {
+  const rejectApplication = (id: string, remarks?: string) => {
     setApplications(prev => prev.map(app => app.id === id ? { ...app, status: 'Rejected' } : app));
-    alert(`Leave Application ${id} Rejected.`);
+    console.log(`Leave Application ${id} Rejected. Remarks: ${remarks}`);
   };
 
   return {

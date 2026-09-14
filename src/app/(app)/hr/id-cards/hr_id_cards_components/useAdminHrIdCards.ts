@@ -60,7 +60,7 @@ export function useAdminHrIdCards() {
 
   const previewBulk = () => {
     if (selectedIds.length === 0) {
-      alert("Please select at least one employee to generate ID cards.");
+      console.warn("Please select at least one employee to generate ID cards.");
       return;
     }
     const recordsToPreview = employees.filter(e => selectedIds.includes(e.id));
@@ -75,7 +75,7 @@ export function useAdminHrIdCards() {
 
   const markAsPrinted = (idsToMark: string[]) => {
     setEmployees(prev => prev.map(e => idsToMark.includes(e.id) ? { ...e, idCardPrinted: true } : e));
-    alert(`Success: ${idsToMark.length} ID Card(s) have been sent to the printer and marked as printed.`);
+    console.log(`Success: ${idsToMark.length} ID Card(s) have been sent to the printer and marked as printed.`);
     closePreview();
     setSelectedIds([]); // clear selection after print
   };
