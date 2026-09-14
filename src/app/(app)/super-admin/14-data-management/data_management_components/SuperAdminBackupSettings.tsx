@@ -32,7 +32,7 @@ export default function SuperAdminBackupSettings() {
           <button 
             onClick={handleManualBackup}
             disabled={isManualBackingUp}
-            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-white text-sm font-bold rounded-md hover:bg-primary-hover transition-all shadow-sm disabled:opacity-70 w-fit"
+            className="flex items-center justify-center gap-2 px-4 py-2.5 bg-primary text-black text-sm font-bold rounded-md hover:bg-primary-hover transition-all shadow-sm disabled:opacity-70 w-fit"
           >
             {isManualBackingUp ? <Loader2 size={16} className="animate-spin" /> : <DownloadCloud size={16} />}
             Manual backup

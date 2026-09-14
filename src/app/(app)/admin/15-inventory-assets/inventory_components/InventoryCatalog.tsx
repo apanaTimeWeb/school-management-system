@@ -60,7 +60,7 @@ export default function InventoryCatalog() {
                  <label className="text-xs font-semibold text-text-secondary">Min Stock</label>
                  <input type="number" placeholder="10" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                </div>
-               <button onClick={handleSave} className="bg-primary text-white px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
+               <button onClick={handleSave} className="bg-primary text-black px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
                  <Plus size={16}/> Add Item
                </button>
             </div>

@@ -85,7 +85,7 @@ export default function AcademicConfig() {
                   <label htmlFor="lockMarks" className="text-sm font-bold text-text-primary">Lock Marks after Result Declaration</label>
                 </div>
                 
-                <button onClick={handleSave} className="w-full bg-primary text-white py-3 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-auto">
+                <button onClick={handleSave} className="w-full bg-primary text-black py-3 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-auto">
                   <Save size={16}/> Save Configurations
                 </button>
              </div>

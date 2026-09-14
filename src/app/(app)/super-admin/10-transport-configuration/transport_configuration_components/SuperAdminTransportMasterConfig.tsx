@@ -174,7 +174,7 @@ export default function SuperAdminTransportMasterConfig() {
                   <label className="text-xs font-bold text-text-secondary">Buffer Capacity (%)</label>
                   <input type="number" defaultValue="5" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
                 </div>
-                <button className="px-4 py-2 mt-2 bg-primary text-white rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Save Rules</button>
+                <button className="px-4 py-2 mt-2 bg-primary text-black rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Save Rules</button>
               </div>
             </div>
 

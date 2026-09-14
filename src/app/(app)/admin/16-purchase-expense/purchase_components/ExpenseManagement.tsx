@@ -64,7 +64,7 @@ export default function ExpenseManagement() {
                </div>
              </div>
              
-             <button onClick={handleSave} className="bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 mt-2">
+             <button onClick={handleSave} className="bg-primary text-black px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 mt-2">
                <Save size={16}/> Record Expense
              </button>
           </div>

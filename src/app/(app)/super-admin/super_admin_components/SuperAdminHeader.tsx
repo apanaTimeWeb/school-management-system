@@ -179,7 +179,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                   <p className="text-xs">Search results are filtered based on your Super Admin permissions.</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {['Users', 'Students', 'Payments', 'Logs', 'Certificates'].map(tag => (
-                      <span key={tag} onClick={() => setSearchQuery(tag)} className="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20 cursor-pointer hover:bg-primary hover:text-white transition-colors">
+                      <span key={tag} onClick={() => setSearchQuery(tag)} className="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded border border-primary/20 cursor-pointer hover:bg-primary hover:text-black transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -190,7 +190,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                   {filteredResults.length > 0 ? (
                     filteredResults.map((result, i) => (
                       <div key={i} className="flex items-center gap-3 p-3 rounded-lg hover:bg-bg-page cursor-pointer group transition-colors">
-                        <div className="p-2 bg-primary/10 text-primary rounded-md group-hover:bg-primary group-hover:text-white transition-colors">
+                        <div className="p-2 bg-primary/10 text-primary rounded-md group-hover:bg-primary group-hover:text-black transition-colors">
                           <result.icon size={20} />
                         </div>
                         <div className="flex flex-col flex-1">

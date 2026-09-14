@@ -36,7 +36,7 @@ export default function ReceiptsInvoices() {
             <div className="bg-white border border-border p-8 rounded-lg shadow-sm max-w-2xl mx-auto w-full text-black relative">
               <div className="absolute top-4 right-4 flex gap-2">
                 <button className="p-2 bg-gray-100 hover:bg-gray-200 rounded text-gray-700 transition" title="Download PDF"><FileDown size={18}/></button>
-                <button onClick={handlePrint} className="p-2 bg-primary hover:bg-primary-hover text-white rounded transition flex items-center gap-2 text-sm font-bold"><Printer size={16}/> Print</button>
+                <button onClick={handlePrint} className="p-2 bg-primary hover:bg-primary-hover text-black rounded transition flex items-center gap-2 text-sm font-bold"><Printer size={16}/> Print</button>
               </div>
 
               <div className="text-center border-b-2 border-gray-300 pb-4 mb-6 pt-4">
@@ -100,7 +100,7 @@ export default function ReceiptsInvoices() {
                 <label className="text-xs font-semibold text-text-secondary">Search Student</label>
                 <input type="text" placeholder="Admission No. or Name..." className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Fetch Ledger</button>
+              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Fetch Ledger</button>
             </div>
 
             <table className="w-full text-left border-collapse border border-border rounded-lg overflow-hidden">

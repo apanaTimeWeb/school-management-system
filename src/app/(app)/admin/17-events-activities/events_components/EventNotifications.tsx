@@ -51,7 +51,7 @@ export default function EventNotifications() {
              </div>
              
              <div className="flex gap-4 mt-2">
-               <button onClick={handleSend} className="flex-1 bg-primary text-white py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2">
+               <button onClick={handleSend} className="flex-1 bg-primary text-black py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2">
                  <Send size={16}/> Send Broadcast
                </button>
              </div>

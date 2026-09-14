@@ -31,7 +31,7 @@ export default function SuperAdminTranslationTools() {
         
         {/* Translation management */}
         <div className="flex flex-col gap-3 p-4 border border-border rounded-lg bg-bg-page hover:border-primary transition-colors cursor-pointer group">
-          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-black transition-colors">
             <Globe size={20} />
           </div>
           <h3 className="text-sm font-bold text-text-primary uppercase">Translation management</h3>
@@ -42,7 +42,7 @@ export default function SuperAdminTranslationTools() {
 
         {/* Language labels */}
         <div className="flex flex-col gap-3 p-4 border border-border rounded-lg bg-bg-page hover:border-primary transition-colors cursor-pointer group">
-          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-black transition-colors">
             <Languages size={20} />
           </div>
           <h3 className="text-sm font-bold text-text-primary uppercase">Language labels</h3>
@@ -53,7 +53,7 @@ export default function SuperAdminTranslationTools() {
 
         {/* System text translation */}
         <div className="flex flex-col gap-3 p-4 border border-border rounded-lg bg-bg-page hover:border-primary transition-colors cursor-pointer group">
-          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+          <div className="p-2 bg-primary/10 w-fit rounded-md text-primary group-hover:bg-primary group-hover:text-black transition-colors">
             <Type size={20} />
           </div>
           <h3 className="text-sm font-bold text-text-primary uppercase">System text translation</h3>

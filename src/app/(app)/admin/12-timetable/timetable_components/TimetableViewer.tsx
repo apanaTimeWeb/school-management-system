@@ -39,7 +39,7 @@ export default function TimetableViewer() {
               <button 
                 key={v.id} 
                 onClick={() => { setViewType(v.id); setSelectedValue(''); }}
-                className={clsx("flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all", viewType === v.id ? "bg-primary text-white" : "bg-card border border-border text-text-secondary hover:text-primary")}
+                className={clsx("flex items-center gap-2 px-4 py-2 rounded-md text-sm font-bold transition-all", viewType === v.id ? "bg-primary text-black" : "bg-card border border-border text-text-secondary hover:text-primary")}
               >
                 <v.icon size={16}/> {v.label}
               </button>
@@ -57,7 +57,7 @@ export default function TimetableViewer() {
               {viewType === 'teacher' && <><option>John Doe (Maths)</option><option>Sarah Smith (Science)</option></>}
               {viewType === 'room' && <><option>Room 101</option><option>Lab 3</option></>}
             </select>
-            <button onClick={handleSearch} disabled={!selectedValue} className="bg-primary text-white px-4 py-2 rounded-md font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
+            <button onClick={handleSearch} disabled={!selectedValue} className="bg-primary text-black px-4 py-2 rounded-md font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
               <Search size={18}/>
             </button>
           </div>

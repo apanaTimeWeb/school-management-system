@@ -42,7 +42,7 @@ export default function SuperAdminAuditDiffDrawer({ isOpen, onClose, oldValue, n
         </div>
 
         <div className="p-6 border-t border-border bg-header flex items-center justify-end">
-          <button onClick={onClose} className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-hover text-sm font-medium">Close</button>
+          <button onClick={onClose} className="px-6 py-2 bg-primary text-black rounded-md hover:bg-primary-hover text-sm font-medium">Close</button>
         </div>
       </div>
     </>

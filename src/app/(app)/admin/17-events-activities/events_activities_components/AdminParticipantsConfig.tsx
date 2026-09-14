@@ -11,7 +11,7 @@ export default function AdminParticipantsConfig() {
           <Settings className="text-primary" size={20} />
           Participants
         </h2>
-        <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition">
+        <button className="bg-primary text-black px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition">
           <Plus size={16} /> Add New
         </button>
       </div>

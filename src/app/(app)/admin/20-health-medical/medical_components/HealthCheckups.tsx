@@ -67,7 +67,7 @@ export default function HealthCheckups() {
                <input type="text" placeholder="Any specific advice..." className="bg-bg-input border border-border rounded-md px-3 py-2 text-sm outline-none focus:border-primary" />
              </div>
              
-             <button onClick={handleSave} className="bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
+             <button onClick={handleSave} className="bg-primary text-black px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
                Save Checkup Record
              </button>
           </div>

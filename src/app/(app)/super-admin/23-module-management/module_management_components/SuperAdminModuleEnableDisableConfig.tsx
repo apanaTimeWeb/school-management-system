@@ -36,7 +36,7 @@ export default function SuperAdminModuleEnableDisableConfig() {
               अगर किसी school में Hostel नहीं है तो पूरा Hostel module यहाँ से OFF करने पर UI से hide हो जाएगा।
             </span>
           </div>
-          <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
+          <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
             <Save size={16} /> Apply Changes
           </button>
         </div>
@@ -52,7 +52,7 @@ export default function SuperAdminModuleEnableDisableConfig() {
             >
               <div className="flex justify-between items-start">
                 <div className="flex items-center gap-3">
-                  <div className={`p-2.5 rounded-lg ${mod.enabled ? 'bg-primary text-white' : 'bg-sidebar text-sidebar-text-muted'}`}>
+                  <div className={`p-2.5 rounded-lg ${mod.enabled ? 'bg-primary text-black' : 'bg-sidebar text-sidebar-text-muted'}`}>
                     <mod.icon size={24} />
                   </div>
                   <h4 className={`text-sm font-bold ${mod.enabled ? 'text-primary' : 'text-text-secondary'}`}>{mod.name}</h4>

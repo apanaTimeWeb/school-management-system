@@ -54,7 +54,7 @@ export default function TimetableBuilder() {
               <option>Class 10 - Section A</option>
               <option>Class 9 - Section B</option>
            </select>
-           <button className="bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-md font-bold text-sm hover:bg-primary hover:text-white transition">
+           <button className="bg-primary/10 text-primary border border-primary/20 px-4 py-2 rounded-md font-bold text-sm hover:bg-primary hover:text-black transition">
               Load Draft
            </button>
         </div>

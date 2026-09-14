@@ -70,7 +70,7 @@ export default function CatalogManagement() {
              </div>
              
              <div className="flex items-center gap-4 mt-2 border-t border-border pt-4">
-               <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2">
+               <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2">
                  <Save size={16}/> Save Book Entry
                </button>
                <span className="text-xs font-bold text-text-secondary flex items-center gap-1">

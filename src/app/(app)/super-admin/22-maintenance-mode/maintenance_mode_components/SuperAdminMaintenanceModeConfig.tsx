@@ -118,7 +118,7 @@ export default function SuperAdminMaintenanceModeConfig() {
               <span className="text-sm font-semibold">Send auto-announcement to All Users 24 hours before start</span>
             </label>
 
-            <button className="px-5 py-2.5 mt-2 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-fit">
+            <button className="px-5 py-2.5 mt-2 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-fit">
               Save Schedule
             </button>
           </div>

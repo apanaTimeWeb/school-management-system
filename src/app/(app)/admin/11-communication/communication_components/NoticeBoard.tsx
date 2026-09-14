@@ -115,7 +115,7 @@ export default function NoticeBoard() {
                 <textarea rows={4} className="bg-bg-input border border-border rounded-md px-3 py-2 text-sm outline-none focus:border-primary resize-none" placeholder="Enter notice content here..."></textarea>
               </div>
 
-              <button onClick={() => { handleSave(); setActiveTab('board'); }} className="bg-primary text-white px-6 py-2 mt-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start flex items-center gap-2">
+              <button onClick={() => { handleSave(); setActiveTab('board'); }} className="bg-primary text-black px-6 py-2 mt-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start flex items-center gap-2">
                 <Megaphone size={16}/> Publish Notice
               </button>
             </div>

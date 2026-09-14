@@ -58,7 +58,7 @@ export default function ProcurementCycle() {
                  <label className="text-xs font-semibold text-text-secondary">Items Needed</label>
                  <input type="text" placeholder="e.g. 10x Footballs" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                </div>
-               <button onClick={handleAction} className="bg-primary text-white px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
+               <button onClick={handleAction} className="bg-primary text-black px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
                  Submit Request
                </button>
             </div>

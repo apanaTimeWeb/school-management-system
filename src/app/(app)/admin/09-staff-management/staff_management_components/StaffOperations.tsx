@@ -47,7 +47,7 @@ export default function StaffOperations() {
                 <label className="text-xs font-semibold text-text-secondary">Search Employee</label>
                 <input type="text" placeholder="Emp ID..." className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button onClick={handleGenerate} className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Preview & Print PDF</button>
+              <button onClick={handleGenerate} className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Preview & Print PDF</button>
             </div>
             
             <div className="w-[300px] h-[450px] border border-border bg-white shadow-lg mx-auto rounded-lg overflow-hidden flex flex-col relative text-black">
@@ -107,7 +107,7 @@ export default function StaffOperations() {
                   </select>
                 </div>
               </div>
-              <button onClick={handleGenerate} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition mt-2 self-start">Assign Subject</button>
+              <button onClick={handleGenerate} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition mt-2 self-start">Assign Subject</button>
             </div>
           </div>
         )}

@@ -104,7 +104,7 @@ export default function SuperAdminSystemAnnouncementConfig() {
               </div>
 
               <div className="flex gap-4 pt-2 border-t border-border mt-2">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-full justify-center">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-full justify-center">
                   <Send size={16} /> Publish Now
                 </button>
                 <button className="flex items-center gap-2 px-5 py-2.5 bg-bg-page border border-border text-text-primary font-bold rounded-lg hover:border-primary transition-colors w-full justify-center">

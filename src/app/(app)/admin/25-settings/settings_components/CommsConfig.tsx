@@ -67,7 +67,7 @@ export default function CommsConfig() {
                    <input type="checkbox" className="accent-primary w-5 h-5 cursor-pointer" defaultChecked/>
                 </div>
                 
-                <button onClick={handleSave} className="bg-primary text-white py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 w-48 mt-2">
+                <button onClick={handleSave} className="bg-primary text-black py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 w-48 mt-2">
                   <Save size={16}/> Save Preferences
                 </button>
              </div>

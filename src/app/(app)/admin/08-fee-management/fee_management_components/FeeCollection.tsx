@@ -51,7 +51,7 @@ export default function FeeCollection() {
                 <label className="text-xs font-semibold text-text-secondary">Search Student</label>
                 <input type="text" placeholder="Admission No. or Name..." className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Dues</button>
+              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Dues</button>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -149,7 +149,7 @@ export default function FeeCollection() {
                 <span className="font-bold text-danger">Auto Late Fee:</span> ₹750 (15 days x ₹50)
               </div>
               <div className="flex gap-2 mt-4 pt-4 border-t border-danger/20">
-                <button className="text-xs bg-primary text-white px-4 py-1.5 rounded font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Add to Current Invoice</button>
+                <button className="text-xs bg-primary text-black px-4 py-1.5 rounded font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Add to Current Invoice</button>
                 <button className="text-xs bg-bg-page border border-border text-text-primary px-4 py-1.5 rounded font-bold hover:bg-card active:scale-95 transition">Waive Late Fee</button>
               </div>
             </div>

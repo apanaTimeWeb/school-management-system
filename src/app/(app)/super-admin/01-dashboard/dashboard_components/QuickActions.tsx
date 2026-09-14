@@ -7,13 +7,13 @@ import { cn } from '@/lib/utils';
 
 export default function QuickActions() {
   const actions = [
-    { label: 'Add School/Branch', icon: Plus, href: '/super-admin/schools/add', color: 'bg-primary-subtle text-primary hover:bg-primary hover:text-white border-primary' },
+    { label: 'Add School/Branch', icon: Plus, href: '/super-admin/schools/add', color: 'bg-primary-subtle text-primary hover:bg-primary hover:text-black border-primary' },
     { label: 'Add User', icon: UserPlus, href: '/super-admin/users/add', color: 'bg-info-bg text-info hover:bg-info hover:text-white border-info' },
     { label: 'Create Session', icon: CalendarPlus, href: '/super-admin/sessions/create', color: 'bg-purple-bg text-purple hover:bg-purple hover:text-white border-purple' },
     { label: 'Create Class', icon: GraduationCap, href: '/super-admin/structure/class/create', color: 'bg-success-bg text-success hover:bg-success hover:text-white border-success' },
     { label: 'Create Role', icon: Key, href: '/super-admin/roles/create', color: 'bg-warning-bg text-warning hover:bg-warning hover:text-white border-warning' },
     { label: 'Permissions', icon: ShieldCheck, href: '/super-admin/permissions', color: 'bg-danger-bg text-danger hover:bg-danger hover:text-white border-danger' },
-    { label: 'System Settings', icon: Settings, href: '/super-admin/settings', color: 'bg-primary-subtle text-primary hover:bg-primary hover:text-white border-primary' },
+    { label: 'System Settings', icon: Settings, href: '/super-admin/settings', color: 'bg-primary-subtle text-primary hover:bg-primary hover:text-black border-primary' },
     { label: 'Backup', icon: DatabaseBackup, href: '/super-admin/backups', color: 'bg-purple-bg text-purple hover:bg-purple hover:text-white border-purple' },
     { label: 'Audit Logs', icon: History, href: '/super-admin/audit', color: 'bg-info-bg text-info hover:bg-info hover:text-white border-info' },
   ];

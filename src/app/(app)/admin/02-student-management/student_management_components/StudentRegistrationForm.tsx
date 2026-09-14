@@ -32,7 +32,7 @@ export default function StudentRegistrationForm() {
               <div key={step.id} className="flex flex-col items-center gap-2">
                 <div className={clsx(
                   "w-10 h-10 rounded-full flex items-center justify-center border-2 transition-colors",
-                  isActive ? "bg-primary border-primary text-white" :
+                  isActive ? "bg-primary border-primary text-black" :
                   isCompleted ? "bg-success border-success text-white" :
                   "bg-bg-page border-border text-text-disabled"
                 )}>
@@ -267,7 +267,7 @@ export default function StudentRegistrationForm() {
         {currentStep < steps.length ? (
           <button 
             onClick={() => setCurrentStep(prev => Math.min(steps.length, prev + 1))}
-            className="px-6 py-2 bg-primary text-white rounded-md text-sm font-semibold hover:bg-primary-hover transition"
+            className="px-6 py-2 bg-primary text-black rounded-md text-sm font-semibold hover:bg-primary-hover transition"
           >
             Next Step
           </button>

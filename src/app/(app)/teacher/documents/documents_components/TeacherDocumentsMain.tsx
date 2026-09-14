@@ -70,7 +70,7 @@ export default function TeacherDocumentsMain() {
               onClick={() => setFilterCategory(cat as any)}
               className={`px-4 py-1.5 rounded-lg text-[13px] font-bold transition-colors whitespace-nowrap flex items-center gap-2 ${
                 filterCategory === cat 
-                ? (cat === 'Confidential' ? 'bg-danger text-white' : 'bg-primary text-black') 
+                ? (cat === 'Confidential' ? 'bg-danger text-black' : 'bg-primary text-black') 
                 : (cat === 'Confidential' ? 'bg-page border border-danger/50 text-danger hover:bg-danger/10' : 'bg-page border border-border text-text-secondary hover:text-text-primary')
               }`}
             >

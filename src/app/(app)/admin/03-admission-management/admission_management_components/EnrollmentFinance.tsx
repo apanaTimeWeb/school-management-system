@@ -60,7 +60,7 @@ export default function EnrollmentFinance() {
               </div>
               <div className="flex items-center gap-2 w-full sm:w-auto">
                 <input type="text" value="10453" disabled className="w-24 bg-card border border-border rounded px-2 py-1.5 text-sm font-bold text-center" />
-                <button className="px-4 py-1.5 bg-primary text-white text-sm font-bold rounded shadow-sm whitespace-nowrap">Generate & Assign</button>
+                <button className="px-4 py-1.5 bg-primary text-black text-sm font-bold rounded shadow-sm whitespace-nowrap">Generate & Assign</button>
               </div>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function EnrollmentFinance() {
             <p className="text-sm text-text-secondary text-center max-w-md">
               Rohan Sharma has completed all stages (Approved, Fee Paid, Admn No: 10453). Click below to permanently enroll them into the Student Database.
             </p>
-            <button className="mt-4 px-8 py-3 bg-primary text-white rounded-lg font-bold shadow-md hover:bg-primary-hover transition">
+            <button className="mt-4 px-8 py-3 bg-primary text-black rounded-lg font-bold shadow-md hover:bg-primary-hover transition">
               Enroll Student to Directory
             </button>
           </div>

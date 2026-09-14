@@ -31,7 +31,7 @@ export default function SuperAdminImportCard() {
                   onClick={() => setSelectedEntity(entity)}
                   className={`px-3 py-1.5 text-[11px] font-bold border rounded-md transition-colors ${
                     selectedEntity === entity 
-                      ? 'bg-primary text-white border-primary' 
+                      ? 'bg-primary text-black border-primary' 
                       : 'bg-bg-page text-text-secondary border-border hover:bg-card hover:text-primary'
                   }`}
                 >
@@ -60,7 +60,7 @@ export default function SuperAdminImportCard() {
               <span className="text-sm font-medium text-text-primary">Click to select or drag and drop</span>
               <span className="text-xs text-text-secondary mt-1">Supports .xlsx and .csv files</span>
             </div>
-            <button className="w-full mt-2 py-2.5 bg-primary text-white text-sm font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
+            <button className="w-full mt-2 py-2.5 bg-primary text-black text-sm font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
               Upload & Process
             </button>
           </div>

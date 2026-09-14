@@ -42,7 +42,7 @@ export default function AcademicCalendar() {
                   <input type="date" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                 </div>
                 <div className="flex flex-col gap-1.5 md:col-span-2">
-                  <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm">Save Event</button>
+                  <button className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm">Save Event</button>
                 </div>
               </div>
             </div>
@@ -73,7 +73,7 @@ export default function AcademicCalendar() {
                   </label>
                 ))}
               </div>
-              <button className="mt-6 bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm">Save Configuration</button>
+              <button className="mt-6 bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm">Save Configuration</button>
             </div>
           </div>
         )}

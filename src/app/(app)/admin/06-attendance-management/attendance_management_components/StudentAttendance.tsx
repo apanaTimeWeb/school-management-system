@@ -64,7 +64,7 @@ export default function StudentAttendance() {
                 <label className="text-xs font-semibold text-text-secondary">Attendance Date</label>
                 <input type="date" defaultValue="2026-10-15" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Roster</button>
+              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Roster</button>
             </div>
 
             <div className="flex justify-between items-center mt-2">
@@ -114,7 +114,7 @@ export default function StudentAttendance() {
 
             <div className="flex items-center justify-end gap-4 mt-4">
               {isSubmitted && <span className="text-sm font-bold text-success fade-in">Attendance Saved Successfully!</span>}
-              <button onClick={handleSubmit} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-primary-hover active:scale-95 transition"><Save size={16}/> Submit Attendance</button>
+              <button onClick={handleSubmit} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-primary-hover active:scale-95 transition"><Save size={16}/> Submit Attendance</button>
             </div>
           </div>
         )}

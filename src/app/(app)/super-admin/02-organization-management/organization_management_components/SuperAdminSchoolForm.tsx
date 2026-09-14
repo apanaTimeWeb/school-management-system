@@ -239,7 +239,7 @@ export default function SuperAdminSchoolForm() {
           <button 
             type="submit"
             disabled={isSubmitting}
-            className="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-hover transition-colors text-sm font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-6 py-2 bg-primary text-black rounded-md hover:bg-primary-hover transition-colors text-sm font-medium disabled:opacity-70 disabled:cursor-not-allowed"
           >
             <Save size={16} />
             {isSubmitting ? 'Saving...' : 'Save School'}

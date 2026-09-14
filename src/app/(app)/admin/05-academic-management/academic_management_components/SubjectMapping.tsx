@@ -52,7 +52,7 @@ export default function SubjectMapping() {
                       <option>Both</option>
                     </select>
                   </div>
-                  <button className="bg-primary text-white rounded-md text-sm font-bold py-2 mt-2 shadow-sm">Save Subject</button>
+                  <button className="bg-primary text-black rounded-md text-sm font-bold py-2 mt-2 shadow-sm">Save Subject</button>
                 </div>
               </div>
               <div className="lg:col-span-2">
@@ -102,7 +102,7 @@ export default function SubjectMapping() {
                   </select>
                 </div>
                 <div className="flex items-end">
-                  <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm">Map Subject</button>
+                  <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm">Map Subject</button>
                 </div>
               </div>
               <div className="mt-4 bg-bg-page border border-border p-4 rounded-lg">
@@ -142,7 +142,7 @@ export default function SubjectMapping() {
                 </div>
               </div>
               <div className="flex justify-end">
-                <button className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm">Assign Teacher to Subject</button>
+                <button className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm">Assign Teacher to Subject</button>
               </div>
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function SubjectMapping() {
                   <select className="flex-1 bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary">
                     <option>Mr. John Doe</option>
                   </select>
-                  <button className="bg-primary text-white px-4 py-1.5 rounded-md text-sm font-bold shadow-sm">Assign</button>
+                  <button className="bg-primary text-black px-4 py-1.5 rounded-md text-sm font-bold shadow-sm">Assign</button>
                 </div>
               </div>
             </div>
@@ -206,7 +206,7 @@ export default function SubjectMapping() {
                   <select className="flex-1 bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary">
                     <option>Mrs. Smith</option>
                   </select>
-                  <button className="bg-primary text-white px-4 py-1.5 rounded-md text-sm font-bold shadow-sm">Assign</button>
+                  <button className="bg-primary text-black px-4 py-1.5 rounded-md text-sm font-bold shadow-sm">Assign</button>
                 </div>
               </div>
             </div>

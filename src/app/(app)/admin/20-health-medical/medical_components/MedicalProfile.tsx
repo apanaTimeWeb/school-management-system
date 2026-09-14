@@ -127,7 +127,7 @@ export default function MedicalProfile() {
                </div>
              </div>
              
-             <button onClick={handleSave} className="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 mt-4">
+             <button onClick={handleSave} className="bg-primary text-black px-6 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 mt-4">
                <Save size={16}/> Save Medical Record
              </button>
           </div>

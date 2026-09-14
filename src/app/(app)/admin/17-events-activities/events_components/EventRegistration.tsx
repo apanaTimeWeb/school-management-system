@@ -47,7 +47,7 @@ export default function EventRegistration() {
                </div>
              </div>
              
-             <button onClick={handleRegister} className="bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
+             <button onClick={handleRegister} className="bg-primary text-black px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
                Confirm Registration
              </button>
           </div>

@@ -30,7 +30,7 @@ export default function HostelManagementPage() {
               className={clsx(
                 "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
                 activeTab === tab.id 
-                  ? "bg-primary text-white shadow-sm" 
+                  ? "bg-primary text-black shadow-sm" 
                   : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
               )}
             >
@@ -47,7 +47,7 @@ export default function HostelManagementPage() {
          <p className="text-sm font-semibold text-text-secondary mt-2 max-w-md">
            This module is currently in setup mode. Please define the Hostel Blocks and Wardens in the Settings before allocating students to beds.
          </p>
-         <button className="bg-primary text-white px-6 py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover mt-6">
+         <button className="bg-primary text-black px-6 py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover mt-6">
            Configure Hostel Settings
          </button>
       </div>

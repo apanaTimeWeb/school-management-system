@@ -60,7 +60,7 @@ export default function DiscountsRefunds() {
                     <option>Special Manual Discount</option>
                   </select>
                 </div>
-                <button onClick={handleApply} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition w-[160px] mt-2 text-center">Apply Concession</button>
+                <button onClick={handleApply} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition w-[160px] mt-2 text-center">Apply Concession</button>
               </div>
             </div>
           </div>

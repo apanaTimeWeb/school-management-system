@@ -81,7 +81,7 @@ export default function SuperAdminPermissionEditor({ role }: EditorProps) {
               className={cn(
                 "w-full flex items-center justify-between px-3 py-2.5 rounded-md text-sm font-medium transition-colors",
                 activeModule === mod 
-                  ? "bg-primary text-white shadow-sm" 
+                  ? "bg-primary text-black shadow-sm" 
                   : "text-text-secondary hover:bg-card hover:text-text-primary"
               )}
             >
@@ -166,7 +166,7 @@ export default function SuperAdminPermissionEditor({ role }: EditorProps) {
           <button 
             onClick={handleSave}
             disabled={isSaving}
-            className="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70 shadow-sm transition-all"
+            className="flex items-center gap-2 px-6 py-2.5 bg-primary text-black rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70 shadow-sm transition-all"
           >
             <Save size={16} />
             {isSaving ? 'Saving Policy...' : `Save ${role} Permissions`}

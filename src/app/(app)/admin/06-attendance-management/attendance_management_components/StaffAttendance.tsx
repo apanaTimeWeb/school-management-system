@@ -68,7 +68,7 @@ export default function StaffAttendance() {
               Staff attendance is automatically synced from the Biometric RFID/Fingerprint devices installed at the gates.
             </p>
             <div className="flex gap-4 mt-6">
-              <button onClick={handleSync} disabled={isSyncing} className="px-6 py-2 bg-primary text-white rounded-lg font-bold shadow-sm hover:bg-primary-hover disabled:opacity-50 transition min-w-[120px]">
+              <button onClick={handleSync} disabled={isSyncing} className="px-6 py-2 bg-primary text-black rounded-lg font-bold shadow-sm hover:bg-primary-hover disabled:opacity-50 transition min-w-[120px]">
                 {isSyncing ? "Syncing..." : "Sync Now"}
               </button>
               <button className="px-6 py-2 bg-bg-page border border-border text-text-primary rounded-lg font-bold shadow-sm hover:bg-card">View Raw Device Logs</button>
@@ -120,7 +120,7 @@ export default function StaffAttendance() {
                     <td className="p-3"><input type="time" value={s.punchOut} onChange={(e) => updateStaffTime(s.id, 'punchOut', e.target.value)} className="bg-bg-input border border-border rounded px-2 py-1 text-sm outline-none w-24" /></td>
                     <td className="p-3 text-right">
                       {s.status !== 'absent' && <button onClick={() => markAbsent(s.id)} className="text-xs bg-danger-bg text-danger border border-danger/30 px-3 py-1.5 rounded font-bold mr-2 hover:bg-danger/10">Mark Absent</button>}
-                      <button onClick={handleAction} className="text-xs bg-primary text-white px-3 py-1.5 rounded font-bold transition-colors w-[70px]">Update</button>
+                      <button onClick={handleAction} className="text-xs bg-primary text-black px-3 py-1.5 rounded font-bold transition-colors w-[70px]">Update</button>
                     </td>
                   </tr>
                 ))}

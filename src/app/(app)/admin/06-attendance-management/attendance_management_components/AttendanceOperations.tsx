@@ -79,7 +79,7 @@ export default function AttendanceOperations() {
                     <td className="p-3 text-sm">{app.teacher}</td>
                     <td className="p-3 text-sm"><span className="text-success font-bold">{app.stats.p} P</span> | <span className="text-danger font-bold">{app.stats.a} A</span></td>
                     <td className="p-3 text-right">
-                      <button onClick={(e) => handleAction(e, "Locked")} className="text-xs bg-primary text-white px-4 py-1.5 rounded font-bold shadow-sm transition min-w-[100px]">Approve & Lock</button>
+                      <button onClick={(e) => handleAction(e, "Locked")} className="text-xs bg-primary text-black px-4 py-1.5 rounded font-bold shadow-sm transition min-w-[100px]">Approve & Lock</button>
                     </td>
                   </tr>
                 ))}
@@ -106,7 +106,7 @@ export default function AttendanceOperations() {
                   <label className="text-xs font-semibold text-text-secondary">SMS Template</label>
                   <textarea disabled className="bg-bg-input border border-border rounded-md px-3 py-2 text-sm text-text-disabled min-h-[60px]" defaultValue="Dear Parent, your ward [Student Name] is absent from school today ([Date]). Please contact the class teacher."></textarea>
                 </div>
-                <button onClick={(e) => handleAction(e, "Saved")} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm self-start transition">Update Preferences</button>
+                <button onClick={(e) => handleAction(e, "Saved")} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm self-start transition">Update Preferences</button>
               </div>
             </div>
           </div>

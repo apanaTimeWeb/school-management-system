@@ -35,7 +35,7 @@ export default function InventoryAssetsPage() {
               className={clsx(
                 "flex items-center gap-2 px-4 py-2 rounded-md text-sm font-semibold transition-all whitespace-nowrap",
                 activeTab === tab.id 
-                  ? "bg-primary text-white shadow-sm" 
+                  ? "bg-primary text-black shadow-sm" 
                   : "text-text-secondary hover:text-text-primary hover:bg-bg-page"
               )}
             >

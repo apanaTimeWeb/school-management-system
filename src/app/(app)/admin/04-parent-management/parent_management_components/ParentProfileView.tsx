@@ -54,7 +54,7 @@ export default function ParentProfileView() {
               <label className="text-xs font-bold text-text-secondary uppercase">Link Another Child</label>
               <div className="flex gap-2">
                 <input type="text" placeholder="Enter Student Admission No..." className="flex-1 bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
-                <button className="text-sm font-bold bg-primary text-white px-4 py-1.5 rounded-md shadow-sm">Link</button>
+                <button className="text-sm font-bold bg-primary text-black px-4 py-1.5 rounded-md shadow-sm">Link</button>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ParentProfileView() {
                     <option>PAN</option>
                   </select>
                   <input type="file" className="text-xs flex-1 file:bg-bg-page file:border file:border-border file:rounded file:px-2 file:py-1 file:text-text-primary" />
-                  <button className="text-xs font-bold bg-primary text-white px-3 py-1.5 rounded">Upload</button>
+                  <button className="text-xs font-bold bg-primary text-black px-3 py-1.5 rounded">Upload</button>
                 </div>
               </div>
             </div>

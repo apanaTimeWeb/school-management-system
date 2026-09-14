@@ -22,7 +22,7 @@ export default function AdminDashboardPage() {
           <button className="flex items-center gap-2 bg-bg-page border border-border text-text-primary px-4 py-2 rounded-md text-sm font-semibold hover:bg-border/50 transition">
             <Plus size={16} /> Quick Actions
           </button>
-          <button className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-primary/90 transition shadow-sm">
+          <button className="flex items-center gap-2 bg-primary text-black px-4 py-2 rounded-md text-sm font-semibold hover:bg-primary/90 transition shadow-sm">
             <UserPlus size={16} /> Admit Student
           </button>
           <button className="flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-secondary-hover transition shadow-sm">

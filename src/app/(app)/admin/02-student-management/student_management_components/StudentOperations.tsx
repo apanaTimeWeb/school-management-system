@@ -161,7 +161,7 @@ export default function StudentOperations() {
           </div>
           
           <div className="mt-auto flex justify-end">
-            <button className="px-6 py-2 bg-primary text-white rounded-md text-sm font-semibold hover:bg-primary-hover transition">
+            <button className="px-6 py-2 bg-primary text-black rounded-md text-sm font-semibold hover:bg-primary-hover transition">
               Execute {operations.find(o => o.id === activeTab)?.title}
             </button>
           </div>

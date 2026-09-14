@@ -16,8 +16,8 @@ export default function AdmissionEnquiries() {
     <div className="bg-card border border-border rounded-xl shadow-sm flex flex-col h-full fade-in min-h-[500px]">
       <div className="p-4 border-b border-border flex flex-col sm:flex-row justify-between items-center gap-4">
         <div className="flex gap-2">
-          <button onClick={() => setActiveTab('list')} className={clsx("px-4 py-2 rounded-md text-sm font-semibold transition", activeTab === 'list' ? 'bg-primary text-white' : 'bg-bg-page text-text-secondary hover:text-text-primary')}>Enquiry & Applications List</button>
-          <button onClick={() => setActiveTab('form')} className={clsx("px-4 py-2 rounded-md text-sm font-semibold transition", activeTab === 'form' ? 'bg-primary text-white' : 'bg-bg-page text-text-secondary hover:text-text-primary')}>+ New Admission Entry</button>
+          <button onClick={() => setActiveTab('list')} className={clsx("px-4 py-2 rounded-md text-sm font-semibold transition", activeTab === 'list' ? 'bg-primary text-black' : 'bg-bg-page text-text-secondary hover:text-text-primary')}>Enquiry & Applications List</button>
+          <button onClick={() => setActiveTab('form')} className={clsx("px-4 py-2 rounded-md text-sm font-semibold transition", activeTab === 'form' ? 'bg-primary text-black' : 'bg-bg-page text-text-secondary hover:text-text-primary')}>+ New Admission Entry</button>
         </div>
       </div>
 
@@ -105,7 +105,7 @@ export default function AdmissionEnquiries() {
             </div>
             
             <div className="flex justify-end pt-4 border-t border-border">
-              <button className="px-6 py-2 bg-primary text-white rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover">Save Application Form</button>
+              <button className="px-6 py-2 bg-primary text-black rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover">Save Application Form</button>
             </div>
           </div>
         )}

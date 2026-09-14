@@ -28,7 +28,7 @@ export default function SuperAdminClassesSectionsTab() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Classes</h2>
-          <button onClick={() => setIsClassDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
+          <button onClick={() => setIsClassDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-black text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
             <Plus size={14} /> Add Class
           </button>
         </div>
@@ -75,7 +75,7 @@ export default function SuperAdminClassesSectionsTab() {
       <div className="flex flex-col gap-4">
         <div className="flex items-center justify-between">
           <h2 className="text-base font-semibold text-text-primary">Sections</h2>
-          <button onClick={() => setIsSectionDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
+          <button onClick={() => setIsSectionDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-black text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
             <Plus size={14} /> Add Section
           </button>
         </div>

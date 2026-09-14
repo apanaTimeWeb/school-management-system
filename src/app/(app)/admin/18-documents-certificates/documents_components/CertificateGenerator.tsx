@@ -57,7 +57,7 @@ export default function CertificateGenerator() {
                <button className="flex-1 bg-card border border-border text-text-primary py-2.5 rounded-lg font-bold shadow-sm hover:border-primary transition text-sm flex items-center justify-center gap-2">
                  <FileText size={16}/> Preview Print
                </button>
-               <button onClick={handleGenerate} className="flex-1 bg-primary text-white py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition text-sm flex items-center justify-center gap-2">
+               <button onClick={handleGenerate} className="flex-1 bg-primary text-black py-2.5 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition text-sm flex items-center justify-center gap-2">
                  <Download size={16}/> Generate PDF
                </button>
              </div>

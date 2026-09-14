@@ -53,7 +53,7 @@ export default function SuperAdminNotificationConfig() {
         <h2 className="text-base font-bold text-text-primary uppercase border-b border-border pb-2">Controls</h2>
         <div className="flex flex-col gap-3 pl-2">
           {controls.map((ctrl, i) => (
-            <button key={i} className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold text-left hover:bg-primary hover:text-white transition-colors">
+            <button key={i} className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold text-left hover:bg-primary hover:text-black transition-colors">
               {ctrl}
             </button>
           ))}

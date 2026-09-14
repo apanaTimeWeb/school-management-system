@@ -44,7 +44,7 @@ export default function AcademicReports() {
                        <option>Current Academic Year (2025-26)</option>
                        <option>Previous Year (2024-25)</option>
                      </select>
-                     <button onClick={generateReport} className="bg-primary text-white py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2 text-sm transition">
+                     <button onClick={generateReport} className="bg-primary text-black py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2 text-sm transition">
                        <Download size={16}/> Export Excel/PDF
                      </button>
                    </div>
@@ -58,7 +58,7 @@ export default function AcademicReports() {
                        <option>Primary (1 to 5)</option>
                        <option>Secondary (6 to 10)</option>
                      </select>
-                     <button onClick={generateReport} className="bg-primary text-white py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2 text-sm transition">
+                     <button onClick={generateReport} className="bg-primary text-black py-2 rounded-lg font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2 text-sm transition">
                        <Download size={16}/> Export Excel/PDF
                      </button>
                    </div>

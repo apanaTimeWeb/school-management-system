@@ -41,7 +41,7 @@ export default function MembersReservations() {
                  <Search size={16} className="text-text-secondary"/>
                  <input type="text" placeholder="Search Student or Staff ID..." className="bg-transparent border-none outline-none text-sm w-full font-semibold"/>
                </div>
-               <button className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm">Sync from Directory</button>
+               <button className="bg-primary text-black px-4 py-2 rounded-lg text-sm font-bold shadow-sm">Sync from Directory</button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

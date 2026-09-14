@@ -38,7 +38,7 @@ export default function MediaGallery() {
                <h2 className="text-xl font-bold text-text-primary flex items-center gap-2">
                  <ImageIcon size={20} className="text-primary"/> Manage Public Photo Gallery
                </h2>
-               <label className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition cursor-pointer flex items-center gap-2">
+               <label className="bg-primary text-black px-4 py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition cursor-pointer flex items-center gap-2">
                  <Upload size={16}/> Upload Photos
                  <input type="file" multiple className="hidden" onChange={handleUpload}/>
                </label>

@@ -158,7 +158,7 @@ export default function SuperAdminGeneralSettingsForm() {
 
         {/* Global Save Button */}
         <div className="flex justify-end mt-2">
-          <button type="submit" className="flex items-center gap-2 px-8 py-3 bg-primary text-white text-sm font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
+          <button type="submit" className="flex items-center gap-2 px-8 py-3 bg-primary text-black text-sm font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
             <Save size={18} /> Save Settings
           </button>
         </div>

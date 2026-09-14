@@ -50,7 +50,7 @@ export default function AcademicSetupPage() {
           {activeTab !== 'holidays' && (
             <button 
               onClick={() => setIsAddingNew(!isAddingNew)}
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-black text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors shadow-sm"
             >
               {isAddingNew ? (
                 <><ArrowLeft size={16} /> Cancel</>

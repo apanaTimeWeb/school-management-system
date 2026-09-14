@@ -12,7 +12,7 @@ export default function AdminStudentChangesConfig() {
           Student Changes Audit Logs
         </h2>
         <div className="flex gap-2">
-          <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition">
+          <button className="bg-primary text-black px-4 py-2 rounded-md text-sm font-semibold flex items-center gap-2 hover:bg-primary/90 transition">
             <Download size={16} /> Export Logs
           </button>
         </div>
