@@ -63,10 +63,10 @@ export default function SchoolAdminLogin() {
             <button 
               type="submit" 
               disabled={loading}
-              className="mt-4 w-full bg-secondary hover:bg-secondary/90 text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 w-full bg-secondary hover:bg-secondary/90 text-[#0B1C2C] font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-[#0B1C2C]/30 border-t-[#0B1C2C] rounded-full animate-spin" />
               ) : (
                 "Login as School Admin"
               )}
