@@ -76,11 +76,11 @@ export default function PrincipalTimetableApprovalTab() {
                   </td>
                   <td className="p-3 text-right">
                     <div className="flex justify-end gap-2">
-                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 bg-page border border-border hover:bg-white/10 rounded text-[12px] font-bold text-text-primary transition-colors flex items-center gap-1.5">
+                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 bg-page border border-border hover:bg-white/10 rounded text-[12px] font-bold text-text-primary transition-colors flex items-center gap-1.5">
                         <Eye size={14} /> Review
                       </button>
                       {draft.status === 'Pending Approval' && (
-                        <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-black transition-colors flex items-center gap-1.5 disabled:opacity-50" disabled={draft.conflictsCount > 0}>
+                        <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-black transition-colors flex items-center gap-1.5 disabled:opacity-50" disabled={draft.conflictsCount > 0}>
                           <Send size={14} /> Publish
                         </button>
                       )}

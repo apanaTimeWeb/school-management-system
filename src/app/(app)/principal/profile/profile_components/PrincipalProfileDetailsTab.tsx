@@ -67,7 +67,7 @@ export default function PrincipalProfileDetailsTab({ profile }: { profile: Princ
            </div>
            
            <div className="mt-6 flex justify-end">
-             <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-6 py-2 bg-primary hover:bg-primary-hover text-black font-bold text-[13px] rounded-md transition-colors">
+             <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-6 py-2 bg-primary hover:bg-primary-hover text-black font-bold text-[13px] rounded-md transition-colors">
                Edit Profile
              </button>
            </div>

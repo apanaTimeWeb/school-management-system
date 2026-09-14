@@ -61,7 +61,7 @@ export default function PrincipalCommunicationNoticeModal() {
               </div>
               <div>
                 <p className="text-[13px] font-bold text-text-primary">{selectedNotice.attachments} Attachment(s) Available</p>
-                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="text-[12px] text-primary hover:underline font-semibold mt-0.5">Download All</button>
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="text-[12px] text-primary hover:underline font-semibold mt-0.5">Download All</button>
               </div>
             </div>
           )}

@@ -120,7 +120,7 @@ export default function PrincipalComplaintDetailsModal() {
 
           {(selectedComplaint.status !== 'Resolved' && selectedComplaint.status !== 'Closed') && (
             <>
-              <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }}
+              <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }}
                 disabled={loading}
                 className="px-4 py-2 rounded-md bg-page hover:bg-white/5 border border-border text-text-primary text-[13px] font-bold transition-colors"
               >

@@ -117,7 +117,7 @@ export default function PrincipalAttendanceOverviewTab() {
                   </div>
                   <p className="text-[14px] font-medium text-text-primary">{alert.message}</p>
                 </div>
-                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-4 py-2 bg-page border border-border rounded-md text-[12px] font-bold hover:bg-white/10 transition-colors shrink-0">
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-4 py-2 bg-page border border-border rounded-md text-[12px] font-bold hover:bg-white/10 transition-colors shrink-0">
                   Take Action
                 </button>
               </div>

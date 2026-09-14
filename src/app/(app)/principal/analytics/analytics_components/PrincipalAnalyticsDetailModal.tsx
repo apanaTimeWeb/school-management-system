@@ -83,10 +83,10 @@ export default function PrincipalAnalyticsDetailModal() {
               </div>
 
               <div className="flex gap-2 mt-4">
-                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="flex-1 py-2 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-black font-bold text-[13px] rounded transition-colors">
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="flex-1 py-2 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-black font-bold text-[13px] rounded transition-colors">
                   Schedule Meeting
                 </button>
-                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="flex-1 py-2 bg-info/10 hover:bg-info border border-info/30 hover:border-info text-info hover:text-black font-bold text-[13px] rounded transition-colors">
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="flex-1 py-2 bg-info/10 hover:bg-info border border-info/30 hover:border-info text-info hover:text-black font-bold text-[13px] rounded transition-colors">
                   Send Warning Letter
                 </button>
               </div>

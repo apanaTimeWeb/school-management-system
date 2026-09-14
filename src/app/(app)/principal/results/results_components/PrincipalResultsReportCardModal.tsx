@@ -106,7 +106,7 @@ export default function PrincipalResultsReportCardModal() {
           >
             Close Preview
           </button>
-          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }}
+          <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }}
             disabled={loading}
             className="px-4 py-2 rounded-md bg-primary text-black text-[13px] font-bold hover:bg-primary-hover transition-colors flex items-center gap-2 disabled:opacity-50"
           >

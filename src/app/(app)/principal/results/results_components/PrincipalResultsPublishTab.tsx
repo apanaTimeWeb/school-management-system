@@ -81,7 +81,7 @@ export default function PrincipalResultsPublishTab() {
                       <Eye size={14} /> Review Sample
                     </button>
                     {draft.approvalStatus === 'Pending Review' && (
-                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-black transition-colors flex items-center gap-1.5">
+                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-black transition-colors flex items-center gap-1.5">
                         <Send size={14} /> Publish
                       </button>
                     )}

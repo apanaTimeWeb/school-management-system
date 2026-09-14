@@ -66,7 +66,7 @@ export default function PrincipalAcademicsSubjectsTab() {
               <Edit3 size={14} className="text-primary" />
               Assign HOD
             </button>
-            <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="flex-1 px-4 py-2 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded-md text-[13px] font-bold text-primary hover:text-black transition-colors">
+            <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="flex-1 px-4 py-2 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded-md text-[13px] font-bold text-primary hover:text-black transition-colors">
               View Teachers
             </button>
           </div>

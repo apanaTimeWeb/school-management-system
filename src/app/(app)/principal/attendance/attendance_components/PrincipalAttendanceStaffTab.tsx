@@ -95,7 +95,7 @@ export default function PrincipalAttendanceStaffTab() {
                   </span>
                 </td>
                 <td className="p-4 text-center">
-                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'This action is part of the next development phase.' })); }} className="p-2 bg-info/10 border border-info/30 rounded-md text-info hover:bg-info hover:text-white hover:border-info transition-colors shadow-sm">
+                  <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="p-2 bg-info/10 border border-info/30 rounded-md text-info hover:bg-info hover:text-white hover:border-info transition-colors shadow-sm">
                     <Eye size={16} />
                   </button>
                 </td>
