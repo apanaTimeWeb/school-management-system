@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { KeyRound, ShieldAlert, SmartphoneNfc } from "lucide-react";
 import type { UserProfileData } from "../hr_my_profile_types/AdminHrMyProfileTypes";
 
@@ -9,6 +10,17 @@ interface AdminHrSecurityTabProps {
 }
 
 export default function AdminHrSecurityTab({ profile, handle2FAToggle }: AdminHrSecurityTabProps) {
+  const [isUpdatingPassword, setIsUpdatingPassword] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleUpdatePassword = () => {
+    setIsUpdatingPassword(true);
+    setTimeout(() => {
+      setIsUpdatingPassword(false);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
+    }, 1500);
+  };
 
   return (
     <div className="motion-safe:animate-in motion-safe:fade-in duration-300 flex flex-col gap-6">
@@ -31,9 +43,18 @@ export default function AdminHrSecurityTab({ profile, handle2FAToggle }: AdminHr
              <label className="block text-[10px] font-bold text-muted-foreground mb-1 uppercase tracking-wider">Confirm New Password</label>
              <input type="password" placeholder="••••••••" className="w-full px-3 py-2 bg-input border border-border rounded-md text-sm font-bold text-foreground outline-none focus:border-primary" />
            </div>
-           <button className="px-6 py-2 bg-primary text-card text-sm font-bold rounded-md hover:bg-yellow-500 shadow-md transition-all active:scale-95 w-full sm:w-auto">
-             Update Password
-           </button>
+           
+           <div className="flex items-center gap-3">
+             <button 
+               onClick={handleUpdatePassword}
+               disabled={isUpdatingPassword}
+               className="px-6 py-2 bg-primary text-card text-sm font-bold rounded-md hover:bg-yellow-500 shadow-md transition-all active:scale-95 w-full sm:w-auto disabled:opacity-50 disabled:pointer-events-none flex items-center gap-2 justify-center"
+             >
+               {isUpdatingPassword ? <div className="w-4 h-4 border-2 border-card border-t-transparent rounded-full animate-spin"></div> : null}
+               {isUpdatingPassword ? 'Updating...' : 'Update Password'}
+             </button>
+             {showSuccess && <span className="text-sm font-bold text-success motion-safe:animate-in motion-safe:fade-in">Password updated!</span>}
+           </div>
         </div>
       </div>
 

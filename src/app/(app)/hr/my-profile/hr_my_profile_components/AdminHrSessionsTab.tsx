@@ -1,10 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import { Monitor, Smartphone, Globe, AlertTriangle, XCircle } from "lucide-react";
 import { MOCK_ACTIVE_SESSIONS, MOCK_LOGIN_HISTORY } from "../hr_my_profile_constants/AdminHrMyProfileConstants";
 
 export default function AdminHrSessionsTab() {
-  
+  const [sessions, setSessions] = useState(MOCK_ACTIVE_SESSIONS);
+  const [revokingId, setRevokingId] = useState<string | null>(null);
+
+  const handleRevoke = (id: string) => {
+    setRevokingId(id);
+    setTimeout(() => {
+      setSessions(prev => prev.filter(s => s.id !== id));
+      setRevokingId(null);
+    }, 1500);
+  };
+
   return (
     <div className="motion-safe:animate-in motion-safe:fade-in duration-300 flex flex-col gap-6">
       
@@ -14,7 +25,7 @@ export default function AdminHrSessionsTab() {
         <p className="text-sm text-muted-foreground mb-6">These devices are currently logged into your account. Revoke any sessions you do not recognize.</p>
         
         <div className="space-y-4">
-           {MOCK_ACTIVE_SESSIONS.map(session => (
+           {sessions.map(session => (
              <div key={session.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 border border-border rounded-lg bg-input/20">
                <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-full ${session.isCurrentSession ? 'bg-primary/10 text-primary' : 'bg-card text-muted-foreground border border-border'}`}>
@@ -32,8 +43,13 @@ export default function AdminHrSessionsTab() {
                </div>
                
                {!session.isCurrentSession && (
-                 <button className="px-4 py-1.5 text-xs font-bold text-danger hover:bg-danger/10 border border-danger/20 rounded transition-colors flex items-center gap-1">
-                   <XCircle size={14}/> Revoke
+                 <button 
+                   onClick={() => handleRevoke(session.id)}
+                   disabled={revokingId === session.id}
+                   className="px-4 py-1.5 text-xs font-bold text-danger hover:bg-danger/10 border border-danger/20 rounded transition-colors flex items-center gap-1 disabled:opacity-50 disabled:pointer-events-none"
+                 >
+                   {revokingId === session.id ? <div className="w-3 h-3 border-2 border-danger border-t-transparent rounded-full animate-spin"></div> : <XCircle size={14}/>}
+                   {revokingId === session.id ? 'Revoking...' : 'Revoke'}
                  </button>
                )}
              </div>
