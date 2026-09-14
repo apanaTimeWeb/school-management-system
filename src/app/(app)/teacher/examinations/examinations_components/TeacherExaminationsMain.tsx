@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { Calendar, Clock, BookOpen, AlertCircle, Edit3, ArrowRight, FileText } from 'lucide-react';
+import { Calendar, Clock, BookOpen, AlertCircle, Edit3, ArrowRight, FileText, CheckCircle2 } from 'lucide-react';
 import { useTeacherExaminationsStore } from '../examinations_store/useTeacherExaminationsStore';
 import { TEACHER_EXAMS_LIST } from '../examinations_constants/TeacherExaminationsMockData';
 import TeacherMarksEntryModal from './TeacherMarksEntryModal';
