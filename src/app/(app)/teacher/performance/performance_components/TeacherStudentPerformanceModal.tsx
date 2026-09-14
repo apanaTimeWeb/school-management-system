@@ -5,12 +5,14 @@ import { useTeacherPerformanceStore } from '../performance_store/useTeacherPerfo
 
 export default function TeacherStudentPerformanceModal() {
   const { isModalOpen, closePerformanceModal, selectedStudent } = useTeacherPerformanceStore();
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isModalOpen || !selectedStudent) return null;
 
   const handleUpdateRemarks = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Performance Remarks updated successfully.' }));
+    setSuccessMessage('Performance Remarks updated successfully.');
+    setTimeout(() => setSuccessMessage(''), 2500);
   };
 
   const renderTrendIcon = (status: string) => {
@@ -126,15 +128,19 @@ export default function TeacherStudentPerformanceModal() {
                     <p className="text-[12px] text-text-secondary mb-4">
                       Add academic remarks for {selectedStudent.name}. This helps track interventions and improvement plans.
                     </p>
-                    <form onSubmit={handleUpdateRemarks} className="flex flex-col flex-1">
+                    <form onSubmit={handleUpdateRemarks} className="flex flex-col flex-1 relative z-0">
                       <textarea 
                         defaultValue={selectedStudent.teacherRemarks}
                         className="w-full flex-1 min-h-[200px] bg-input border border-border rounded-lg p-3 text-[13px] text-text-primary focus:outline-none focus:border-primary resize-none custom-scrollbar mb-4"
                         placeholder="Enter remarks..."
                         required
                       ></textarea>
-                      <button type="submit" className="w-full py-3 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors">
-                        <Save size={18} /> Update Remarks
+                      <button type="submit" disabled={!!successMessage} className="w-full py-3 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                        {successMessage ? (
+                          <><CheckCircle2 size={18} /> {successMessage}</>
+                        ) : (
+                          <><Save size={18} /> Update Remarks</>
+                        )}
                       </button>
                     </form>
                  </div>

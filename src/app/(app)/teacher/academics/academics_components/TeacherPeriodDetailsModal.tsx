@@ -5,6 +5,7 @@ import { useTeacherTimetableStore } from '../academics_store/useTeacherTimetable
 
 export default function TeacherPeriodDetailsModal() {
   const { isPeriodDetailsModalOpen, closePeriodDetails, selectedPeriod } = useTeacherTimetableStore();
+  const [navigating, setNavigating] = React.useState(false);
 
   if (!isPeriodDetailsModalOpen || !selectedPeriod) return null;
 
@@ -66,8 +67,15 @@ export default function TeacherPeriodDetailsModal() {
                   <p className="text-[15px] font-bold text-text-primary">{selectedPeriod.class}</p>
                 </div>
               </div>
-              <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Navigating to class attendance.' }))} className="px-3 py-1.5 bg-info text-black text-[12px] font-bold rounded hover:bg-info/90 transition-colors">
-                Take Attendance
+              <button 
+                onClick={() => {
+                  setNavigating(true);
+                  setTimeout(() => setNavigating(false), 2000);
+                }} 
+                disabled={navigating}
+                className="px-3 py-1.5 bg-info text-black text-[12px] font-bold rounded hover:bg-info/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed min-w-[120px]"
+              >
+                {navigating ? 'Opening...' : 'Take Attendance'}
               </button>
             </div>
           )}

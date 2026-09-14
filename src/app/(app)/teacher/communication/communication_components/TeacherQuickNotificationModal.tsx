@@ -8,6 +8,7 @@ export default function TeacherQuickNotificationModal() {
   const { isQuickNotificationModalOpen, closeQuickNotification, notificationType } = useTeacherCommunicationStore();
   const [target, setTarget] = useState('');
   const [template, setTemplate] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     if (notificationType === 'Homework') setTemplate('Dear Parent, this is to remind you that your ward has pending homework for [Subject]. Please ensure it is completed by [Date].');
@@ -18,8 +19,11 @@ export default function TeacherQuickNotificationModal() {
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: `${notificationType} Notification sent successfully.` }));
-    closeQuickNotification();
+    setSuccessMessage(`${notificationType} Notification sent successfully.`);
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeQuickNotification();
+    }, 2500);
   };
 
   if (!isQuickNotificationModalOpen) return null;
@@ -80,7 +84,12 @@ export default function TeacherQuickNotificationModal() {
            </div>
 
            <div className="pt-2">
-             <button type="submit" className="w-full py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors">
+             {successMessage ? (
+               <div className="mb-3 text-success text-[13px] font-bold text-center animate-in fade-in">
+                 {successMessage}
+               </div>
+             ) : null}
+             <button type="submit" disabled={!!successMessage} className="w-full py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <BellRing size={16} /> Send Alert Now
              </button>
            </div>

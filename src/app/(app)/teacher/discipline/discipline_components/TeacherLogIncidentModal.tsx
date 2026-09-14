@@ -16,13 +16,17 @@ export default function TeacherLogIncidentModal() {
     parentNotified: false,
     escalatedToPrincipal: false
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   if (!isLogIncidentModalOpen) return null;
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Incident logged successfully and respective parties notified.' }));
-    closeLogIncidentModal();
+    setSuccessMessage('Incident logged successfully and respective parties notified.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeLogIncidentModal();
+    }, 2500);
   };
 
   const INCIDENT_TYPES = ['Disruptive Behaviour', 'Late Arrival', 'Cheating', 'Insubordination', 'Property Damage', 'Bullying', 'Other'];
@@ -139,11 +143,16 @@ export default function TeacherLogIncidentModal() {
              </label>
            </div>
 
-           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4">
+           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4 items-center">
+             {successMessage ? (
+               <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                 {successMessage}
+               </div>
+             ) : null}
              <button type="button" onClick={closeLogIncidentModal} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
                Cancel
              </button>
-             <button type="submit" className="px-5 py-2.5 bg-danger text-white font-bold text-[13px] rounded-lg hover:bg-danger/90 flex items-center gap-2 transition-colors">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-danger text-white font-bold text-[13px] rounded-lg hover:bg-danger/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Save Record
              </button>
            </div>

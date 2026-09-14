@@ -8,11 +8,15 @@ export default function TeacherNewMessageModal() {
   const { isNewMessageModalOpen, closeNewMessageModal } = useTeacherCommunicationStore();
   const [recipientType, setRecipientType] = useState<'Individual' | 'Class'>('Individual');
   const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
   
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
-    window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Message sent successfully.' }));
-    closeNewMessageModal();
+    setSuccessMessage('Message sent successfully.');
+    setTimeout(() => {
+      setSuccessMessage('');
+      closeNewMessageModal();
+    }, 2500);
   };
 
   if (!isNewMessageModalOpen) return null;
@@ -72,11 +76,16 @@ export default function TeacherNewMessageModal() {
              ></textarea>
            </div>
 
-           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4">
-             <button type="button" onClick={closeNewMessageModal} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
+           <div className="pt-2 flex justify-end gap-3 border-t border-border mt-4 items-center">
+             {successMessage ? (
+               <div className="flex-1 text-success text-[13px] font-bold animate-in fade-in">
+                 {successMessage}
+               </div>
+             ) : null}
+             <button type="button" onClick={closeNewMessageModal} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
                Cancel
              </button>
-             <button type="submit" className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Send Message
              </button>
            </div>

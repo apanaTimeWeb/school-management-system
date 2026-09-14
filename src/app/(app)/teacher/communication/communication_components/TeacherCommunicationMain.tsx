@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { MessageSquare, Users, Bell, FileText, CalendarCheck, Megaphone, Send, Search, Shield, BookOpen } from 'lucide-react';
+import { MessageSquare, Users, Bell, FileText, CalendarCheck, Megaphone, Send, Search, Shield, BookOpen, CheckCircle2 } from 'lucide-react';
 import { useTeacherCommunicationStore } from '../communication_store/useTeacherCommunicationStore';
 import { TEACHER_PARENTS_LIST, TEACHER_CHAT_MESSAGES, TEACHER_ANNOUNCEMENTS, TEACHER_ADMIN_LIST, TEACHER_STUDENT_GROUPS } from '../communication_constants/TeacherCommunicationMockData';
 import TeacherNewMessageModal from './TeacherNewMessageModal';
@@ -19,6 +19,7 @@ export default function TeacherCommunicationMain() {
   const [searchQuery, setSearchQuery] = useState('');
   const [messageInput, setMessageInput] = useState('');
   const [localMessages, setLocalMessages] = useState(TEACHER_CHAT_MESSAGES);
+  const [requestingAccess, setRequestingAccess] = useState(false);
 
   const getFilteredContacts = () => {
     let list: any[] = [];
@@ -147,8 +148,15 @@ export default function TeacherCommunicationMain() {
                        <Shield size={48} className="text-danger mb-4 opacity-50"/>
                        <h3 className="text-[16px] font-bold text-text-primary mb-2">Communication Locked</h3>
                        <p className="text-[13px] text-text-secondary max-w-sm">You need approval from the Principal to initiate a direct chat with this parent. Please request access.</p>
-                       <button onClick={() => window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Request sent to Principal.' }))} className="mt-4 px-4 py-2 bg-page border border-border text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
-                         Request Access
+                       <button 
+                         onClick={() => {
+                           setRequestingAccess(true);
+                           setTimeout(() => setRequestingAccess(false), 2500);
+                         }} 
+                         disabled={requestingAccess}
+                         className={`mt-4 px-4 py-2 border border-border font-bold text-[13px] rounded-lg transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed ${requestingAccess ? 'bg-success/20 text-success border-success/30' : 'bg-page text-primary hover:bg-white/5'}`}
+                       >
+                         {requestingAccess ? <><CheckCircle2 size={16} /> Request Sent</> : 'Request Access'}
                        </button>
                      </div>
                    ) : (
