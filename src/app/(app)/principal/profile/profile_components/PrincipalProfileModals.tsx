@@ -79,7 +79,7 @@ export default function PrincipalProfileModals() {
              <p className="text-[13px] text-text-secondary mb-6">Two-factor authentication adds an extra layer of security to your account. Are you sure you want to toggle this setting?</p>
              <div className="flex gap-3">
                <button onClick={() => setIs2FAModalOpen(false)} className="flex-1 py-2 bg-page hover:bg-white/5 border border-border rounded text-[13px] font-bold text-text-primary">Cancel</button>
-               <button onClick={handle2FAToggle} disabled={loading} className="flex-1 py-2 bg-warning hover:bg-warning/80 text-black rounded text-[13px] font-bold disabled:opacity-50">Confirm Action</button>
+               <button onClick={handle2FAToggle} disabled={loading} className="flex-1 py-2 bg-warning hover:bg-warning/80 text-white rounded text-[13px] font-bold disabled:opacity-50">Confirm Action</button>
              </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function PrincipalProfileModals() {
              <p className="text-[13px] text-text-secondary mb-6">You are about to log out the session on <strong>{sessionToTerminate.device}</strong> ({sessionToTerminate.location}). They will need to log in again.</p>
              <div className="flex gap-3">
                <button onClick={() => setSessionToTerminate(null)} className="flex-1 py-2 bg-page hover:bg-white/5 border border-border rounded text-[13px] font-bold text-text-primary">Cancel</button>
-               <button onClick={handleTerminate} disabled={loading} className="flex-1 py-2 bg-danger hover:bg-danger/80 text-black rounded text-[13px] font-bold disabled:opacity-50">Terminate</button>
+               <button onClick={handleTerminate} disabled={loading} className="flex-1 py-2 bg-danger hover:bg-danger/80 text-white rounded text-[13px] font-bold disabled:opacity-50">Terminate</button>
              </div>
           </div>
         </div>

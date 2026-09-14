@@ -78,7 +78,7 @@ export default function PrincipalDocumentViewModal() {
             <button
               onClick={() => handleAction('Verify')}
               disabled={loading}
-              className="w-full py-2.5 rounded-md bg-success hover:bg-success-hover text-black text-[13px] font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-2.5 rounded-md bg-success hover:bg-success-hover text-white text-[13px] font-bold transition-colors flex items-center justify-center gap-2 disabled:opacity-50"
             >
               <CheckCircle size={16}/> Verify & Approve Document
             </button>

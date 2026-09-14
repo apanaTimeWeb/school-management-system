@@ -63,7 +63,7 @@ export default function TeacherReviewSubmissionModal() {
                 {isPlagChecked ? (
                   <span className="text-[12px] font-bold text-success bg-success/10 px-2 py-1 rounded border border-success/20">Originality: 94% (Safe)</span>
                 ) : (
-                  <button type="button" onClick={() => setIsPlagChecked(true)} className="text-[12px] font-bold text-black bg-info px-3 py-1.5 rounded hover:bg-info/90 transition-colors">Run Scan</button>
+                  <button type="button" onClick={() => setIsPlagChecked(true)} className="text-[12px] font-bold text-white bg-info px-3 py-1.5 rounded hover:bg-info/90 transition-colors">Run Scan</button>
                 )}
              </div>
 

@@ -96,7 +96,7 @@ export default function PrincipalHostelIncidentModal() {
             <button
               onClick={handleAction}
               disabled={loading || !remarks.trim()}
-              className="px-6 py-2 rounded-md bg-success hover:bg-success-hover text-black text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+              className="px-6 py-2 rounded-md bg-success hover:bg-success-hover text-white text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
             >
               <CheckCircle size={16}/> Mark Resolved
             </button>

@@ -108,14 +108,14 @@ export default function PrincipalApprovalActionModal() {
              <button
                 onClick={() => handleAction('Reject')}
                 disabled={loading}
-                className="px-5 py-2 rounded-md bg-danger/10 hover:bg-danger text-danger hover:text-black border border-danger/30 hover:border-danger text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+                className="px-5 py-2 rounded-md bg-danger/10 hover:bg-danger text-danger hover:text-white border border-danger/30 hover:border-danger text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
               >
                 <XCircle size={16}/> Reject
               </button>
               <button
                 onClick={() => handleAction('Approve')}
                 disabled={loading}
-                className="px-6 py-2 rounded-md bg-success hover:bg-success-hover text-black text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+                className="px-6 py-2 rounded-md bg-success hover:bg-success-hover text-white text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
               >
                 <CheckCircle size={16}/> Approve
               </button>

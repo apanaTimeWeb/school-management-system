@@ -128,7 +128,7 @@ export default function PrincipalLeavesActionModal() {
             <button
               onClick={() => handleAction('Approved')}
               disabled={loading}
-              className="px-6 py-2 rounded-md bg-success border border-success hover:bg-success/90 text-black text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+              className="px-6 py-2 rounded-md bg-success border border-success hover:bg-success/90 text-white text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
             >
               {loading ? "Processing..." : <><CheckCircle size={16}/> Approve</>}
             </button>

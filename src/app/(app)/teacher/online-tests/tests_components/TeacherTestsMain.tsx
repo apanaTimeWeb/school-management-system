@@ -117,7 +117,7 @@ export default function TeacherTestsMain() {
                     setTimeout(() => setOpeningLiveTest(null), 2000);
                   }}
                   disabled={openingLiveTest === test.id}
-                  className={`px-4 py-2 ${openingLiveTest === test.id ? 'bg-success/50' : 'bg-success hover:bg-success/90 animate-pulse'} text-black text-[13px] font-bold rounded flex items-center gap-2 transition-colors w-full justify-center disabled:cursor-not-allowed`}
+                  className={`px-4 py-2 ${openingLiveTest === test.id ? 'bg-success/50' : 'bg-success hover:bg-success/90 animate-pulse'} text-white text-[13px] font-bold rounded flex items-center gap-2 transition-colors w-full justify-center disabled:cursor-not-allowed`}
                 >
                   {openingLiveTest === test.id ? 'Opening...' : <><PlayCircle size={16} /> Monitor Live Test</>}
                 </button>
