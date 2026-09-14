@@ -32,7 +32,7 @@ const MENU_ITEMS = [
   { href: '/principal/analytics', label: 'Principal Analytics', icon: <GraduationCap size={20} /> },
   { href: '/principal/leaves', label: 'Leave Management', icon: <GraduationCap size={20} /> },
   { href: '/principal/discipline', label: 'Discipline & Rules', icon: <GraduationCap size={20} /> },
-  { href: '/principal/profile', label: 'My Profile', icon: <GraduationCap size={20} /> },
+  { href: '/principal/settings', label: 'System Settings', icon: <Settings size={20} /> },
 ];
 
 export default function PrincipalSidebar() {

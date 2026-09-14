@@ -29,7 +29,6 @@ const MENU_ITEMS = [
   { href: '/accountant/communication', label: 'Communication', icon: <MessageSquare size={20} className="text-amber-600" /> },
   { href: '/accountant/documents', label: 'Documents', icon: <Archive size={20} className="text-stone-500" /> },
   { href: '/accountant/audit-history', label: 'Audit & History', icon: <History size={20} className="text-rose-600" /> },
-  { href: '/accountant/profile', label: 'My Profile', icon: <User size={20} className="text-blue-500" /> },
 ];
 
 export default function AccountantSidebar() {

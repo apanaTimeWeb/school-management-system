@@ -30,7 +30,6 @@ const MENU_ITEMS = [
   { href: '/teacher/reports', label: 'Reports', icon: <UserCircle size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <UserCircle size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <UserCircle size={20} /> },
-  { href: '/teacher/profile', label: 'My Profile', icon: <UserCircle size={20} /> },
 ];
 
 export default function TeacherSidebar() {
