@@ -1,11 +1,12 @@
-export const AdminHrTransferUrlConfig = {
+export const HrTransferUrlConfig = {
     endpoints: {
-        getRequests: '/api/admin/hr/transfer/requests',
-        getHistory: '/api/admin/hr/transfer/history',
-        createRequest: '/api/admin/hr/transfer/create',
-        updateStatus: (id: string) => `/api/admin/hr/transfer/${id}/status`,
+        getRequests: '/api/hr/transfer/requests',
+        getHistory: '/api/hr/transfer/history',
+        createRequest: '/api/hr/transfer/create',
+        updateStatus: (id: string) => `/api/hr/transfer/${id}/status`,
     },
     routes: {
         main: '/hr/transfer_promotion',
     }
 };
+

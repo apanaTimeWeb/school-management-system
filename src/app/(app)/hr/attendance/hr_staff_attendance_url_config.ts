@@ -1,12 +1,13 @@
-export const AdminHrStaffAttendanceUrlConfig = {
+export const HrStaffAttendanceUrlConfig = {
     endpoints: {
-        getDailyAttendance: (date: string) => `/api/admin/hr/attendance/daily?date=${date}`,
-        getMonthlyAttendance: (month: string, year: string) => `/api/admin/hr/attendance/monthly?month=${month}&year=${year}`,
-        markAttendance: '/api/admin/hr/attendance/mark',
-        syncBiometric: '/api/admin/hr/attendance/sync-biometric',
-        correctAttendance: '/api/admin/hr/attendance/correct',
+        getDailyAttendance: (date: string) => `/api/hr/attendance/daily?date=${date}`,
+        getMonthlyAttendance: (month: string, year: string) => `/api/hr/attendance/monthly?month=${month}&year=${year}`,
+        markAttendance: '/api/hr/attendance/mark',
+        syncBiometric: '/api/hr/attendance/sync-biometric',
+        correctAttendance: '/api/hr/attendance/correct',
     },
     routes: {
         main: '/hr/staff_attendance',
     }
 };
+

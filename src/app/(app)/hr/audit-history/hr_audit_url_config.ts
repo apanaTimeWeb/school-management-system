@@ -1,8 +1,9 @@
-export const AdminHrAuditUrlConfig = {
+export const HrAuditUrlConfig = {
     endpoints: {
-        getAuditLogs: '/api/admin/hr/audit/logs',
+        getAuditLogs: '/api/hr/audit/logs',
     },
     routes: {
         main: '/hr/audit',
     }
 };
+

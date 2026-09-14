@@ -1,8 +1,9 @@
-export const AdminHrReportsUrlConfig = {
+export const HrReportsUrlConfig = {
     endpoints: {
-        getReportData: '/api/admin/hr/reports/generate',
+        getReportData: '/api/hr/reports/generate',
     },
     routes: {
         main: '/hr/reports',
     }
 };
+

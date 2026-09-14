@@ -1,4 +1,4 @@
-# Admin HR My Profile Module — Feature Map
+# Hr My Profile Module — Feature Map
 
 ## Module Purpose
 The My Profile module provides self-service capabilities for the Admin/HR user. It handles personal information updates, password changes, 2FA (Two-Factor Authentication) security setup, and monitoring of active sessions and login history.
@@ -11,13 +11,13 @@ The My Profile module provides self-service capabilities for the Admin/HR user. 
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Vertical Tabbed Layout** | `AdminHrMyProfileMain` | ✅ IMPLEMENTED |
-| **Personal Profile Form** | `AdminHrProfileTab` | ✅ IMPLEMENTED |
-| **Change Password** | `AdminHrSecurityTab` | ✅ IMPLEMENTED |
-| **2FA Setup & Toggle** | `AdminHrSecurityTab` | ✅ INTERACTIVE |
-| **2FA QR Modal** | `AdminHr2faModal` | ✅ IMPLEMENTED |
-| **Active Sessions Tracker** | `AdminHrSessionsTab` | ✅ IMPLEMENTED |
-| **Login History Table** | `AdminHrSessionsTab` | ✅ IMPLEMENTED |
+| **Vertical Tabbed Layout** | `HrMyProfileMain` | ✅ IMPLEMENTED |
+| **Personal Profile Form** | `HrProfileTab` | ✅ IMPLEMENTED |
+| **Change Password** | `HrSecurityTab` | ✅ IMPLEMENTED |
+| **2FA Setup & Toggle** | `HrSecurityTab` | ✅ INTERACTIVE |
+| **2FA QR Modal** | `Hr2faModal` | ✅ IMPLEMENTED |
+| **Active Sessions Tracker** | `HrSessionsTab` | ✅ IMPLEMENTED |
+| **Login History Table** | `HrSessionsTab` | ✅ IMPLEMENTED |
 
 ## User Flows & Interactions
 ### Flow 1: Updating Personal Profile
@@ -41,4 +41,5 @@ The My Profile module provides self-service capabilities for the Admin/HR user. 
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Fully compliant. Layout uses strict Tailwind grid/flex. 2FA states use `text-success` and `bg-success/5` vs `warning`/`danger` tokens.
-- **Rule 6 (Hooks Isolation):** `useAdminHrMyProfile` manages the tab switching, profile state fetching, and the 2FA toggle logic.
+- **Rule 6 (Hooks Isolation):** `useHrMyProfile` manages the tab switching, profile state fetching, and the 2FA toggle logic.
+

@@ -1,9 +1,10 @@
-export const AdminHrMyProfileUrlConfig = {
+export const HrMyProfileUrlConfig = {
     endpoints: {
-        getProfile: '/api/admin/hr/profile',
-        updateProfile: '/api/admin/hr/profile/update',
+        getProfile: '/api/hr/profile',
+        updateProfile: '/api/hr/profile/update',
     },
     routes: {
         main: '/hr/my_profile',
     }
 };
+

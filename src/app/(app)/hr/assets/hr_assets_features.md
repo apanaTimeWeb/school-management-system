@@ -11,10 +11,10 @@ The Employee Assets module tracks all physical inventory (Laptops, Uniforms, Key
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Active Assets Tracker** | Primary Tab (`AdminHrAssetsList`) | ✅ IMPLEMENTED |
-| **Asset History Tracker** | Secondary Tab (`AdminHrAssetsList`) | ✅ IMPLEMENTED |
+| **Active Assets Tracker** | Primary Tab (`HrAssetsList`) | ✅ IMPLEMENTED |
+| **Asset History Tracker** | Secondary Tab (`HrAssetsList`) | ✅ IMPLEMENTED |
 | **Asset Status Badges** | Inside Table | ✅ DYNAMIC (Assigned, Returned, Damaged, Lost) |
-| **Asset Allocation Editor**| Deep Modal (`AdminHrAssetModal`) | ✅ INTERACTIVE |
+| **Asset Allocation Editor**| Deep Modal (`HrAssetModal`) | ✅ INTERACTIVE |
 | **Lifecycle Dates Logic** | Inside Modal | ✅ IMPLEMENTED (Issue, Return Due, Actual Return) |
 
 ## User Flows & Interactions
@@ -39,4 +39,5 @@ The Employee Assets module tracks all physical inventory (Laptops, Uniforms, Key
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors. Status badges use `bg-info/10 text-info`, `bg-warning/10 text-warning`, etc.
-- **Rule 6 (Hooks Isolation):** `useAdminHrAssets` handles the array filtering. Instead of duplicating the List component for History and Active, the same `AdminHrAssetsList` is reused and simply fed filtered data from the hook based on `activeTab`.
+- **Rule 6 (Hooks Isolation):** `useHrAssets` handles the array filtering. Instead of duplicating the List component for History and Active, the same `HrAssetsList` is reused and simply fed filtered data from the hook based on `activeTab`.
+

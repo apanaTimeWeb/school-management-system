@@ -11,12 +11,12 @@ The Payroll module (Permission Based) handles the monthly salary cycle. It allow
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Payroll Pipeline Table** | Primary Tab (`AdminHrPayrollList`) | ✅ INTERACTIVE |
-| **Salary Structure Breakdown** | Deep Modal (`AdminHrPayrollDetailModal`) | ✅ IMPLEMENTED |
+| **Payroll Pipeline Table** | Primary Tab (`HrPayrollList`) | ✅ INTERACTIVE |
+| **Salary Structure Breakdown** | Deep Modal (`HrPayrollDetailModal`) | ✅ IMPLEMENTED |
 | **Earnings & Deductions** | Inside Deep Modal | ✅ IMPLEMENTED (Color coded calculations) |
 | **Payroll Processing Action** | Inside Deep Modal | ✅ INTERACTIVE (Triggers state update) |
 | **Payslip Generation** | Inside Deep Modal | ✅ INTERACTIVE (Unlocks upon Processing) |
-| **Payroll Reports Tab** | Second Tab (`AdminHrPayrollReports`) | ✅ MOCKED UI |
+| **Payroll Reports Tab** | Second Tab (`HrPayrollReports`) | ✅ MOCKED UI |
 
 ## User Flows & Interactions
 ### Flow 1: Reviewing Salary Structure
@@ -37,5 +37,6 @@ The Payroll module (Permission Based) handles the monthly salary cycle. It allow
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-success`, `bg-danger/10`, `border-primary`). Zero `[var(...)]` CSS variables were used.
-- **Rule 6 (Hooks Isolation):** `useAdminHrPayroll` houses all the logic for updating specific salary records and unlocking the payslip flag, keeping the modal JSX completely pure.
+- **Rule 6 (Hooks Isolation):** `useHrPayroll` houses all the logic for updating specific salary records and unlocking the payslip flag, keeping the modal JSX completely pure.
 - **Rule 29 (Motion-Safe):** Tab switches, modal zoom-ins, and button state unlocks all utilize `motion-safe:animate-in`, `transition-all`, and `fade-in` for a deeply premium interactive experience.
+

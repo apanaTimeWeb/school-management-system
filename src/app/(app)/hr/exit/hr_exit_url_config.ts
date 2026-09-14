@@ -1,10 +1,11 @@
-export const AdminHrExitUrlConfig = {
+export const HrExitUrlConfig = {
     endpoints: {
-        getExitPipeline: '/api/admin/hr/exit/pipeline',
-        getExitHistory: '/api/admin/hr/exit/history',
-        updateClearance: (id: string) => `/api/admin/hr/exit/${id}/clearance`,
+        getExitPipeline: '/api/hr/exit/pipeline',
+        getExitHistory: '/api/hr/exit/history',
+        updateClearance: (id: string) => `/api/hr/exit/${id}/clearance`,
     },
     routes: {
         main: '/hr/exit',
     }
 };
+

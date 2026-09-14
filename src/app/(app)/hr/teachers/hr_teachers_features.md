@@ -12,10 +12,10 @@ The Teacher Management module (`hr_teachers`) isolates teacher-specific data log
 ## Feature Inventory
 | Feature | Route | Key Components | Status |
 |---|---|---|---|
-| Teacher Directory | `/admin/hr_teachers` | `AdminHrTeachersTable`, `AdminHrTeachersToolbar` | ✅ MOCKED |
-| Teacher Profile | `/admin/hr_teachers/[id]` | `AdminHrTeachersProfileHeader`, `AdminHrTeachersProfileTabs` | ✅ MOCKED |
-| Class Assignment | `/admin/hr_teachers/[id]` | `AdminHrTeachersAssignmentModal` | ✅ MOCKED |
-| Workload | `/admin/hr_teachers/[id]` | Inside `AdminHrTeachersProfileTabs` | ✅ MOCKED |
+| Teacher Directory | `/admin/hr_teachers` | `HrTeachersTable`, `HrTeachersToolbar` | ✅ MOCKED |
+| Teacher Profile | `/admin/hr_teachers/[id]` | `HrTeachersProfileHeader`, `HrTeachersProfileTabs` | ✅ MOCKED |
+| Class Assignment | `/admin/hr_teachers/[id]` | `HrTeachersAssignmentModal` | ✅ MOCKED |
+| Workload | `/admin/hr_teachers/[id]` | Inside `HrTeachersProfileTabs` | ✅ MOCKED |
 
 ## User Flows & Interactions
 ### Flow 1: Directory Search
@@ -33,5 +33,6 @@ The Teacher Management module (`hr_teachers`) isolates teacher-specific data log
 
 ## Strict Rules Verification Check
 - **Rule 4 (Theme Independence):** All components have been rigidly coded using `text-primary`, `bg-success/10`, `text-info`, `text-purple-500`. No raw CSS vars in JSX.
-- **Rule 6 (Hooks Isolation):** All fetching and modal toggle states are safely isolated in `useAdminHrTeachersList` and `useAdminHrTeachersProfile`.
+- **Rule 6 (Hooks Isolation):** All fetching and modal toggle states are safely isolated in `useHrTeachersList` and `useHrTeachersProfile`.
 - **Interactivity & Color:** The layout features colorful Badges, interactive hover animations (`group-hover:scale-110`, `-translate-y-1`), and visually distinct tabs for an incredibly premium user experience. All requested checklist fields exist across the profile.
+

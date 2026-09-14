@@ -11,12 +11,12 @@ The Appointments & Letters module allows the HR/Admin to generate official paper
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Templates Grid** | Primary Tab (`AdminHrLettersTemplates`) | ✅ INTERACTIVE |
-| **Letter Generator Modal** | Deep Modal (`AdminHrLettersGeneratorModal`) | ✅ INTERACTIVE |
+| **Templates Grid** | Primary Tab (`HrLettersTemplates`) | ✅ INTERACTIVE |
+| **Letter Generator Modal** | Deep Modal (`HrLettersGeneratorModal`) | ✅ INTERACTIVE |
 | **Live Template Autofill** | Inside Deep Modal | ✅ INTERACTIVE (Real-time replacement of `[Employee_Name]`) |
 | **PDF Generation Action** | Inside Deep Modal | ✅ MOCKED UI (Buttons exist) |
 | **Print Action** | Inside Deep Modal | ✅ MOCKED UI (Buttons exist) |
-| **Letter History Table** | Second Tab (`AdminHrLettersHistory`) | ✅ INTERACTIVE |
+| **Letter History Table** | Second Tab (`HrLettersHistory`) | ✅ INTERACTIVE |
 | **Save to History Action** | Inside Deep Modal | ✅ INTERACTIVE (Creates mock history record instantly) |
 
 ## User Flows & Interactions
@@ -35,5 +35,6 @@ The Appointments & Letters module allows the HR/Admin to generate official paper
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-primary`, `bg-info/10`, `border-success/20`). Zero `[var(...)]` CSS variables were used.
-- **Rule 6 (Hooks Isolation):** `useAdminHrLetters` holds the logic for creating the new generated history record and switching tabs dynamically, keeping `AdminHrLettersGeneratorModal` focused on UI.
+- **Rule 6 (Hooks Isolation):** `useHrLetters` holds the logic for creating the new generated history record and switching tabs dynamically, keeping `HrLettersGeneratorModal` focused on UI.
 - **Rule 29 (Motion-Safe):** All tab switches, hovers, and the massive generator modal utilize `motion-safe:animate-in`, `motion-safe:fade-in`, and `motion-safe:zoom-in-95` for an incredibly premium application feel.
+

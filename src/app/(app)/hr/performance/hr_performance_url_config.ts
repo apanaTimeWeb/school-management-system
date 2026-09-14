@@ -1,10 +1,11 @@
-export const AdminHrPerformanceUrlConfig = {
+export const HrPerformanceUrlConfig = {
     endpoints: {
-        getActiveAppraisals: '/api/admin/hr/performance/active',
-        getPerformanceHistory: '/api/admin/hr/performance/history',
-        submitAppraisal: (id: string) => `/api/admin/hr/performance/${id}/submit`,
+        getActiveAppraisals: '/api/hr/performance/active',
+        getPerformanceHistory: '/api/hr/performance/history',
+        submitAppraisal: (id: string) => `/api/hr/performance/${id}/submit`,
     },
     routes: {
         main: '/hr/performance',
     }
 };
+

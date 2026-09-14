@@ -1,11 +1,12 @@
-export const AdminHrTeachersUrlConfig = {
+export const HrTeachersUrlConfig = {
     endpoints: {
-        getTeachers: '/api/admin/hr/teachers',
-        getTeacherById: (id: string) => `/api/admin/hr/teachers/${id}`,
-        assignClassTeacher: (id: string) => `/api/admin/hr/teachers/${id}/assignment`,
+        getTeachers: '/api/hr/teachers',
+        getTeacherById: (id: string) => `/api/hr/teachers/${id}`,
+        assignClassTeacher: (id: string) => `/api/hr/teachers/${id}/assignment`,
     },
     routes: {
         list: '/hr/teachers',
         profile: (id: string) => `/hr/teachers/${id}`,
     }
 };
+

@@ -1,4 +1,4 @@
-export default function AdminHrDashboardLoading() {
+export default function HrDashboardLoading() {
   return (
     <div className="w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8 motion-safe:animate-pulse">
       {/* Header Skeleton */}
@@ -40,3 +40,4 @@ export default function AdminHrDashboardLoading() {
     </div>
   );
 }
+

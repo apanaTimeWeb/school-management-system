@@ -1,8 +1,9 @@
-export const AdminHrDashboardUrlConfig = {
+export const HrDashboardUrlConfig = {
     endpoints: {
-        getDashboardStats: '/api/admin/hr/dashboard/stats',
+        getDashboardStats: '/api/hr/dashboard/stats',
     },
     routes: {
         main: '/hr/dashboard',
     }
 };
+

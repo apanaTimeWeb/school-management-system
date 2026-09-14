@@ -11,13 +11,13 @@ The Staff Meetings module provides a unified workflow for managing internal meet
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Meeting Schedule Grid** | Primary Tab (`AdminHrMeetingsList`) | ✅ INTERACTIVE |
+| **Meeting Schedule Grid** | Primary Tab (`HrMeetingsList`) | ✅ INTERACTIVE |
 | **Meeting Status Badges** | Inside Schedule Grid | ✅ DYNAMIC (Color coded Upcoming/Completed) |
-| **Meeting Details Editor**| Deep Modal (`AdminHrMeetingModal`) | ✅ INTERACTIVE |
+| **Meeting Details Editor**| Deep Modal (`HrMeetingModal`) | ✅ INTERACTIVE |
 | **Attendance Tracker** | Inside Deep Modal | ✅ INTERACTIVE (Ratio input fields) |
 | **MOM / Minutes Textarea** | Inside Deep Modal | ✅ IMPLEMENTED |
 | **Action Items Sub-editor** | Inside Deep Modal | ✅ INTERACTIVE (Add rows, toggle status) |
-| **Action Items Tracking Tab** | Second Tab (`AdminHrMeetingsActionItems`) | ✅ INTERACTIVE (Global view) |
+| **Action Items Tracking Tab** | Second Tab (`HrMeetingsActionItems`) | ✅ INTERACTIVE (Global view) |
 
 ## User Flows & Interactions
 ### Flow 1: Scheduling & Recording a Meeting
@@ -37,4 +37,5 @@ The Staff Meetings module provides a unified workflow for managing internal meet
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors. Status badges use `bg-info/10 text-info`, action items use `text-success` and `text-danger` for deadlines.
-- **Rule 6 (Hooks Isolation):** `useAdminHrMeetings` manages deep cloning of complex meeting objects so action items can be edited locally in the modal without mutating global state until "Save" is clicked. It also elegantly computes the flattened `allActionItems` array.
+- **Rule 6 (Hooks Isolation):** `useHrMeetings` manages deep cloning of complex meeting objects so action items can be edited locally in the modal without mutating global state until "Save" is clicked. It also elegantly computes the flattened `allActionItems` array.
+

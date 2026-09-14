@@ -1,4 +1,4 @@
-# Admin HR Reports Module — Feature Map
+# Hr Reports Module — Feature Map
 
 ## Module Purpose
 The HR Reports module is a centralized analytics hub that fulfills all 15 report types requested in the checklist. It provides a beautiful grid of report cards, categorized logically, and a deep interactive viewer to configure filters and generate tabular data.
@@ -11,10 +11,10 @@ The HR Reports module is a centralized analytics hub that fulfills all 15 report
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **15 Report Types Grid** | Main Dashboard (`AdminHrReportCards`) | ✅ IMPLEMENTED |
+| **15 Report Types Grid** | Main Dashboard (`HrReportCards`) | ✅ IMPLEMENTED |
 | **Category Grouping** | Inside Cards Component | ✅ VISUAL (Demographics, Lifecycle, etc.) |
-| **RBAC Security Toggle** | Main Dashboard (`AdminHrReportsMain`) | ✅ INTERACTIVE |
-| **Deep Viewer Modal**| Modal Component (`AdminHrReportViewerModal`) | ✅ INTERACTIVE |
+| **RBAC Security Toggle** | Main Dashboard (`HrReportsMain`) | ✅ INTERACTIVE |
+| **Deep Viewer Modal**| Modal Component (`HrReportViewerModal`) | ✅ INTERACTIVE |
 | **Dynamic Table Columns** | Inside Viewer Modal | ✅ DYNAMIC (Based on report type) |
 | **Generation Loading State** | Inside Viewer Modal | ✅ VISUAL (`animate-spin`) |
 
@@ -36,4 +36,5 @@ The HR Reports module is a centralized analytics hub that fulfills all 15 report
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Fully compliant. Card backgrounds use `bg-primary/5 hover:bg-primary/10`, and category icons are styled strictly with Tailwind text colors (`text-info`, `text-warning`).
-- **Rule 6 (Hooks Isolation):** `useAdminHrReports` cleanly separates the filter state, loading state, and the RBAC `hasPaymentAuthority` state away from the JSX.
+- **Rule 6 (Hooks Isolation):** `useHrReports` cleanly separates the filter state, loading state, and the RBAC `hasPaymentAuthority` state away from the JSX.
+

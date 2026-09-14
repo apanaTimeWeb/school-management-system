@@ -1,10 +1,11 @@
-export const AdminHrWorkloadUrlConfig = {
+export const HrWorkloadUrlConfig = {
     endpoints: {
-        getWorkloadList: '/api/admin/hr/workload/list',
-        getWorkloadSummary: '/api/admin/hr/workload/summary',
-        updateAssignments: (id: string) => `/api/admin/hr/workload/${id}/assignments`,
+        getWorkloadList: '/api/hr/workload/list',
+        getWorkloadSummary: '/api/hr/workload/summary',
+        updateAssignments: (id: string) => `/api/hr/workload/${id}/assignments`,
     },
     routes: {
         main: '/hr/workload',
     }
 };
+

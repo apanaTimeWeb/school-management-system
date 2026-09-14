@@ -1,11 +1,11 @@
-import AdminHrDashboardMain from "./hr_dashboard_components/AdminHrDashboardMain";
+import HrDashboardMain from "./hr_dashboard_components/HrDashboardMain";
 
 export const metadata = {
   title: "HR & Office Dashboard | Smart Gym 360",
   description: "Manage staff, attendance, leaves, and HR operations.",
 };
 
-export default function AdminHrDashboardPage() {
+export default function HrDashboardPage() {
   return (
     <main className="w-full max-w-7xl mx-auto p-4 md:p-6 lg:p-8">
       <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
@@ -15,7 +15,8 @@ export default function AdminHrDashboardPage() {
         </div>
       </div>
 
-      <AdminHrDashboardMain />
+      <HrDashboardMain />
     </main>
   );
 }
+

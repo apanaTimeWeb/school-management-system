@@ -1,11 +1,11 @@
-export const AdminHrEmployeesUrlConfig = {
+export const HrEmployeesUrlConfig = {
     endpoints: {
-        getEmployees: '/api/admin/hr/employees',
-        getEmployeeById: (id: string) => `/api/admin/hr/employees/${id}`,
-        createEmployee: '/api/admin/hr/employees',
-        updateEmployee: (id: string) => `/api/admin/hr/employees/${id}`,
-        updateEmployeeStatus: (id: string) => `/api/admin/hr/employees/${id}/status`,
-        addEmployeeHistory: (id: string) => `/api/admin/hr/employees/${id}/history`,
+        getEmployees: '/api/hr/employees',
+        getEmployeeById: (id: string) => `/api/hr/employees/${id}`,
+        createEmployee: '/api/hr/employees',
+        updateEmployee: (id: string) => `/api/hr/employees/${id}`,
+        updateEmployeeStatus: (id: string) => `/api/hr/employees/${id}/status`,
+        addEmployeeHistory: (id: string) => `/api/hr/employees/${id}/history`,
     },
     routes: {
         list: '/hr/employees',
@@ -13,3 +13,4 @@ export const AdminHrEmployeesUrlConfig = {
         profile: (id: string) => `/hr/employees/${id}`,
     }
 };
+

@@ -6,7 +6,7 @@ The Recruitment module handles the entire hiring lifecycle for the school. It tr
 ## Directory Structure
 | Folder | Responsibility |
 |---|---|
-| `/admin/hr_recruitment/` | The core interface featuring a tab switcher (`AdminHrRecruitmentTabs`) leading to 2 distinct views: Jobs & Applications. |
+| `/admin/hr_recruitment/` | The core interface featuring a tab switcher (`HrRecruitmentTabs`) leading to 2 distinct views: Jobs & Applications. |
 
 ## Feature Inventory
 | Feature | Location | Status |
@@ -14,7 +14,7 @@ The Recruitment module handles the entire hiring lifecycle for the school. It tr
 | **Job Positions** | Primary Tab | ✅ MOCKED |
 | **Vacancies View** | Inside Jobs Tab (Cards) | ✅ MOCKED |
 | **Job Applications** | Second Tab | ✅ INTERACTIVE |
-| **Candidate Profile** | Deep Modal (`AdminHrRecruitmentCandidateModal`) | ✅ INTERACTIVE |
+| **Candidate Profile** | Deep Modal (`HrRecruitmentCandidateModal`) | ✅ INTERACTIVE |
 | **Resume/Documents** | Inside Candidate Modal | ✅ MOCKED |
 | **Pipeline Actions** | Inside Candidate Modal (Bottom Right Panel) | ✅ INTERACTIVE (State mutations) |
 | **Recruitment History** | Inside Candidate Modal (Timeline) | ✅ INTERACTIVE (Auto-updates) |
@@ -39,5 +39,6 @@ The Recruitment module handles the entire hiring lifecycle for the school. It tr
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Coloring strictly utilizes exact Tailwind mapped colors (`bg-primary`, `bg-info/10`, `text-purple-500`, `border-success`). No `[var(...)]` tokens exist.
-- **Rule 6 (Hooks Isolation):** `useAdminHrRecruitment` isolates the complex optimistic UI updates for the candidate pipeline state, keeping JSX purely presentational.
+- **Rule 6 (Hooks Isolation):** `useHrRecruitment` isolates the complex optimistic UI updates for the candidate pipeline state, keeping JSX purely presentational.
 - **Rule 29 (Motion-Safe):** All tab switches, avatar hovers, and deep modal popups utilize `motion-safe:animate-in`, `motion-safe:fade-in`, and `motion-safe:zoom-in-95` for an incredibly premium application feel.
+

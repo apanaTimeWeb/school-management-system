@@ -1,10 +1,11 @@
-export const AdminHrIdCardsUrlConfig = {
+export const HrIdCardsUrlConfig = {
     endpoints: {
-        getEmployeesForId: '/api/admin/hr/id-cards/employees',
-        printIdCard: (id: string) => `/api/admin/hr/id-cards/${id}/print`,
-        bulkPrint: '/api/admin/hr/id-cards/bulk-print',
+        getEmployeesForId: '/api/hr/id-cards/employees',
+        printIdCard: (id: string) => `/api/hr/id-cards/${id}/print`,
+        bulkPrint: '/api/hr/id-cards/bulk-print',
     },
     routes: {
         main: '/hr/id_cards',
     }
 };
+

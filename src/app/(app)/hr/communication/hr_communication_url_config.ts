@@ -1,10 +1,11 @@
-export const AdminHrCommUrlConfig = {
+export const HrCommUrlConfig = {
     endpoints: {
-        getInbox: '/api/admin/hr/communication/inbox',
-        getChannels: '/api/admin/hr/communication/channels',
-        broadcast: '/api/admin/hr/communication/broadcast',
+        getInbox: '/api/hr/communication/inbox',
+        getChannels: '/api/hr/communication/channels',
+        broadcast: '/api/hr/communication/broadcast',
     },
     routes: {
         main: '/hr/communication',
     }
 };
+

@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { AlertOctagon, RefreshCw } from "lucide-react";
 
-export default function AdminHrDashboardError({
+export default function HrDashboardError({
   error,
   reset,
 }: {
@@ -40,3 +40,4 @@ export default function AdminHrDashboardError({
     </div>
   );
 }
+

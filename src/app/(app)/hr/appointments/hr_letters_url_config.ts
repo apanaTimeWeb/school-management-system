@@ -1,10 +1,11 @@
-export const AdminHrLettersUrlConfig = {
+export const HrLettersUrlConfig = {
     endpoints: {
-        getTemplates: '/api/admin/hr/letters/templates',
-        getHistory: '/api/admin/hr/letters/history',
-        generateLetter: '/api/admin/hr/letters/generate',
+        getTemplates: '/api/hr/letters/templates',
+        getHistory: '/api/hr/letters/history',
+        generateLetter: '/api/hr/letters/generate',
     },
     routes: {
         main: '/hr/letters',
     }
 };
+

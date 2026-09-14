@@ -11,11 +11,11 @@ The Staff Communication module acts as a unified inbox and broadcasting center. 
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Unified Inbox List** | Primary Tab (`AdminHrCommInbox`) | ✅ INTERACTIVE |
+| **Unified Inbox List** | Primary Tab (`HrCommInbox`) | ✅ INTERACTIVE |
 | **Read / Unread State** | Inside Inbox List | ✅ INTERACTIVE (Pulse animation & click to read) |
 | **Category Badges** | Inside Inbox List | ✅ DYNAMIC (Color coded by category) |
-| **Channel Config UI** | Second Tab (`AdminHrCommChannels`) | ✅ INTERACTIVE (Toggle switches) |
-| **Broadcast Composer Modal**| Deep Modal (`AdminHrCommBroadcastModal`) | ✅ INTERACTIVE |
+| **Channel Config UI** | Second Tab (`HrCommChannels`) | ✅ INTERACTIVE (Toggle switches) |
+| **Broadcast Composer Modal**| Deep Modal (`HrCommBroadcastModal`) | ✅ INTERACTIVE |
 | **Multi-Channel Selection** | Inside Composer Modal | ✅ INTERACTIVE (Checkbox chips) |
 
 ## User Flows & Interactions
@@ -37,5 +37,6 @@ The Staff Communication module acts as a unified inbox and broadcasting center. 
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Fully compliant. Category badges and Unread dots strictly use Tailwind tokens like `bg-info/10 text-info` and `bg-primary`.
-- **Rule 6 (Hooks Isolation):** `useAdminHrComm` handles all inbox array manipulation, read/unread state toggling, and modal state management.
+- **Rule 6 (Hooks Isolation):** `useHrComm` handles all inbox array manipulation, read/unread state toggling, and modal state management.
 - **Rule 29 (Motion-Safe):** Unread messages utilize `motion-safe:animate-pulse` for a premium subtle notification effect.
+

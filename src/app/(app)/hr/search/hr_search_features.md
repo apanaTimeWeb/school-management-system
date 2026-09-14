@@ -1,4 +1,4 @@
-# Admin HR Search Module — Feature Map
+# Hr Search Module — Feature Map
 
 ## Module Purpose
 The Advanced Search & Filters module provides a robust, multi-parameter search hub to query the master employee directory. It implements all 10 filter parameters specified in the checklist and provides deep profile previews for the results.
@@ -11,14 +11,14 @@ The Advanced Search & Filters module provides a robust, multi-parameter search h
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Multi-Parameter Search Hub** | `AdminHrSearchFilters` | ✅ INTERACTIVE |
+| **Multi-Parameter Search Hub** | `HrSearchFilters` | ✅ INTERACTIVE |
 | **Search by Name / ID** | Inside Filters Grid | ✅ IMPLEMENTED |
 | **Search by Dept / Designation** | Inside Filters Grid | ✅ IMPLEMENTED |
 | **Search by Emp Type / Status** | Inside Filters Grid | ✅ IMPLEMENTED |
 | **Search by Date Range** | Inside Filters Grid | ✅ IMPLEMENTED (Join From / Join To) |
 | **Search by Qual / Location / Docs** | Inside Filters Grid | ✅ IMPLEMENTED |
-| **Debounced Search Results Table** | `AdminHrSearchResults` | ✅ IMPLEMENTED |
-| **Deep Profile Summary Modal**| `AdminHrSearchProfileModal` | ✅ INTERACTIVE |
+| **Debounced Search Results Table** | `HrSearchResults` | ✅ IMPLEMENTED |
+| **Deep Profile Summary Modal**| `HrSearchProfileModal` | ✅ INTERACTIVE |
 
 ## User Flows & Interactions
 ### Flow 1: Advanced Filtering
@@ -35,4 +35,5 @@ The Advanced Search & Filters module provides a robust, multi-parameter search h
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Fully compliant. Status badges use `bg-success/10 text-success`, `bg-warning/10 text-warning`. The modal header uses `bg-gradient-to-r from-primary/80 to-primary`.
-- **Rule 6 (Hooks Isolation):** `useAdminHrSearch` manages all 10 filter states in a single object, handles the debounce logic `setTimeout`, and manages the modal state, keeping the UI completely declarative.
+- **Rule 6 (Hooks Isolation):** `useHrSearch` manages all 10 filter states in a single object, handles the debounce logic `setTimeout`, and manages the modal state, keeping the UI completely declarative.
+

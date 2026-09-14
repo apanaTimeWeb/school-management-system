@@ -11,21 +11,21 @@ The Employee Exit module formally handles the offboarding (resignation/terminati
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Offboarding Pipeline List** | Primary Tab (`AdminHrExitList`) | ✅ INTERACTIVE |
+| **Offboarding Pipeline List** | Primary Tab (`HrExitList`) | ✅ INTERACTIVE |
 | **Progress Tracker** | Inside Pipeline List | ✅ INTERACTIVE (Auto-calculates Clearance Progress) |
-| **Clearance Tracker** | Deep Modal (`AdminHrExitDetailModal`) | ✅ INTERACTIVE |
+| **Clearance Tracker** | Deep Modal (`HrExitDetailModal`) | ✅ INTERACTIVE |
 | **Asset Return** | Inside Deep Modal Checklist | ✅ INTERACTIVE |
 | **Pending Dues** | Inside Deep Modal Checklist | ✅ INTERACTIVE |
 | **Exit Interview** | Inside Deep Modal Checklist | ✅ INTERACTIVE |
 | **Relieving / Exp Letter** | Inside Deep Modal Docs | ✅ MOCKED (Generate actions) |
 | **Final Separation Control** | Inside Deep Modal | ✅ INTERACTIVE (Moves to history) |
-| **Exit History** | Second Tab (`AdminHrExitHistory`) | ✅ IMPLEMENTED |
+| **Exit History** | Second Tab (`HrExitHistory`) | ✅ IMPLEMENTED |
 
 ## User Flows & Interactions
 ### Flow 1: Tracking Offboarding Progress
 1. Admin navigates to `/admin/hr_exit`.
 2. A table shows all resigning employees. A red **Clearance Progress Bar** (e.g. 50%) visually indicates how many clearance tasks are completed.
-3. Clicking on an employee (e.g., *Rakesh Singh*) opens the deep `AdminHrExitDetailModal`.
+3. Clicking on an employee (e.g., *Rakesh Singh*) opens the deep `HrExitDetailModal`.
 
 ### Flow 2: Completing Clearance & Dues
 1. Inside the modal, the Admin sees the employee's Resignation Date, Notice Period, and Expected Relieving date at the top.
@@ -41,5 +41,6 @@ The Employee Exit module formally handles the offboarding (resignation/terminati
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-success`, `bg-danger/10`, `border-primary`). Zero `[var(...)]` CSS variables were used.
-- **Rule 6 (Hooks Isolation):** `useAdminHrExit` houses all the logic for updating specific checklist tasks within nested employee objects and moving items between the active pipeline and history state arrays.
+- **Rule 6 (Hooks Isolation):** `useHrExit` houses all the logic for updating specific checklist tasks within nested employee objects and moving items between the active pipeline and history state arrays.
 - **Rule 29 (Motion-Safe):** Hover actions, tab switches, and the deep detail modal all utilize `motion-safe:animate-in` and `motion-safe:fade-in` for a deeply premium interactive experience.
+

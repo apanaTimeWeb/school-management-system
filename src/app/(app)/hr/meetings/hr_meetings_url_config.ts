@@ -1,9 +1,10 @@
-export const AdminHrMeetingsUrlConfig = {
+export const HrMeetingsUrlConfig = {
     endpoints: {
-        getMeetings: '/api/admin/hr/meetings',
-        saveMeeting: '/api/admin/hr/meetings/save',
+        getMeetings: '/api/hr/meetings',
+        saveMeeting: '/api/hr/meetings/save',
     },
     routes: {
         main: '/hr/meetings',
     }
 };
+

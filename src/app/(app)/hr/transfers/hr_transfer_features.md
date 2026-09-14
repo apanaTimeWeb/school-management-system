@@ -11,14 +11,14 @@ The Transfer & Promotion module manages internal mobility. It handles Department
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Initiate Request Modal** | Deep Modal (`AdminHrTransferInitiateModal`) | ✅ INTERACTIVE |
+| **Initiate Request Modal** | Deep Modal (`HrTransferInitiateModal`) | ✅ INTERACTIVE |
 | **Department Transfer** | Request Type Option | ✅ IMPLEMENTED |
 | **Designation Change** | Request Type Option | ✅ IMPLEMENTED |
 | **Promotion / Demotion** | Request Type Option | ✅ IMPLEMENTED |
 | **Branch/Campus Transfer** | Request Type Option | ✅ IMPLEMENTED |
-| **Requests Pipeline Table** | Primary Tab (`AdminHrTransferRequests`) | ✅ INTERACTIVE |
+| **Requests Pipeline Table** | Primary Tab (`HrTransferRequests`) | ✅ INTERACTIVE |
 | **Approval / Rejection Flow** | Inside Pipeline Table | ✅ INTERACTIVE (Hover actions update state instantly) |
-| **Transfer History** | Second Tab (`AdminHrTransferHistory`) | ✅ IMPLEMENTED |
+| **Transfer History** | Second Tab (`HrTransferHistory`) | ✅ IMPLEMENTED |
 
 ## User Flows & Interactions
 ### Flow 1: Initiating a Transfer / Promotion
@@ -34,5 +34,6 @@ The Transfer & Promotion module manages internal mobility. It handles Department
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-success`, `bg-danger/10`, `border-primary`). Zero `[var(...)]` CSS variables were used.
-- **Rule 6 (Hooks Isolation):** `useAdminHrTransfer` houses all the logic for updating row statuses, form submission, and appending mock data.
+- **Rule 6 (Hooks Isolation):** `useHrTransfer` houses all the logic for updating row statuses, form submission, and appending mock data.
 - **Rule 29 (Motion-Safe):** Hover actions, tab switches, and the initiate modal all utilize `motion-safe:animate-in`, `opacity-0 group-hover:opacity-100`, and `transition-all` for a deeply premium interactive experience.
+

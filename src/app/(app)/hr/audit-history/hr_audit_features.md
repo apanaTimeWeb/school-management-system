@@ -1,4 +1,4 @@
-# Admin HR Audit Module — Feature Map
+# Hr Audit Module — Feature Map
 
 ## Module Purpose
 The Audit & History module securely logs the 10 sensitive actions specified in the checklist (Employee Created/Updated, Salary changes, Terminations, etc.). It features a powerful "Diff Viewer" to prove transparency by showing exactly what changed, who changed it, and when.
@@ -11,12 +11,12 @@ The Audit & History module securely logs the 10 sensitive actions specified in t
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Secure Log Table** | `AdminHrAuditList` | ✅ IMPLEMENTED |
-| **Search by Target / Admin** | `AdminHrAuditFilters` | ✅ IMPLEMENTED |
-| **Filter by Action Type (10 Items)** | `AdminHrAuditFilters` | ✅ IMPLEMENTED |
-| **Filter by Date Range** | `AdminHrAuditFilters` | ✅ IMPLEMENTED |
+| **Secure Log Table** | `HrAuditList` | ✅ IMPLEMENTED |
+| **Search by Target / Admin** | `HrAuditFilters` | ✅ IMPLEMENTED |
+| **Filter by Action Type (10 Items)** | `HrAuditFilters` | ✅ IMPLEMENTED |
+| **Filter by Date Range** | `HrAuditFilters` | ✅ IMPLEMENTED |
 | **Action Color Badges** | Inside Table | ✅ IMPLEMENTED (Red for Salary/Exit, Green/Blue for others) |
-| **Deep Diff Viewer Modal**| `AdminHrAuditDiffModal` | ✅ INTERACTIVE |
+| **Deep Diff Viewer Modal**| `HrAuditDiffModal` | ✅ INTERACTIVE |
 | **Before / After JSON Diffs** | Inside Diff Modal | ✅ IMPLEMENTED |
 
 ## User Flows & Interactions
@@ -37,4 +37,5 @@ The Audit & History module securely logs the 10 sensitive actions specified in t
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Fully compliant. Status badges use standard Tailwind color opacities (`bg-danger/10 text-danger`). The diff viewer uses `bg-danger/5` for deletions and `bg-success/5` for additions.
-- **Rule 6 (Hooks Isolation):** `useAdminHrAudit` manages the filter states, debounced API simulated call, and modal states cleanly away from the UI.
+- **Rule 6 (Hooks Isolation):** `useHrAudit` manages the filter states, debounced API simulated call, and modal states cleanly away from the UI.
+

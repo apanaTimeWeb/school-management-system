@@ -11,12 +11,12 @@ The Onboarding module ensures a smooth transition for new hires. It tracks the p
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **New Employee List** | `AdminHrOnboardingList` | ✅ INTERACTIVE |
+| **New Employee List** | `HrOnboardingList` | ✅ INTERACTIVE |
 | **Onboarding Status Progress Bar** | Inside List Table | ✅ INTERACTIVE (Auto-calculates) |
-| **Joining Checklist** | Inside `AdminHrOnboardingDetailModal` | ✅ INTERACTIVE |
-| **Document Verification** | Inside `AdminHrOnboardingDetailModal` | ✅ INTERACTIVE |
-| **System Access Request (RBAC)** | Inside `AdminHrOnboardingDetailModal` | ✅ INTERACTIVE |
-| **Employee ID Generation** | Inside `AdminHrOnboardingDetailModal` | ✅ INTERACTIVE (Triggered on Access Grant) |
+| **Joining Checklist** | Inside `HrOnboardingDetailModal` | ✅ INTERACTIVE |
+| **Document Verification** | Inside `HrOnboardingDetailModal` | ✅ INTERACTIVE |
+| **System Access Request (RBAC)** | Inside `HrOnboardingDetailModal` | ✅ INTERACTIVE |
+| **Employee ID Generation** | Inside `HrOnboardingDetailModal` | ✅ INTERACTIVE (Triggered on Access Grant) |
 
 ## User Flows & Interactions
 ### Flow 1: Tracking Onboarding Progress
@@ -38,5 +38,6 @@ The Onboarding module ensures a smooth transition for new hires. It tracks the p
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly Tailwind colors used (`text-success`, `bg-warning/10`, `border-primary`).
-- **Rule 6 (Hooks Isolation):** `useAdminHrOnboarding` houses all the complex state mapping required to deeply update a specific checklist item or document inside a specific candidate object.
+- **Rule 6 (Hooks Isolation):** `useHrOnboarding` houses all the complex state mapping required to deeply update a specific checklist item or document inside a specific candidate object.
 - **Rule 29 (Motion-Safe):** Modals, hovers, and progress bars utilize standard `transition-all` and `motion-safe` rules for premium fluidity.
+

@@ -11,12 +11,12 @@ The Employee Documents module acts as a secure, structured vault for tracking al
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Document Vault** | Primary Tab (`AdminHrDocumentsVault`) | ✅ INTERACTIVE |
+| **Document Vault** | Primary Tab (`HrDocumentsVault`) | ✅ INTERACTIVE |
 | **Progress Tracker (Vault)** | Inside Vault Cards | ✅ INTERACTIVE (Auto-calculates Uploaded/Verified) |
-| **Document Alerts** | Second Tab (`AdminHrDocumentsAlerts`) | ✅ MOCKED |
+| **Document Alerts** | Second Tab (`HrDocumentsAlerts`) | ✅ MOCKED |
 | **Alert Badge Counter** | Top Tab Nav | ✅ INTERACTIVE (Shows exact count of alerts) |
 | **Document Categories** | Inside Deep Modal | ✅ MOCKED (Categorized dynamically) |
-| **Document Verification** | Inside Deep Modal (`AdminHrDocumentsEmployeeModal`) | ✅ INTERACTIVE (Verify/Reject updates state instantly) |
+| **Document Verification** | Inside Deep Modal (`HrDocumentsEmployeeModal`) | ✅ INTERACTIVE (Verify/Reject updates state instantly) |
 
 ## User Flows & Interactions
 ### Flow 1: Identifying Missing/Unverified Documents
@@ -38,5 +38,6 @@ The Employee Documents module acts as a secure, structured vault for tracking al
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-danger`, `bg-warning/10`, `border-success/30`).
-- **Rule 6 (Hooks Isolation):** `useAdminHrDocuments` handles the complex state logic required to deeply update a specific document's verification status inside a nested employee array, keeping the JSX clean.
+- **Rule 6 (Hooks Isolation):** `useHrDocuments` handles the complex state logic required to deeply update a specific document's verification status inside a nested employee array, keeping the JSX clean.
 - **Rule 29 (Motion-Safe):** All tab switches, hovers, and deep modal popups utilize `motion-safe:animate-in`, `motion-safe:fade-in`, and `motion-safe:zoom-in-95` for an incredibly premium application feel.
+

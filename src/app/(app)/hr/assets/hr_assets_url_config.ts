@@ -1,9 +1,10 @@
-export const AdminHrAssetsUrlConfig = {
+export const HrAssetsUrlConfig = {
     endpoints: {
-        getAssets: '/api/admin/hr/assets',
-        saveAsset: '/api/admin/hr/assets/save',
+        getAssets: '/api/hr/assets',
+        saveAsset: '/api/hr/assets/save',
     },
     routes: {
         main: '/hr/assets',
     }
 };
+

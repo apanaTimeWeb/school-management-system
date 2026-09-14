@@ -6,7 +6,7 @@ The Leave Management module is designed to track, approve, and configure leaves 
 ## Directory Structure
 | Folder | Responsibility |
 |---|---|
-| `/admin/hr_leave_management/` | The core interface featuring a massive tab switcher (`AdminHrLeaveTabs`) leading to 4 distinct views. |
+| `/admin/hr_leave_management/` | The core interface featuring a massive tab switcher (`HrLeaveTabs`) leading to 4 distinct views. |
 
 ## Feature Inventory
 | Feature | Location | Status |
@@ -33,6 +33,7 @@ The Leave Management module is designed to track, approve, and configure leaves 
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** All coloring utilizes exact Tailwind mapped colors (`bg-success`, `border-warning`, `text-danger`, `text-info`). No `[var(...)]` tokens are present.
-- **Rule 6 (Hooks Isolation):** `useAdminHrLeave` manages the massive logic of tab switching and multi-endpoint data fetching.
+- **Rule 6 (Hooks Isolation):** `useHrLeave` manages the massive logic of tab switching and multi-endpoint data fetching.
 - **Rule 29 (Motion-Safe):** All tabs transition via `motion-safe:animate-in`, and approve/reject buttons fade in via `opacity-0 group-hover:opacity-100 transition-opacity`.
-- **Modularity:** Tab views are broken into separate sub-components (`AdminHrLeaveApplications`, `AdminHrLeaveOtherTabs`).
+- **Modularity:** Tab views are broken into separate sub-components (`HrLeaveApplications`, `HrLeaveOtherTabs`).
+

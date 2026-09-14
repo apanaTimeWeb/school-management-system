@@ -1,10 +1,11 @@
-export const AdminHrDocumentsUrlConfig = {
+export const HrDocumentsUrlConfig = {
     endpoints: {
-        getVaultList: '/api/admin/hr/documents/vault',
-        getAlerts: '/api/admin/hr/documents/alerts',
-        verifyDocument: (empId: string, docId: string) => `/api/admin/hr/documents/${empId}/${docId}/verify`,
+        getVaultList: '/api/hr/documents/vault',
+        getAlerts: '/api/hr/documents/alerts',
+        verifyDocument: (empId: string, docId: string) => `/api/hr/documents/${empId}/${docId}/verify`,
     },
     routes: {
         main: '/hr/documents',
     }
 };
+

@@ -1,9 +1,10 @@
-export const AdminHrOnboardingUrlConfig = {
+export const HrOnboardingUrlConfig = {
     endpoints: {
-        getOnboardingList: '/api/admin/hr/onboarding/list',
-        updateStatus: (id: string) => `/api/admin/hr/onboarding/${id}/status`,
+        getOnboardingList: '/api/hr/onboarding/list',
+        updateStatus: (id: string) => `/api/hr/onboarding/${id}/status`,
     },
     routes: {
         main: '/hr/onboarding',
     }
 };
+

@@ -11,13 +11,13 @@ The Employee Performance module handles the end-to-end Appraisal Cycle. It allow
 ## Feature Inventory
 | Feature | Location | Status |
 |---|---|---|
-| **Appraisal List Table** | Primary Tab (`AdminHrPerformanceList`) | ✅ INTERACTIVE (Auto Goal Progress) |
-| **Performance Goals Evaluation**| Deep Modal (`AdminHrPerformanceModal`) | ✅ INTERACTIVE (Range Sliders) |
+| **Appraisal List Table** | Primary Tab (`HrPerformanceList`) | ✅ INTERACTIVE (Auto Goal Progress) |
+| **Performance Goals Evaluation**| Deep Modal (`HrPerformanceModal`) | ✅ INTERACTIVE (Range Sliders) |
 | **Star Rating System** | Inside Deep Modal | ✅ INTERACTIVE (1 to 5 Hover/Click) |
 | **Reviews & Remarks** | Inside Deep Modal | ✅ IMPLEMENTED (Manager & HR Textareas) |
 | **Promotion Recommendation** | Inside Deep Modal | ✅ INTERACTIVE (Tailwind Switch Toggle) |
 | **Save Draft vs Finalize** | Inside Deep Modal Actions | ✅ INTERACTIVE (State routing) |
-| **Performance History** | Second Tab (`AdminHrPerformanceHistory`) | ✅ IMPLEMENTED |
+| **Performance History** | Second Tab (`HrPerformanceHistory`) | ✅ IMPLEMENTED |
 
 ## User Flows & Interactions
 ### Flow 1: Tracking Goal Progress
@@ -38,5 +38,6 @@ The Employee Performance module handles the end-to-end Appraisal Cycle. It allow
 
 ## Strict Rules Verification Check
 - **Rule 4 (No Raw Variables):** Strictly mapped standard Tailwind colors (`text-success`, `bg-danger/10`, `border-primary`, `fill-primary`). Zero `[var(...)]` CSS variables were used.
-- **Rule 6 (Hooks Isolation):** `useAdminHrPerformance` houses all the logic. Deep cloning (`JSON.parse(JSON.stringify)`) is used in the modal to isolate local edits from the global state until the user clicks Save.
+- **Rule 6 (Hooks Isolation):** `useHrPerformance` houses all the logic. Deep cloning (`JSON.parse(JSON.stringify)`) is used in the modal to isolate local edits from the global state until the user clicks Save.
 - **Rule 29 (Motion-Safe):** Goal sliders, Star rating hover scales (`hover:scale-110`), and custom switch toggles all use heavily animated, highly responsive Tailwind transition utilities for a premium interactive feel.
+

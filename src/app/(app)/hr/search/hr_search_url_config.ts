@@ -1,8 +1,9 @@
-export const AdminHrSearchUrlConfig = {
+export const HrSearchUrlConfig = {
     endpoints: {
-        searchEmployees: '/api/admin/hr/search',
+        searchEmployees: '/api/hr/search',
     },
     routes: {
         main: '/hr/search',
     }
 };
+
