@@ -16,7 +16,7 @@ export default function AdminHrStaffAttendanceMain() {
     year, setYear,
     department, setDepartment,
     updateDailyStatus, saveManualAttendance, syncBiometric,
-    isCorrectionModalOpen, correctionContext, openCorrection, closeCorrection
+    isCorrectionModalOpen, correctionContext, openCorrection, closeCorrection, updateMonthlyStatus
   } = useAdminHrStaffAttendance();
 
   return (
@@ -52,6 +52,9 @@ export default function AdminHrStaffAttendanceMain() {
         isOpen={isCorrectionModalOpen}
         close={closeCorrection}
         context={correctionContext}
+        onSave={(employeeId, day, status) => {
+          updateMonthlyStatus(employeeId, day, status);
+        }}
       />
     </div>
   );

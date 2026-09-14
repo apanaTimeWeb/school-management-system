@@ -21,6 +21,20 @@ export default function AdminHrStaffAttendanceDaily({ records, updateStatus, sav
     }
   };
 
+  const [isSaving, setIsSaving] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  const handleSave = () => {
+    setIsSaving(true);
+    // Simulate API call
+    setTimeout(() => {
+      saveManual(); // call the parent callback if needed, but hook also has alert, so we might want to remove alert from hook.
+      setIsSaving(false);
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
+    }, 1000);
+  };
+
   return (
     <div className="motion-safe:animate-in motion-safe:fade-in duration-300">
       <div className="w-full overflow-x-auto bg-card border border-border rounded-lg shadow-sm mb-4">
@@ -78,12 +92,25 @@ export default function AdminHrStaffAttendanceDaily({ records, updateStatus, sav
         </table>
       </div>
 
-      <div className="flex justify-end">
+      <div className="flex justify-end items-center gap-4">
+        {showSuccess && (
+          <span className="text-sm font-bold text-success motion-safe:animate-in motion-safe:fade-in">
+            Attendance Saved!
+          </span>
+        )}
         <button 
-          onClick={saveManual} 
-          className="px-6 py-2 bg-primary text-card font-bold rounded-md shadow-lg shadow-primary/20 hover:bg-yellow-500 transition-all active:scale-95"
+          onClick={handleSave} 
+          disabled={isSaving}
+          className="flex items-center gap-2 px-6 py-2 bg-primary text-card font-bold rounded-md shadow-lg shadow-primary/20 hover:bg-yellow-500 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
         >
-          Save Manual Attendance
+          {isSaving ? (
+            <>
+              <div className="w-4 h-4 border-2 border-card border-t-transparent rounded-full animate-spin"></div>
+              Saving...
+            </>
+          ) : (
+            'Save Manual Attendance'
+          )}
         </button>
       </div>
     </div>

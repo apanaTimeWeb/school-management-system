@@ -47,11 +47,13 @@ export function useAdminHrStaffAttendance() {
   };
 
   const saveManualAttendance = () => {
-    alert("Manual Attendance Saved Successfully!");
+    // API call would happen here
+    console.log("Manual Attendance Saved Successfully!");
   };
 
   const syncBiometric = () => {
-    alert("Biometric Sync Initiated. Syncing...");
+    // API call would happen here
+    console.log("Biometric Sync Initiated. Syncing...");
   };
 
   const openCorrection = (employeeId: string, name: string, day: number) => {
@@ -64,6 +66,17 @@ export function useAdminHrStaffAttendance() {
     setCorrectionContext(null);
   };
 
+  const updateMonthlyStatus = (employeeId: string, day: number, newStatus: AttendanceStatus) => {
+    setMonthlyRecords(prev => prev.map(record => {
+      if (record.employeeId === employeeId) {
+        const newAttendance = [...record.attendance];
+        newAttendance[day - 1] = newStatus;
+        return { ...record, attendance: newAttendance };
+      }
+      return record;
+    }));
+  };
+
   return {
     activeTab, setActiveTab,
     dailyRecords, monthlyRecords, isLoading,
@@ -71,7 +84,7 @@ export function useAdminHrStaffAttendance() {
     month, setMonth,
     year, setYear,
     department, setDepartment,
-    updateDailyStatus, saveManualAttendance, syncBiometric,
+    updateDailyStatus, updateMonthlyStatus, saveManualAttendance, syncBiometric,
     isCorrectionModalOpen, correctionContext, openCorrection, closeCorrection
   };
 }

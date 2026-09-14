@@ -1,6 +1,8 @@
 "use client";
 
-import { CalendarDays, CalendarHeart, Download, Fingerprint } from "lucide-react";
+import { useState } from "react";
+import { CalendarDays, CalendarHeart, Download, Fingerprint, Loader2 } from "lucide-react";
+import AdminHrStaffAttendanceReportModal from "./AdminHrStaffAttendanceReportModal";
 
 interface AdminHrStaffAttendanceToolbarProps {
   activeTab: 'Daily' | 'Monthly';
@@ -19,7 +21,19 @@ interface AdminHrStaffAttendanceToolbarProps {
 export default function AdminHrStaffAttendanceToolbar({
   activeTab, setActiveTab, date, setDate, month, setMonth, year, setYear, department, setDepartment, syncBiometric
 }: AdminHrStaffAttendanceToolbarProps) {
-  
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [isSyncing, setIsSyncing] = useState(false);
+
+  const handleSync = () => {
+    setIsSyncing(true);
+    // Simulate sync
+    setTimeout(() => {
+      setIsSyncing(false);
+      syncBiometric(); // Can still call parent function if needed to refresh data
+      alert("Biometric data synced successfully!");
+    }, 2000);
+  };
+
   return (
     <div className="flex flex-col gap-4 mb-6">
       <div className="flex border-b border-border">
@@ -65,15 +79,32 @@ export default function AdminHrStaffAttendanceToolbar({
 
         <div className="flex items-center gap-3">
           {activeTab === 'Daily' && (
-            <button onClick={syncBiometric} className="flex items-center gap-2 px-4 py-2 bg-info/10 text-info font-bold rounded-md hover:bg-info hover:text-white transition-all active:scale-95 text-sm border border-info/20 shadow-sm">
-              <Fingerprint size={16} /> Sync Biometric
+            <button 
+              onClick={handleSync}
+              disabled={isSyncing}
+              className="flex items-center gap-2 px-4 py-2 bg-info/10 text-info font-bold rounded-md hover:bg-info hover:text-white transition-all active:scale-95 text-sm border border-info/20 shadow-sm disabled:opacity-50 disabled:pointer-events-none"
+            >
+              {isSyncing ? <Loader2 size={16} className="animate-spin" /> : <Fingerprint size={16} />} 
+              {isSyncing ? 'Syncing...' : 'Sync Biometric'}
             </button>
           )}
-          <button className="flex items-center gap-2 px-4 py-2 bg-input text-foreground border border-border font-bold rounded-md hover:border-primary hover:text-primary transition-all active:scale-95 text-sm shadow-sm" onClick={() => alert('Generate Reports')}>
+          <button 
+            className="flex items-center gap-2 px-4 py-2 bg-input text-foreground border border-border font-bold rounded-md hover:border-primary hover:text-primary transition-all active:scale-95 text-sm shadow-sm" 
+            onClick={() => setIsReportModalOpen(true)}
+          >
             <Download size={16} /> Reports
           </button>
         </div>
       </div>
+
+      <AdminHrStaffAttendanceReportModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
+        date={date}
+        month={month}
+        year={year}
+        activeTab={activeTab}
+      />
     </div>
   );
 }
