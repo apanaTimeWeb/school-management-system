@@ -13,7 +13,7 @@ export default function HRLogin() {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      router.push('/admin/hr_dashboard');
+      router.push('/hr/dashboard');
     }, 1000);
   };
 
