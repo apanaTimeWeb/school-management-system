@@ -267,7 +267,7 @@ export default function StudentRegistrationForm() {
         {currentStep < steps.length ? (
           <button 
             onClick={() => setCurrentStep(prev => Math.min(steps.length, prev + 1))}
-            className="px-6 py-2 bg-primary text-black rounded-md text-sm font-semibold hover:bg-primary-hover transition"
+            className="px-6 py-2 bg-primary text-white rounded-md text-sm font-semibold hover:bg-primary-hover transition"
           >
             Next Step
           </button>

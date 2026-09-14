@@ -52,11 +52,11 @@ export default function AdmissionProcessing() {
                 <div className="flex flex-col gap-2">
                   <div className="flex justify-between items-center bg-card p-2 border border-border rounded">
                     <span className="text-sm font-semibold text-text-secondary">Birth Certificate.pdf</span>
-                    <button className="text-xs bg-primary text-black px-2 py-1 rounded font-bold">Approve</button>
+                    <button className="text-xs bg-primary text-white px-2 py-1 rounded font-bold">Approve</button>
                   </div>
                   <div className="flex justify-between items-center bg-card p-2 border border-border rounded">
                     <span className="text-sm font-semibold text-text-secondary">Aadhar_Card.jpg</span>
-                    <button className="text-xs bg-primary text-black px-2 py-1 rounded font-bold">Approve</button>
+                    <button className="text-xs bg-primary text-white px-2 py-1 rounded font-bold">Approve</button>
                   </div>
                 </div>
               </div>
@@ -80,7 +80,7 @@ export default function AdmissionProcessing() {
                 <label className="text-sm font-semibold text-text-secondary">Update Test Score</label>
                 <div className="flex gap-2">
                   <input type="number" placeholder="Marks out of 100" className="flex-1 bg-bg-input border border-border rounded-md px-4 py-2 text-sm outline-none focus:border-primary" />
-                  <button className="px-4 py-2 bg-primary text-black rounded-md text-sm font-bold">Save Score</button>
+                  <button className="px-4 py-2 bg-primary text-white rounded-md text-sm font-bold">Save Score</button>
                 </div>
               </div>
             </div>
@@ -104,7 +104,7 @@ export default function AdmissionProcessing() {
                 <textarea className="bg-bg-input border border-border rounded-md px-4 py-2 text-sm outline-none focus:border-primary min-h-[100px]" placeholder="Enter observations..."></textarea>
               </div>
               <div className="md:col-span-2 flex justify-end">
-                 <button className="px-6 py-2 bg-primary text-black rounded-md text-sm font-bold">Save Interview Record</button>
+                 <button className="px-6 py-2 bg-primary text-white rounded-md text-sm font-bold">Save Interview Record</button>
               </div>
             </div>
           </div>

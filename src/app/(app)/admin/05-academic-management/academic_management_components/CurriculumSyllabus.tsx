@@ -47,7 +47,7 @@ export default function CurriculumSyllabus() {
                 <textarea className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary min-h-[100px]" placeholder="List the topics to be covered..."></textarea>
               </div>
               <div className="flex justify-end">
-                <button className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm">Save Curriculum Node</button>
+                <button className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm">Save Curriculum Node</button>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export default function CurriculumSyllabus() {
                   <label className="text-xs font-semibold text-text-secondary">Select PDF</label>
                   <div className="flex gap-2">
                     <input type="file" accept=".pdf" className="flex-1 bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
-                    <button className="bg-primary text-black px-4 py-1.5 rounded-md text-sm font-bold shadow-sm flex items-center gap-2"><Upload size={16}/> Upload</button>
+                    <button className="bg-primary text-white px-4 py-1.5 rounded-md text-sm font-bold shadow-sm flex items-center gap-2"><Upload size={16}/> Upload</button>
                   </div>
                 </div>
               </div>

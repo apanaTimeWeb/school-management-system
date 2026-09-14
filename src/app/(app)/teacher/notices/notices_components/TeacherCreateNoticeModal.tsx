@@ -152,7 +152,7 @@ export default function TeacherCreateNoticeModal() {
              <button type="button" onClick={(e) => handleSend(e, true)} disabled={!!successMessage} className="px-5 py-2 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg hover:border-primary/50 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
                <Save size={16} /> Save as Draft
              </button>
-             <button type="submit" disabled={!!successMessage} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Broadcast Message
              </button>
            </div>

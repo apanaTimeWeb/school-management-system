@@ -154,7 +154,7 @@ export default function PrincipalCommunicationSendTab() {
           <button
             type="submit"
             disabled={loading || channels.length === 0 || !subject || !message}
-            className="px-8 py-3 rounded-lg bg-primary hover:bg-primary-hover text-black text-[14px] font-bold transition-all disabled:opacity-50 flex items-center gap-2 shadow-lg shadow-primary/20"
+            className="px-8 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white text-[14px] font-bold transition-all disabled:opacity-50 flex items-center gap-2 shadow-lg shadow-primary/20"
           >
             {loading ? "Sending..." : <><Send size={16}/> Send Now</>}
           </button>

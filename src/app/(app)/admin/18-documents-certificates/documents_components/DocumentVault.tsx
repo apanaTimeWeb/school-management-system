@@ -46,7 +46,7 @@ export default function DocumentVault() {
                  <Search size={16} className="text-text-secondary"/>
                  <input type="text" placeholder={`Search ${activeTab} ID or Name...`} className="bg-transparent border-none outline-none text-sm w-full font-semibold"/>
                </div>
-               <button className="bg-primary text-black px-4 py-2 rounded-lg text-sm font-bold shadow-sm">+ Upload File</button>
+               <button className="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold shadow-sm">+ Upload File</button>
              </div>
 
              <div className="bg-bg-page border border-border rounded-lg p-5">

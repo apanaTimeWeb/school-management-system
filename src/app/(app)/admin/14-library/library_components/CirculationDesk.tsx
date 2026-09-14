@@ -71,7 +71,7 @@ export default function CirculationDesk() {
                  </div>
                </div>
 
-               <button onClick={handleAction} disabled={!barcode || !memberId} className="w-full bg-primary text-black py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
+               <button onClick={handleAction} disabled={!barcode || !memberId} className="w-full bg-primary text-white py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
                  Confirm Issue
                </button>
             </div>

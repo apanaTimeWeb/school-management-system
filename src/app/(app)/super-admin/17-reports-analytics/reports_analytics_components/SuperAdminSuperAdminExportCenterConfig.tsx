@@ -71,7 +71,7 @@ export default function SuperAdminSuperAdminExportCenterConfig() {
               <div className="flex items-center gap-3 md:ml-auto border-t md:border-none border-border pt-3 md:pt-0 mt-2 md:mt-0">
                 {exp.expires !== 'Expired' ? (
                   <div className="flex flex-col items-end mr-2">
-                    <button className="text-xs font-bold bg-primary text-black px-4 py-1.5 rounded hover:bg-primary-hover shadow-sm transition-colors flex items-center gap-1.5">
+                    <button className="text-xs font-bold bg-primary text-white px-4 py-1.5 rounded hover:bg-primary-hover shadow-sm transition-colors flex items-center gap-1.5">
                       <DownloadCloud size={14} /> Download File
                     </button>
                     <span className="text-[10px] text-text-secondary mt-1 flex items-center gap-1"><AlertTriangle size={10} className="text-warning"/> {exp.expires}</span>

@@ -90,7 +90,7 @@ export default function SuperAdminSuperAdminProfileConfig() {
               </div>
 
               <div className="pt-4 border-t border-border mt-2">
-                <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
+                <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
                   <Save size={16} /> Save Profile Changes
                 </button>
               </div>
@@ -118,7 +118,7 @@ export default function SuperAdminSuperAdminProfileConfig() {
                   <label className="text-xs font-bold text-text-secondary uppercase">Confirm New Password</label>
                   <input type="password" placeholder="Re-enter new password" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
                 </div>
-                <button className="mt-2 flex items-center justify-center gap-2 px-4 py-2 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-fit">
+                <button className="mt-2 flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm w-fit">
                   Update Password
                 </button>
               </div>
@@ -161,7 +161,7 @@ export default function SuperAdminSuperAdminProfileConfig() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 
                 <div className="p-4 border border-primary/50 bg-primary/5 rounded-lg flex flex-col gap-1 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 bg-primary text-black text-[9px] font-bold px-2 py-0.5 rounded-bl">CURRENT</div>
+                  <div className="absolute top-0 right-0 bg-primary text-white text-[9px] font-bold px-2 py-0.5 rounded-bl">CURRENT</div>
                   <h4 className="text-sm font-bold text-text-primary">Windows 11 - Chrome</h4>
                   <span className="text-xs text-text-secondary">IP: 192.168.1.100 (Mumbai, IN)</span>
                   <span className="text-[10px] text-text-secondary font-semibold mt-1">Last active: Just now</span>

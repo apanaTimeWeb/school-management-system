@@ -42,7 +42,7 @@ export default function QRVerification() {
                     className="flex-1 bg-bg-input border border-border rounded-lg px-4 py-3 text-sm outline-none focus:border-primary font-bold text-center" 
                   />
                 </div>
-                <button onClick={handleVerify} className="w-full bg-primary text-black py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition text-sm">
+                <button onClick={handleVerify} className="w-full bg-primary text-white py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition text-sm">
                   Verify Certificate
                 </button>
               </div>

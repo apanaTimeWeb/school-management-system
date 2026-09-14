@@ -61,7 +61,7 @@ export default function TeacherClassworkFeedbackModal() {
               className="flex-1 bg-input border border-border rounded-full px-5 py-3 text-[14px] text-text-primary focus:outline-none focus:border-primary transition-colors"
               required
             />
-            <button type="submit" className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-black hover:bg-primary/90 transition-colors shrink-0">
+            <button type="submit" className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors shrink-0">
               <Send size={18} className="ml-1" />
             </button>
           </form>

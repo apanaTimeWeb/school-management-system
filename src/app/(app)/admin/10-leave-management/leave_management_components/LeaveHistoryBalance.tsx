@@ -29,12 +29,12 @@ export default function LeaveHistoryBalance() {
                 <label className="text-xs font-semibold text-text-secondary">Search Employee</label>
                 <input type="text" placeholder="Emp ID or Name..." className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Search</button>
+              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Search</button>
             </div>
 
             <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 bg-primary text-black rounded-full flex items-center justify-center font-bold text-2xl">J</div>
+                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-2xl">J</div>
                 <div>
                   <h3 className="font-bold text-lg text-text-primary">John Doe</h3>
                   <p className="text-xs text-text-secondary font-semibold">EMP001 • Science Dept • Senior Teacher</p>

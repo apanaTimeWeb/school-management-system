@@ -63,7 +63,7 @@ export default function CMSDashboard() {
                    <textarea rows={4} className="bg-bg-input border border-border rounded-md px-3 py-2 text-sm outline-none focus:border-primary resize-none" defaultValue={"Welcome to our school. We strive for excellence in education and holistic development..."}></textarea>
                 </div>
                 
-                <button onClick={handleSave} className="bg-primary text-black py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2 w-48">
+                <button onClick={handleSave} className="bg-primary text-white py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2 w-48">
                   <Save size={16}/> Publish to Website
                 </button>
              </div>

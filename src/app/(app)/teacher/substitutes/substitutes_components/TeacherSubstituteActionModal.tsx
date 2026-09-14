@@ -73,7 +73,7 @@ export default function TeacherSubstituteActionModal() {
                </button>
                <button 
                  onClick={handleAcknowledge}
-                 className="flex-1 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                 className="flex-1 py-2.5 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
                >
                  <Check size={16}/> Acknowledge
                </button>

@@ -57,7 +57,7 @@ export default function TimetableViewer() {
               {viewType === 'teacher' && <><option>John Doe (Maths)</option><option>Sarah Smith (Science)</option></>}
               {viewType === 'room' && <><option>Room 101</option><option>Lab 3</option></>}
             </select>
-            <button onClick={handleSearch} disabled={!selectedValue} className="bg-primary text-black px-4 py-2 rounded-md font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
+            <button onClick={handleSearch} disabled={!selectedValue} className="bg-primary text-white px-4 py-2 rounded-md font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50">
               <Search size={18}/>
             </button>
           </div>

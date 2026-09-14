@@ -46,7 +46,7 @@ export default function TeacherDocumentsMain() {
         </div>
         <button 
           onClick={openUploadModal}
-          className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
         >
           <Plus size={18} /> Upload Document
         </button>
@@ -118,7 +118,7 @@ export default function TeacherDocumentsMain() {
                    <span>Uploaded: {doc.uploadDate}</span>
                    <span>Size: {doc.fileSize}</span>
                  </div>
-                 <button className="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-black transition-colors">
+                 <button className="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors">
                    <FileDown size={16}/>
                  </button>
               </div>

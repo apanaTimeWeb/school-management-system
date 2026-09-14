@@ -71,7 +71,7 @@ export default function PrincipalCommunicationNoticeModal() {
         <div className="px-5 py-4 border-t border-border bg-card flex justify-end shrink-0">
           <button
             onClick={() => setSelectedNotice(null)}
-            className="px-6 py-2 rounded-md bg-primary hover:bg-primary-hover text-black text-[13px] font-bold transition-colors"
+            className="px-6 py-2 rounded-md bg-primary hover:bg-primary-hover text-white text-[13px] font-bold transition-colors"
           >
             Close
           </button>

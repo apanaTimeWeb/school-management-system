@@ -90,7 +90,7 @@ export default function ParentDirectory() {
         <span>Showing 1 to 3 of 850 Parents</span>
         <div className="flex gap-1">
           <button className="px-3 py-1 border border-border rounded-md hover:bg-bg-page disabled:opacity-50" disabled>Prev</button>
-          <button className="px-3 py-1 border border-primary bg-primary text-black rounded-md">1</button>
+          <button className="px-3 py-1 border border-primary bg-primary text-white rounded-md">1</button>
           <button className="px-3 py-1 border border-border rounded-md hover:bg-bg-page">2</button>
           <button className="px-3 py-1 border border-border rounded-md hover:bg-bg-page">Next</button>
         </div>

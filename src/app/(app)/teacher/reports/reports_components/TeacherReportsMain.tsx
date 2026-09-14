@@ -92,7 +92,7 @@ export default function TeacherReportsMain() {
 
             <button 
               onClick={() => openGeneratorModal(rep.title)}
-              className="w-full py-2.5 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg group-hover:bg-primary group-hover:text-black group-hover:border-primary transition-colors flex items-center justify-center gap-2"
+              className="w-full py-2.5 bg-page border border-border text-text-primary font-bold text-[13px] rounded-lg group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-colors flex items-center justify-center gap-2"
             >
               <FileDown size={16} /> Configure & Generate
             </button>

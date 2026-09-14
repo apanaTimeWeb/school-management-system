@@ -188,7 +188,7 @@ export default function SuperAdminLibraryMasterConfig() {
                   <input type="checkbox" defaultChecked className="w-4 h-4 mt-0.5 accent-primary" />
                   <span className="text-sm font-bold text-text-primary">Auto-generate barcode on book entry</span>
                 </label>
-                <button className="px-4 py-2 mt-2 bg-primary text-black rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Save Settings</button>
+                <button className="px-4 py-2 mt-2 bg-primary text-white rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Save Settings</button>
               </div>
             </div>
 
@@ -204,7 +204,7 @@ export default function SuperAdminLibraryMasterConfig() {
                   <label className="text-xs font-bold text-text-secondary">Next Accession Number</label>
                   <input type="text" defaultValue="10452" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none" />
                 </div>
-                <button className="px-4 py-2 mt-2 bg-primary text-black rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Update Prefix</button>
+                <button className="px-4 py-2 mt-2 bg-primary text-white rounded-md text-sm font-bold hover:bg-primary-hover transition-colors w-fit">Update Prefix</button>
               </div>
             </div>
 

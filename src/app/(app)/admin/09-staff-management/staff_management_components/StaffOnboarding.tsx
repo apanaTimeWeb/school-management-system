@@ -61,7 +61,7 @@ export default function StaffOnboarding() {
                   <div className="flex flex-col gap-2">
                     <input type="text" placeholder="Department Name" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                     <input type="text" placeholder="HOD Name" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
-                    <button onClick={handleSave} className="bg-primary text-black px-4 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Dept</button>
+                    <button onClick={handleSave} className="bg-primary text-white px-4 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Dept</button>
                   </div>
                 </div>
                 
@@ -89,7 +89,7 @@ export default function StaffOnboarding() {
                   <div className="flex flex-col gap-2">
                     <input type="text" placeholder="Designation Title" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                     <input type="text" placeholder="Level/Grade" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
-                    <button onClick={handleSave} className="bg-primary text-black px-4 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Designation</button>
+                    <button onClick={handleSave} className="bg-primary text-white px-4 py-1.5 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Designation</button>
                   </div>
                 </div>
                 
@@ -149,7 +149,7 @@ export default function StaffOnboarding() {
                   </select>
                 </div>
                 <div className="flex flex-col gap-1.5 md:col-span-2 pt-4 border-t border-border mt-2">
-                  <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start">Onboard Staff</button>
+                  <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start">Onboard Staff</button>
                 </div>
               </div>
             </div>

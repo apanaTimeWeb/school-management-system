@@ -128,7 +128,7 @@ export default function SendCommunication() {
                   <button 
                     onClick={handleSend} 
                     disabled={isSending}
-                    className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSending ? (
                       <><span className="animate-spin border-2 border-white/30 border-t-white rounded-full w-4 h-4"></span> Sending...</>

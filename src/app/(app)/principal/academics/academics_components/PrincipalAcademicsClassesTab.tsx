@@ -87,7 +87,7 @@ export default function PrincipalAcademicsClassesTab() {
                     <td className="p-4 text-right">
                       <button 
                         onClick={() => setAssignTeacherModalOpen(true, sec.id)}
-                        className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-black border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-2 ml-auto"
+                        className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-2 ml-auto"
                       >
                         {sec.classTeacher ? <Edit3 size={14} /> : <UserPlus size={14} />}
                         {sec.classTeacher ? 'Change Teacher' : 'Assign Teacher'}

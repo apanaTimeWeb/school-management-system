@@ -119,7 +119,7 @@ export default function PrincipalLeavesRequestsTab({ showOnlyPending }: Props) {
                   {req.status === 'Pending' ? (
                     <button 
                       onClick={() => setSelectedRequest(req)}
-                      className="px-4 py-1.5 rounded bg-primary hover:bg-primary-hover text-black font-bold text-[12px] transition-colors"
+                      className="px-4 py-1.5 rounded bg-primary hover:bg-primary-hover text-white font-bold text-[12px] transition-colors"
                     >
                       Review
                     </button>

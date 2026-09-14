@@ -26,7 +26,7 @@ export default function PrincipalStudentsFilters() {
         <div className="flex items-center gap-2 px-3 py-2 bg-page border border-border rounded-md text-[13px] text-text-secondary">
           <Filter size={16} /> Filters
           {activeFilterCount > 0 && (
-            <span className="bg-primary text-black px-1.5 rounded-full text-[11px] font-bold">
+            <span className="bg-primary text-white px-1.5 rounded-full text-[11px] font-bold">
               {activeFilterCount}
             </span>
           )}

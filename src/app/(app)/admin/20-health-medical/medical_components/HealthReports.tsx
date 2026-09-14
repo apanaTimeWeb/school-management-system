@@ -40,7 +40,7 @@ export default function HealthReports() {
                  <option>Class 10 - Section A</option>
                  <option>Class 10 - Section B</option>
                </select>
-               <button className="bg-primary text-black py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2">
+               <button className="bg-primary text-white py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover flex items-center justify-center gap-2">
                  <Download size={16}/> Download Class Batch (PDF)
                </button>
              </div>

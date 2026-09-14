@@ -64,7 +64,7 @@ export default function ExamSetup() {
                   <input type="text" placeholder="e.g. Unit Test 2" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                 </div>
                 <div className="flex flex-col gap-1.5 md:col-span-2">
-                  <button onClick={handleSave} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm flex items-center justify-center gap-2 hover:bg-primary-hover active:scale-95 transition"><PlusCircle size={16}/> Create Exam Type</button>
+                  <button onClick={handleSave} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm flex items-center justify-center gap-2 hover:bg-primary-hover active:scale-95 transition"><PlusCircle size={16}/> Create Exam Type</button>
                 </div>
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function ExamSetup() {
                 </tbody>
               </table>
               <div className="flex justify-end mt-4">
-                <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Schedule</button>
+                <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Schedule</button>
               </div>
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function ExamSetup() {
               </tbody>
             </table>
             <div className="flex">
-              <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Update Grading Rules</button>
+              <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Update Grading Rules</button>
             </div>
           </div>
         )}

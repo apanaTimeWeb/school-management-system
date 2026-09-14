@@ -80,7 +80,7 @@ export default function PrincipalTimetableApprovalTab() {
                         <Eye size={14} /> Review
                       </button>
                       {draft.status === 'Pending Approval' && (
-                        <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-black transition-colors flex items-center gap-1.5 disabled:opacity-50" disabled={draft.conflictsCount > 0}>
+                        <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary rounded text-[12px] font-bold text-primary hover:text-white transition-colors flex items-center gap-1.5 disabled:opacity-50" disabled={draft.conflictsCount > 0}>
                           <Send size={14} /> Publish
                         </button>
                       )}

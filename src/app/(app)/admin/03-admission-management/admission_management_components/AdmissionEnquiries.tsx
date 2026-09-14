@@ -105,7 +105,7 @@ export default function AdmissionEnquiries() {
             </div>
             
             <div className="flex justify-end pt-4 border-t border-border">
-              <button className="px-6 py-2 bg-primary text-black rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover">Save Application Form</button>
+              <button className="px-6 py-2 bg-primary text-white rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover">Save Application Form</button>
             </div>
           </div>
         )}

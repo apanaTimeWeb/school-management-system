@@ -89,7 +89,7 @@ export default function TeacherQuickNotificationModal() {
                  {successMessage}
                </div>
              ) : null}
-             <button type="submit" disabled={!!successMessage} className="w-full py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+             <button type="submit" disabled={!!successMessage} className="w-full py-2.5 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <BellRing size={16} /> Send Alert Now
              </button>
            </div>

@@ -106,7 +106,7 @@ export default function PrincipalDashboardOperations({
                   <h3 className="text-[14px] font-medium text-text-primary">{l.requesterName} <span className="text-[10px] uppercase text-text-secondary bg-white/5 px-1 rounded ml-1">{l.role}</span></h3>
                   <div className="text-[12px] text-text-secondary mt-1">{l.dateRange} &bull; {l.reason}</div>
                 </div>
-                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1 bg-primary text-black text-[12px] font-medium rounded hover:bg-primary-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-page">Review</button>
+                <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1 bg-primary text-white text-[12px] font-medium rounded hover:bg-primary-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-page">Review</button>
               </div>
             ))}
           </div>

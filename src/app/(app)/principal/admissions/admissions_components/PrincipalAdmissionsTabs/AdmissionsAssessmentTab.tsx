@@ -95,7 +95,7 @@ export default function AdmissionsAssessmentTab({ assessment }: AdmissionsAssess
           <button 
             onClick={handleSave}
             disabled={isSaving}
-            className="px-5 py-2 rounded bg-primary text-black text-[13px] font-bold hover:bg-primary-hover transition-colors flex items-center gap-2 disabled:opacity-70"
+            className="px-5 py-2 rounded bg-primary text-white text-[13px] font-bold hover:bg-primary-hover transition-colors flex items-center gap-2 disabled:opacity-70"
           >
             {isSaving ? <div className="w-3.5 h-3.5 border-2 border-black/30 border-t-black rounded-full animate-spin" /> : null}
             Save Assessment

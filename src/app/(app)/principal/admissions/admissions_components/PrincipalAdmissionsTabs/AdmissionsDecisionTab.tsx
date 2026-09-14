@@ -97,7 +97,7 @@ export default function AdmissionsDecisionTab({ decision, applicationId }: Admis
           <button 
             onClick={handleSave}
             disabled={isSaving || currentDecision === 'Pending'}
-            className="px-5 py-2.5 rounded bg-primary text-black text-[13px] font-bold hover:bg-primary-hover transition-colors flex items-center gap-2 disabled:opacity-50"
+            className="px-5 py-2.5 rounded bg-primary text-white text-[13px] font-bold hover:bg-primary-hover transition-colors flex items-center gap-2 disabled:opacity-50"
           >
             {isSaving ? <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" /> : null}
             Submit Final Decision

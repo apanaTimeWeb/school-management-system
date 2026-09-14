@@ -151,7 +151,7 @@ export default function TeacherAddRemarkModal() {
              <button type="button" onClick={closeAddRemarkModal} className="px-5 py-2.5 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors mr-auto">
                Cancel
              </button>
-             <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+             <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                <Send size={16} /> Save Remark
              </button>
            </div>

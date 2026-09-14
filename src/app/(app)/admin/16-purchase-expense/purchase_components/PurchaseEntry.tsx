@@ -66,7 +66,7 @@ export default function PurchaseEntry() {
                  </div>
                </div>
                
-               <button onClick={handleAction} className="w-full bg-primary text-black py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition mt-2">
+               <button onClick={handleAction} className="w-full bg-primary text-white py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition mt-2">
                  Save Purchase Entry & Add to Inventory
                </button>
              </div>

@@ -103,7 +103,7 @@ export default function PrincipalParentsDirectoryTab() {
                 <td className="p-4 text-right">
                   <button 
                     onClick={() => setSelectedParent(parent)}
-                    className="px-4 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-[12px] font-bold text-primary hover:text-black transition-colors"
+                    className="px-4 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-[12px] font-bold text-primary hover:text-white transition-colors"
                   >
                     View Profile
                   </button>

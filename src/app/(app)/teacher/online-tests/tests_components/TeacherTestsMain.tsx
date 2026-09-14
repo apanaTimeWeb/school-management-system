@@ -35,7 +35,7 @@ export default function TeacherTestsMain() {
         </div>
         <button 
           onClick={openCreateModal}
-          className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
         >
           <Plus size={18} /> Create Quiz
         </button>
@@ -124,7 +124,7 @@ export default function TeacherTestsMain() {
               ) : (
                 <button 
                   onClick={() => openAnalyticsModal(test)}
-                  className="px-4 py-2 bg-primary text-black text-[13px] font-bold rounded hover:bg-primary/90 flex items-center gap-2 transition-colors w-full justify-center"
+                  className="px-4 py-2 bg-primary text-white text-[13px] font-bold rounded hover:bg-primary/90 flex items-center gap-2 transition-colors w-full justify-center"
                 >
                   <BarChart2 size={16} /> View Analytics
                 </button>

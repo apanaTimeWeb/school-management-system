@@ -126,7 +126,7 @@ export default function TeacherClassPerformanceModal() {
                       defaultValue={selectedStudent.remarks}
                       className="w-full h-24 bg-input border border-border rounded-lg p-3 text-[13px] text-text-primary focus:outline-none focus:border-primary resize-none custom-scrollbar mb-3"
                     ></textarea>
-                    <button type="submit" className="w-full py-2 bg-primary text-black font-bold text-[13px] rounded hover:bg-primary/90 transition-colors">
+                    <button type="submit" className="w-full py-2 bg-primary text-white font-bold text-[13px] rounded hover:bg-primary/90 transition-colors">
                       Update Remarks
                     </button>
                   </form>

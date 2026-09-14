@@ -56,7 +56,7 @@ export default function SubstituteManagement() {
                     <option value="T2">Anna Lee (History) - 4 Periods</option>
                   </select>
                </div>
-               <button onClick={handleSearchFreeTeachers} disabled={!absentTeacher} className="mt-2 bg-primary text-black px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 disabled:opacity-50">
+               <button onClick={handleSearchFreeTeachers} disabled={!absentTeacher} className="mt-2 bg-primary text-white px-4 py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center justify-center gap-2 disabled:opacity-50">
                  <Search size={16}/> Find Free Teachers
                </button>
             </div>

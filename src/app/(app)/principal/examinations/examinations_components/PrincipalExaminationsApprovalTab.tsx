@@ -87,7 +87,7 @@ export default function PrincipalExaminationsApprovalTab() {
                     {app.status === 'Pending Verification' ? (
                       <button 
                         onClick={() => setApproveModalOpen(true, app.id)}
-                        className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-black border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-1.5 ml-auto"
+                        className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-1.5 ml-auto"
                       >
                         <FileCheck size={14} />
                         Verify & Approve

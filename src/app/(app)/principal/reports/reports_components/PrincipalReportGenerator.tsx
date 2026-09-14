@@ -55,7 +55,7 @@ export default function PrincipalReportGenerator() {
            <button 
              onClick={handleGenerate}
              disabled={loading}
-             className="w-full sm:w-auto px-6 py-2 bg-primary hover:bg-primary-hover text-black font-bold text-[13px] rounded-md transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
+             className="w-full sm:w-auto px-6 py-2 bg-primary hover:bg-primary-hover text-white font-bold text-[13px] rounded-md transition-colors flex items-center justify-center gap-2 disabled:opacity-70"
            >
              {loading ? <Loader2 size={16} className="animate-spin" /> : <Play size={16} />}
              {loading ? 'Generating...' : 'Generate Report'}

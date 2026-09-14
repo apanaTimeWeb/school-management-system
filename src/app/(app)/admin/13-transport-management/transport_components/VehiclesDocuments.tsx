@@ -57,7 +57,7 @@ export default function VehiclesDocuments() {
                 <label className="text-xs font-semibold text-text-secondary">Capacity</label>
                 <input type="number" placeholder="40" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button onClick={handleAdd} className="bg-primary text-black px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
+              <button onClick={handleAdd} className="bg-primary text-white px-4 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center gap-2">
                 <Plus size={16}/> Add Vehicle
               </button>
             </div>

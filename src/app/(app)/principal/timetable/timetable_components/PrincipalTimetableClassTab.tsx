@@ -116,7 +116,7 @@ export default function PrincipalTimetableClassTab() {
                   {!period.isBreak && (
                     <button 
                       onClick={() => setSubstituteModalOpen(true, period.id)}
-                      className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-black border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-1.5 ml-auto opacity-0 group-hover:opacity-100"
+                      className="px-3 py-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/30 hover:border-primary rounded-md text-[12px] font-bold transition-colors flex items-center gap-1.5 ml-auto opacity-0 group-hover:opacity-100"
                     >
                       <UserPlus size={14} />
                       Substitute

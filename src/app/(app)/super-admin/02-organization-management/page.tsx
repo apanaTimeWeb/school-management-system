@@ -47,7 +47,7 @@ export default function OrganizationManagementPage() {
         {activeTab !== 'branding' && activeTab !== 'structure' && (
           <button 
             onClick={() => setIsAddingNew(!isAddingNew)}
-            className="flex items-center gap-2 px-4 py-2 bg-primary text-black text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors"
           >
             {isAddingNew ? (
               <><ArrowLeft size={16} /> Back to List</>

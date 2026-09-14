@@ -61,7 +61,7 @@ export default function AllocationAssignment() {
                 </select>
               </div>
               
-              <button onClick={handleAssign} className="bg-primary text-black px-4 py-2 mt-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start">
+              <button onClick={handleAssign} className="bg-primary text-white px-4 py-2 mt-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start">
                 Confirm Assignment
               </button>
             </div>
@@ -97,7 +97,7 @@ export default function AllocationAssignment() {
                       <span className="font-bold text-sm">Aarav Sharma</span>
                       <p className="text-xs text-text-secondary">Class 10-A • STU2026001</p>
                     </div>
-                    <button onClick={handleAssign} className="bg-primary/10 text-primary border border-primary/20 px-3 py-1.5 rounded text-xs font-bold hover:bg-primary hover:text-black transition">
+                    <button onClick={handleAssign} className="bg-primary/10 text-primary border border-primary/20 px-3 py-1.5 rounded text-xs font-bold hover:bg-primary hover:text-white transition">
                       Allocate to Stop
                     </button>
                  </div>

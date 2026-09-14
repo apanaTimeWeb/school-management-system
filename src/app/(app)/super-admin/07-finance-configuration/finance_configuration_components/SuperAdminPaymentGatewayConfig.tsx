@@ -187,7 +187,7 @@ export default function SuperAdminPaymentGatewayConfig() {
                 <p className="text-sm text-text-secondary">
                   Compare system receipts with actual bank settlements from the payment gateway to find discrepancies.
                 </p>
-                <button className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-black rounded-md text-sm font-bold hover:bg-primary-hover transition-colors shadow-sm w-full">
+                <button className="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white rounded-md text-sm font-bold hover:bg-primary-hover transition-colors shadow-sm w-full">
                   <RefreshCcw size={16} /> Run Daily Reconciliation (API)
                 </button>
                 <div className="text-xs text-center text-text-secondary mt-1">

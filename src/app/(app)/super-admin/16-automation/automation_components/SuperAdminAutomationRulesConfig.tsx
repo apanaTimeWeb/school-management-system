@@ -57,7 +57,7 @@ export default function SuperAdminAutomationRulesConfig() {
                   <option>System</option>
                 </select>
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 bg-primary text-black text-xs font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
+              <button className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-md hover:bg-primary-hover transition-colors shadow-sm">
                 <Plus size={14} /> Create New Rule
               </button>
             </div>

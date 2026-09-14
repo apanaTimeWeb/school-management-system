@@ -107,7 +107,7 @@ export default function PrincipalDisciplineActionModal() {
           <button
             onClick={handleUpdate}
             disabled={loading || !actionDesc.trim()}
-            className="px-6 py-2 rounded-md bg-primary border border-primary hover:bg-primary-hover text-black text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
+            className="px-6 py-2 rounded-md bg-primary border border-primary hover:bg-primary-hover text-white text-[13px] font-bold transition-colors flex items-center gap-2 disabled:opacity-50"
           >
             {loading ? "Saving..." : <><CheckCircle size={16}/> Save Action</>}
           </button>

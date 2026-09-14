@@ -45,7 +45,7 @@ export default function AccountSecurity() {
                 <input type="password" placeholder="Min 8 characters" className="bg-bg-input border border-border rounded-md px-3 py-2 text-sm outline-none focus:border-primary font-mono" />
               </div>
 
-              <button onClick={()=>handleSave('Password Changed Successfully!')} className="w-full bg-primary text-black py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2">
+              <button onClick={()=>handleSave('Password Changed Successfully!')} className="w-full bg-primary text-white py-2.5 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2">
                 <Save size={16}/> Update Password
               </button>
            </div>

@@ -22,7 +22,7 @@ export default function SuperAdminGroupsTab() {
         <h2 className="text-base font-semibold text-text-primary flex items-center gap-2">
           <Layers size={18} className="text-primary" /> Streams & Groups
         </h2>
-        <button onClick={() => setIsDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-black text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
+        <button onClick={() => setIsDrawerOpen(true)} className="flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-xs font-medium rounded hover:bg-primary-hover transition-colors shadow-sm">
           <Plus size={14} /> Add Group
         </button>
       </div>

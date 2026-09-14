@@ -74,7 +74,7 @@ export default function PrincipalTransportRouteModal() {
             <div className="space-y-4 relative before:absolute before:inset-0 before:ml-[11px] before:translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
               {selectedRoute.stops.map((stop, idx) => (
                 <div key={idx} className="relative flex items-center group">
-                  <div className="flex items-center justify-center w-6 h-6 rounded-full border-4 border-bg-main bg-primary text-black shrink-0 shadow z-10"></div>
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full border-4 border-bg-main bg-primary text-white shrink-0 shadow z-10"></div>
                   <div className="ml-4 p-3 rounded-lg border border-border bg-page shadow-sm flex-1">
                     <p className="text-[14px] font-bold text-text-primary">{stop}</p>
                     <p className="text-[11px] text-text-secondary mt-0.5">Stop {idx + 1}</p>

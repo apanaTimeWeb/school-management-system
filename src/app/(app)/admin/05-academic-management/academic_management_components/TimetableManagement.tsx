@@ -40,7 +40,7 @@ export default function TimetableManagement() {
                   <input type="time" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                 </div>
                 <div className="flex flex-col gap-1.5 md:col-span-2">
-                  <button className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm">Save Period</button>
+                  <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm">Save Period</button>
                 </div>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function TimetableManagement() {
                   <option>Tuesday</option>
                 </select>
               </div>
-              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm">Load / Create Schedule</button>
+              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm">Load / Create Schedule</button>
             </div>
 
             <div className="mt-4 bg-bg-page border border-border rounded-lg p-5">

@@ -8,7 +8,7 @@ export default function LandingPage() {
       {/* Navbar */}
       <nav className="flex justify-between items-center px-8 py-4 bg-bg-card border-b border-border sticky top-0 z-50 shadow-sm">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-black font-bold text-xl">
+          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-xl">
             S
           </div>
           <span className="text-2xl font-bold tracking-tight text-text-primary">
@@ -22,7 +22,7 @@ export default function LandingPage() {
           <Link href="#modules" className="hover:text-primary transition-colors">Modules</Link>
         </div>
         <div>
-          <Link href="/login" className="bg-primary hover:bg-primary-hover text-black px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2">
+          <Link href="/login" className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2">
             LOGIN
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function LandingPage() {
             A secure, cloud-based ERP handling Students, Academics, Finance, HR, and 20+ other modules seamlessly from one centralized dashboard.
           </p>
           
-          <Link href="/login" className="group bg-primary hover:bg-primary-hover text-black px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3">
+          <Link href="/login" className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3">
             🔐 Login to ERP
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>
@@ -137,7 +137,7 @@ export default function LandingPage() {
         </section>
         
         {/* Full Module List Banner */}
-        <section id="modules" className="py-20 bg-primary text-black text-center px-6">
+        <section id="modules" className="py-20 bg-primary text-white text-center px-6">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-white">28 COMPREHENSIVE MODULES</h2>
             <div className="flex flex-wrap justify-center gap-x-6 gap-y-4 text-base font-medium text-white/80">
@@ -152,7 +152,7 @@ export default function LandingPage() {
       {/* Footer */}
       <footer className="bg-bg-card py-10 px-6 text-center border-t border-border">
         <div className="flex justify-center items-center gap-2 mb-6">
-          <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-black font-bold text-xs">
+          <div className="w-6 h-6 rounded-md bg-primary flex items-center justify-center text-white font-bold text-xs">
             S
           </div>
           <span className="text-xl font-bold tracking-tight text-text-primary">

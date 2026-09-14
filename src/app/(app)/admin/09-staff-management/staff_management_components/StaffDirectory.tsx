@@ -108,7 +108,7 @@ export default function StaffDirectory() {
                   </div>
                   
                   <div className="mt-4 flex gap-2">
-                    <button onClick={() => setSelectedStaff(s)} className="flex-1 text-xs bg-bg-page border border-border text-text-primary px-3 py-1.5 rounded font-bold hover:bg-primary hover:text-black hover:border-primary transition">View Profile</button>
+                    <button onClick={() => setSelectedStaff(s)} className="flex-1 text-xs bg-bg-page border border-border text-text-primary px-3 py-1.5 rounded font-bold hover:bg-primary hover:text-white hover:border-primary transition">View Profile</button>
                     <button onClick={() => toggleStatus(s.id)} className="text-xs bg-bg-page border border-border text-text-primary px-3 py-1.5 rounded font-bold hover:bg-card transition" title="Toggle Status"><UserCheck size={14}/></button>
                   </div>
                 </div>
@@ -129,7 +129,7 @@ export default function StaffDirectory() {
             
             <div className="flex flex-col md:flex-row gap-6">
               <div className="w-full md:w-1/3 flex flex-col items-center p-6 border border-border rounded-lg bg-bg-page h-fit">
-                <div className="w-24 h-24 bg-primary text-black rounded-full flex items-center justify-center font-bold text-3xl mb-4 shadow-sm">
+                <div className="w-24 h-24 bg-primary text-white rounded-full flex items-center justify-center font-bold text-3xl mb-4 shadow-sm">
                   {selectedStaff.name.charAt(0)}
                 </div>
                 <h3 className="font-bold text-lg text-text-primary">{selectedStaff.name}</h3>
@@ -174,7 +174,7 @@ export default function StaffDirectory() {
                 <div className="bg-card border border-border rounded-lg p-5 shadow-sm">
                   <h4 className="font-bold text-sm text-text-primary uppercase mb-4">Quick Actions</h4>
                   <div className="flex flex-wrap gap-3">
-                    <button className="text-xs bg-primary text-black px-4 py-2 rounded font-bold shadow-sm hover:bg-primary-hover transition">Edit Profile</button>
+                    <button className="text-xs bg-primary text-white px-4 py-2 rounded font-bold shadow-sm hover:bg-primary-hover transition">Edit Profile</button>
                     <button className="text-xs bg-bg-page border border-border text-text-primary px-4 py-2 rounded font-bold hover:bg-card transition">Generate ID Card</button>
                     <button className="text-xs bg-bg-page border border-border text-text-primary px-4 py-2 rounded font-bold hover:bg-card transition">Assign Teacher Role</button>
                   </div>

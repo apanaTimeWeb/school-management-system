@@ -31,7 +31,7 @@ export default function NotificationTemplates() {
       <div className="flex-1 bg-card border border-border rounded-xl shadow-sm p-6 overflow-y-auto">
         <div className="flex justify-between items-center border-b border-border pb-4 mb-6">
           <h2 className="text-xl font-bold text-text-primary">Communication Templates</h2>
-          <button className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center gap-2">
+          <button className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition flex items-center gap-2">
             <Plus size={16}/> Create Template
           </button>
         </div>

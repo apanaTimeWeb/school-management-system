@@ -36,7 +36,7 @@ export default function SuperAdminModuleEnableDisableConfig() {
               अगर किसी school में Hostel नहीं है तो पूरा Hostel module यहाँ से OFF करने पर UI से hide हो जाएगा।
             </span>
           </div>
-          <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
+          <button className="flex items-center gap-2 px-5 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
             <Save size={16} /> Apply Changes
           </button>
         </div>

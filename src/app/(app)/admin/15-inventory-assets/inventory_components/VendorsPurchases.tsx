@@ -29,7 +29,7 @@ export default function VendorsPurchases() {
                 </div>
                 <span className="text-[10px] font-bold bg-success-bg text-success px-2 py-0.5 rounded uppercase">Active</span>
              </div>
-             <button className="bg-primary/10 text-primary border border-primary/20 py-2 rounded font-bold text-sm mt-2 hover:bg-primary hover:text-black transition">
+             <button className="bg-primary/10 text-primary border border-primary/20 py-2 rounded font-bold text-sm mt-2 hover:bg-primary hover:text-white transition">
                + Add New Vendor
              </button>
           </div>

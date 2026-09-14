@@ -91,7 +91,7 @@ export default function TeacherSyllabusUploadModal() {
             <button type="button" onClick={closeUploadModal} className="px-5 py-2.5 bg-page border border-border text-text-primary font-bold text-[14px] rounded-lg hover:bg-white/5 transition-colors">
               Cancel
             </button>
-            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+            <button type="submit" disabled={!!successMessage} className="px-5 py-2.5 bg-primary text-white font-bold text-[14px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
               <UploadCloud size={18} /> Upload Syllabus
             </button>
           </div>

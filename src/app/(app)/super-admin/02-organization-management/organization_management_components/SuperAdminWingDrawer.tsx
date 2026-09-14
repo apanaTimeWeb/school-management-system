@@ -60,7 +60,7 @@ export default function SuperAdminWingDrawer({ isOpen, onClose }: DrawerProps) {
 
         <div className="p-6 border-t border-border bg-header flex items-center justify-end gap-3">
           <button type="button" onClick={onClose} className="px-4 py-2 border border-border rounded-md text-text-secondary hover:bg-bg-page text-sm font-medium">Cancel</button>
-          <button type="submit" form="wing-form" disabled={isSubmitting} className="flex items-center gap-2 px-6 py-2 bg-primary text-black rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70">
+          <button type="submit" form="wing-form" disabled={isSubmitting} className="flex items-center gap-2 px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70">
             <Save size={16} /> Save Wing
           </button>
         </div>

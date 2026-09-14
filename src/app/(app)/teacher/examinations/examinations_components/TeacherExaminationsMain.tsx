@@ -101,7 +101,7 @@ export default function TeacherExaminationsMain() {
               {exam.status === 'Marks Entry Open' && (
                 <button 
                   onClick={() => openMarksEntry(exam)}
-                  className="px-4 py-2 bg-primary text-black text-[13px] font-bold rounded hover:bg-primary/90 flex items-center gap-2 transition-colors"
+                  className="px-4 py-2 bg-primary text-white text-[13px] font-bold rounded hover:bg-primary/90 flex items-center gap-2 transition-colors"
                 >
                   Enter Marks <ArrowRight size={16} />
                 </button>

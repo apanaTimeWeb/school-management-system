@@ -183,7 +183,7 @@ export default function SuperAdminFeeFinanceConfig() {
                 <label className="text-xs font-bold text-text-secondary">Receipt numbering prefix/format</label>
                 <div className="flex gap-2">
                   <input type="text" defaultValue="REC-2425-" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none flex-1" />
-                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-black transition-colors">Save</button>
+                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-white transition-colors">Save</button>
                 </div>
               </div>
 
@@ -192,7 +192,7 @@ export default function SuperAdminFeeFinanceConfig() {
                 <label className="text-xs font-bold text-text-secondary">Invoice numbering prefix/format</label>
                 <div className="flex gap-2">
                   <input type="text" defaultValue="INV-2425-" className="bg-input border border-border rounded-md px-3 py-2 text-sm text-text-primary focus:border-primary outline-none flex-1" />
-                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-black transition-colors">Save</button>
+                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-white transition-colors">Save</button>
                 </div>
               </div>
               
@@ -204,7 +204,7 @@ export default function SuperAdminFeeFinanceConfig() {
                     <option value="none">No Tax Applicable</option>
                     <option value="gst18">GST @ 18% (for non-educational fees)</option>
                   </select>
-                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-black transition-colors">Save</button>
+                  <button className="px-4 py-2 bg-primary/10 text-primary border border-primary/20 rounded-md text-sm font-bold hover:bg-primary hover:text-white transition-colors">Save</button>
                 </div>
               </div>
             </div>

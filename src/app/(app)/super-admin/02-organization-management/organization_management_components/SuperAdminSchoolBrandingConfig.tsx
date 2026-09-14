@@ -195,7 +195,7 @@ export default function SuperAdminSchoolBrandingConfig() {
         )}
 
         <div className="mt-6 flex justify-end">
-          <button className="flex items-center gap-2 px-6 py-2.5 bg-primary text-black font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
+          <button className="flex items-center gap-2 px-6 py-2.5 bg-primary text-white font-bold rounded-lg hover:bg-primary-hover transition-colors shadow-sm">
             <Save size={16} /> Save Branding Settings
           </button>
         </div>

@@ -94,7 +94,7 @@ export default function PrincipalStaffDirectoryTab() {
                 <td className="p-4 text-right">
                   <button 
                     onClick={() => setSelectedProfileId(staff.id)}
-                    className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-[12px] font-bold text-primary hover:text-black transition-colors inline-flex items-center gap-1.5"
+                    className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-[12px] font-bold text-primary hover:text-white transition-colors inline-flex items-center gap-1.5"
                   >
                     <Eye size={14} /> Profile
                   </button>

@@ -73,7 +73,7 @@ export default function FeeConfiguration() {
                   <input type="number" placeholder="0" className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
                 </div>
                 <div className="flex flex-col gap-1.5 md:col-span-3">
-                  <button onClick={handleSave} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Add Fee Head</button>
+                  <button onClick={handleSave} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Add Fee Head</button>
                 </div>
               </div>
             </div>
@@ -118,7 +118,7 @@ export default function FeeConfiguration() {
                   <option>Class IX</option>
                 </select>
               </div>
-              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Structure</button>
+              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Load Structure</button>
             </div>
 
             <div className="bg-card border border-border p-4 rounded-lg shadow-sm">
@@ -141,7 +141,7 @@ export default function FeeConfiguration() {
                 </label>
               </div>
               <div className="flex justify-end mt-4 pt-4 border-t border-border">
-                <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Class Fees</button>
+                <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Save Class Fees</button>
               </div>
             </div>
           </div>
@@ -157,7 +157,7 @@ export default function FeeConfiguration() {
                 <label className="text-xs font-semibold text-text-secondary">Search Student</label>
                 <input type="text" placeholder="Admission No. or Name..." className="bg-bg-input border border-border rounded-md px-3 py-1.5 text-sm outline-none focus:border-primary" />
               </div>
-              <button className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Search</button>
+              <button className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Search</button>
             </div>
 
             <div className="bg-card border border-border p-4 rounded-lg shadow-sm">
@@ -175,7 +175,7 @@ export default function FeeConfiguration() {
                 </div>
               </div>
               <div className="flex justify-end mt-4">
-                <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Apply Custom Fee</button>
+                <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition">Apply Custom Fee</button>
               </div>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function FeeConfiguration() {
                 </div>
               </div>
 
-              <button onClick={handleSave} className="bg-primary text-black px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start mt-2">Save Due Date Rules</button>
+              <button onClick={handleSave} className="bg-primary text-white px-4 py-2 rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition self-start mt-2">Save Due Date Rules</button>
             </div>
           </div>
         )}

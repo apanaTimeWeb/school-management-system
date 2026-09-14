@@ -91,7 +91,7 @@ export default function PrincipalCertificateHistoryTab() {
                       Log
                     </button>
                     {(req.status === 'Approved' || req.status === 'Issued') && (
-                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-black text-[12px] font-bold transition-colors flex items-center gap-1.5">
+                      <button onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.dispatchEvent(new CustomEvent('open-coming-soon', { detail: 'Action completed successfully!' })); }} className="px-3 py-1.5 rounded bg-primary/10 hover:bg-primary border border-primary/30 hover:border-primary text-primary hover:text-white text-[12px] font-bold transition-colors flex items-center gap-1.5">
                         <Download size={14}/> PDF
                       </button>
                     )}

@@ -68,7 +68,7 @@ export default function TemplateBuilder() {
                   </div>
                 </div>
                 
-                <button onClick={handleSave} className="bg-primary text-black py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
+                <button onClick={handleSave} className="bg-primary text-white py-2 rounded-lg text-sm font-bold shadow-sm hover:bg-primary-hover transition flex items-center justify-center gap-2 mt-2">
                   <Save size={16}/> Save Configuration
                 </button>
              </div>

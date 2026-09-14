@@ -33,7 +33,7 @@ export default function TeacherComingSoonModal() {
         
         <button 
           onClick={() => setIsOpen(false)}
-          className="w-full py-2.5 bg-primary text-black font-bold text-[14px] rounded hover:bg-primary-hover transition-colors flex items-center justify-center gap-2"
+          className="w-full py-2.5 bg-primary text-white font-bold text-[14px] rounded hover:bg-primary-hover transition-colors flex items-center justify-center gap-2"
         >
           <X size={16} /> Close
         </button>

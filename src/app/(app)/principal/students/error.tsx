@@ -26,7 +26,7 @@ export default function PrincipalStudentsError({
         </p>
         <button
           onClick={() => reset()}
-          className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-black font-semibold text-[14px] py-3 px-4 rounded-md transition-all duration-200"
+          className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] py-3 px-4 rounded-md transition-all duration-200"
         >
           <RefreshCcw size={16} />
           Reload Data

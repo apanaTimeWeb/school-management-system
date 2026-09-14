@@ -94,7 +94,7 @@ export default function SuperAdminViewUserDrawer({ isOpen, onClose, userId }: Vi
 
         <div className="p-6 border-t border-border bg-header flex items-center justify-between">
           <p className="text-xs text-text-secondary flex items-center gap-1.5"><UserCheck size={14} /> ID: {userId}</p>
-          <button onClick={onClose} className="px-6 py-2 bg-primary text-black rounded-md hover:bg-primary-hover text-sm font-medium">Done</button>
+          <button onClick={onClose} className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary-hover text-sm font-medium">Done</button>
         </div>
       </div>
     </>

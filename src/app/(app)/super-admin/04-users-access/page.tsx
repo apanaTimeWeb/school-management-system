@@ -50,7 +50,7 @@ export default function UsersAccessPage() {
           {activeTab !== 'sessions' && !editingRole && (
             <button 
               onClick={() => setIsAddingNew(true)}
-              className="flex items-center gap-2 px-4 py-2 bg-primary text-black text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors shadow-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors shadow-sm"
             >
               <Plus size={16} /> Add New {activeTab === 'users' ? 'User' : 'Role'}
             </button>

@@ -56,7 +56,7 @@ export default function ResultProcessing() {
                   <button 
                     onClick={processResults} 
                     disabled={isProcessing || isGenerated}
-                    className="bg-primary text-black px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50"
+                    className="bg-primary text-white px-6 py-1.5 h-[34px] rounded-md text-sm font-bold shadow-sm hover:bg-primary-hover active:scale-95 transition disabled:opacity-50"
                   >
                     Start Batch Processing
                   </button>

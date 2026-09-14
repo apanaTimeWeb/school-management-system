@@ -66,7 +66,7 @@ export default function LifecycleTab({ data }: LifecycleTabProps) {
           <button 
             disabled={data.transferStatus !== 'Not Requested'}
             onClick={() => setTransferModalOpen(true)}
-            className="w-full py-2.5 rounded bg-primary text-black text-[13px] font-semibold hover:bg-primary-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-2.5 rounded bg-primary text-white text-[13px] font-semibold hover:bg-primary-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             Initiate Transfer
           </button>

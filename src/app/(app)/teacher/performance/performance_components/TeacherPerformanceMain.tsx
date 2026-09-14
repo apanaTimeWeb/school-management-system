@@ -117,7 +117,7 @@ export default function TeacherPerformanceMain() {
                 </div>
                 <button 
                   onClick={() => openPerformanceModal(student)}
-                  className="w-full py-2 bg-primary/10 text-primary text-[13px] font-bold rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-black transition-colors"
+                  className="w-full py-2 bg-primary/10 text-primary text-[13px] font-bold rounded flex items-center justify-center gap-2 hover:bg-primary hover:text-white transition-colors"
                 >
                   <BarChart2 size={16} /> Track Performance
                 </button>

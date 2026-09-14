@@ -81,7 +81,7 @@ export default function PrincipalAttendanceRequestsTab() {
             <div className="flex flex-col items-end gap-3 shrink-0 border-t md:border-t-0 md:border-l border-border/50 pt-4 md:pt-0 md:pl-6">
               <button 
                 onClick={() => setCorrectionModalOpen(true, req.id)}
-                className="w-full md:w-auto px-5 py-2.5 bg-primary/10 hover:bg-primary text-primary hover:text-black border border-primary/30 hover:border-primary rounded-md text-[13px] font-bold transition-colors shadow-sm flex items-center justify-center gap-2"
+                className="w-full md:w-auto px-5 py-2.5 bg-primary/10 hover:bg-primary text-primary hover:text-white border border-primary/30 hover:border-primary rounded-md text-[13px] font-bold transition-colors shadow-sm flex items-center justify-center gap-2"
               >
                 Review Request
               </button>

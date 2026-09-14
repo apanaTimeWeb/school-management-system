@@ -11,7 +11,7 @@ export default function LoginSelectionPage() {
       
       <div className="text-center mb-12">
         <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-black font-bold text-2xl shadow-md">
+          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-2xl shadow-md">
             S
           </div>
           <span className="text-3xl font-bold tracking-tight text-text-primary">
@@ -31,7 +31,7 @@ export default function LoginSelectionPage() {
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">SUPER ADMIN</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">System Control & Global Settings</p>
-          <div className="mt-auto flex items-center gap-2 text-primary font-bold bg-primary/5 px-6 py-2.5 rounded-full group-hover:bg-primary group-hover:text-black transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-primary font-bold bg-primary/5 px-6 py-2.5 rounded-full group-hover:bg-primary group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>

@@ -126,7 +126,7 @@ export default function TeacherReportGeneratorModal() {
            <button type="button" onClick={() => { closeGeneratorModal(); setSuccessMessage(''); }} className="px-5 py-2 bg-transparent border border-border text-text-primary font-bold text-[13px] rounded-lg hover:bg-white/5 transition-colors">
              Cancel
            </button>
-           <button type="submit" form="report-form" disabled={isGenerating || !!successMessage} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+           <button type="submit" form="report-form" disabled={isGenerating || !!successMessage} className="px-5 py-2 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
              {isGenerating ? (
                <span className="flex items-center gap-2"><span className="animate-spin h-4 w-4 border-2 border-black border-t-transparent rounded-full"></span> Generating...</span>
              ) : successMessage ? (

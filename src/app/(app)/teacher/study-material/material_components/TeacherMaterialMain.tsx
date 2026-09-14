@@ -46,7 +46,7 @@ export default function TeacherMaterialMain() {
         </div>
         <button 
           onClick={openCreateModal}
-          className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
         >
           <Plus size={18} /> Add Material
         </button>

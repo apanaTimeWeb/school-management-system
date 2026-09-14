@@ -51,7 +51,7 @@ export default function ParentOperations() {
                 <div className="flex items-center justify-between">
                   <span className="text-sm text-text-secondary">Last Login: Oct 12, 10:45 AM</span>
                 </div>
-                <button className="mt-2 px-4 py-1.5 bg-primary text-black rounded text-sm font-bold w-full hover:bg-primary-hover shadow-sm">Send Password Reset Link</button>
+                <button className="mt-2 px-4 py-1.5 bg-primary text-white rounded text-sm font-bold w-full hover:bg-primary-hover shadow-sm">Send Password Reset Link</button>
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function ParentOperations() {
             <h2 className="text-xl font-bold text-text-primary border-b border-border pb-2">Communication History</h2>
             <div className="flex gap-2">
               <input type="text" placeholder="Search parent by name..." className="flex-1 bg-bg-input border border-border rounded-md px-4 py-2 text-sm outline-none focus:border-primary" />
-              <button className="px-4 py-2 bg-primary text-black rounded-md text-sm font-bold">Search</button>
+              <button className="px-4 py-2 bg-primary text-white rounded-md text-sm font-bold">Search</button>
             </div>
             <div className="flex flex-col gap-3 mt-2">
               <div className="bg-bg-page border border-border p-4 rounded-lg flex flex-col gap-2">
@@ -110,7 +110,7 @@ export default function ParentOperations() {
                 <textarea className="bg-bg-input border border-border rounded-md px-4 py-2 text-sm outline-none focus:border-primary min-h-[100px]" placeholder="Type your message here..."></textarea>
               </div>
               <div className="flex justify-end">
-                <button className="px-6 py-2 bg-primary text-black rounded-md text-sm font-bold flex items-center gap-2 shadow-sm hover:bg-primary-hover"><Send size={16}/> Send Now</button>
+                <button className="px-6 py-2 bg-primary text-white rounded-md text-sm font-bold flex items-center gap-2 shadow-sm hover:bg-primary-hover"><Send size={16}/> Send Now</button>
               </div>
             </div>
           </div>

@@ -27,7 +27,7 @@ export default function PrincipalDashboardError({
         </p>
         <button
           onClick={() => reset()}
-          className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-black font-semibold text-[14px] py-3 px-4 rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-page"
+          className="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] py-3 px-4 rounded-md transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-page"
         >
           <RefreshCcw size={16} />
           Try Again

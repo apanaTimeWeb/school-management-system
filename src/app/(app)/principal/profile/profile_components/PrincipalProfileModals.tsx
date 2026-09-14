@@ -61,7 +61,7 @@ export default function PrincipalProfileModals() {
                <button 
                  onClick={handlePasswordUpdate}
                  disabled={loading || !oldPass || !newPass}
-                 className="w-full py-2 bg-primary hover:bg-primary-hover text-black font-bold text-[13px] rounded mt-2 transition-colors disabled:opacity-50"
+                 className="w-full py-2 bg-primary hover:bg-primary-hover text-white font-bold text-[13px] rounded mt-2 transition-colors disabled:opacity-50"
                >
                  {loading ? 'Updating...' : 'Update Password'}
                </button>

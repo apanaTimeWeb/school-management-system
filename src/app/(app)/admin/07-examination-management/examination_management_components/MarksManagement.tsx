@@ -127,7 +127,7 @@ export default function MarksManagement() {
               </table>
               {!isVerified && (
                 <div className="p-4 flex justify-end">
-                  <button onClick={handleSave} className="bg-primary text-black px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-primary-hover active:scale-95 transition"><Save size={16}/> Save Draft</button>
+                  <button onClick={handleSave} className="bg-primary text-white px-6 py-2 rounded-md text-sm font-bold shadow-sm flex items-center gap-2 hover:bg-primary-hover active:scale-95 transition"><Save size={16}/> Save Draft</button>
                 </div>
               )}
             </div>

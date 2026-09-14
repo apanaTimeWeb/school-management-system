@@ -41,7 +41,7 @@ export default function StaffAdminReports() {
                  </select>
                </div>
                
-               <button onClick={generateReport} className="w-full bg-primary text-black py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition mt-4 flex items-center justify-center gap-2">
+               <button onClick={generateReport} className="w-full bg-primary text-white py-3 rounded-lg font-bold shadow-sm hover:bg-primary-hover transition mt-4 flex items-center justify-center gap-2">
                  <Download size={18}/> Export Staff Report
                </button>
              </div>

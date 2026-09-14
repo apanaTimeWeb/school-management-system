@@ -166,7 +166,7 @@ export default function SuperAdminPermissionEditor({ role }: EditorProps) {
           <button 
             onClick={handleSave}
             disabled={isSaving}
-            className="flex items-center gap-2 px-6 py-2.5 bg-primary text-black rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70 shadow-sm transition-all"
+            className="flex items-center gap-2 px-6 py-2.5 bg-primary text-white rounded-md hover:bg-primary-hover text-sm font-medium disabled:opacity-70 shadow-sm transition-all"
           >
             <Save size={16} />
             {isSaving ? 'Saving Policy...' : `Save ${role} Permissions`}

@@ -180,7 +180,7 @@ export default function TeacherCommunicationMain() {
                              placeholder="Type your message..." 
                              className="flex-1 bg-input border border-border rounded-lg px-4 py-2 text-[14px] focus:outline-none focus:border-primary"
                            />
-                           <button type="submit" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-black hover:bg-primary/90 transition-colors shrink-0">
+                           <button type="submit" className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white hover:bg-primary/90 transition-colors shrink-0">
                              <Send size={18} className="ml-[-2px]"/>
                            </button>
                          </form>
@@ -202,7 +202,7 @@ export default function TeacherCommunicationMain() {
         {activeTab === 'Announcements' && (
           <div className="p-6 w-full h-[600px] overflow-y-auto custom-scrollbar flex flex-col">
              <div className="flex justify-end mb-6">
-               <button onClick={() => openQuickNotification('Announcement')} className="px-5 py-2 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
+               <button onClick={() => openQuickNotification('Announcement')} className="px-5 py-2 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors">
                  <Megaphone size={16} /> New Announcement
                </button>
              </div>

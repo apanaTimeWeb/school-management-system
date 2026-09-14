@@ -26,7 +26,7 @@ export default function TeacherMeetingsMain() {
         </div>
         <button 
           onClick={openScheduleModal}
-          className="flex items-center gap-2 px-4 py-2 bg-primary text-black font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
+          className="flex items-center gap-2 px-4 py-2 bg-primary text-white font-bold text-[14px] rounded-lg hover:bg-primary/90 transition-colors shadow-sm self-start md:self-auto"
         >
           <Plus size={18} /> Schedule Meeting
         </button>
@@ -93,7 +93,7 @@ export default function TeacherMeetingsMain() {
                {meeting.status === 'Scheduled' ? (
                  <button 
                    onClick={() => openActionModal(meeting)}
-                   className="w-full py-2 bg-primary text-black font-bold text-[13px] rounded hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                   className="w-full py-2 bg-primary text-white font-bold text-[13px] rounded hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
                  >
                    Log Meeting Notes <ChevronRight size={16}/>
                  </button>

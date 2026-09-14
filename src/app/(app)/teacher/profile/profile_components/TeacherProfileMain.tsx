@@ -209,7 +209,7 @@ function SecurityTab() {
              <label className="block text-[12px] font-bold text-text-secondary uppercase mb-2">Confirm New Password</label>
              <input type="password" placeholder="Re-enter new password" className="w-full bg-input border border-border rounded-lg px-4 py-2.5 text-[14px] text-text-primary focus:border-primary focus:outline-none" required />
            </div>
-           <button type="submit" className="px-5 py-2.5 bg-primary text-black font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors mt-2">
+           <button type="submit" className="px-5 py-2.5 bg-primary text-white font-bold text-[13px] rounded-lg hover:bg-primary/90 flex items-center gap-2 transition-colors mt-2">
              <Key size={16} /> Update Password
            </button>
            {passwordMsg && <p className="text-success text-[13px] font-bold mt-2 animate-in fade-in">{passwordMsg}</p>}

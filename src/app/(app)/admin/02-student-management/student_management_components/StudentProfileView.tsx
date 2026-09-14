@@ -23,7 +23,7 @@ export default function StudentProfileView() {
           <button className="px-4 py-2 bg-white text-primary rounded-md text-sm font-bold shadow-sm hover:bg-white/90 transition">
             Edit Profile
           </button>
-          <button className="px-4 py-2 bg-primary-hover text-black border border-white/20 rounded-md text-sm font-bold hover:bg-primary/50 transition">
+          <button className="px-4 py-2 bg-primary-hover text-white border border-white/20 rounded-md text-sm font-bold hover:bg-primary/50 transition">
             Print ID Card
           </button>
         </div>
