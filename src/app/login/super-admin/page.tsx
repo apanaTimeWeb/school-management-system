@@ -39,9 +39,9 @@ export default function SuperAdminLogin() {
               <div className="relative">
                 <input 
                   type="text" 
-                  defaultValue="superadmin"
+                  defaultValue="super@erp360.com"
                   className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-primary outline-none transition-colors"
-                  readOnly
+                  
                 />
                 <User className="absolute left-3 top-3 text-text-secondary" size={18} />
               </div>
@@ -54,7 +54,7 @@ export default function SuperAdminLogin() {
                   type="password" 
                   defaultValue="password123"
                   className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-primary outline-none transition-colors tracking-widest"
-                  readOnly
+                  
                 />
                 <Lock className="absolute left-3 top-3 text-text-secondary" size={18} />
               </div>
