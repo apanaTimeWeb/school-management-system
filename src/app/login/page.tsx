@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Shield, School, GraduationCap, ArrowLeft, ArrowRight, UserCircle, Calculator } from 'lucide-react';
+import { Shield, School, GraduationCap, ArrowLeft, ArrowRight, UserCircle, Calculator, Building2 } from 'lucide-react';
 
 export default function LoginSelectionPage() {
   return (
@@ -22,7 +22,7 @@ export default function LoginSelectionPage() {
         <p className="text-text-secondary text-base">Select your account type to continue securely.</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 w-full max-w-7xl">
         
         {/* Super Admin Card */}
         <Link href="/login/super-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
@@ -80,6 +80,18 @@ export default function LoginSelectionPage() {
           <h2 className="text-xl font-bold text-text-primary mb-2">ACCOUNTANT</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Finance, Fees & Expense Tracking</p>
           <div className="mt-auto flex items-center gap-2 text-emerald-600 font-bold bg-emerald-500/5 px-6 py-2.5 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* HR / Office Card */}
+        <Link href="/login/hr" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-indigo-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">HR / OFFICE</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Staff, Payroll & Admin Operations</p>
+          <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold bg-indigo-500/5 px-6 py-2.5 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
