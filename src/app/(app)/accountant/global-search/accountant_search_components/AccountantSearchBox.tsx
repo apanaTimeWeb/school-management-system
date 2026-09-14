@@ -37,7 +37,7 @@ export default function AccountantSearchBox() {
           className={clsx(
             "px-4 py-2 rounded-full text-xs font-bold transition-all border",
             entityFilter === 'All' 
-              ? "bg-primary text-black border-primary shadow-md" 
+              ? "bg-primary text-white border-primary shadow-md" 
               : "bg-bg-input text-text-secondary border-border hover:border-primary/50"
           )}
         >
@@ -50,7 +50,7 @@ export default function AccountantSearchBox() {
             className={clsx(
               "px-4 py-2 rounded-full text-xs font-bold transition-all border",
               entityFilter === type 
-                ? "bg-primary text-black border-primary shadow-md" 
+                ? "bg-primary text-white border-primary shadow-md" 
                 : "bg-bg-input text-text-secondary border-border hover:border-primary/50"
             )}
           >

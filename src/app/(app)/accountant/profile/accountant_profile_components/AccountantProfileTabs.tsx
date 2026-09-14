@@ -23,7 +23,7 @@ export default function AccountantProfileTabs() {
           className={clsx(
             "flex items-center gap-2 px-4 py-3 rounded-lg text-sm font-bold transition-all whitespace-nowrap flex-1 justify-center sm:justify-start",
             activeTab === tab.id 
-              ? "bg-primary text-black shadow-md" 
+              ? "bg-primary text-white shadow-md" 
               : "text-text-secondary hover:bg-bg-input hover:text-primary"
           )}
         >

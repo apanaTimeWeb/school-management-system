@@ -101,7 +101,7 @@ export default function AccountantCollectFeeSummaryModal() {
                 <Download size={16} /> Save PDF
               </button>
             </div>
-            <button onClick={handleFinish} className="w-full py-3 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-lg mt-2">
+            <button onClick={handleFinish} className="w-full py-3 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-lg mt-2">
               Collect Another Fee
             </button>
           </div>

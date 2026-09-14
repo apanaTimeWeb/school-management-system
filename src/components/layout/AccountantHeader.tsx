@@ -132,6 +132,9 @@ export default function AccountantHeader() {
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
+              <Link href="/accountant/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-purple-500/10 transition">
+                <UserCircle size={16} /> My Profile
+              </Link>
               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                 <LogOut size={16} /> Logout
               </Link>

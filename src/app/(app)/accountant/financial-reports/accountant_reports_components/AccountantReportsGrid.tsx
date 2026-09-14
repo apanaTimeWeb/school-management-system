@@ -75,7 +75,7 @@ export default function AccountantReportsGrid() {
               className={clsx(
                 "px-4 py-2 text-sm font-bold rounded-lg transition-colors whitespace-nowrap",
                 activeCategory === cat.id 
-                  ? "bg-primary text-black" 
+                  ? "bg-primary text-white" 
                   : "bg-bg-input text-text-secondary hover:text-text-primary border border-border"
               )}
             >

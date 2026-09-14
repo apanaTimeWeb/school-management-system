@@ -61,7 +61,7 @@ export default function AccountantProfileDetails() {
       </div>
 
       <div className="pt-4 flex justify-end">
-        <button className="px-6 py-2.5 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors">
+        <button className="px-6 py-2.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors">
           Save Changes
         </button>
       </div>

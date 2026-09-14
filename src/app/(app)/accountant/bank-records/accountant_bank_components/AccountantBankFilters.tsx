@@ -56,7 +56,7 @@ export default function AccountantBankFilters() {
         </button>
         <button 
           onClick={() => setReconcileModalOpen(true)}
-          className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors whitespace-nowrap"
+          className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors whitespace-nowrap"
         >
           <FileCheck2 size={16} /> Bank Reconciliation
         </button>

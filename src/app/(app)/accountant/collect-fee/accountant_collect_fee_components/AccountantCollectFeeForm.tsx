@@ -58,7 +58,7 @@ export default function AccountantCollectFeeForm() {
                 }}
                 className={clsx(
                   "py-2 px-3 text-xs font-bold rounded-lg border transition-all duration-200 flex items-center justify-center gap-2",
-                  paymentType === type ? "bg-primary text-black border-primary shadow-md" : "bg-bg-page border-border text-text-secondary hover:border-primary/50"
+                  paymentType === type ? "bg-primary text-white border-primary shadow-md" : "bg-bg-page border-border text-text-secondary hover:border-primary/50"
                 )}
               >
                 {paymentType === type && <CheckCircle2 size={14} />} {type}
@@ -178,7 +178,7 @@ export default function AccountantCollectFeeForm() {
         <button 
           disabled={!amountToCollect || Number(amountToCollect) <= 0}
           onClick={() => setReviewModalOpen(true)}
-          className="flex items-center gap-2 px-8 py-2.5 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 px-8 py-2.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Wallet size={18} /> Review & Collect
         </button>

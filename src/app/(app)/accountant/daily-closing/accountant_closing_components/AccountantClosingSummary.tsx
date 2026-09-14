@@ -20,7 +20,7 @@ export default function AccountantClosingSummary() {
         </div>
         <button 
           onClick={() => setConfirmModalOpen(true)}
-          className="w-full lg:w-auto flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-lg transition-colors shadow-primary/20"
+          className="w-full lg:w-auto flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-lg transition-colors shadow-primary/20"
         >
           <Coins size={18} /> Confirm & Close EOD
         </button>

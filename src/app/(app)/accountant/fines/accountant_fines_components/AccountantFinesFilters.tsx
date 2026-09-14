@@ -43,7 +43,7 @@ export default function AccountantFinesFilters() {
         </button>
         <button 
           onClick={() => alert("Apply Custom Fine workflow will go here.")}
-          className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors"
+          className="flex-1 xl:flex-none flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors"
         >
           <PlusCircle size={16} /> Apply Custom Fine
         </button>

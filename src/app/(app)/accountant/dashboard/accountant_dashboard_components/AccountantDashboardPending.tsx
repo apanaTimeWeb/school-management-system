@@ -76,7 +76,7 @@ export default function AccountantDashboardPending() {
                 </button>
                 <button 
                   onClick={(e) => handleApprove(item.id, e)}
-                  className="w-7 h-7 flex items-center justify-center rounded-md bg-primary text-black hover:bg-primary-hover transition-colors"
+                  className="w-7 h-7 flex items-center justify-center rounded-md bg-primary text-white hover:bg-primary-hover transition-colors"
                   title="Approve"
                 >
                   <Check size={14} strokeWidth={3} />

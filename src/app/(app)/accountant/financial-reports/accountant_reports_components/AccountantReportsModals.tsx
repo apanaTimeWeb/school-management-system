@@ -95,7 +95,7 @@ export default function AccountantReportsModal() {
             
             <div className="p-4 border-t border-border bg-bg-page flex justify-end gap-3 shrink-0">
               <button onClick={handleCloseConfig} className="px-4 py-2 text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors">Cancel</button>
-              <button onClick={handleGenerate} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors">
+              <button onClick={handleGenerate} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors">
                 <FileText size={16} /> Generate Report
               </button>
             </div>
@@ -113,7 +113,7 @@ export default function AccountantReportsModal() {
                 <p className="text-xs text-text-secondary mt-0.5">Generated on {new Date().toLocaleDateString()}</p>
               </div>
               <div className="flex items-center gap-3">
-                <button onClick={() => alert(`Downloading as ${format}...`)} className="flex items-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover transition-colors">
+                <button onClick={() => alert(`Downloading as ${format}...`)} className="flex items-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover transition-colors">
                   <Download size={16} /> Export {format}
                 </button>
                 <button onClick={() => alert("Printing...")} className="p-2 text-text-secondary hover:text-primary transition-colors border border-border rounded-lg bg-bg-input">

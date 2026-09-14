@@ -86,7 +86,7 @@ export default function AccountantCashbookModals() {
             </div>
             <div className="p-4 border-t border-border bg-bg-page flex justify-end gap-3">
               <button onClick={() => setClosingModalOpen(false)} className="px-4 py-2 text-sm font-semibold text-text-secondary">Cancel</button>
-              <button onClick={submitClosing} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors" disabled={physicalCash === ""}><Lock size={16} /> Confirm & Close</button>
+              <button onClick={submitClosing} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors" disabled={physicalCash === ""}><Lock size={16} /> Confirm & Close</button>
             </div>
           </div>
         </div>

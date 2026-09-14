@@ -41,7 +41,7 @@ export default function AccountantDocumentsActions() {
 
       <button 
         onClick={() => setUploadModalOpen(true)}
-        className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors"
+        className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors"
       >
         <UploadCloud size={18} /> Upload Document
       </button>

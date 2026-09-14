@@ -22,7 +22,7 @@ export default function AccountantMethodsHeader() {
 
       <button 
         onClick={() => alert("Add Custom Method Flow")}
-        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-md transition-colors"
+        className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-md transition-colors"
       >
         <PlusCircle size={16} /> Add Custom Method
       </button>

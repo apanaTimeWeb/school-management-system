@@ -105,7 +105,7 @@ export default function AccountantReceiptsModals() {
                 <button onClick={() => handleAction("PDF Downloaded")} className="flex items-center gap-2 px-4 py-2 text-sm font-bold bg-bg-input text-text-primary rounded-lg border border-border hover:bg-primary/10 hover:text-primary transition-colors">
                   <Download size={16} /> PDF
                 </button>
-                <button onClick={() => handleAction("Printing")} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-black rounded-lg hover:bg-primary-hover shadow-lg transition-all">
+                <button onClick={() => handleAction("Printing")} className="flex items-center gap-2 px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary-hover shadow-lg transition-all">
                   <Printer size={16} /> Reprint
                 </button>
               </div>

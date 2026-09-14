@@ -44,7 +44,7 @@ export default function AccountantDashboardTransactions() {
             onClick={() => setActiveTransactionTab('today')}
             className={clsx(
               "flex-1 sm:flex-none px-4 py-1.5 text-xs font-semibold rounded-md transition-colors",
-              activeTransactionTab === 'today' ? "bg-primary text-black" : "text-text-secondary hover:text-text-primary"
+              activeTransactionTab === 'today' ? "bg-primary text-white" : "text-text-secondary hover:text-text-primary"
             )}
           >
             Today's Transactions
@@ -53,7 +53,7 @@ export default function AccountantDashboardTransactions() {
             onClick={() => setActiveTransactionTab('recent')}
             className={clsx(
               "flex-1 sm:flex-none px-4 py-1.5 text-xs font-semibold rounded-md transition-colors",
-              activeTransactionTab === 'recent' ? "bg-primary text-black" : "text-text-secondary hover:text-text-primary"
+              activeTransactionTab === 'recent' ? "bg-primary text-white" : "text-text-secondary hover:text-text-primary"
             )}
           >
             Recent Payments
