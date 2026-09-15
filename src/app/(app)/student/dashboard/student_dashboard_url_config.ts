@@ -5,10 +5,11 @@ export const StudentDashboardUrls = {
   TIMETABLE: '/student/timetable',
   ATTENDANCE: '/student/attendance',
   HOMEWORK: '/student/homework',
-  EXAMS: '/student/exams',
+  EXAMS: '/student/examinations',
   FEES: '/student/fees',
-  NOTICES: '/student/notices',
+  NOTICES: '/student/notifications',
   STUDY_MATERIAL: '/student/study-material',
+  FEEDBACK: '/student/feedback',
 
   // API Endpoints
   API_DASHBOARD_STATS: '/api/student/dashboard/stats',

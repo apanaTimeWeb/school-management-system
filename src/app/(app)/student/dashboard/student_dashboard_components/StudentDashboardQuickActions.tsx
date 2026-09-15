@@ -10,7 +10,7 @@ const ACTIONS = [
   { label: 'Homework', icon: <BookOpen size={20} />, href: StudentDashboardUrls.HOMEWORK, color: 'text-amber-500', bg: 'bg-amber-500/10' },
   { label: 'My Attendance', icon: <CalendarCheck size={20} />, href: StudentDashboardUrls.ATTENDANCE, color: 'text-emerald-500', bg: 'bg-emerald-500/10' },
   { label: 'Fee Receipts', icon: <Landmark size={20} />, href: StudentDashboardUrls.FEES, color: 'text-rose-500', bg: 'bg-rose-500/10' },
-  { label: 'Ask Query', icon: <HelpCircle size={20} />, href: '#', color: 'text-sky-500', bg: 'bg-sky-500/10' },
+  { label: 'Ask Query', icon: <HelpCircle size={20} />, href: StudentDashboardUrls.FEEDBACK, color: 'text-sky-500', bg: 'bg-sky-500/10' },
   { label: 'Exam Results', icon: <FileText size={20} />, href: StudentDashboardUrls.EXAMS, color: 'text-purple-500', bg: 'bg-purple-500/10' },
 ];
 
