@@ -10,6 +10,10 @@ export default function StudentLoginPage() {
   const [showPwd, setShowPwd] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  
+  // Auto-filled for testing
+  const [admissionNo, setAdmissionNo] = useState('STU-2024-001');
+  const [password, setPassword] = useState('student123');
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,9 +22,13 @@ export default function StudentLoginPage() {
 
     // Mock Login Logic
     setTimeout(() => {
-      // Simulate success
-      setIsLoading(false);
-      router.push('/student/dashboard');
+      if (admissionNo === 'STU-2024-001' && password === 'student123') {
+        setIsLoading(false);
+        router.push('/student/dashboard');
+      } else {
+        setIsLoading(false);
+        setIsError(true);
+      }
     }, 1000);
   };
 
@@ -55,7 +63,8 @@ export default function StudentLoginPage() {
             <label className="block text-xs font-bold text-text-secondary uppercase mb-2">Admission Number / Student ID</label>
             <div className="relative">
               <input 
-                type="text" required placeholder="e.g. ADM-12345"
+                type="text" required placeholder="e.g. STU-2024-001"
+                value={admissionNo} onChange={(e) => setAdmissionNo(e.target.value)}
                 className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 font-semibold transition-all"
               />
               <UserCircle size={18} className="absolute left-3 top-3.5 text-text-secondary" />
@@ -67,6 +76,7 @@ export default function StudentLoginPage() {
             <div className="relative">
               <input 
                 type={showPwd ? "text" : "password"} required placeholder="Enter your password"
+                value={password} onChange={(e) => setPassword(e.target.value)}
                 className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-10 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 font-semibold transition-all"
               />
               <KeyRound size={18} className="absolute left-3 top-3.5 text-text-secondary" />
