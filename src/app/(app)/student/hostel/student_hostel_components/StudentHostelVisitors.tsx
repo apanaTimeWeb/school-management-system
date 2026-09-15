@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import type { VisitorInfo } from '../student_hostel_types/student_hostel_types';
-import { Users, Plus, Loader2, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { Users, Plus, Loader2, Clock, CheckCircle, XCircle, CalendarClock } from 'lucide-react';
 import clsx from 'clsx';
 
 interface Props {

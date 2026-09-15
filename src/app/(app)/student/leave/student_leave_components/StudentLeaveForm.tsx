@@ -1,33 +1,43 @@
 "use client";
 
 import React, { useState } from 'react';
-import type { LeaveRequest } from '../student_leave_types/student_leave_types';
+import type { LeaveType, LeaveRequest } from '../student_leave_types/student_leave_types';
 import { Calendar, FileText, Paperclip, Send, Loader2, AlertCircle } from 'lucide-react';
 
 interface Props {
-  onSubmit: (payload: Partial<LeaveRequest>) => Promise<void>;
+  onSubmit: (payload: Partial<LeaveRequest>) => Promise<any>;
+  onClose?: () => void;
 }
 
-export default function StudentLeaveForm({ onSubmit }: Props) {
+export default function StudentLeaveForm({ onSubmit, onClose }: Props) {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    leaveType: 'Sick Leave',
-    startDate: '',
-    endDate: '',
-    reason: '',
-    hasAttachment: false
-  });
+  const [leaveType, setLeaveType] = useState<LeaveType>('Sick Leave');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
+  const [reason, setReason] = useState('');
+  const [hasAttachment, setHasAttachment] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.startDate || !formData.endDate || !formData.reason.trim()) {
+    if (!startDate || !endDate || !reason.trim()) {
       alert("Please fill in all required fields.");
       return;
     }
     
     setIsSubmitting(true);
-    await onSubmit(formData);
+    const res = await onSubmit({
+      leaveType,
+      startDate,
+      endDate,
+      reason,
+      hasAttachment
+    });
     setIsSubmitting(false);
+
+    if (res?.success) {
+      alert("Leave requested successfully!");
+      onClose?.();
+    }
   };
 
   return (

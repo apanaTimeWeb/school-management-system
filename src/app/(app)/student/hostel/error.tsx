@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { BuildingX, RefreshCw } from 'lucide-react';
+import { Building, RefreshCw } from 'lucide-react';
 
 export default function StudentHostelError({
   error,
@@ -17,7 +17,7 @@ export default function StudentHostelError({
   return (
     <div className="w-full h-[60vh] flex flex-col items-center justify-center p-6 text-center">
       <div className="w-16 h-16 rounded-full bg-danger/10 flex items-center justify-center mb-4">
-        <BuildingX size={32} className="text-danger" />
+        <Building size={32} className="text-danger" />
       </div>
       <h2 className="text-xl font-bold text-text-primary mb-2">Could not load hostel details</h2>
       <p className="text-sm text-text-secondary max-w-md mb-6">

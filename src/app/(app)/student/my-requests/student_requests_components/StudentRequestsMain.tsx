@@ -16,7 +16,7 @@ export default function StudentRequestsMain() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const [activeFilter, setActiveFilter] = useState<RequestCategory>('All');
+  const [activeFilter, setActiveFilter] = useState<RequestCategory | 'All'>('All');
   const [showNewModal, setShowNewModal] = useState(false);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function StudentRequestsMain() {
     return res;
   };
 
-  const categories: RequestCategory[] = ['All', 'Leave Request', 'Certificate Request', 'Bonafide Request', 'Document Request', 'Other'];
+  const categories: (RequestCategory | 'All')[] = ['All', 'Leave Request', 'Certificate Request', 'Bonafide Request', 'Document Request', 'Other'];
   
   const filteredRequests = activeFilter === 'All' 
     ? data.requests 

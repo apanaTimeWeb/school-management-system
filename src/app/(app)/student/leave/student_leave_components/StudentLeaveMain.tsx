@@ -62,14 +62,14 @@ export default function StudentLeaveMain() {
     const res = await submitLeaveApplication(payload);
     if (res.success && res.data) {
       // Optimistic UI update
-      setData(prev => prev ? { ...prev, leaveHistory: [res.data!, ...prev.leaveHistory] } : null);
+      setData(prev => prev ? { ...prev, requests: [res.data!, ...prev.requests] } : null);
       setActiveTab('history');
       alert("Leave Application Submitted Successfully!");
     }
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 motion-safe:animate-[fadeIn_0.3s_ease-out]">
       
       {/* Tabs */}
       <div className="flex items-center gap-2 p-1 bg-card border border-border rounded-lg w-fit">
