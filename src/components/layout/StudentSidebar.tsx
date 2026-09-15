@@ -13,7 +13,6 @@ import {
 
 const navItems = [
   { label: 'Dashboard', href: '/student/dashboard', icon: <LayoutDashboard size={20} /> },
-  { label: 'My Profile', href: '/student/profile', icon: <UserCircle size={20} /> },
   { label: 'Academics', href: '/student/academics', icon: <GraduationCap size={20} /> },
   { label: 'Timetable', href: '/student/timetable', icon: <Calendar size={20} /> },
   { label: 'Attendance', href: '/student/attendance', icon: <UserCheck size={20} /> },
@@ -94,8 +93,10 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
 
         {/* Navigation Links */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-1">
-          {navItems.map((item) => {
+          {navItems.map((item, index) => {
             const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
+            const serialNo = (index + 1).toString().padStart(2, '0') + ".";
+            
             return (
               <Link 
                 key={item.href} 
@@ -107,8 +108,11 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
                     : "text-text-secondary hover:bg-page hover:text-primary"
                 )}
               >
-                {item.icon}
-                <span className="text-sm">{item.label}</span>
+                <div className="flex items-center gap-3">
+                  <span className="opacity-50 text-xs font-bold w-4">{serialNo}</span>
+                  {item.icon}
+                  <span className="text-sm">{item.label}</span>
+                </div>
                 {/* Micro hover indicator */}
                 {!isActive && (
                   <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-primary rounded-r-full transition-all group-hover:h-1/2"></span>
@@ -116,17 +120,6 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
               </Link>
             )
           })}
-        </div>
-
-        {/* Footer Area */}
-        <div className="p-4 border-t border-border bg-card shrink-0">
-          <button 
-            onClick={handleLogout}
-            className="flex items-center gap-3 w-full px-4 py-3 rounded-xl font-bold text-danger hover:bg-danger/10 transition-colors"
-          >
-            <LogOut size={20} />
-            <span className="text-sm">Logout Securely</span>
-          </button>
         </div>
 
       </aside>
