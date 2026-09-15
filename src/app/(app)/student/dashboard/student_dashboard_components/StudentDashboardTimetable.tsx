@@ -4,6 +4,8 @@ import React from 'react';
 import type { TimetableClass } from '../student_dashboard_types/student_dashboard_types';
 import { Clock, MapPin, User, CheckCircle2 } from 'lucide-react';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { StudentDashboardUrls } from '../student_dashboard_url_config';
 
 interface Props {
   todayClasses: TimetableClass[];
@@ -19,7 +21,7 @@ export default function StudentDashboardTimetable({ todayClasses }: Props) {
         <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
           <span className="w-1 h-4 bg-primary rounded-full"></span> Today's Timetable
         </h3>
-        <button className="text-xs font-semibold text-primary hover:underline">View Full</button>
+        <Link href={StudentDashboardUrls.TIMETABLE} className="text-xs font-semibold text-primary hover:underline">View Full</Link>
       </div>
 
       <div className="space-y-3">

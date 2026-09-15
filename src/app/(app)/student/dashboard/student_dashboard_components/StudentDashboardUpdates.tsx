@@ -4,6 +4,8 @@ import React from 'react';
 import type { DashboardUpdate } from '../student_dashboard_types/student_dashboard_types';
 import { Bell, Megaphone, Calendar, FileText, ChevronRight } from 'lucide-react';
 import clsx from 'clsx';
+import Link from 'next/link';
+import { StudentDashboardUrls } from '../student_dashboard_url_config';
 
 interface Props {
   updates: DashboardUpdate[];
@@ -37,7 +39,7 @@ export default function StudentDashboardUpdates({ updates }: Props) {
         <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
           <span className="w-1 h-4 bg-info rounded-full"></span> Notice Board
         </h3>
-        <button className="text-xs font-semibold text-primary hover:underline">View All</button>
+        <Link href={StudentDashboardUrls.NOTICES} className="text-xs font-semibold text-primary hover:underline">View All</Link>
       </div>
 
       <div className="flex-1 space-y-3 overflow-y-auto custom-scrollbar pr-1 max-h-[500px]">
@@ -45,10 +47,11 @@ export default function StudentDashboardUpdates({ updates }: Props) {
           <div className="text-center py-10 text-sm text-text-secondary">No new updates.</div>
         ) : (
           updates.map((update) => (
-            <div 
-              key={update.id} 
+            <Link 
+              key={update.id}
+              href={StudentDashboardUrls.NOTICES}
               className={clsx(
-                "p-3 rounded-lg border flex gap-3 cursor-pointer group motion-safe:transition-all hover:bg-page hover:shadow-sm hover:-translate-y-0.5",
+                "p-3 rounded-lg border flex gap-3 cursor-pointer group motion-safe:transition-all hover:bg-page hover:shadow-sm hover:-translate-y-0.5 block",
                 update.isUnread ? "bg-page border-primary/20 shadow-sm shadow-primary/5" : "bg-transparent border-transparent hover:border-border"
               )}
             >
@@ -73,7 +76,7 @@ export default function StudentDashboardUpdates({ updates }: Props) {
                   <span className="text-[10px] font-semibold text-text-secondary/70">{update.date}</span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))
         )}
       </div>

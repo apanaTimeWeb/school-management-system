@@ -3,6 +3,8 @@
 import React from 'react';
 import type { AcademicTask } from '../student_dashboard_types/student_dashboard_types';
 import { BookOpen, PenTool, Clock, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import { StudentDashboardUrls } from '../student_dashboard_url_config';
 
 interface Props {
   pendingTasks: AcademicTask[];
@@ -18,7 +20,7 @@ export default function StudentDashboardAcademics({ pendingTasks }: Props) {
         <h3 className="text-sm font-bold text-text-primary flex items-center gap-2">
           <span className="w-1 h-4 bg-amber-500 rounded-full"></span> Pending Tasks
         </h3>
-        <button className="text-xs font-semibold text-primary hover:underline">View All</button>
+        <Link href={StudentDashboardUrls.HOMEWORK} className="text-xs font-semibold text-primary hover:underline">View All</Link>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -26,7 +28,7 @@ export default function StudentDashboardAcademics({ pendingTasks }: Props) {
           <div className="col-span-full text-center py-6 text-sm text-text-secondary">No pending tasks! 🎉</div>
         ) : (
           pendingTasks.map((task) => (
-            <div key={task.id} className="p-4 rounded-lg bg-page border border-border flex flex-col hover:border-amber-500/30 motion-safe:transition-colors group cursor-pointer">
+            <Link key={task.id} href={StudentDashboardUrls.HOMEWORK} className="p-4 rounded-lg bg-page border border-border flex flex-col hover:border-amber-500/30 motion-safe:transition-colors group cursor-pointer block">
               <div className="flex items-center gap-2 mb-2">
                 {task.type === 'homework' ? (
                   <BookOpen size={14} className="text-amber-500" />
@@ -44,7 +46,7 @@ export default function StudentDashboardAcademics({ pendingTasks }: Props) {
                 </span>
                 <ChevronRight size={16} className="text-text-secondary group-hover:text-amber-500 transition-colors" />
               </div>
-            </div>
+            </Link>
           ))
         )}
       </div>
