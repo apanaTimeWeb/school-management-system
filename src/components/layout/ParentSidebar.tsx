@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { 
-  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail, Trophy, Bus, Home, HeartPulse, Scale, ScrollText, IdCard, Star, ClipboardList
+  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail, Trophy, Bus, Home, HeartPulse, Scale, ScrollText, IdCard, Star, ClipboardList, Bell, PieChart, Siren
 } from 'lucide-react';
 
 const navItems = [
@@ -35,6 +35,9 @@ const navItems = [
   { label: 'Complaints', href: '/parent/complaints', icon: <AlertCircle size={20} /> },
   { label: 'Feedback', href: '/parent/feedback', icon: <Star size={20} /> },
   { label: 'My Requests', href: '/parent/requests', icon: <ClipboardList size={20} /> },
+  { label: 'Notifications', href: '/parent/notifications', icon: <Bell size={20} /> },
+  { label: 'Reports', href: '/parent/reports', icon: <PieChart size={20} /> },
+  { label: 'Emergency Alerts', href: '/parent/alerts', icon: <Siren size={20} /> },
 ];
 
 interface Props {
