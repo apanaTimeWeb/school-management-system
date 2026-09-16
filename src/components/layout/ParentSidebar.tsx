@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { 
-  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail
+  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail, Trophy, Bus, Home, HeartPulse, Scale, ScrollText, IdCard, Star, ClipboardList
 } from 'lucide-react';
 
 const navItems = [
@@ -19,12 +19,22 @@ const navItems = [
   { label: 'Examinations', href: '/parent/examinations', icon: <GraduationCap size={20} /> },
   { label: 'Results', href: '/parent/results', icon: <Award size={20} /> },
   { label: 'Academics', href: '/parent/academics', icon: <BookOpen size={20} /> },
-  { label: 'Timetable & Events', href: '/parent/timetable', icon: <Calendar size={20} /> },
+  { label: 'Timetable', href: '/parent/timetable', icon: <Calendar size={20} /> },
+  { label: 'Events & Activities', href: '/parent/events', icon: <Trophy size={20} /> },
   { label: 'Attendance', href: '/parent/attendance', icon: <AlertCircle size={20} /> },
   { label: 'Apply Leave', href: '/parent/leave', icon: <AlertCircle size={20} /> },
   { label: 'Communication', href: '/parent/communication', icon: <MessageSquare size={20} /> },
   { label: 'Messages', href: '/parent/messages', icon: <Mail size={20} /> },
   { label: 'Meetings (PTM)', href: '/parent/ptm', icon: <Users size={20} /> },
+  { label: 'Transport', href: '/parent/transport', icon: <Bus size={20} /> },
+  { label: 'Hostel', href: '/parent/hostel', icon: <Home size={20} /> },
+  { label: 'Health & Medical', href: '/parent/health', icon: <HeartPulse size={20} /> },
+  { label: 'Discipline', href: '/parent/discipline', icon: <Scale size={20} /> },
+  { label: 'Certificates', href: '/parent/certificates', icon: <ScrollText size={20} /> },
+  { label: 'Student ID Card', href: '/parent/id-card', icon: <IdCard size={20} /> },
+  { label: 'Complaints', href: '/parent/complaints', icon: <AlertCircle size={20} /> },
+  { label: 'Feedback', href: '/parent/feedback', icon: <Star size={20} /> },
+  { label: 'My Requests', href: '/parent/requests', icon: <ClipboardList size={20} /> },
 ];
 
 interface Props {
