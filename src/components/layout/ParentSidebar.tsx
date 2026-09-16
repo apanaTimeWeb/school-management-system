@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { 
-  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle
+  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap
 } from 'lucide-react';
 
 const navItems = [
@@ -14,6 +14,10 @@ const navItems = [
   { label: 'Children Summary', href: '/parent/children', icon: <Users size={20} /> },
   { label: 'Fees & Payments', href: '/parent/fees', icon: <Wallet size={20} /> },
   { label: 'Homework', href: '/parent/homework', icon: <BookOpen size={20} /> },
+  { label: 'Assignments', href: '/parent/assignments', icon: <FileText size={20} /> },
+  { label: 'Study Material', href: '/parent/study-material', icon: <FileVideo size={20} /> },
+  { label: 'Examinations', href: '/parent/examinations', icon: <GraduationCap size={20} /> },
+  { label: 'Results', href: '/parent/results', icon: <Award size={20} /> },
   { label: 'Academics', href: '/parent/academics', icon: <BookOpen size={20} /> },
   { label: 'Timetable & Events', href: '/parent/timetable', icon: <Calendar size={20} /> },
   { label: 'Leave & Attendance', href: '/parent/attendance', icon: <AlertCircle size={20} /> },
