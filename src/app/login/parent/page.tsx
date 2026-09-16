@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Users, Mail, Lock, Eye, EyeOff, LogIn } from 'lucide-react';
@@ -6,8 +8,8 @@ import { useRouter } from 'next/navigation';
 export default function ParentLoginPage() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('parent@schoolerp.com');
+  const [password, setPassword] = useState('password123');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {

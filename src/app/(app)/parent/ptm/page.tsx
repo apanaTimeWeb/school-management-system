@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { 
   Users, ChevronDown, CheckCircle2, CalendarDays, Clock, 
   MapPin, CheckSquare, XSquare, Plus, MessageSquareQuote, 
-  Star, UserCircle, Send
+  Star, UserCircle, Send, History
 } from 'lucide-react';
 import clsx from 'clsx';
 import Link from 'next/link';
