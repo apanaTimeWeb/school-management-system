@@ -2,7 +2,7 @@ import React from 'react';
 import StudentHostelMain from './student_hostel_components/StudentHostelMain';
 
 export const metadata = {
-  title: "Hostel | Smart Gym 360",
+  title: "Hostel | School ERP 360",
   description: "Manage your hostel accommodation, leaves, and visitor passes.",
 };
 

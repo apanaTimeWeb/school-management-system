@@ -2,7 +2,7 @@ import React from 'react';
 import StudentHomeworkMain from './student_homework_components/StudentHomeworkMain';
 
 export const metadata = {
-  title: "Homework & Assignments | Smart Gym 360",
+  title: "Homework & Assignments | School ERP 360",
   description: "View and manage your pending and completed homework.",
 };
 

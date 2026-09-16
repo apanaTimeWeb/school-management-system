@@ -2,7 +2,7 @@ import React from 'react';
 import StudentTransportMain from './student_transport_components/StudentTransportMain';
 
 export const metadata = {
-  title: "Transport | Smart Gym 360",
+  title: "Transport | School ERP 360",
   description: "View your bus route, track live location, and get transport updates.",
 };
 

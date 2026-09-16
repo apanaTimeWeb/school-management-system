@@ -2,7 +2,7 @@ import React from 'react';
 import StudentProfileMain from './student_profile_components/StudentProfileMain';
 
 export const metadata = {
-  title: "My Profile | Smart Gym 360",
+  title: "My Profile | School ERP 360",
   description: "View your personal and academic profile details.",
 };
 

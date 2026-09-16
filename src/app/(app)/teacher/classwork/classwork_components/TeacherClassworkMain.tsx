@@ -104,8 +104,8 @@ export default function TeacherClassworkMain() {
               <div className="flex-1">
                 <div className="flex justify-between items-start mb-2">
                   <div>
-                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-2 inline-block ${cw.isPublished !== false ? 'bg-success/20 text-success' : 'bg-warning/20 text-warning'}`}>
-                      {cw.isPublished !== false ? 'Published to Students' : 'Draft'}
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mb-2 inline-block ${'isCompleted' in cw && cw.isCompleted ? 'bg-success/20 text-success' : 'bg-warning/20 text-warning'}`}>
+                      {'isCompleted' in cw && cw.isCompleted ? 'Published to Students' : 'Draft'}
                     </span>
                     <h3 className="text-[16px] font-bold text-text-primary group-hover:text-primary transition-colors">{cw.topic}</h3>
                     <p className="text-[12px] text-text-secondary mt-0.5 flex items-center gap-1"><BookOpen size={14}/> {cw.subject} • {cw.chapter}</p>

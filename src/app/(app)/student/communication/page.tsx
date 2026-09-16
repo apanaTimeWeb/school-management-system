@@ -2,7 +2,7 @@ import React from 'react';
 import StudentCommunicationMain from './student_communication_components/StudentCommunicationMain';
 
 export const metadata = {
-  title: "Communication | Smart Gym 360",
+  title: "Communication | School ERP 360",
   description: "View important notices, announcements, and school updates.",
 };
 

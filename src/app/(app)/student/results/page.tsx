@@ -2,7 +2,7 @@ import React from 'react';
 import StudentResultsMain from './student_results_components/StudentResultsMain';
 
 export const metadata = {
-  title: "Results & Report Card | Smart Gym 360",
+  title: "Results & Report Card | School ERP 360",
   description: "View your examination results, grades, and report cards.",
 };
 

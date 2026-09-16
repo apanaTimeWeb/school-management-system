@@ -4,7 +4,7 @@ import React from 'react';
 import { GraduationCap, BookOpen, CalendarCheck } from 'lucide-react';
 
 interface Props {
-  class: string;
+  currentClass: string;
   section: string;
   session: string;
 }
@@ -12,7 +12,7 @@ interface Props {
 /**
  * RESPONSIBILITY: Renders current class and session header.
  */
-export default function StudentAcademicsHeader({ class: className, section, session }: Props) {
+export default function StudentAcademicsHeader({ currentClass, section, session }: Props) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       
@@ -22,7 +22,7 @@ export default function StudentAcademicsHeader({ class: className, section, sess
         </div>
         <div>
           <span className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Current Class</span>
-          <h2 className="text-xl font-bold text-text-primary">{className} <span className="text-blue-500">-</span> {section}</h2>
+          <h2 className="text-xl font-bold text-text-primary">{currentClass} <span className="text-blue-500">-</span> {section}</h2>
         </div>
       </div>
 

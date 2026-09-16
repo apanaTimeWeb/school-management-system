@@ -2,7 +2,7 @@ import React from 'react';
 import StudentIdCardMain from './student_id_card_components/StudentIdCardMain';
 
 export const metadata = {
-  title: "Digital ID Card | Smart Gym 360",
+  title: "Digital ID Card | School ERP 360",
   description: "View, download, or print your official Digital Student ID Card.",
 };
 

@@ -11,7 +11,6 @@ export default function TeacherApplyLeaveModal() {
     fromDate: '',
     toDate: '',
     reason: '',
-    reason: '',
     file: null as File | null
   });
   const [successMessage, setSuccessMessage] = useState('');

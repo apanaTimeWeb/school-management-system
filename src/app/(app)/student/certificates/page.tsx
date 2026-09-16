@@ -2,7 +2,7 @@ import React from 'react';
 import StudentCertificatesMain from './student_certificates_components/StudentCertificatesMain';
 
 export const metadata = {
-  title: "Certificates & Documents | Smart Gym 360",
+  title: "Certificates & Documents | School ERP 360",
   description: "Request and download official school certificates.",
 };
 

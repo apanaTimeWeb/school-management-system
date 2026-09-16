@@ -2,7 +2,7 @@ import React from 'react';
 import StudentStudyMaterialMain from './student_study_material_components/StudentStudyMaterialMain';
 
 export const metadata = {
-  title: "Study Material | Smart Gym 360",
+  title: "Study Material | School ERP 360",
   description: "Browse and download study materials, notes, and videos.",
 };
 

@@ -1,4 +1,6 @@
-export const TEACHER_EXAMS_LIST = [
+import type { ExamData } from '../examinations_store/useTeacherExaminationsStore';
+
+export const TEACHER_EXAMS_LIST: ExamData[] = [
   {
     id: 'EXAM-001',
     name: 'Mid-Term Examination 2023',

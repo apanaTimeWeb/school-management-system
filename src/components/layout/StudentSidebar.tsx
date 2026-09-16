@@ -40,6 +40,7 @@ const navItems = [
   { label: 'Reports', href: '/student/reports', icon: <PieChart size={20} /> },
   { label: 'My Requests', href: '/student/my-requests', icon: <InboxRequest size={20} /> },
   { label: 'Security', href: '/student/security', icon: <ShieldCheck size={20} /> },
+  { label: 'My Profile', href: '/student/profile', icon: <UserCircle size={20} /> },
 ];
 
 interface Props {

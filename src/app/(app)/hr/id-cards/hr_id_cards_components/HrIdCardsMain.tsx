@@ -3,7 +3,7 @@
 import { useHrIdCards } from "./useHrIdCards";
 import HrIdCardsList from "./HrIdCardsList";
 import HrIdCardsPreviewModal from "./HrIdCardsPreviewModal";
-import { Loader2, IdentificationBadge } from "lucide-react"; // Note: Using some generic lucide icon if IdentificationBadge isn't present, usually Contact or User is fine. Let's stick to standard ones if possible, but assuming standard build.
+import { Loader2, Badge } from "lucide-react"; // Note: Using some generic lucide icon if Badge isn't present, usually Contact or User is fine. Let's stick to standard ones if possible, but assuming standard build.
 
 export default function HrIdCardsMain() {
   const {

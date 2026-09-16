@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Users, UserCheck, TrendingUp, CheckCircle, GraduationCap } from 'lucide-react';
-import { PrincipalDashboardKPIs } from '../dashboard_types/PrincipalDashboard.types';
+import type { PrincipalDashboardKPIs } from '../dashboard_types/PrincipalDashboard.types';
 
 interface PrincipalDashboardKPIsProps {
   data: PrincipalDashboardKPIs | null;

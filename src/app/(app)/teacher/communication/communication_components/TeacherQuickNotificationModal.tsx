@@ -5,7 +5,7 @@ import { useTeacherCommunicationStore } from '../communication_store/useTeacherC
 import { TEACHER_PARENTS_LIST } from '../communication_constants/TeacherCommunicationMockData';
 
 export default function TeacherQuickNotificationModal() {
-  const { isQuickNotificationModalOpen, closeQuickNotification, notificationType } = useTeacherCommunicationStore();
+  const { isQuickNotificationModalOpen, closeQuickNotification, quickNotificationType: notificationType } = useTeacherCommunicationStore();
   const [target, setTarget] = useState('');
   const [template, setTemplate] = useState('');
   const [successMessage, setSuccessMessage] = useState('');

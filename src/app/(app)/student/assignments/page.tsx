@@ -2,7 +2,7 @@ import React from 'react';
 import StudentAssignmentsMain from './student_assignments_components/StudentAssignmentsMain';
 
 export const metadata = {
-  title: "Assignments | Smart Gym 360",
+  title: "Assignments | School ERP 360",
   description: "View, submit, and track your assignments.",
 };
 

@@ -28,12 +28,12 @@ export const MOCK_STUDENT_DASHBOARD_DATA: StudentDashboardData = {
     { id: "t2", type: "assignment", subject: "Physics", title: "Thermodynamics Lab Report", dueDate: "Aug 15, 2024", status: "pending" },
   ],
   upcomingExams: [
-    { id: "e1", title: "Half-Yearly: Mathematics", date: "Aug 20, 2024", daysLeft: 5 },
-    { id: "e2", title: "Half-Yearly: Physics", date: "Aug 22, 2024", daysLeft: 7 },
+    { id: "e1", title: "Half-Yearly: Mathematics", subject: "Mathematics", type: "Half-Yearly", date: "Aug 20, 2024", time: "09:00 AM", daysLeft: 5 },
+    { id: "e2", title: "Half-Yearly: Physics", subject: "Physics", type: "Half-Yearly", date: "Aug 22, 2024", time: "09:00 AM", daysLeft: 7 },
   ],
   recentResults: [
-    { id: "r1", examName: "Unit Test 1", subject: "Mathematics", marksObtained: 45, totalMarks: 50, grade: "A" },
-    { id: "r2", examName: "Unit Test 1", subject: "Physics", marksObtained: 42, totalMarks: 50, grade: "A" },
+    { id: "r1", examName: "Unit Test 1", subject: "Mathematics", type: "Unit Test", marksObtained: 45, totalMarks: 50, grade: "A" },
+    { id: "r2", examName: "Unit Test 1", subject: "Physics", type: "Unit Test", marksObtained: 42, totalMarks: 50, grade: "A" },
   ],
   updates: [
     { id: "u1", type: "notice", title: "School closed on Aug 15 for Independence Day", date: "2 hours ago", isUnread: true, priority: "normal" },

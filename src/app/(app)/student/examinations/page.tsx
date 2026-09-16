@@ -2,7 +2,7 @@ import React from 'react';
 import StudentExaminationsMain from './student_examinations_components/StudentExaminationsMain';
 
 export const metadata = {
-  title: "Examinations | Smart Gym 360",
+  title: "Examinations | School ERP 360",
   description: "View your upcoming and past examination schedules and syllabus.",
 };
 

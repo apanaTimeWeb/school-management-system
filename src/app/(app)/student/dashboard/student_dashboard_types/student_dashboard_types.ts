@@ -38,7 +38,10 @@ export interface AcademicTask {
 export interface ExamInfo {
   id: string;
   title: string;
+  subject: string;
+  type: string;
   date: string;
+  time: string;
   daysLeft: number;
 }
 
@@ -46,6 +49,7 @@ export interface RecentResult {
   id: string;
   examName: string;
   subject: string;
+  type: string;
   marksObtained: number;
   totalMarks: number;
   grade: string;

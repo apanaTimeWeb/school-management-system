@@ -2,7 +2,7 @@ import React from 'react';
 import StudentDisciplineMain from './student_discipline_components/StudentDisciplineMain';
 
 export const metadata = {
-  title: "Discipline & Behaviour | Smart Gym 360",
+  title: "Discipline & Behaviour | School ERP 360",
   description: "View teacher remarks, official warnings, and counselling records.",
 };
 

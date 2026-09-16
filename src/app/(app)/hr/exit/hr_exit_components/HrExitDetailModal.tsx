@@ -1,6 +1,6 @@
 "use client";
 
-import { X, CheckCircle, Circle, FileText, CheckCircle2 } from "lucide-react";
+import { X, CheckCircle, Circle, FileText, CheckCircle2, LogOut } from "lucide-react";
 import type { EmployeeExitRecord } from "../hr_exit_types/HrExitTypes";
 
 interface HrExitDetailModalProps {
@@ -105,7 +105,7 @@ export default function HrExitDetailModal({ exitRecord, close, toggleClearance, 
               {/* Final Status Control */}
               <div className="border border-danger/20 rounded-xl p-5 bg-danger/5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2 flex items-center gap-2"><DoorOpen size={16} className="text-danger"/> Final Separation</h3>
+                  <h3 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2 flex items-center gap-2"><LogOut size={16} className="text-danger"/> Final Separation</h3>
                   <p className="text-xs font-medium text-muted-foreground mb-4">Clicking the button below will permanently mark this employee as Exited and remove them from the active payroll and directories.</p>
                 </div>
 

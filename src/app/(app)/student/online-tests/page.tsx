@@ -2,7 +2,7 @@ import React from 'react';
 import StudentOnlineTestsMain from './student_online_tests_components/StudentOnlineTestsMain';
 
 export const metadata = {
-  title: "Online Tests & Quizzes | Smart Gym 360",
+  title: "Online Tests & Quizzes | School ERP 360",
   description: "Take online assessments, quizzes and view your past scores.",
 };
 

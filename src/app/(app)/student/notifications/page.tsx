@@ -2,7 +2,7 @@ import React from 'react';
 import StudentNotificationsMain from './student_notifications_components/StudentNotificationsMain';
 
 export const metadata = {
-  title: "Notifications | Smart Gym 360",
+  title: "Notifications | School ERP 360",
   description: "View all your school updates and alerts in one place.",
 };
 

@@ -1,4 +1,6 @@
-export const TEACHER_ONLINE_TESTS = [
+import type { OnlineTestData } from '../tests_store/useTeacherTestsStore';
+
+export const TEACHER_ONLINE_TESTS: OnlineTestData[] = [
   {
     id: 'TEST-001',
     title: 'Algebra Quick Quiz',

@@ -2,7 +2,7 @@ import React from 'react';
 import StudentLeaveMain from './student_leave_components/StudentLeaveMain';
 
 export const metadata = {
-  title: "Leave Application | Smart Gym 360",
+  title: "Leave Application | School ERP 360",
   description: "Apply for leaves and track your leave request status.",
 };
 

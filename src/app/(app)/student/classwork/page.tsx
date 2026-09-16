@@ -2,7 +2,7 @@ import React from 'react';
 import StudentClassworkMain from './student_classwork_components/StudentClassworkMain';
 
 export const metadata = {
-  title: "Classwork | Smart Gym 360",
+  title: "Classwork | School ERP 360",
   description: "View daily classwork notes and teacher instructions.",
 };
 

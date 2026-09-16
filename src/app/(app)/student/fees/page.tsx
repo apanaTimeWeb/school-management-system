@@ -2,7 +2,7 @@ import React from 'react';
 import StudentFeesMain from './student_fees_components/StudentFeesMain';
 
 export const metadata = {
-  title: "Fee Management | Smart Gym 360",
+  title: "Fee Management | School ERP 360",
   description: "View fee structure, payment history, and pay online.",
 };
 

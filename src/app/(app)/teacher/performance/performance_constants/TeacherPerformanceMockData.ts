@@ -1,4 +1,6 @@
-export const TEACHER_PERFORMANCE_STUDENTS = [
+import type { PerformanceData } from '../performance_store/useTeacherPerformanceStore';
+
+export const TEACHER_PERFORMANCE_STUDENTS: PerformanceData[] = [
   {
     id: 'STU-001',
     rollNo: 12,

@@ -2,7 +2,8 @@
 
 import React from 'react';
 import type { StudentProfile } from '../student_dashboard_types/student_dashboard_types';
-import { User, Calendar, MapPin, Hash } from 'lucide-react';
+import { User, Calendar, MapPin, Hash, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface Props {
   profile: StudentProfile;
@@ -47,6 +48,14 @@ export default function StudentDashboardProfileHeader({ profile }: Props) {
           </div>
         </div>
       </div>
+      
+      {/* View Profile Button */}
+      <Link 
+        href="/student/profile" 
+        className="shrink-0 self-center md:self-end flex items-center gap-2 px-4 py-2 rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary hover:text-white transition-all group z-10"
+      >
+        View Profile <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+      </Link>
     </div>
   );
 }

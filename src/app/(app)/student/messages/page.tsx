@@ -2,7 +2,7 @@ import React from 'react';
 import StudentMessagesMain from './student_messages_components/StudentMessagesMain';
 
 export const metadata = {
-  title: "Messages | Smart Gym 360",
+  title: "Messages | School ERP 360",
   description: "View and reply to messages from teachers and school administration.",
 };
 

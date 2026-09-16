@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { fetchOnboardingCandidates } from "../hr_onboarding_api/HrOnboardingApi";
-import type { OnboardingCandidate } from "../hr_onboarding_types/HrOnboardingTypes";
+import type { OnboardingCandidate, OnboardingStatus } from "../hr_onboarding_types/HrOnboardingTypes";
 
 export function useHrOnboarding() {
   const [candidates, setCandidates] = useState<OnboardingCandidate[]>([]);
@@ -43,8 +43,7 @@ export function useHrOnboarding() {
       
       // Auto update status to "In Review" if they start checking things off
       let newStatus = c.status;
-      if (c.status === 'Initiated' && newChecklist.some(x => x.isCompleted)) newStatus = 'In Review';
-      
+      if (c.status === 'Initiated' && newChecklist.some(x => x.isCompleted)) newStatus = 'In Review' as OnboardingStatus;
       return { ...c, checklist: newChecklist, status: newStatus };
     };
 
@@ -67,7 +66,7 @@ export function useHrOnboarding() {
     const newEmpId = `EMP-2024-${Math.floor(Math.random() * 900) + 100}`;
     const updateFn = (c: OnboardingCandidate) => {
       if (c.id !== candidateId) return c;
-      return { ...c, systemAccessGranted: true, status: 'Completed', finalEmployeeId: newEmpId };
+      return { ...c, systemAccessGranted: true, status: 'Completed' as OnboardingStatus, finalEmployeeId: newEmpId };
     };
 
     setCandidates(prev => prev.map(updateFn));

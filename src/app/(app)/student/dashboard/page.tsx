@@ -2,7 +2,7 @@ import React from 'react';
 import StudentDashboardMain from './student_dashboard_components/StudentDashboardMain';
 
 export const metadata = {
-  title: "Student Dashboard | Smart Gym 360",
+  title: "Student Dashboard | School ERP 360",
   description: "View your classes, attendance, assignments, and updates.",
 };
 

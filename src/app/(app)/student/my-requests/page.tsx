@@ -2,7 +2,7 @@ import React from 'react';
 import StudentRequestsMain from './student_requests_components/StudentRequestsMain';
 
 export const metadata = {
-  title: "My Requests | Smart Gym 360",
+  title: "My Requests | School ERP 360",
   description: "Track and manage all your school requests in one place.",
 };
 

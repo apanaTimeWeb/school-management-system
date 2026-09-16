@@ -2,7 +2,7 @@ import React from 'react';
 import StudentHealthMain from './student_health_components/StudentHealthMain';
 
 export const metadata = {
-  title: "Health & Medical | Smart Gym 360",
+  title: "Health & Medical | School ERP 360",
   description: "View your school health profile, medical checkups, and advisories.",
 };
 

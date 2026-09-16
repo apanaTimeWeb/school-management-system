@@ -2,7 +2,7 @@ import React from 'react';
 import StudentFeedbackMain from './student_feedback_components/StudentFeedbackMain';
 
 export const metadata = {
-  title: "Feedback & Suggestions | Smart Gym 360",
+  title: "Feedback & Suggestions | School ERP 360",
   description: "Share your thoughts, suggestions, and grievances securely.",
 };
 

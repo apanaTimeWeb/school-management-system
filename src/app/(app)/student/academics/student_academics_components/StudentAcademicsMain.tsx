@@ -64,7 +64,7 @@ export default function StudentAcademicsMain() {
     <div className="flex flex-col gap-6">
       
       {/* Top Details */}
-      <StudentAcademicsHeader class={data.currentClass} section={data.section} session={data.academicSession} />
+      <StudentAcademicsHeader currentClass={data.currentClass} section={data.section} session={data.academicSession} />
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         

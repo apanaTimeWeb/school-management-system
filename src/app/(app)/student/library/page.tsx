@@ -2,7 +2,7 @@ import React from 'react';
 import StudentLibraryMain from './student_library_components/StudentLibraryMain';
 
 export const metadata = {
-  title: "Library | Smart Gym 360",
+  title: "Library | School ERP 360",
   description: "Search books, manage issued items, and track your library history.",
 };
 

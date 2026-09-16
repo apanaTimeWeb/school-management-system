@@ -2,7 +2,7 @@ import React from 'react';
 import StudentEventsMain from './student_events_components/StudentEventsMain';
 
 export const metadata = {
-  title: "Events & Activities | Smart Gym 360",
+  title: "Events & Activities | School ERP 360",
   description: "Register for school events, track participations, and download certificates.",
 };
 

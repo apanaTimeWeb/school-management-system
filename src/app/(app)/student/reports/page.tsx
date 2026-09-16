@@ -2,7 +2,7 @@ import React from 'react';
 import StudentReportsMain from './student_reports_components/StudentReportsMain';
 
 export const metadata = {
-  title: "Reports & Analytics | Smart Gym 360",
+  title: "Reports & Analytics | School ERP 360",
   description: "View and download comprehensive analytical reports for your academic journey.",
 };
 

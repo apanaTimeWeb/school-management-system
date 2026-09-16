@@ -2,7 +2,7 @@ import React from 'react';
 import StudentAttendanceMain from './student_attendance_components/StudentAttendanceMain';
 
 export const metadata = {
-  title: "My Attendance | Smart Gym 360",
+  title: "My Attendance | School ERP 360",
   description: "View daily, monthly, and subject-wise attendance.",
 };
 

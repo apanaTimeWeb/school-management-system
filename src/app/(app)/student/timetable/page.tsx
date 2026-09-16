@@ -2,7 +2,7 @@ import React from 'react';
 import StudentTimetableMain from './student_timetable_components/StudentTimetableMain';
 
 export const metadata = {
-  title: "My Timetable | Smart Gym 360",
+  title: "My Timetable | School ERP 360",
   description: "View daily and weekly class schedules.",
 };
 

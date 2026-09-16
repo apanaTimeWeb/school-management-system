@@ -2,7 +2,7 @@ import React from 'react';
 import StudentSecurityMain from './student_security_components/StudentSecurityMain';
 
 export const metadata = {
-  title: "Account Security | Smart Gym 360",
+  title: "Account Security | School ERP 360",
   description: "Manage your account security, passwords, and active sessions.",
 };
 

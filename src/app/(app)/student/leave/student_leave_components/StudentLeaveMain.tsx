@@ -62,7 +62,7 @@ export default function StudentLeaveMain() {
     const res = await submitLeaveApplication(payload);
     if (res.success && res.data) {
       // Optimistic UI update
-      setData(prev => prev ? { ...prev, requests: [res.data!, ...prev.requests] } : null);
+      setData(prev => prev ? { ...prev, leaveHistory: [res.data!, ...prev.leaveHistory] } : null);
       setActiveTab('history');
       alert("Leave Application Submitted Successfully!");
     }
@@ -98,7 +98,7 @@ export default function StudentLeaveMain() {
         {activeTab === 'form' ? (
           <StudentLeaveForm onSubmit={handleLeaveSubmit} />
         ) : (
-          <StudentLeaveHistory history={data.history} />
+          <StudentLeaveHistory history={data.leaveHistory} />
         )}
       </div>
 

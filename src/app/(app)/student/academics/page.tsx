@@ -2,7 +2,7 @@ import React from 'react';
 import StudentAcademicsMain from './student_academics_components/StudentAcademicsMain';
 
 export const metadata = {
-  title: "My Academics | Smart Gym 360",
+  title: "My Academics | School ERP 360",
   description: "View subjects, syllabus, and academic history.",
 };
 
