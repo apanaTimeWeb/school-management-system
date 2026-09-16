@@ -13,7 +13,8 @@ const navItems = [
   { label: 'My Profile', href: '/parent/profile', icon: <UserCircle size={20} /> },
   { label: 'Children Summary', href: '/parent/children', icon: <Users size={20} /> },
   { label: 'Fees & Payments', href: '/parent/fees', icon: <Wallet size={20} /> },
-  { label: 'Homework & Academics', href: '/parent/academics', icon: <BookOpen size={20} /> },
+  { label: 'Homework', href: '/parent/homework', icon: <BookOpen size={20} /> },
+  { label: 'Academics', href: '/parent/academics', icon: <BookOpen size={20} /> },
   { label: 'Timetable & Events', href: '/parent/timetable', icon: <Calendar size={20} /> },
   { label: 'Leave & Attendance', href: '/parent/attendance', icon: <AlertCircle size={20} /> },
 ];
