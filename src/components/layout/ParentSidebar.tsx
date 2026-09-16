@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import clsx from 'clsx';
 import { 
-  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award
+  LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail
 } from 'lucide-react';
 
 const navItems = [
@@ -20,7 +20,11 @@ const navItems = [
   { label: 'Results', href: '/parent/results', icon: <Award size={20} /> },
   { label: 'Academics', href: '/parent/academics', icon: <BookOpen size={20} /> },
   { label: 'Timetable & Events', href: '/parent/timetable', icon: <Calendar size={20} /> },
-  { label: 'Leave & Attendance', href: '/parent/attendance', icon: <AlertCircle size={20} /> },
+  { label: 'Attendance', href: '/parent/attendance', icon: <AlertCircle size={20} /> },
+  { label: 'Apply Leave', href: '/parent/leave', icon: <AlertCircle size={20} /> },
+  { label: 'Communication', href: '/parent/communication', icon: <MessageSquare size={20} /> },
+  { label: 'Messages', href: '/parent/messages', icon: <Mail size={20} /> },
+  { label: 'Meetings (PTM)', href: '/parent/ptm', icon: <Users size={20} /> },
 ];
 
 interface Props {
