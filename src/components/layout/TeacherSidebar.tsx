@@ -6,28 +6,33 @@ import { Settings, X, UserCircle } from 'lucide-react';
 import { useTeacherLayoutStore } from './useTeacherLayoutStore';
 
 const MENU_ITEMS = [
-  { href: '/teacher/dashboard', label: 'Dashboard', icon: <UserCircle size={20} /> },
-  { href: '/teacher/students', label: 'Student Management', icon: <UserCircle size={20} /> },
-  { href: '/teacher/classes', label: 'My Classes', icon: <UserCircle size={20} /> },
-  { href: '/teacher/attendance', label: 'Student Attendance', icon: <UserCircle size={20} /> },
+  // User's Checklist Items
+  { href: '/teacher/my-classes', label: 'My Classes', icon: <UserCircle size={20} /> },
+  { href: '/teacher/my-subjects', label: 'My Subjects', icon: <UserCircle size={20} /> },
+  { href: '/teacher/attendance', label: 'Attendance', icon: <UserCircle size={20} /> },
+  { href: '/teacher/timetable', label: 'Timetable', icon: <UserCircle size={20} /> },
   { href: '/teacher/homework', label: 'Homework', icon: <UserCircle size={20} /> },
-  { href: '/teacher/academics', label: 'Academics & Timetable', icon: <UserCircle size={20} /> },
-  { href: '/teacher/classwork', label: 'Classwork', icon: <UserCircle size={20} /> },
-  { href: '/teacher/syllabus', label: 'Syllabus & Progress', icon: <UserCircle size={20} /> },
-  { href: '/teacher/study-material', label: 'Study Material', icon: <UserCircle size={20} /> },
   { href: '/teacher/assignments', label: 'Assignments', icon: <UserCircle size={20} /> },
-  { href: '/teacher/examinations', label: 'Examinations', icon: <UserCircle size={20} /> },
-  { href: '/teacher/results', label: 'Results & Analytics', icon: <UserCircle size={20} /> },
-  { href: '/teacher/online-tests', label: 'Online Tests', icon: <UserCircle size={20} /> },
-  { href: '/teacher/performance', label: 'Student Performance', icon: <UserCircle size={20} /> },
-  { href: '/teacher/leaves', label: 'Leave Requests', icon: <UserCircle size={20} /> },
-  { href: '/teacher/substitutes', label: 'Substitutes', icon: <UserCircle size={20} /> },
-  { href: '/teacher/discipline', label: 'Discipline', icon: <UserCircle size={20} /> },
-  { href: '/teacher/remarks', label: 'Student Remarks', icon: <UserCircle size={20} /> },
-  { href: '/teacher/meetings', label: 'Parent Meetings', icon: <UserCircle size={20} /> },
+  { href: '/teacher/study-material', label: 'Study Material', icon: <UserCircle size={20} /> },
+  { href: '/teacher/classwork', label: 'Classwork', icon: <UserCircle size={20} /> },
+  { href: '/teacher/syllabus', label: 'Syllabus', icon: <UserCircle size={20} /> },
+  { href: '/teacher/teaching-progress', label: 'Teaching Progress', icon: <UserCircle size={20} /> },
+  { href: '/teacher/exams', label: 'Exams', icon: <UserCircle size={20} /> },
+  { href: '/teacher/marks-entry', label: 'Marks Entry', icon: <UserCircle size={20} /> },
+  { href: '/teacher/results-assigned', label: 'Result-related assigned work', icon: <UserCircle size={20} /> },
+  { href: '/teacher/online-tests', label: 'Online Tests/Quizzes', icon: <UserCircle size={20} /> },
+  { href: '/teacher/student-performance', label: 'Student Performance', icon: <UserCircle size={20} /> },
+  { href: '/teacher/student-remarks', label: 'Student Remarks', icon: <UserCircle size={20} /> },
+  { href: '/teacher/discipline-remarks', label: 'Discipline Remarks', icon: <UserCircle size={20} /> },
+  { href: '/teacher/parent-communication', label: 'Parent Communication', icon: <UserCircle size={20} /> },
+  { href: '/teacher/ptm', label: 'PTM', icon: <UserCircle size={20} /> },
+  { href: '/teacher/substitute-classes', label: 'Substitute Classes', icon: <UserCircle size={20} /> },
+  { href: '/teacher/leave', label: 'Leave', icon: <UserCircle size={20} /> },
+  { href: '/teacher/teaching-reports', label: 'Teaching Reports', icon: <UserCircle size={20} /> },
+  // Un-removed default items (Restored to ensure no loss of features)
+  { href: '/teacher/dashboard', label: 'Dashboard', icon: <UserCircle size={20} /> },
   { href: '/teacher/documents', label: 'Documents', icon: <UserCircle size={20} /> },
   { href: '/teacher/notifications', label: 'Notifications', icon: <UserCircle size={20} /> },
-  { href: '/teacher/reports', label: 'Reports', icon: <UserCircle size={20} /> },
   { href: '/teacher/communication', label: 'Communication', icon: <UserCircle size={20} /> },
   { href: '/teacher/notices', label: 'Notice Board', icon: <UserCircle size={20} /> },
 ];
@@ -99,13 +104,7 @@ export default function TeacherSidebar() {
 
         {/* Footer Area */}
         <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-sidebar">
-          <button 
-            onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Settings module coming soon.' })); }}
-            className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]"
-          >
-            <Settings size={20} />
-            Settings
-          </button>
+          {/* Settings removed for Teacher role */}
         </div>
       </aside>
     </>
