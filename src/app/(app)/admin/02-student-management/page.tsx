@@ -9,14 +9,21 @@ import { Users, UserPlus, Settings2, UserCircle } from "lucide-react";
 import clsx from "clsx";
 
 const tabs = [
-  { id: "directory", label: "Student Directory", icon: Users },
-  { id: "registration", label: "New Registration", icon: UserPlus },
-  { id: "profile", label: "Student Profile", icon: UserCircle },
-  { id: "operations", label: "Operations & Actions", icon: Settings2 },
+  { id: "admission", label: "Student admission/enrollment", icon: UserPlus },
+  { id: "history", label: "Student history", icon: UserCircle },
+  { id: "promotion", label: "Student promotion", icon: Settings2 },
+  { id: "demotion", label: "Student demotion", icon: Settings2 },
+  { id: "section", label: "Section change", icon: Settings2 },
+  { id: "class", label: "Class change", icon: Settings2 },
+  { id: "transfer", label: "Student transfer", icon: Settings2 },
+  { id: "withdrawal", label: "Student withdrawal", icon: Settings2 },
+  { id: "readmission", label: "Re-admission", icon: Settings2 },
+  { id: "roll", label: "Roll number", icon: Settings2 },
+  { id: "house", label: "House allocation", icon: Settings2 }
 ];
 
 export default function StudentManagementPage() {
-  const [activeTab, setActiveTab] = useState("directory");
+  const [activeTab, setActiveTab] = useState("admission");
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
@@ -48,10 +55,9 @@ export default function StudentManagementPage() {
 
       {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
-        {activeTab === "directory" && <StudentDirectory />}
-        {activeTab === "registration" && <StudentRegistrationForm />}
-        {activeTab === "profile" && <StudentProfileView />}
-        {activeTab === "operations" && <StudentOperations />}
+        {(activeTab === "admission" || activeTab === "readmission") && <StudentRegistrationForm />}
+        {activeTab === "history" && <StudentProfileView />}
+        {["promotion", "demotion", "section", "class", "transfer", "withdrawal", "roll", "house"].includes(activeTab) && <StudentOperations />}
       </div>
     </div>
   );
