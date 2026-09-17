@@ -206,8 +206,8 @@ export default function FeesPage() {
                                <div>
                                  <h4 className="font-bold text-text-primary">{fee.type}</h4>
                                  <div className="flex items-center gap-3 mt-1">
-                                   <p className="text-xs text-text-secondary">Due: <span className={clsx("font-bold", fee.isOverdue ? "text-red-500" : "")}>{fee.dueDate}</span></p>
-                                   {fee.isOverdue && <span className="px-2 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold">Overdue</span>}
+                                   <p className="text-xs text-text-secondary">Due: <span className={clsx("font-bold", (fee as any).isOverdue ? "text-red-500" : "")}>{fee.dueDate}</span></p>
+                                   {(fee as any).isOverdue && <span className="px-2 py-0.5 bg-red-100 text-red-600 rounded text-[10px] font-bold">Overdue</span>}
                                  </div>
                                </div>
                              </div>

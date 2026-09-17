@@ -54,7 +54,7 @@ export default function HostelPage() {
   const [showChildSwitcher, setShowChildSwitcher] = useState(false);
   
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const hostel = hostelData[selectedChildId as keyof typeof hostelData];
+  const hostel = hostelData[selectedChildId as keyof typeof hostelData] as any;
 
   return (
     <div className="p-4 md:p-8 max-w-7xl mx-auto space-y-6">
@@ -204,7 +204,7 @@ export default function HostelPage() {
                    <CalendarDays size={18} className="text-pink-500" /> Recent Leaves
                  </h3>
                  <div className="flex-1 space-y-3">
-                   {hostel.leaves?.map(leave => (
+                   {hostel.leaves?.map((leave: any) => (
                      <div key={leave.id} className="flex justify-between items-center p-3 border border-border rounded-xl">
                        <div>
                          <p className="text-sm font-bold text-text-primary">{leave.type}</p>
@@ -232,7 +232,7 @@ export default function HostelPage() {
                   <Bell size={18} className="text-indigo-500"/> Hostel Notices
                 </h3>
                 <div className="space-y-3">
-                  {hostel.notices?.map(notice => (
+                  {hostel.notices?.map((notice: any) => (
                     <div key={notice.id} className="flex items-start gap-3 p-4 bg-indigo-50/50 rounded-xl border border-indigo-100">
                       <FileText size={18} className="text-indigo-500 mt-0.5 flex-shrink-0"/>
                       <div>
@@ -255,7 +255,7 @@ export default function HostelPage() {
                  <Users size={18} className="text-orange-500" /> Authorized Visitors
                </h3>
                <div className="space-y-3">
-                 {hostel.visitors?.map(visitor => (
+                 {hostel.visitors?.map((visitor: any) => (
                    <div key={visitor.id} className="flex items-center gap-3">
                      <div className="w-10 h-10 bg-page rounded-full border border-border flex items-center justify-center text-text-tertiary">
                        <ShieldCheck size={18} />

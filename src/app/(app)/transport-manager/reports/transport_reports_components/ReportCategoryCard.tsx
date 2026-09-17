@@ -4,8 +4,7 @@ import React from 'react';
 import { 
   Bus, Map, GraduationCap, Users, IndianRupee, ShieldAlert, 
   List, Activity, Wrench, Fuel, AlertTriangle, MapPin, 
-  PieChart, GitMerge, UserCheck, Clock, CalendarDays, History, 
-  SteeringWheel, UserCircle, CalendarCheck, Link, FileText, 
+  PieChart, GitMerge, UserCheck, Clock, CalendarDays, History, UserCircle, CalendarCheck, Link, FileText, 
   AlertCircle, TrendingUp, Receipt, Car, ClipboardCheck, ChevronRight
 } from 'lucide-react';
 import type { ReportCategoryDefinition, ReportDefinition } from '../transport_reports_types/transport_reports.types';
@@ -25,7 +24,7 @@ export default function ReportCategoryCard({ category, onSelectReport }: ReportC
       Bus, Map, GraduationCap, Users, IndianRupee, ShieldAlert,
       List, Activity, Wrench, Fuel, AlertTriangle, MapPin,
       PieChart, GitMerge, UserCheck, Clock, CalendarDays, History,
-      History, UserCircle, CalendarCheck, Link, FileText,
+      UserCircle, CalendarCheck, Link, FileText,
       AlertCircle, TrendingUp, Receipt, CarCrash: Car, ClipboardCheck
     };
     const IconComponent = iconMap[name] || FileText;

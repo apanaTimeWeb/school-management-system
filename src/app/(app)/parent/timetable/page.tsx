@@ -61,7 +61,7 @@ export default function TimetablePage() {
   const [viewMode, setViewMode] = useState<'daily' | 'weekly'>('daily');
 
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const timetable = timetableData[selectedChildId as keyof typeof timetableData];
+  const timetable = timetableData[selectedChildId as keyof typeof timetableData] as any;
 
   // Map subjects to colors for visual consistency
   const getSubjectColor = (subject: string) => {
@@ -126,7 +126,7 @@ export default function TimetablePage() {
       {/* Alerts / Timetable Changes */}
       {timetable.alerts.length > 0 && (
         <div className="space-y-3 animate-[fadeIn_0.3s_ease-out]">
-          {timetable.alerts.map((alert, idx) => (
+          {timetable.alerts.map((alert: any, idx: number) => (
             <div key={idx} className={clsx(
               "flex items-start md:items-center gap-4 p-4 rounded-xl border",
               alert.type === 'substitute' ? "bg-orange-50 border-orange-200" : "bg-blue-50 border-blue-200"
@@ -182,7 +182,7 @@ export default function TimetablePage() {
           
           {viewMode === 'daily' ? (
             <div className="space-y-4 relative before:absolute before:inset-0 before:ml-10 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-              {timetable.daily.map((slot, idx) => (
+              {timetable.daily.map((slot: any, idx: number) => (
                 <div key={idx} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                   
                   {/* Timeline Node */}
@@ -260,13 +260,13 @@ export default function TimetablePage() {
                 </div>
                 
                 <div className="space-y-2">
-                  {timetable.weekly.map((dayRow, idx) => (
+                  {timetable.weekly.map((dayRow: any, idx: number) => (
                     <div key={idx} className="grid grid-cols-6 gap-2 items-stretch">
                       <div className="p-3 bg-white border border-border rounded-xl flex items-center justify-center text-sm font-bold text-text-primary shadow-sm">
                         {dayRow.day}
                       </div>
                       
-                      {dayRow.subjects.map((sub, i) => {
+                      {dayRow.subjects.map((sub: any, i: number) => {
                         const styleClass = getSubjectColor(sub);
                         return (
                           <div key={i} className={clsx(

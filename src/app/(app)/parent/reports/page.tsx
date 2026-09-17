@@ -107,7 +107,7 @@ export default function ReportsPage() {
            >
              {/* Decorative Background Icon */}
              <div className="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform duration-500">
-               {React.cloneElement(report.icon as React.ReactElement, { size: 100 })}
+               {React.cloneElement(report.icon as React.ReactElement, { size: 100 } as any)}
              </div>
 
              <div>

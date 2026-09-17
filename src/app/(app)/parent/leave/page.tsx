@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { 
   CalendarDays, ChevronDown, CheckCircle2, History, Send, 
-  Paperclip, Clock, CheckSquare, XSquare, Plus
+  Paperclip, Clock, CheckSquare, XSquare, Plus, AlertCircle
 } from 'lucide-react';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -34,7 +34,7 @@ export default function LeavePage() {
   const [showSuccess, setShowSuccess] = useState(false);
 
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const history = leaveHistoryData[selectedChildId as keyof typeof leaveHistoryData];
+  const history = leaveHistoryData[selectedChildId as keyof typeof leaveHistoryData] as any[];
 
   // Form State
   const [leaveType, setLeaveType] = useState('Sick Leave');
@@ -283,7 +283,7 @@ export default function LeavePage() {
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {history.map((leave) => (
+                  {history.map((leave: any) => (
                     <div key={leave.id} className="p-5 border border-border rounded-2xl bg-white hover:shadow-md transition-shadow">
                        
                        <div className="flex items-start justify-between mb-4">

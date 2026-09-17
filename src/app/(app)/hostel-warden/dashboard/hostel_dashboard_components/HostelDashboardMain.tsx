@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { 
   Building2, Bed, DoorOpen, Users, UserCheck, CalendarDays, 
   UserPlus, BellRing, MessageSquareWarning, Wrench, Utensils, 
-  Activity, ArrowRight, CheckCircle2, AlertTriangle, Clock
+  Activity, ArrowRight, CheckCircle2, AlertTriangle, Clock, FileSignature
 } from 'lucide-react';
 import { 
   MOCK_HOSTEL_STATS, MOCK_STUDENT_STATS, 

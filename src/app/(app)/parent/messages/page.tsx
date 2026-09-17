@@ -64,7 +64,7 @@ export default function MessagesPage() {
   const [showChildSwitcher, setShowChildSwitcher] = useState(false);
   
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const conversations = conversationsData[selectedChildId as keyof typeof conversationsData];
+  const conversations = conversationsData[selectedChildId as keyof typeof conversationsData] as any[];
   
   const [activeConvId, setActiveConvId] = useState<number | null>(null);
   const [replyText, setReplyText] = useState('');
@@ -256,7 +256,7 @@ export default function MessagesPage() {
                    </span>
                  </div>
 
-                 {activeConv!.messages.map((msg) => (
+                 {activeConv!.messages.map((msg: any) => (
                    <div key={msg.id} className={clsx("flex flex-col max-w-[80%] animate-[fadeIn_0.2s_ease-out]", msg.isMe ? "self-end items-end" : "self-start items-start")}>
                      
                      <div className={clsx(

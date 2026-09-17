@@ -69,7 +69,7 @@ export function useHrStaffAttendance() {
   const updateMonthlyStatus = (employeeId: string, day: number, newStatus: AttendanceStatus) => {
     setMonthlyRecords(prev => prev.map(record => {
       if (record.employeeId === employeeId) {
-        const newAttendance = [...record.attendance];
+        const newAttendance = [...(record as any).attendance];
         newAttendance[day - 1] = newStatus;
         return { ...record, attendance: newAttendance };
       }

@@ -85,7 +85,7 @@ export default function AccountantDashboardPending() {
             </div>
           </div>
         ))}
-        {(!data || data.length === 0) && (
+        {(!data || (data as any).length === 0) && (
           <div className="p-6 text-center text-text-secondary text-sm">
             No pending requests.
           </div>

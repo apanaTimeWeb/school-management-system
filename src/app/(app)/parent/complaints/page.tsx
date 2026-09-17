@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { 
   AlertCircle, ChevronDown, CheckCircle2, 
-  Send, Plus, Clock, Search, MessageSquareWarning, ArrowPathRoundedSquare, Check
+  Send, Plus, Clock, Search, MessageSquareWarning, Check
 } from 'lucide-react';
 import clsx from 'clsx';
 

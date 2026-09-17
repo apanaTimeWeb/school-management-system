@@ -34,7 +34,7 @@ export default function MyRequestsPage() {
   const [filterStatus, setFilterStatus] = useState('All');
 
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const requests = allRequests[selectedChildId as keyof typeof allRequests];
+  const requests = allRequests[selectedChildId as keyof typeof allRequests] as any[];
 
   // Filtering
   const filteredRequests = requests.filter(req => {
@@ -213,7 +213,7 @@ export default function MyRequestsPage() {
              </div>
            ) : (
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-               {filteredRequests.map(req => (
+               {filteredRequests.map((req: any) => (
                  <div key={req.id} className="border border-border rounded-2xl p-5 hover:shadow-md transition-shadow flex flex-col h-full relative overflow-hidden">
                     
                     <div className="flex justify-between items-start mb-3 border-b border-border pb-3">

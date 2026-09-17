@@ -16,7 +16,7 @@ export const MOCK_COMPLAINTS: MaintenanceComplaint[] = [
   {
     id: 'MNT-2023-002',
     category: 'Plumbing',
-    locationType: 'Washroom',
+    locationType: 'Washroom' as any,
     locationDetail: 'Room 102 Attached Washroom',
     description: 'Tap is continuously leaking, causing water wastage.',
     priority: 'High',

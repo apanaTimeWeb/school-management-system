@@ -312,7 +312,7 @@ export default function AttendancePage() {
                 <div key={idx} className="p-4 flex items-center justify-between hover:bg-page/30 transition-colors cursor-default">
                   <div>
                     <p className="text-sm font-bold text-text-primary">{hist.date}</p>
-                    <p className="text-xs text-text-secondary">{hist.type} Attendance {hist.reason && <span className="text-red-500 font-semibold">• {hist.reason}</span>}</p>
+                    <p className="text-xs text-text-secondary">{hist.type} Attendance {(hist as any).reason && <span className="text-red-500 font-semibold">• {(hist as any).reason}</span>}</p>
                   </div>
                   <span className={clsx(
                     "px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border",
