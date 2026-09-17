@@ -18,10 +18,11 @@ import SuperAdminSystemAlertsConfig from './audit_security_components/SuperAdmin
 import SuperAdminTermsPrivacyConsentConfig from './audit_security_components/SuperAdminTermsPrivacyConsentConfig';
 
 const TABS = [
-  { id: 'security', label: 'Login & Access Security', icon: ShieldCheck },
-  { id: 'audit', label: 'Audit & Activity Logs', icon: Activity },
-  { id: 'data', label: 'Data & Privacy', icon: Database },
-  { id: 'alerts', label: 'Alerts & Notifications', icon: Bell },
+  { id: 'security', label: 'Security Settings', icon: ShieldCheck },
+  { id: 'login', label: 'Login/Identity Settings', icon: ShieldCheck },
+  { id: 'audit', label: 'Audit Logs', icon: Activity },
+  { id: 'retention', label: 'Data Retention', icon: Database },
+  { id: 'history', label: 'Configuration History', icon: Activity },
 ];
 
 export default function AuditSecurityPage() {
@@ -77,29 +78,34 @@ export default function AuditSecurityPage() {
                 <SuperAdmin2FACard />
                 <SuperAdminAccessControlCard />
               </div>
-              <SuperAdminLoginIdentitySettingsConfig />
             </form>
           </FormProvider>
+        )}
+
+        {activeTab === 'login' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminLoginIdentitySettingsConfig />
+          </div>
         )}
 
         {activeTab === 'audit' && (
           <div className="flex flex-col gap-6">
             <SuperAdminSystemActivityLogsTable />
             <SuperAdminAuditLogsTable />
-            <SuperAdminConfigurationChangeHistoryConfig />
           </div>
         )}
 
-        {activeTab === 'data' && (
+        {activeTab === 'retention' && (
           <div className="flex flex-col gap-6">
-            <SuperAdminSensitiveDataProtectionConfig />
             <SuperAdminDataRetentionArchivingConfig />
+            <SuperAdminSensitiveDataProtectionConfig />
             <SuperAdminTermsPrivacyConsentConfig />
           </div>
         )}
 
-        {activeTab === 'alerts' && (
+        {activeTab === 'history' && (
           <div className="flex flex-col gap-6">
+            <SuperAdminConfigurationChangeHistoryConfig />
             <SuperAdminSystemAlertsConfig />
           </div>
         )}

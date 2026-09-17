@@ -15,9 +15,9 @@ import SuperAdminPermissionEditor from './users_access_components/SuperAdminPerm
 import type { RoleType } from './users_access_types/super_admin_role_management.types';
 
 const TABS = [
-  { id: 'users', label: 'Users', icon: Users },
-  { id: 'roles', label: 'Roles & Permissions', icon: ShieldCheck },
-  { id: 'sessions', label: 'Device Sessions', icon: MonitorSmartphone },
+  { id: 'users', label: 'User Management', icon: Users },
+  { id: 'roles', label: 'Role & Permission Management', icon: ShieldCheck },
+  { id: 'sessions', label: 'Device/Session Management', icon: MonitorSmartphone },
 ];
 
 export default function UsersAccessPage() {
