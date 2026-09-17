@@ -100,10 +100,7 @@ export default function PrincipalSidebar() {
 
         {/* Footer Area */}
         <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-sidebar">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
-            <Settings size={20} />
-            Settings
-          </button>
+          {/* Settings removed as per requirements */}
         </div>
       </aside>
     </>
