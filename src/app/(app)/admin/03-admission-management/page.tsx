@@ -10,15 +10,18 @@ import { UserPlus, Settings2, FileCheck, CreditCard, BarChart2 } from "lucide-re
 import clsx from "clsx";
 
 const tabs = [
-  { id: "enquiries", label: "Enquiries & Apps", icon: UserPlus },
-  { id: "processing", label: "Verification & Tests", icon: Settings2 },
-  { id: "decisions", label: "Decisions & Approval", icon: FileCheck },
-  { id: "enrollment", label: "Fee & Enrollment", icon: CreditCard },
-  { id: "reports", label: "Admission Reports", icon: BarChart2 },
+  { id: "enquiry", label: "Enquiry", icon: UserPlus },
+  { id: "application", label: "Application", icon: Settings2 },
+  { id: "registration", label: "Registration", icon: Settings2 },
+  { id: "verification", label: "Document verification", icon: FileCheck },
+  { id: "approval", label: "Admission approval", icon: FileCheck },
+  { id: "waiting", label: "Waiting/rejected applications", icon: FileCheck },
+  { id: "enrollment", label: "Enrollment", icon: CreditCard },
+  { id: "reports", label: "Admission reports", icon: BarChart2 }
 ];
 
 export default function AdmissionManagementPage() {
-  const [activeTab, setActiveTab] = useState("enquiries");
+  const [activeTab, setActiveTab] = useState("enquiry");
 
   return (
     <div className="flex flex-col gap-6 w-full max-w-7xl mx-auto pb-10 fade-in h-[calc(100vh-100px)]">
@@ -50,9 +53,9 @@ export default function AdmissionManagementPage() {
 
       {/* Main Content Area */}
       <div className="flex-1 overflow-y-auto hide-scrollbar pb-6">
-        {activeTab === "enquiries" && <AdmissionEnquiries />}
-        {activeTab === "processing" && <AdmissionProcessing />}
-        {activeTab === "decisions" && <AdmissionDecisions />}
+        {activeTab === "enquiry" && <AdmissionEnquiries />}
+        {["application", "registration", "verification"].includes(activeTab) && <AdmissionProcessing />}
+        {["approval", "waiting"].includes(activeTab) && <AdmissionDecisions />}
         {activeTab === "enrollment" && <EnrollmentFinance />}
         {activeTab === "reports" && <AdmissionReports />}
       </div>
