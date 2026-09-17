@@ -120,6 +120,18 @@ export default function LoginSelectionPage() {
           </div>
         </Link>
 
+        {/* Transport Manager Card */}
+        <Link href="/login/transport-manager" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">TRANSPORT</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Vehicles, Routes & Tracking</p>
+          <div className="mt-auto flex items-center gap-2 text-teal-600 font-bold bg-teal-500/5 px-6 py-2.5 rounded-full group-hover:bg-teal-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
       </div>
     </div>
   );
