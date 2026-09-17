@@ -29,9 +29,9 @@ export default function TransportCommunicationTable({ records, onView }: Transpo
   const renderChannels = (channels: CommunicationChannel[]) => {
     return (
       <div className="flex items-center gap-1.5">
-        {channels.includes('SMS') && <Smartphone size={14} className="text-emerald-500" title="SMS" />}
-        {channels.includes('EMAIL') && <Mail size={14} className="text-blue-500" title="Email" />}
-        {channels.includes('APP_PUSH') && <Bell size={14} className="text-purple-500" title="App Push" />}
+        {channels.includes('SMS') && <span title="SMS"><Smartphone size={14} className="text-emerald-500" /></span>}
+        {channels.includes('EMAIL') && <span title="Email"><Mail size={14} className="text-blue-500" /></span>}
+        {channels.includes('APP_PUSH') && <span title="App Push"><Bell size={14} className="text-purple-500" /></span>}
       </div>
     );
   };

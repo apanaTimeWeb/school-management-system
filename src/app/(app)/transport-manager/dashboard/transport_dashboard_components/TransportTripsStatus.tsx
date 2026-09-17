@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, Filter, MoreVertical, Eye, Play, CheckCircle2, Clock } from 'lucide-react';
+import { Search, Filter, MoreVertical, Eye, Play, CheckCircle2, Clock, Route } from 'lucide-react';
 import type { TransportTrip } from '../transport_dashboard_types/transport_dashboard.types';
 
 // RESPONSIBILITY: Renders the table of today's trips and their status

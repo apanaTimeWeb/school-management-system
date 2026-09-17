@@ -87,7 +87,7 @@ export default function TransportDocumentsTable({ documents, onView, onEdit, onD
                     <div className="flex items-center justify-end gap-2 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 motion-safe:transition-opacity">
                       {doc.attachmentUrl && (
                         <button 
-                          onClick={(e) => { e.stopPropagation(); window.open(doc.attachmentUrl, '_blank'); }}
+                          onClick={(e) => { e.stopPropagation(); window.open(doc.attachmentUrl!, '_blank'); }}
                           className="p-1.5 rounded-md hover:bg-[var(--bg-input)] text-[var(--text-secondary)] hover:text-blue-400 transition-colors"
                           aria-label="View Attachment"
                           title="View Attachment"

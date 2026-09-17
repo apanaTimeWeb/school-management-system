@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { ShieldAlert, Wrench, FileWarning, AlertTriangle } from 'lucide-react';
+import { ShieldAlert, Wrench, FileWarning, AlertTriangle, CheckCircle2 } from 'lucide-react';
 import type { TransportMaintenanceAlert } from '../transport_dashboard_types/transport_dashboard.types';
 
 // RESPONSIBILITY: Renders the list of maintenance, insurance, and permit alerts

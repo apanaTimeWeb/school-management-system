@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Edit, Wrench, Bus, Calendar, DollarSign, Tool } from 'lucide-react';
+import { Edit, Wrench, Bus, Calendar, DollarSign, Settings } from 'lucide-react';
 import type { TransportMaintenance } from '../transport_maintenance_types/transport_maintenance.types';
 import { MAINTENANCE_STATUS_COLORS, MAINTENANCE_TYPE_COLORS } from '../transport_maintenance_constants/transport_maintenance.constants';
 
@@ -69,7 +69,7 @@ export default function TransportMaintenanceTable({ records, onView, onEdit }: T
                     </div>
                     {record.partsReplaced && (
                       <div className="text-[10px] text-[var(--text-secondary)] mt-1 truncate max-w-[150px] flex items-center gap-1" title={record.partsReplaced}>
-                        <Tool size={10} /> {record.partsReplaced}
+                        <Settings size={10} /> {record.partsReplaced}
                       </div>
                     )}
                   </td>

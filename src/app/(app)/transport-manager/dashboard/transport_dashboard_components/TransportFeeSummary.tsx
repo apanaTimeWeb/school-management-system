@@ -3,7 +3,6 @@
 import React from 'react';
 import { IndianRupee } from 'lucide-react';
 import type { TransportFeeSummary as TransportFeeSummaryType } from '../transport_dashboard_types/transport_dashboard.types';
-import { formatCurrency } from '@/lib/formatters'; // Assuming standard formatters
 
 // RESPONSIBILITY: Renders the fee collection summary for transport
 

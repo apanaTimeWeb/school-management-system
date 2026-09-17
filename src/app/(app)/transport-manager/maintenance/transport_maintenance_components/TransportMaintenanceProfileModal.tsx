@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { X, Wrench, Bus, Calendar, DollarSign, Tool, FileText, User } from 'lucide-react';
+import { X, Wrench, Bus, Calendar, DollarSign, Settings, FileText, User } from 'lucide-react';
 import type { TransportMaintenance } from '../transport_maintenance_types/transport_maintenance.types';
 import { MAINTENANCE_STATUS_COLORS, MAINTENANCE_TYPE_COLORS } from '../transport_maintenance_constants/transport_maintenance.constants';
 
@@ -154,7 +154,7 @@ export default function TransportMaintenanceProfileModal({ record, isOpen, onClo
           {/* Technical Details Section */}
           <div className="space-y-4 pt-4 border-t border-[var(--border)]">
              <h3 className="text-sm font-semibold text-[var(--text-primary)] flex items-center gap-2">
-                <Tool size={16} className="text-[var(--primary)]" /> Technical Notes
+                <Settings size={16} className="text-[var(--primary)]" /> Technical Notes
              </h3>
              
              {record.partsReplaced && (

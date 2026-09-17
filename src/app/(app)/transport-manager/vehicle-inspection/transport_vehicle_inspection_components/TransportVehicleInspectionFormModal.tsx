@@ -206,7 +206,7 @@ export default function TransportVehicleInspectionFormModal({ record, isOpen, on
                           type="button"
                           onClick={() => handleChecklistChange(item.key, 'PASS')}
                           className={`flex-1 text-[10px] font-bold uppercase py-1.5 rounded transition-colors ${
-                            formData.checklist[item.key as keyof InspectionChecklist] === 'PASS' 
+                            formData.checklist[item.key as keyof typeof formData.checklist] === 'PASS' 
                             ? 'bg-emerald-500 text-white shadow' 
                             : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                           }`}
@@ -217,7 +217,7 @@ export default function TransportVehicleInspectionFormModal({ record, isOpen, on
                           type="button"
                           onClick={() => handleChecklistChange(item.key, 'FAIL')}
                           className={`flex-1 text-[10px] font-bold uppercase py-1.5 rounded transition-colors ${
-                            formData.checklist[item.key as keyof InspectionChecklist] === 'FAIL' 
+                            formData.checklist[item.key as keyof typeof formData.checklist] === 'FAIL' 
                             ? 'bg-red-500 text-white shadow' 
                             : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                           }`}
@@ -228,7 +228,7 @@ export default function TransportVehicleInspectionFormModal({ record, isOpen, on
                           type="button"
                           onClick={() => handleChecklistChange(item.key, 'N_A')}
                           className={`flex-1 text-[10px] font-bold uppercase py-1.5 rounded transition-colors ${
-                            formData.checklist[item.key as keyof InspectionChecklist] === 'N_A' 
+                            formData.checklist[item.key as keyof typeof formData.checklist] === 'N_A' 
                             ? 'bg-[var(--border)] text-[var(--text-primary)] shadow' 
                             : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
                           }`}

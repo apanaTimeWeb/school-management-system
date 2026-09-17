@@ -50,7 +50,7 @@ export default function TransportPage() {
   const [trackingActive, setTrackingActive] = useState(false);
 
   const childInfo = childrenList.find(c => c.id === selectedChildId)!;
-  const transport = transportData[selectedChildId as keyof typeof transportData];
+  const transport = transportData[selectedChildId as keyof typeof transportData] as any;
 
   // Simulated GPS tracker toggle
   const handleTrackLive = () => {
@@ -216,7 +216,7 @@ export default function TransportPage() {
                 <Bell size={18} className="text-indigo-500"/> Transport Logs & Updates
               </h3>
               <div className="space-y-3">
-                {transport.notifications.map((notif) => (
+                {transport.notifications.map((notif: any) => (
                   <div key={notif.id} className="flex gap-4 p-3 bg-page rounded-xl border border-border">
                     <div className="text-indigo-500 mt-0.5"><Clock size={16} /></div>
                     <div>

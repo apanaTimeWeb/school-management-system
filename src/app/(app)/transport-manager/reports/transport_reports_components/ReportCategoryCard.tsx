@@ -25,7 +25,7 @@ export default function ReportCategoryCard({ category, onSelectReport }: ReportC
       Bus, Map, GraduationCap, Users, IndianRupee, ShieldAlert,
       List, Activity, Wrench, Fuel, AlertTriangle, MapPin,
       PieChart, GitMerge, UserCheck, Clock, CalendarDays, History,
-      SteeringWheel, UserCircle, CalendarCheck, Link, FileText,
+      History, UserCircle, CalendarCheck, Link, FileText,
       AlertCircle, TrendingUp, Receipt, CarCrash: Car, ClipboardCheck
     };
     const IconComponent = iconMap[name] || FileText;
