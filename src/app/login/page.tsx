@@ -132,6 +132,18 @@ export default function LoginSelectionPage() {
           </div>
         </Link>
 
+        {/* Hostel Warden Card */}
+        <Link href="/login/hostel-warden" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-orange-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">HOSTEL WARDEN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Hostels, Rooms & Allocations</p>
+          <div className="mt-auto flex items-center gap-2 text-orange-600 font-bold bg-orange-500/5 px-6 py-2.5 rounded-full group-hover:bg-orange-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
       </div>
     </div>
   );
