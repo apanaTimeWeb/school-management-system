@@ -7,8 +7,8 @@ import TransportMaintenanceAlerts from './TransportMaintenanceAlerts';
 import TransportFeeSummary from './TransportFeeSummary';
 import TransportRecentActivities from './TransportRecentActivities';
 
-import { 
-  TRANSPORT_DASHBOARD_KPIS, 
+import {
+  TRANSPORT_DASHBOARD_KPIS,
   TRANSPORT_DASHBOARD_TRIPS,
   TRANSPORT_MAINTENANCE_ALERTS,
   TRANSPORT_FEE_SUMMARY,
@@ -43,16 +43,16 @@ export default function TransportDashboardMain() {
 
       {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        
+
         {/* Left Column - Trips Table (Takes up 2 columns on large screens) */}
         <div className="lg:col-span-2 flex flex-col gap-6">
           <div className="h-[400px]">
             <TransportTripsStatus trips={TRANSPORT_DASHBOARD_TRIPS} />
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-[320px]">
-             <TransportFeeSummary data={TRANSPORT_FEE_SUMMARY} />
-             <TransportRecentActivities activities={TRANSPORT_RECENT_ACTIVITIES} />
+            <TransportFeeSummary data={TRANSPORT_FEE_SUMMARY} />
+            <TransportRecentActivities activities={TRANSPORT_RECENT_ACTIVITIES} />
           </div>
         </div>
 
@@ -61,28 +61,28 @@ export default function TransportDashboardMain() {
           <div className="h-[400px]">
             <TransportMaintenanceAlerts alerts={TRANSPORT_MAINTENANCE_ALERTS} />
           </div>
-          
+
           {/* We can add a quick stats or driver status panel here */}
           <div className="bg-[var(--bg-card)] rounded-xl border border-[var(--border)] p-5 flex flex-col h-[320px]">
-             <h2 className="text-base font-semibold text-[var(--text-primary)] mb-4">Quick Actions</h2>
-             <div className="grid grid-cols-2 gap-3 mt-2">
-                <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(250,204,21,0.05)] hover:bg-[rgba(250,204,21,0.1)] border border-[rgba(250,204,21,0.1)] transition-colors text-[var(--primary)]">
-                  <span className="text-2xl">🚌</span>
-                  <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Add Vehicle</span>
-                </button>
-                <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(34,197,94,0.05)] hover:bg-[rgba(34,197,94,0.1)] border border-[rgba(34,197,94,0.1)] transition-colors text-emerald-500">
-                  <span className="text-2xl">🛣️</span>
-                  <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Manage Routes</span>
-                </button>
-                <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(59,130,246,0.05)] hover:bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.1)] transition-colors text-blue-500">
-                  <span className="text-2xl">👨‍✈️</span>
-                  <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Driver Directory</span>
-                </button>
-                <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(239,68,68,0.05)] hover:bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.1)] transition-colors text-red-500">
-                  <span className="text-2xl">🚨</span>
-                  <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Emergency SOS</span>
-                </button>
-             </div>
+            <h2 className="text-base font-semibold text-[var(--text-primary)] mb-4">Quick Actions</h2>
+            <div className="grid grid-cols-2 gap-3 mt-2">
+              <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(250,204,21,0.05)] hover:bg-[rgba(250,204,21,0.1)] border border-[rgba(250,204,21,0.1)] transition-colors text-[var(--primary)]">
+                <span className="text-2xl">🚌</span>
+                <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Add Vehicle</span>
+              </button>
+              <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(34,197,94,0.05)] hover:bg-[rgba(34,197,94,0.1)] border border-[rgba(34,197,94,0.1)] transition-colors text-emerald-500">
+                <span className="text-2xl">🛣️</span>
+                <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Manage Routes</span>
+              </button>
+              <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(59,130,246,0.05)] hover:bg-[rgba(59,130,246,0.1)] border border-[rgba(59,130,246,0.1)] transition-colors text-blue-500">
+                <span className="text-2xl">👨‍✈️</span>
+                <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Driver Directory</span>
+              </button>
+              <button className="flex flex-col items-center justify-center gap-2 p-4 rounded-lg bg-[rgba(239,68,68,0.05)] hover:bg-[rgba(239,68,68,0.1)] border border-[rgba(239,68,68,0.1)] transition-colors text-red-500">
+                <span className="text-2xl">🚨</span>
+                <span className="text-xs font-semibold text-center text-[var(--text-primary)]">Emergency SOS</span>
+              </button>
+            </div>
           </div>
         </div>
 
