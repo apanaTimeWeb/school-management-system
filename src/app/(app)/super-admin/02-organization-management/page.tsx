@@ -24,11 +24,11 @@ const TABS = [
   { id: 'schools', label: 'Schools', icon: Building2 },
   { id: 'branches', label: 'Branches / Campuses', icon: MapPin },
   { id: 'branding', label: 'School Branding', icon: Palette },
-  { id: 'structure', label: 'Org Structure', icon: Network },
-  { id: 'departments', label: 'Departments', icon: Layers },
+  { id: 'structure', label: 'School Structure Master', icon: Network },
+  { id: 'departments', label: 'Department Master', icon: Layers },
   { id: 'wings', label: 'Wings / Blocks', icon: GitMerge },
-  { id: 'classes', label: 'Classes & Sections', icon: LayoutGrid },
-  { id: 'houses', label: 'Houses', icon: Home },
+  { id: 'classes', label: 'Class / Section Master', icon: LayoutGrid },
+  { id: 'houses', label: 'House Master', icon: Home },
 ];
 
 export default function OrganizationManagementPage() {

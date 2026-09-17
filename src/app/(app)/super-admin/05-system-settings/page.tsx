@@ -10,11 +10,14 @@ import SuperAdminLanguageTable from './system_settings_components/SuperAdminLang
 import SuperAdminNumberingSequenceConfig from './system_settings_components/SuperAdminNumberingSequenceConfig';
 import SuperAdminSchoolBrandingConfig from './system_settings_components/SuperAdminSchoolBrandingConfig';
 import SuperAdminTranslationTools from './system_settings_components/SuperAdminTranslationTools';
+import SuperAdminWebsiteGlobalSettingsConfig from './system_settings_components/SuperAdminWebsiteGlobalSettingsConfig';
 
 const TABS = [
-  { id: 'general', label: 'General System Settings', icon: Settings },
+  { id: 'general', label: 'System Settings', icon: Settings },
+  { id: 'website', label: 'Website Global Settings', icon: Globe },
   { id: 'language', label: 'Language Management', icon: Globe },
-  { id: 'numbering', label: 'Master Data & Numbering', icon: Hash },
+  { id: 'numbering', label: 'Numbering / Sequence', icon: Hash },
+  { id: 'master', label: 'Category / Master Data', icon: Hash },
 ];
 
 export default function SystemSettingsPage() {
@@ -61,6 +64,12 @@ export default function SystemSettingsPage() {
           </div>
         )}
 
+        {activeTab === 'website' && (
+          <div className="flex flex-col gap-6">
+            <SuperAdminWebsiteGlobalSettingsConfig />
+          </div>
+        )}
+
         {activeTab === 'language' && (
           <div className="flex flex-col gap-6">
             <div className="flex items-start gap-3 p-3 bg-info-bg/50 border border-info/30 rounded-md text-info">
@@ -79,6 +88,11 @@ export default function SystemSettingsPage() {
         {activeTab === 'numbering' && (
           <div className="flex flex-col gap-6">
             <SuperAdminNumberingSequenceConfig />
+          </div>
+        )}
+
+        {activeTab === 'master' && (
+          <div className="flex flex-col gap-6">
             <SuperAdminCategoryMasterDataConfig />
           </div>
         )}

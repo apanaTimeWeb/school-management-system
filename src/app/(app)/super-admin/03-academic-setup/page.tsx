@@ -17,9 +17,9 @@ import SuperAdminSubjectDrawer from './academic_setup_components/SuperAdminSubje
 import SuperAdminGroupDrawer from './academic_setup_components/SuperAdminGroupDrawer';
 
 const TABS = [
-  { id: 'sessions', label: 'Academic Sessions', icon: CalendarDays },
-  { id: 'financial-years', label: 'Financial Years', icon: Briefcase },
-  { id: 'subjects', label: 'Subjects', icon: BookOpen },
+  { id: 'sessions', label: 'Academic Session Master', icon: CalendarDays },
+  { id: 'financial-years', label: 'Financial Year Master', icon: Briefcase },
+  { id: 'subjects', label: 'Subject Master', icon: BookOpen },
   { id: 'groups', label: 'Subject Groups', icon: Layers },
   { id: 'holidays', label: 'Holidays & Working Days', icon: Calendar },
 ];
