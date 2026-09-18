@@ -15,7 +15,8 @@ import {
   MoreVertical,
   X,
   CreditCard,
-  Briefcase
+  Briefcase,
+  User
 } from "lucide-react";
 
 interface Invoice {
