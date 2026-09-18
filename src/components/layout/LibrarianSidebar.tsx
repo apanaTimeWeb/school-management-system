@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useLibrarianLayoutStore } from './useLibrarianLayoutStore';
 import {
   LayoutDashboard,
   Library,
@@ -29,9 +30,6 @@ import {
   Settings2,
   UserCircle2,
   LogOut,
-  ChevronDown,
-  ChevronRight,
-  Menu,
   X
 } from 'lucide-react';
 
@@ -83,35 +81,35 @@ const MENU_ITEMS: SidebarItem[] = [
   { title: 'My Profile', href: '/librarian/profile', icon: UserCircle2 },
 ];
 
-export default function LibrarianSidebar({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (val: boolean) => void }) {
+export default function LibrarianSidebar() {
   const pathname = usePathname();
+  const { isMobileSidebarOpen, closeMobileSidebar } = useLibrarianLayoutStore();
 
   return (
     <>
       {/* Mobile Overlay */}
-      {isOpen && (
+      {isMobileSidebarOpen && (
         <div 
-          className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          onClick={closeMobileSidebar}
         />
       )}
 
       {/* Sidebar Container */}
-      <aside className={`fixed top-0 left-0 h-screen bg-indigo-950 text-indigo-100 w-72 z-50 transition-transform duration-300 ease-in-out flex flex-col ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+      <aside className={`fixed top-0 left-0 h-screen bg-indigo-950 text-indigo-100 w-[280px] z-50 transition-transform duration-300 ease-in-out flex flex-col ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         
         {/* Header */}
-        <div className="h-20 flex items-center justify-between px-6 bg-indigo-950/50 border-b border-indigo-900/50 shrink-0">
+        <div className="h-16 flex items-center justify-between px-6 bg-indigo-950/50 border-b border-indigo-900/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg">
-              <Library className="w-6 h-6" />
+            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+              <Library className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="font-bold text-white text-lg leading-tight tracking-wide">LIBRARIAN</h1>
-              <p className="text-[10px] text-indigo-400 font-bold uppercase tracking-widest">Portal System</p>
+              <h1 className="font-bold text-white text-base leading-tight tracking-wide">LIBRARIAN</h1>
             </div>
           </div>
-          <button onClick={() => setIsOpen(false)} className="lg:hidden text-indigo-300 hover:text-white p-2">
-            <X className="w-6 h-6" />
+          <button onClick={closeMobileSidebar} className="lg:hidden text-indigo-300 hover:text-white p-2 -mr-2">
+            <X className="w-5 h-5" />
           </button>
         </div>
 
@@ -125,28 +123,20 @@ export default function LibrarianSidebar({ isOpen, setIsOpen }: { isOpen: boolea
                 key={index}
                 href={item.href}
                 onClick={() => {
-                  if (window.innerWidth < 1024) setIsOpen(false);
+                  if (window.innerWidth < 1024) closeMobileSidebar();
                 }}
-                className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${
+                className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-200 group ${
                   isActive 
                     ? 'bg-indigo-600 text-white shadow-md' 
                     : 'text-indigo-300 hover:bg-indigo-900/50 hover:text-white'
                 }`}
               >
                 <item.icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-indigo-400 group-hover:text-indigo-200'}`} />
-                <span className="font-medium text-sm">{item.title}</span>
+                <span className="font-medium text-[13px] tracking-wide">{item.title}</span>
                 {isActive && <div className="w-1.5 h-1.5 rounded-full bg-white ml-auto"></div>}
               </Link>
             )
           })}
-        </div>
-
-        {/* Footer / Logout */}
-        <div className="p-4 border-t border-indigo-900/50 shrink-0 bg-indigo-950/80">
-          <button className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-rose-300 hover:bg-rose-500/10 hover:text-rose-200 transition-colors group font-bold text-sm">
-            <LogOut className="w-5 h-5 text-rose-400 group-hover:text-rose-300" />
-            Secure Logout
-          </button>
         </div>
       </aside>
     </>
