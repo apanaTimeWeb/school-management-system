@@ -26,12 +26,12 @@ export default function LoginSelectionPage() {
         
         {/* Student Card */}
         <Link href="/login/student" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <UserCircle className="text-primary" size={32} />
+          <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <UserCircle className="text-blue-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">STUDENT</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Academics, Timetable & Exams</p>
-          <div className="mt-auto flex items-center gap-2 text-primary font-bold bg-primary/5 px-6 py-2.5 rounded-full group-hover:bg-primary group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-blue-600 font-bold bg-blue-500/5 px-6 py-2.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
@@ -43,31 +43,31 @@ export default function LoginSelectionPage() {
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">PARENT</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Fees, Attendance & Progress</p>
-          <div className="mt-auto flex items-center gap-2 text-pink-600 font-bold bg-pink-500/5 px-6 py-2.5 rounded-full group-hover:bg-pink-500 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-pink-600 font-bold bg-pink-500/5 px-6 py-2.5 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
 
         {/* Teacher Card */}
         <Link href="/login/teacher" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-full bg-info/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <GraduationCap className="text-info" size={32} />
+          <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <GraduationCap className="text-cyan-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">TEACHER</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Classroom Management & Grading</p>
-          <div className="mt-auto flex items-center gap-2 text-info font-bold bg-info/5 px-6 py-2.5 rounded-full group-hover:bg-info group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-cyan-600 font-bold bg-cyan-500/5 px-6 py-2.5 rounded-full group-hover:bg-cyan-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
 
         {/* Super Admin Card */}
         <Link href="/login/super-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Shield className="text-secondary" size={32} />
+          <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Shield className="text-red-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">SUPER ADMIN</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">System Control & Global Settings</p>
-          <div className="mt-auto flex items-center gap-2 text-secondary font-bold bg-secondary/5 px-6 py-2.5 rounded-full group-hover:bg-secondary group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-red-600 font-bold bg-red-500/5 px-6 py-2.5 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
@@ -86,12 +86,12 @@ export default function LoginSelectionPage() {
 
         {/* Principal Card */}
         <Link href="/login/principal" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-full bg-yellow-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Building2 className="text-yellow-600" size={32} />
+          <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-amber-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">PRINCIPAL</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Executive Overview & Dashboards</p>
-          <div className="mt-auto flex items-center gap-2 text-yellow-600 font-bold bg-yellow-500/5 px-6 py-2.5 rounded-full group-hover:bg-yellow-500 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-amber-600 font-bold bg-amber-500/5 px-6 py-2.5 rounded-full group-hover:bg-amber-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
@@ -110,12 +110,12 @@ export default function LoginSelectionPage() {
 
         {/* HR / Office Card */}
         <Link href="/login/hr" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
-          <div className="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-            <Building2 className="text-indigo-600" size={32} />
+          <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-fuchsia-600" size={32} />
           </div>
           <h2 className="text-xl font-bold text-text-primary mb-2">HR / OFFICE</h2>
           <p className="text-text-secondary text-[13px] font-medium mb-8">Staff, Payroll & HR Operations</p>
-          <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold bg-indigo-500/5 px-6 py-2.5 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+          <div className="mt-auto flex items-center gap-2 text-fuchsia-600 font-bold bg-fuchsia-500/5 px-6 py-2.5 rounded-full group-hover:bg-fuchsia-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
             Continue <ArrowRight size={16} />
           </div>
         </Link>
