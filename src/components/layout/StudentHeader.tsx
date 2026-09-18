@@ -26,7 +26,7 @@ export default function StudentHeader({ toggleSidebar }: Props) {
   }, []);
 
   const handleLogout = () => {
-    router.push('/login/student');
+    router.push('/login');
   };
 
   return (
@@ -109,3 +109,4 @@ export default function StudentHeader({ toggleSidebar }: Props) {
     </header>
   );
 }
+

@@ -124,7 +124,7 @@ export default function HostelWardenSidebar() {
 
         {/* Footer Area */}
         <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-sidebar shrink-0">
-          <Link href="/" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
+          <Link href="/login" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
             <LogOut size={20} className="text-red-400" />
             <span>Logout</span>
           </Link>

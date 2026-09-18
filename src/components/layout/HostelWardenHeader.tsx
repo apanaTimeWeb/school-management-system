@@ -155,7 +155,7 @@ export default function HostelWardenHeader() {
                     <User size={16} /> My Profile
                   </Link>
                   <div className="h-px bg-border/20 my-1"></div>
-                  <Link href="/" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-danger hover:bg-danger/10 rounded-lg transition-colors">
+                  <Link href="/login" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-danger hover:bg-danger/10 rounded-lg transition-colors">
                     <LogOut size={16} /> Sign Out
                   </Link>
                 </div>

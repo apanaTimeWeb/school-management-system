@@ -57,7 +57,7 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
   const router = useRouter();
 
   const handleLogout = () => {
-    router.push('/login/student');
+    router.push('/login');
   };
 
   return (
@@ -131,3 +131,4 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
     </>
   );
 }
+

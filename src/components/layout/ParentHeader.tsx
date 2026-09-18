@@ -26,7 +26,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
   }, []);
 
   const handleLogout = () => {
-    router.push('/login/parent');
+    router.push('/login');
   };
 
   return (
@@ -109,3 +109,4 @@ export default function ParentHeader({ toggleSidebar }: Props) {
     </header>
   );
 }
+
