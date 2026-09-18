@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import clsx from 'clsx';
-import { Building2, MapPin, Network, Layers, GitMerge, LayoutGrid, Home, Plus, ArrowLeft, Palette } from 'lucide-react';
+import { Building2, MapPin, Network, Layers, GitMerge, LayoutGrid, Home, Plus, ArrowLeft, Palette, Settings2 } from 'lucide-react';
 
 import SuperAdminSchoolsTable from './organization_management_components/SuperAdminSchoolsTable';
 import SuperAdminSchoolForm from './organization_management_components/SuperAdminSchoolForm';
@@ -13,6 +13,7 @@ import SuperAdminWingsTab from './organization_management_components/SuperAdminW
 import SuperAdminClassesSectionsTab from './organization_management_components/SuperAdminClassesSectionsTab';
 import SuperAdminHousesTab from './organization_management_components/SuperAdminHousesTab';
 import SuperAdminSchoolBrandingConfig from './organization_management_components/SuperAdminSchoolBrandingConfig';
+import SuperAdminSchoolConfigPanel from './organization_management_components/SuperAdminSchoolConfigPanel';
 
 import SuperAdminAddBranchDrawer from './organization_management_components/SuperAdminAddBranchDrawer';
 import SuperAdminDepartmentDrawer from './organization_management_components/SuperAdminDepartmentDrawer';
@@ -24,6 +25,7 @@ const TABS = [
   { id: 'schools', label: 'Schools', icon: Building2 },
   { id: 'branches', label: 'Branches / Campuses', icon: MapPin },
   { id: 'branding', label: 'School Branding', icon: Palette },
+  { id: 'school-config', label: 'School Configuration', icon: Settings2 },
   { id: 'structure', label: 'School Structure Master', icon: Network },
   { id: 'departments', label: 'Department Master', icon: Layers },
   { id: 'wings', label: 'Wings / Blocks', icon: GitMerge },
@@ -44,7 +46,7 @@ export default function OrganizationManagementPage() {
         </div>
         
         {/* Dynamic Action Button */}
-        {activeTab !== 'branding' && activeTab !== 'structure' && (
+        {activeTab !== 'branding' && activeTab !== 'structure' && activeTab !== 'school-config' && (
           <button 
             onClick={() => setIsAddingNew(!isAddingNew)}
             className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-md hover:bg-primary-hover transition-colors"
@@ -94,6 +96,7 @@ export default function OrganizationManagementPage() {
           </>
         )}
         {activeTab === 'branding' && <SuperAdminSchoolBrandingConfig />}
+        {activeTab === 'school-config' && <SuperAdminSchoolConfigPanel />}
         {activeTab === 'structure' && <SuperAdminOrgStructureTree />}
         {activeTab === 'departments' && (
           <>
