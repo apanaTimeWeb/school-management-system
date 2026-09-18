@@ -81,15 +81,15 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
         {/* Header Logo Area */}
         <div className="h-16 flex items-center justify-between px-6 border-b border-border bg-card shrink-0">
           <Link href="/student/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <div className="w-8 h-8 rounded-lg bg-[#0284C7] flex items-center justify-center text-white font-bold text-xl shadow-md">
               S
             </div>
-            <span className="text-xl font-bold tracking-tight text-text-primary">
-              Student<span className="text-primary">ERP</span>
+            <span className="text-xl font-bold tracking-tight text-text-white">
+              Student<span className="text-white">ERP</span>
             </span>
           </Link>
           <button 
-            className="lg:hidden text-text-secondary hover:text-primary transition-colors"
+            className="lg:hidden text-text-secondary hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             <PanelLeftClose size={24} />
@@ -109,8 +109,8 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
                 className={clsx(
                   "flex items-center gap-3 px-4 py-2.5 rounded-xl font-semibold transition-all group relative",
                   isActive 
-                    ? "bg-primary text-white shadow-md shadow-primary/20" 
-                    : "text-text-secondary hover:bg-page hover:text-primary"
+                    ? "bg-[#0284C7] text-white shadow-md shadow-primary/20" 
+                    : "text-text-secondary hover:bg-page hover:text-white"
                 )}
               >
                 <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
                 </div>
                 {/* Micro hover indicator */}
                 {!isActive && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-primary rounded-r-full transition-all group-hover:h-1/2"></span>
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#0284C7] rounded-r-full transition-all group-hover:h-1/2"></span>
                 )}
               </Link>
             )

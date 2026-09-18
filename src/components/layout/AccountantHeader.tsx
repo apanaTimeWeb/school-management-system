@@ -40,9 +40,9 @@ export default function AccountantHeader() {
       <div className="flex items-center gap-3">
         <button
           onClick={toggleMobileSidebar}
-          className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
+          className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#475569]-subtle hover:text-sidebar-text transition-colors"
         >
-          <Menu size={24} className="text-primary" />
+          <Menu size={24} className="text-[#475569]" />
         </button>
         <h2 className="text-lg font-semibold text-sidebar-text hidden sm:block">Finance & Accounts</h2>
       </div>
@@ -68,12 +68,12 @@ export default function AccountantHeader() {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+              showNotifications ? "bg-secondary text-[#475569] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#475569]"
             )}
           >
-            <Bell size={20} className="text-amber-500" />
+            <Bell size={20} className="text-[#64748B]" />
             {unreadCount > 0 && (
-              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-danger rounded-full border-2 border-header flex items-center justify-center"></span>
+              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-[#64748B] rounded-full border-2 border-header flex items-center justify-center"></span>
             )}
           </button>
 
@@ -81,12 +81,12 @@ export default function AccountantHeader() {
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
               <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
-                <h3 className="font-bold text-sm text-text-primary">Notifications</h3>
-                <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all as read</span>
+                <h3 className="font-bold text-sm text-text-[#475569]">Notifications</h3>
+                <span className="text-[10px] font-bold text-[#475569] cursor-pointer hover:underline">Mark all as read</span>
               </div>
               <div className="max-h-80 overflow-y-auto flex flex-col">
                 {notifications.map(notif => (
-                  <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-primary/5")}>
+                  <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-[#475569]/5")}>
                     <div className={clsx("mt-0.5", notif.type === 'info' ? 'text-info' : notif.type === 'alert' ? 'text-danger' : 'text-success')}>
                       {notif.type === 'info' && <Info size={16} />}
                       {notif.type === 'alert' && <AlertCircle size={16} />}
@@ -94,8 +94,8 @@ export default function AccountantHeader() {
                     </div>
                     <div className="flex flex-col flex-1">
                       <div className="flex justify-between items-start gap-2">
-                        <span className={clsx("text-sm font-bold text-text-primary", !notif.read && "text-primary")}>{notif.title}</span>
-                        {!notif.read && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1"></span>}
+                        <span className={clsx("text-sm font-bold text-text-[#475569]", !notif.read && "text-[#475569]")}>{notif.title}</span>
+                        {!notif.read && <span className="w-2 h-2 rounded-full bg-[#475569] shrink-0 mt-1"></span>}
                       </div>
                       <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
                       <span className="text-[10px] font-bold text-text-secondary/60 mt-1">{notif.time}</span>
@@ -121,21 +121,21 @@ export default function AccountantHeader() {
               showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-purple-500 group-hover:text-primary")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#475569]" : "text-purple-500 group-hover:text-[#475569]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Rahul V.</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#475569]" : "text-sidebar-text group-hover:text-[#475569]")}>Rahul V.</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">Chief Accountant</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#475569]" : "text-sidebar-text-muted group-hover:text-[#475569]")} />
           </button>
 
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
-              <Link href="/accountant/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-purple-500/10 transition">
+              <Link href="/accountant/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-[#475569] hover:bg-purple-500/10 transition">
                 <UserCircle size={16} /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#64748B]/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

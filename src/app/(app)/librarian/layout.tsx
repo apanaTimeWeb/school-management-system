@@ -10,7 +10,7 @@ export default function LibrarianLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen bg-bg-main overflow-hidden font-sans">
+    <div className="flex h-screen bg-[#FAF5FF] overflow-hidden font-sans">
       
       {/* Sidebar Component */}
       <LibrarianSidebar />

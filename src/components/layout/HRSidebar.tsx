@@ -20,7 +20,7 @@ const MENU_ITEMS = [
   { href: '/hr/promotions', label: 'Promotion', icon: <TrendingUp size={20} className="text-orange-500" /> },
   { href: '/hr/performance', label: 'Performance', icon: <BarChart3 size={20} className="text-pink-500" /> },
   { href: '/hr/workload', label: 'Workload', icon: <Briefcase size={20} className="text-violet-500" /> },
-  { href: '/hr/assets', label: 'Assets', icon: <Monitor size={20} className="text-indigo-600" /> },
+  { href: '/hr/assets', label: 'Assets', icon: <Monitor size={20} className="text-white" /> },
   { href: '/hr/exit', label: 'Exit', icon: <UserMinus size={20} className="text-red-500" /> },
   { href: '/hr/payroll', label: 'Payroll', icon: <Banknote size={20} className="text-green-500" /> },
   { href: '/hr/salary-slip', label: 'Salary Slip', icon: <Banknote size={20} className="text-green-500" /> },
@@ -57,19 +57,19 @@ export default function HRSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-sidebar border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#BE185D] border-r border-border transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-sidebar">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#BE185D]">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-extrabold text-[18px]">
               HR
             </div>
-            <span className="font-bold text-[18px] text-sidebar-text tracking-tight">School<span className="text-indigo-500">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-indigo-500">ERP</span></span>
           </div>
           <button 
-            className="lg:hidden text-sidebar-text-muted hover:text-sidebar-text transition-colors"
+            className="lg:hidden text-white/60 hover:text-white transition-colors"
             onClick={() => setMobileSidebarOpen(false)}
           >
             <X size={20} />
@@ -78,7 +78,7 @@ export default function HRSidebar() {
 
         {/* Navigation Menu */}
         <nav className="p-4 space-y-1.5 overflow-y-auto h-[calc(100vh-140px)] custom-scrollbar">
-          <p className="text-[11px] font-bold text-sidebar-text-muted uppercase tracking-wider mb-3 px-2">HR Menu</p>
+          <p className="text-[11px] font-bold text-white/60 uppercase tracking-wider mb-3 px-2">HR Menu</p>
           {MENU_ITEMS.map((item, index) => {
             const isActive = pathname.startsWith(item.href);
             return (
@@ -90,10 +90,10 @@ export default function HRSidebar() {
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px]
                   ${isActive 
                     ? 'bg-indigo-50 text-indigo-700 shadow-sm' 
-                    : 'text-sidebar-text-muted hover:text-sidebar-text hover:bg-sidebar-hover border border-transparent'}
+                    : 'text-white/60 hover:text-white hover:bg-[#BE185D]-hover border border-transparent'}
                 `}
               >
-                <span className={isActive ? 'text-indigo-600' : 'text-sidebar-text-muted group-hover:text-sidebar-text'}>
+                <span className={isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}>
                   {item.icon}
                 </span>
                 {String(index + 1).padStart(2, '0')} - {item.label}
@@ -103,9 +103,9 @@ export default function HRSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-sidebar">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
-            <Settings size={20} className="text-zinc-400" />
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#BE185D]">
+          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
+            <Settings size={20} className="text-white/60" />
             Settings
           </button>
         </div>

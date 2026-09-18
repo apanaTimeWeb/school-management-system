@@ -51,7 +51,7 @@ export default function HostelWardenHeader() {
         <div className="flex items-center gap-4">
           <button 
             onClick={toggleMobileSidebar}
-            className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
+            className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#166534]-subtle hover:text-sidebar-text transition-colors"
           >
             <Menu size={20} />
           </button>
@@ -72,7 +72,7 @@ export default function HostelWardenHeader() {
           </div>
 
           {/* Messages */}
-          <button className="p-2 rounded-full bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary transition-colors hidden sm:block">
+          <button className="p-2 rounded-full bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#166534] transition-colors hidden sm:block">
             <MessageSquare size={18} />
           </button>
 
@@ -81,11 +81,11 @@ export default function HostelWardenHeader() {
             <button 
               onClick={() => setShowNotifications(!showNotifications)}
               className={`p-2 rounded-full transition-colors relative ${
-                showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+                showNotifications ? "bg-secondary text-[#166534] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#166534]"
               }`}
             >
               <Bell size={18} />
-              <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-danger rounded-full border border-sidebar"></span>
+              <span className="absolute top-1.5 right-1.5 w-2 h-2 text-[#4D7C0F] rounded-full border border-sidebar"></span>
             </button>
             
             {/* Notifications Dropdown */}
@@ -95,7 +95,7 @@ export default function HostelWardenHeader() {
                 <div className="absolute right-0 top-full mt-2 w-80 bg-sidebar border border-border/20 rounded-xl shadow-lg z-50 overflow-hidden animate-in fade-in slide-in-from-top-2">
                   <div className="p-4 border-b border-border/20 flex items-center justify-between bg-secondary/30">
                     <h3 className="font-semibold text-sm text-sidebar-text">Alerts & Events</h3>
-                    <button className="text-xs text-primary hover:underline font-medium">Mark all as read</button>
+                    <button className="text-xs text-[#166534] hover:underline font-medium">Mark all as read</button>
                   </div>
                   <div className="max-h-[300px] overflow-y-auto">
                     {[
@@ -113,7 +113,7 @@ export default function HostelWardenHeader() {
                     ))}
                   </div>
                   <div className="p-2 border-t border-border/20 bg-secondary/10">
-                    <Link href="/hostel-warden/notifications" onClick={() => setShowNotifications(false)} className="block w-full text-center text-xs font-semibold text-primary py-1 hover:underline">
+                    <Link href="/hostel-warden/notifications" onClick={() => setShowNotifications(false)} className="block w-full text-center text-xs font-semibold text-[#166534] py-1 hover:underline">
                       View All Alerts
                     </Link>
                   </div>
@@ -132,14 +132,14 @@ export default function HostelWardenHeader() {
                 showProfileMenu ? "bg-secondary" : "hover:bg-secondary/50"
               }`}
             >
-              <div className="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center text-primary font-bold overflow-hidden">
+              <div className="w-8 h-8 rounded-full bg-[#166534]/20 border border-primary/30 flex items-center justify-center text-[#166534] font-bold overflow-hidden">
                 HW
               </div>
               <div className="hidden sm:flex flex-col items-start text-left">
-                <span className={`text-sm font-semibold transition-colors ${showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary"}`}>Ravi K.</span>
+                <span className={`text-sm font-semibold transition-colors ${showProfileMenu ? "text-[#166534]" : "text-sidebar-text group-hover:text-[#166534]"}`}>Ravi K.</span>
                 <span className="text-xs text-sidebar-text-muted hidden md:block">Chief Warden</span>
               </div>
-              <ChevronDown size={16} className={`ml-1 hidden sm:block transition-colors ${showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary"}`} />
+              <ChevronDown size={16} className={`ml-1 hidden sm:block transition-colors ${showProfileMenu ? "text-[#166534]" : "text-sidebar-text-muted group-hover:text-[#166534]"}`} />
             </button>
 
             {/* Profile Dropdown */}
@@ -151,11 +151,11 @@ export default function HostelWardenHeader() {
                     <span className="block text-sm font-semibold text-sidebar-text">Ravi K.</span>
                     <span className="block text-xs text-sidebar-text-muted">Chief Warden</span>
                   </div>
-                  <Link href="/hostel-warden/my-profile" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-sidebar-text-muted hover:text-primary hover:bg-secondary rounded-lg transition-colors">
+                  <Link href="/hostel-warden/my-profile" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-sidebar-text-muted hover:text-[#166534] hover:bg-secondary rounded-lg transition-colors">
                     <User size={16} /> My Profile
                   </Link>
                   <div className="h-px bg-border/20 my-1"></div>
-                  <Link href="/login" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-danger hover:bg-danger/10 rounded-lg transition-colors">
+                  <Link href="/login" onClick={() => setShowProfileMenu(false)} className="flex items-center gap-3 px-3 py-2 text-sm text-danger hover:text-[#4D7C0F]/10 rounded-lg transition-colors">
                     <LogOut size={16} /> Sign Out
                   </Link>
                 </div>

@@ -5,7 +5,7 @@ import PrincipalComingSoonModal from '@/components/layout/PrincipalComingSoonMod
 
 export default function PrincipalLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-bg-main flex">
+    <div className="min-h-screen bg-[#F5F3FF] flex">
       <PrincipalSidebar />
       <div className="flex-1 flex flex-col min-w-0 lg:pl-64 transition-all duration-300">
         <PrincipalHeader />

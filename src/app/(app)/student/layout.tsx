@@ -12,7 +12,7 @@ export default function StudentLayout({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full bg-bg-main overflow-hidden font-sans">
+    <div className="flex h-screen w-full bg-[#F0F9FF] overflow-hidden font-sans">
       {/* Sidebar */}
       <StudentSidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 

@@ -43,7 +43,7 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
       {/* Left side */}
       <div className="flex items-center gap-3">
         <button 
-          className="md:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
+          className="md:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#0F766E]-subtle hover:text-sidebar-text transition-colors"
           onClick={onMenuClick}
         >
           <Menu size={24} />
@@ -63,12 +63,12 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+              showNotifications ? "bg-secondary text-[#0F766E] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#0F766E]"
             )}
           >
             <Bell size={20} />
             {unreadCount > 0 && (
-              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-danger rounded-full border-2 border-header flex items-center justify-center"></span>
+              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-[#14B8A6] rounded-full border-2 border-header flex items-center justify-center"></span>
             )}
           </button>
 
@@ -77,11 +77,11 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
                <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
                  <h3 className="font-bold text-sm">Notifications</h3>
-                 <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all as read</span>
+                 <span className="text-[10px] font-bold text-[#0F766E] cursor-pointer hover:underline">Mark all as read</span>
                </div>
                <div className="max-h-80 overflow-y-auto flex flex-col">
                  {notifications.map(notif => (
-                    <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-primary/5")}>
+                    <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-[#0F766E]/5")}>
                        <div className={clsx("mt-0.5", notif.type === 'info' ? 'text-info' : notif.type === 'alert' ? 'text-danger' : 'text-success')}>
                          {notif.type === 'info' && <Info size={16}/>}
                          {notif.type === 'alert' && <AlertCircle size={16}/>}
@@ -89,8 +89,8 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
                        </div>
                        <div className="flex flex-col flex-1">
                          <div className="flex justify-between items-start gap-2">
-                           <span className={clsx("text-sm font-bold", !notif.read && "text-primary")}>{notif.title}</span>
-                           {!notif.read && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1"></span>}
+                           <span className={clsx("text-sm font-bold", !notif.read && "text-[#0F766E]")}>{notif.title}</span>
+                           {!notif.read && <span className="w-2 h-2 rounded-full bg-[#0F766E] shrink-0 mt-1"></span>}
                          </div>
                          <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
                          <span className="text-[10px] font-bold text-text-secondary/60 mt-1">{notif.time}</span>
@@ -99,7 +99,7 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
                  ))}
                </div>
                <div className="p-2 border-t border-border bg-bg-page text-center">
-                 <button className="text-xs font-bold text-primary hover:underline">View All Activity</button>
+                 <button className="text-xs font-bold text-[#0F766E] hover:underline">View All Activity</button>
                </div>
             </div>
           )}
@@ -119,12 +119,12 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
               showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text-muted group-hover:text-[#0F766E]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Principal / Admin</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text group-hover:text-[#0F766E]")}>Principal / Admin</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">admin@erp360.com</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text-muted group-hover:text-[#0F766E]")} />
           </button>
 
           {/* Profile Dropdown */}
@@ -134,11 +134,11 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
                  <p className="text-sm font-bold truncate">Principal / Admin</p>
                  <p className="text-xs text-text-secondary truncate">admin@erp360.com</p>
                </div>
-               <Link href="/admin/my-profile" className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-primary hover:bg-bg-page transition">
+               <Link href="/admin/my-profile" className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-[#0F766E] hover:bg-bg-page transition">
                  <UserCircle size={16}/> My Profile
                </Link>
                <div className="h-px w-full bg-border my-1"></div>
-               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#14B8A6]/10 transition">
                  <LogOut size={16}/> Logout
                </Link>
             </div>

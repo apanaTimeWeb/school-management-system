@@ -12,7 +12,7 @@ export default function ParentLayout({
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen w-full bg-bg-main overflow-hidden font-sans">
+    <div className="flex h-screen w-full bg-[#FFFBEB] overflow-hidden font-sans">
       {/* Sidebar */}
       <ParentSidebar isOpen={isSidebarOpen} setIsOpen={setIsSidebarOpen} />
 

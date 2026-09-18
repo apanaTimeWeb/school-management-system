@@ -62,18 +62,18 @@ export default function TeacherHeader() {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+              showNotifications ? "bg-secondary text-[#15803D] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#15803D]"
             )}
           >
             <Bell size={20} />
-            <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-danger rounded-full border-2 border-header flex items-center justify-center"></span>
+            <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-[#22C55E] rounded-full border-2 border-header flex items-center justify-center"></span>
           </button>
 
           {/* Notifications Dropdown */}
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
                <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
-                 <h3 className="font-bold text-sm text-text-primary">Notifications</h3>
+                 <h3 className="font-bold text-sm text-text-[#15803D]">Notifications</h3>
                  <span className="text-[10px] font-bold text-info cursor-pointer hover:underline">Mark all as read</span>
                </div>
                <div className="p-4 text-center text-sm text-text-secondary">
@@ -100,25 +100,25 @@ export default function TeacherHeader() {
               showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#15803D]" : "text-sidebar-text-muted group-hover:text-[#15803D]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Mr. R. Kumar</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#15803D]" : "text-sidebar-text group-hover:text-[#15803D]")}>Mr. R. Kumar</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">Mathematics</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#15803D]" : "text-sidebar-text-muted group-hover:text-[#15803D]")} />
           </button>
 
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
                <div className="px-4 py-2 border-b border-border mb-1 block sm:hidden">
-                 <p className="text-sm font-bold text-text-primary truncate">Mr. R. Kumar</p>
+                 <p className="text-sm font-bold text-text-[#15803D] truncate">Mr. R. Kumar</p>
                  <p className="text-xs text-text-secondary truncate">Mathematics</p>
                </div>
-               <Link href="/teacher/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-info/10 transition">
+               <Link href="/teacher/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-[#15803D] hover:bg-info/10 transition">
                  <UserCircle size={16}/> My Profile
                </Link>
-               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#22C55E]/10 transition">
                  <LogOut size={16}/> Logout
                </Link>
             </div>

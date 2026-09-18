@@ -96,19 +96,19 @@ export default function LibrarianSidebar() {
       )}
 
       {/* Sidebar Container */}
-      <aside className={`fixed top-0 left-0 h-screen bg-indigo-950 text-indigo-100 w-[280px] z-50 transition-transform duration-300 ease-in-out flex flex-col ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
+      <aside className={`fixed top-0 left-0 h-screen bg-[#6D28D9] text-white/90 w-[280px] z-50 transition-transform duration-300 ease-in-out flex flex-col ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         
         {/* Header */}
-        <div className="h-16 flex items-center justify-between px-6 bg-indigo-950/50 border-b border-indigo-900/50 shrink-0">
+        <div className="h-16 flex items-center justify-between px-6 bg-[#6D28D9]/50 border-b border-indigo-900/50 shrink-0">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg">
+            <div className="w-8 h-8 bg-[#6D28D9] rounded-lg flex items-center justify-center text-white shadow-lg">
               <Library className="w-5 h-5" />
             </div>
             <div>
               <h1 className="font-bold text-white text-base leading-tight tracking-wide">LIBRARIAN</h1>
             </div>
           </div>
-          <button onClick={closeMobileSidebar} className="lg:hidden text-indigo-300 hover:text-white p-2 -mr-2">
+          <button onClick={closeMobileSidebar} className="lg:hidden text-white/60 hover:text-white p-2 -mr-2">
             <X className="w-5 h-5" />
           </button>
         </div>
@@ -127,8 +127,8 @@ export default function LibrarianSidebar() {
                 }}
                 className={`flex items-center gap-3 px-4 py-2.5 rounded-xl transition-all duration-200 group ${
                   isActive 
-                    ? 'bg-indigo-600 text-white shadow-md' 
-                    : 'text-indigo-300 hover:bg-indigo-900/50 hover:text-white'
+                    ? 'bg-[#6D28D9] text-white shadow-md' 
+                    : 'text-white/60 hover:bg-[#6D28D9] hover:text-white'
                 }`}
               >
                 <item.icon className={`w-5 h-5 transition-colors ${isActive ? 'text-white' : 'text-indigo-400 group-hover:text-indigo-200'}`} />

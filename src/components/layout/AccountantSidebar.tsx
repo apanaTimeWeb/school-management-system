@@ -23,7 +23,7 @@ const MENU_ITEMS = [
   { href: '/accountant/cash-management', label: 'Cash Management', icon: <Banknote size={20} className="text-emerald-600" /> },
   { href: '/accountant/bank-transactions', label: 'Bank Transactions', icon: <Landmark size={20} className="text-cyan-600" /> },
   { href: '/accountant/daily-closing', label: 'Daily Closing', icon: <CalendarCheck size={20} className="text-blue-600" /> },
-  { href: '/accountant/reconciliation', label: 'Reconciliation', icon: <GitMerge size={20} className="text-indigo-600" /> },
+  { href: '/accountant/reconciliation', label: 'Reconciliation', icon: <GitMerge size={20} className="text-white" /> },
   { href: '/accountant/invoices', label: 'Invoices', icon: <FileSpreadsheet size={20} className="text-amber-500" /> },
   { href: '/accountant/financial-reports', label: 'Financial Reports', icon: <PieChart size={20} className="text-purple-600" /> },
   { href: '/accountant/payment-history', label: 'Payment History', icon: <History size={20} className="text-sky-600" /> },
@@ -53,19 +53,19 @@ export default function AccountantSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-sidebar border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#475569] border-r border-border transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-sidebar">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#475569]">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-primary font-extrabold text-[18px]">
+            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-white font-extrabold text-[18px]">
               A
             </div>
-            <span className="font-bold text-[18px] text-sidebar-text tracking-tight">School<span className="text-secondary">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-secondary">ERP</span></span>
           </div>
           <button 
-            className="lg:hidden text-sidebar-text-muted hover:text-sidebar-text transition-colors"
+            className="lg:hidden text-white/60 hover:text-white transition-colors"
             onClick={() => setMobileSidebarOpen(false)}
           >
             <X size={20} />
@@ -74,7 +74,7 @@ export default function AccountantSidebar() {
 
         {/* Navigation Menu */}
         <nav className="p-4 space-y-1.5 overflow-y-auto h-[calc(100vh-140px)] custom-scrollbar">
-          <p className="text-[11px] font-bold text-sidebar-text-muted uppercase tracking-wider mb-3 px-2">Finance Menu</p>
+          <p className="text-[11px] font-bold text-white/60 uppercase tracking-wider mb-3 px-2">Finance Menu</p>
           {MENU_ITEMS.map((item, index) => {
             const isActive = pathname.startsWith(item.href);
             return (
@@ -85,11 +85,11 @@ export default function AccountantSidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px]
                   ${isActive 
-                    ? 'bg-secondary text-primary shadow-sm' 
-                    : 'text-sidebar-text-muted hover:text-sidebar-text hover:bg-secondary/10 border border-transparent'}
+                    ? 'bg-secondary text-white shadow-sm' 
+                    : 'text-white/60 hover:text-white hover:bg-[#475569]/50 border border-transparent'}
                 `}
               >
-                <span className={isActive ? 'text-primary' : 'text-sidebar-text-muted group-hover:text-sidebar-text'}>
+                <span className={isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}>
                   {item.icon}
                 </span>
                 {String(index + 1).padStart(2, '0')} - {item.label}
@@ -99,9 +99,9 @@ export default function AccountantSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-sidebar">
-          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-text-muted hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
-            <Settings size={20} className="text-zinc-400" />
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#475569]">
+          <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
+            <Settings size={20} className="text-white/60" />
             Settings
           </button>
         </div>

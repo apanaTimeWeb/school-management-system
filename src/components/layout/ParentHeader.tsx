@@ -46,7 +46,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
           <input 
             type="text" 
             placeholder="Search notifications, fees..." 
-            className="bg-transparent border-none outline-none text-sm text-text-primary w-full font-semibold placeholder:font-normal"
+            className="bg-transparent border-none outline-none text-sm text-text-[#B45309] w-full font-semibold placeholder:font-normal"
           />
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
             className="flex items-center gap-3 group cursor-pointer focus:outline-none"
           >
             <div className="text-right hidden sm:block">
-              <h4 className="text-sm font-bold text-text-primary group-hover:text-pink-500 transition-colors leading-none mb-1">Ramesh Kumar</h4>
+              <h4 className="text-sm font-bold text-text-[#B45309] group-hover:text-pink-500 transition-colors leading-none mb-1">Ramesh Kumar</h4>
               <p className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider leading-none">Parent</p>
             </div>
             <div className="flex items-center gap-1">
@@ -82,7 +82,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
           {showDropdown && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-border rounded-xl shadow-lg overflow-hidden motion-safe:animate-[fadeIn_0.15s_ease-out] z-50">
               <div className="p-3 border-b border-border bg-page sm:hidden">
-                <h4 className="text-sm font-bold text-text-primary">Ramesh Kumar</h4>
+                <h4 className="text-sm font-bold text-text-[#B45309]">Ramesh Kumar</h4>
                 <p className="text-[11px] font-semibold text-text-secondary uppercase">Parent</p>
               </div>
               <div className="p-1">
@@ -95,7 +95,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
                 </Link>
                 <button 
                   onClick={() => { setShowDropdown(false); handleLogout(); }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 rounded-lg transition-colors"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2.5 text-sm font-bold text-danger hover:text-[#F59E0B]/10 rounded-lg transition-colors"
                 >
                   <LogOut size={16} /> Logout
                 </button>

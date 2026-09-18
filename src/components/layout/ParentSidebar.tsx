@@ -78,7 +78,7 @@ export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
             <div className="w-8 h-8 rounded-lg bg-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
               P
             </div>
-            <span className="text-xl font-bold tracking-tight text-text-primary">
+            <span className="text-xl font-bold tracking-tight text-text-white">
               Parent<span className="text-pink-500">Portal</span>
             </span>
           </Link>

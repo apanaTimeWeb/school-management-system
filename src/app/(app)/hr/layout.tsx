@@ -11,7 +11,7 @@ export default function HRLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-page flex">
+    <div className="min-h-screen bg-[#FDF2F8] flex">
       <HRSidebar />
       
       <div className="flex-1 lg:pl-[256px] flex flex-col min-h-screen transition-all duration-300 w-full">

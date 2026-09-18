@@ -8,7 +8,7 @@ export default function TransportManagerLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-[#ECFEFF]">
       <TransportManagerSidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <TransportManagerHeader />

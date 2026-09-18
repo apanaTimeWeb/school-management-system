@@ -8,7 +8,7 @@ export default function AccountantLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-bg-page">
+    <div className="flex h-screen overflow-hidden bg-[#F8FAFC]">
       {/* Sidebar Component */}
       <AccountantSidebar />
 

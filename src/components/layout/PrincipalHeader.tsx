@@ -42,7 +42,7 @@ export default function PrincipalHeader() {
       <div className="flex items-center gap-3">
         <button
           onClick={toggleMobileSidebar}
-          className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-primary-subtle hover:text-sidebar-text transition-colors"
+          className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#7C3AED]-subtle hover:text-sidebar-text transition-colors"
         >
           <Menu size={24} />
         </button>
@@ -71,12 +71,12 @@ export default function PrincipalHeader() {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-primary shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-primary"
+              showNotifications ? "bg-secondary text-[#7C3AED] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#7C3AED]"
             )}
           >
             <Bell size={20} />
             {unreadCount > 0 && (
-              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-danger rounded-full border-2 border-header flex items-center justify-center"></span>
+              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-[#8B5CF6] rounded-full border-2 border-header flex items-center justify-center"></span>
             )}
           </button>
 
@@ -84,12 +84,12 @@ export default function PrincipalHeader() {
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
               <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
-                <h3 className="font-bold text-sm text-text-primary">Notifications</h3>
-                <span className="text-[10px] font-bold text-primary cursor-pointer hover:underline">Mark all as read</span>
+                <h3 className="font-bold text-sm text-text-[#7C3AED]">Notifications</h3>
+                <span className="text-[10px] font-bold text-[#7C3AED] cursor-pointer hover:underline">Mark all as read</span>
               </div>
               <div className="max-h-80 overflow-y-auto flex flex-col">
                 {notifications.map(notif => (
-                  <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-primary/5")}>
+                  <div key={notif.id} className={clsx("p-3 border-b border-border hover:bg-bg-page transition cursor-pointer flex gap-3", !notif.read && "bg-[#7C3AED]/5")}>
                     <div className={clsx("mt-0.5", notif.type === 'info' ? 'text-info' : notif.type === 'alert' ? 'text-danger' : 'text-success')}>
                       {notif.type === 'info' && <Info size={16} />}
                       {notif.type === 'alert' && <AlertCircle size={16} />}
@@ -97,8 +97,8 @@ export default function PrincipalHeader() {
                     </div>
                     <div className="flex flex-col flex-1">
                       <div className="flex justify-between items-start gap-2">
-                        <span className={clsx("text-sm font-bold text-text-primary", !notif.read && "text-primary")}>{notif.title}</span>
-                        {!notif.read && <span className="w-2 h-2 rounded-full bg-primary shrink-0 mt-1"></span>}
+                        <span className={clsx("text-sm font-bold text-text-[#7C3AED]", !notif.read && "text-[#7C3AED]")}>{notif.title}</span>
+                        {!notif.read && <span className="w-2 h-2 rounded-full bg-[#7C3AED] shrink-0 mt-1"></span>}
                       </div>
                       <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
                       <span className="text-[10px] font-bold text-text-secondary/60 mt-1">{notif.time}</span>
@@ -107,7 +107,7 @@ export default function PrincipalHeader() {
                 ))}
               </div>
               <div className="p-2 border-t border-border bg-bg-page text-center">
-                <button className="text-xs font-bold text-primary hover:underline">View All Activity</button>
+                <button className="text-xs font-bold text-[#7C3AED] hover:underline">View All Activity</button>
               </div>
             </div>
           )}
@@ -127,25 +127,25 @@ export default function PrincipalHeader() {
               showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text-muted group-hover:text-[#7C3AED]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text group-hover:text-primary")}>Dr. A. Sharma</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text group-hover:text-[#7C3AED]")}>Dr. A. Sharma</span>
               <span className="text-xs text-sidebar-text-muted hidden md:block">Principal</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-primary" : "text-sidebar-text-muted group-hover:text-primary")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text-muted group-hover:text-[#7C3AED]")} />
           </button>
 
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
               <div className="px-4 py-2 border-b border-border mb-1 block sm:hidden">
-                <p className="text-sm font-bold text-text-primary truncate">Dr. A. Sharma</p>
+                <p className="text-sm font-bold text-text-[#7C3AED] truncate">Dr. A. Sharma</p>
                 <p className="text-xs text-text-secondary truncate">Principal</p>
               </div>
-              <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-primary hover:bg-primary/10 transition">
+              <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-[#7C3AED] hover:bg-[#7C3AED]/10 transition">
                 <UserCircle size={16} /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#8B5CF6]/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

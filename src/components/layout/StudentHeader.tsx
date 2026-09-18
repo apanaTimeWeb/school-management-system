@@ -36,7 +36,7 @@ export default function StudentHeader({ toggleSidebar }: Props) {
       <div className="flex items-center gap-4">
         <button 
           onClick={toggleSidebar}
-          className="p-2 -ml-2 rounded-lg text-text-secondary hover:bg-page hover:text-primary transition-colors lg:hidden"
+          className="p-2 -ml-2 rounded-lg text-text-secondary hover:bg-page hover:text-[#0284C7] transition-colors lg:hidden"
         >
           <Menu size={24} />
         </button>
@@ -46,7 +46,7 @@ export default function StudentHeader({ toggleSidebar }: Props) {
           <input 
             type="text" 
             placeholder="Search classes, homework..." 
-            className="bg-transparent border-none outline-none text-sm text-text-primary w-full font-semibold placeholder:font-normal"
+            className="bg-transparent border-none outline-none text-sm text-text-[#0284C7] w-full font-semibold placeholder:font-normal"
           />
         </div>
       </div>
@@ -54,9 +54,9 @@ export default function StudentHeader({ toggleSidebar }: Props) {
       {/* Right section (Notifications & Profile) */}
       <div className="flex items-center gap-3 sm:gap-6">
         
-        <Link href="/student/notifications" className="relative p-2 rounded-full text-text-secondary hover:bg-page hover:text-primary transition-colors">
+        <Link href="/student/notifications" className="relative p-2 rounded-full text-text-secondary hover:bg-page hover:text-[#0284C7] transition-colors">
           <Bell size={20} />
-          <span className="absolute top-1.5 right-2 w-2 h-2 rounded-full bg-danger border border-white animate-pulse"></span>
+          <span className="absolute top-1.5 right-2 w-2 h-2 rounded-full text-[#38BDF8] border border-white animate-pulse"></span>
         </Link>
 
         <div className="w-px h-6 bg-border hidden sm:block"></div>
@@ -67,14 +67,14 @@ export default function StudentHeader({ toggleSidebar }: Props) {
             className="flex items-center gap-3 group cursor-pointer focus:outline-none"
           >
             <div className="text-right hidden sm:block">
-              <h4 className="text-sm font-bold text-text-primary group-hover:text-primary transition-colors leading-none mb-1">Rahul Sharma</h4>
+              <h4 className="text-sm font-bold text-text-[#0284C7] group-hover:text-[#0284C7] transition-colors leading-none mb-1">Rahul Sharma</h4>
               <p className="text-[11px] font-semibold text-text-secondary uppercase tracking-wider leading-none">Class X - A</p>
             </div>
             <div className="flex items-center gap-1">
               <div className="w-10 h-10 rounded-full border-2 border-border group-hover:border-primary overflow-hidden transition-colors shadow-sm bg-page">
                  <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul&backgroundColor=b6e3f4" alt="Avatar" className="w-full h-full object-cover" />
               </div>
-              <ChevronDown size={14} className="text-text-secondary group-hover:text-primary transition-transform hidden sm:block" style={{ transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }} />
+              <ChevronDown size={14} className="text-text-secondary group-hover:text-[#0284C7] transition-transform hidden sm:block" style={{ transform: showDropdown ? 'rotate(180deg)' : 'rotate(0deg)' }} />
             </div>
           </button>
 
@@ -82,20 +82,20 @@ export default function StudentHeader({ toggleSidebar }: Props) {
           {showDropdown && (
             <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-border rounded-xl shadow-lg overflow-hidden motion-safe:animate-[fadeIn_0.15s_ease-out] z-50">
               <div className="p-3 border-b border-border bg-page sm:hidden">
-                <h4 className="text-sm font-bold text-text-primary">Rahul Sharma</h4>
+                <h4 className="text-sm font-bold text-text-[#0284C7]">Rahul Sharma</h4>
                 <p className="text-[11px] font-semibold text-text-secondary uppercase">Class X - A</p>
               </div>
               <div className="p-1">
                 <Link 
                   href="/student/profile" 
                   onClick={() => setShowDropdown(false)}
-                  className="flex items-center gap-2 px-3 py-2.5 text-sm font-bold text-text-secondary hover:text-primary hover:bg-primary/5 rounded-lg transition-colors"
+                  className="flex items-center gap-2 px-3 py-2.5 text-sm font-bold text-text-secondary hover:text-[#0284C7] hover:bg-[#0284C7]/5 rounded-lg transition-colors"
                 >
                   <UserCircle size={16} /> My Profile
                 </Link>
                 <button 
                   onClick={() => { setShowDropdown(false); handleLogout(); }}
-                  className="flex items-center gap-2 w-full text-left px-3 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 rounded-lg transition-colors"
+                  className="flex items-center gap-2 w-full text-left px-3 py-2.5 text-sm font-bold text-danger hover:text-[#38BDF8]/10 rounded-lg transition-colors"
                 >
                   <LogOut size={16} /> Logout
                 </button>

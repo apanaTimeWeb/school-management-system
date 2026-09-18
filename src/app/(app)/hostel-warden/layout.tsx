@@ -8,7 +8,7 @@ export default function HostelWardenLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-background">
+    <div className="flex h-screen overflow-hidden bg-[#F0FDF4]">
       <HostelWardenSidebar />
       <div className="flex-1 flex flex-col min-w-0">
         <HostelWardenHeader />
