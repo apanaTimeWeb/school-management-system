@@ -17,7 +17,8 @@ import {
   BookOpen,
   AlertCircle,
   Bell,
-  X
+  X,
+  Briefcase
 } from "lucide-react";
 
 type MessageType = 'Due Reminder' | 'Overdue Reminder' | 'Reservation Alert' | 'Library Announcement' | 'General Notice';
