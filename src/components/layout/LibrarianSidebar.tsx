@@ -45,7 +45,7 @@ const MENU_ITEMS: SidebarItem[] = [
   
   // Catalog Management
   { title: 'Book Catalog', href: '/librarian/books', icon: Library },
-  { title: 'Book Copies', href: '/librarian/books', icon: Copy },
+  { title: 'Book Copies', href: '/librarian/books/copies', icon: Copy },
   { title: 'Categories', href: '/librarian/categories', icon: Tags },
   { title: 'Library Members', href: '/librarian/members', icon: Users },
   
