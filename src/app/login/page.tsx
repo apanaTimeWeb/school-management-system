@@ -144,6 +144,20 @@ export default function LoginSelectionPage() {
           </div>
         </Link>
 
+        {/* Librarian Card */}
+        <Link href="/login/librarian" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">LIBRARIAN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Books, Circulation & Records</p>
+          <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold bg-indigo-500/5 px-6 py-2.5 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 "use client";
 import React from 'react';
-import { Library, PieChart, BookOpenCheck } from 'lucide-react';
+import { Library, PieChart, BookOpenCheck, FileText } from 'lucide-react';
 import { usePrincipalLibraryStore } from '../library_store/usePrincipalLibraryStore';
 
 import PrincipalLibraryOverviewTab from './PrincipalLibraryOverviewTab';
 import PrincipalLibraryBorrowingTab from './PrincipalLibraryBorrowingTab';
+import PrincipalLibraryReportsTab from './PrincipalLibraryReportsTab';
 import PrincipalLibraryBookModal from './PrincipalLibraryBookModal';
 
 export default function PrincipalLibraryMain() {
@@ -12,7 +13,8 @@ export default function PrincipalLibraryMain() {
 
   const tabs = [
     { id: 'overview', label: 'Library Overview', icon: <PieChart size={16} /> },
-    { id: 'borrowing', label: 'Borrowing & Overdue', icon: <BookOpenCheck size={16} /> }
+    { id: 'borrowing', label: 'Borrowing & Overdue', icon: <BookOpenCheck size={16} /> },
+    { id: 'reports', label: 'Library Reports', icon: <FileText size={16} /> }
   ] as const;
 
   return (
@@ -24,7 +26,7 @@ export default function PrincipalLibraryMain() {
             Library Usage
           </h1>
           <p className="text-[14px] text-text-secondary mt-1">
-            Monitor book statistics, student borrowing records, and overdue books.
+            Monitor book statistics, student borrowing records, overdue books, and reports.
           </p>
         </div>
       </div>
@@ -51,6 +53,7 @@ export default function PrincipalLibraryMain() {
       <div className="flex-1 bg-bg-main pt-6 overflow-x-hidden">
         {activeTab === 'overview' && <PrincipalLibraryOverviewTab />}
         {activeTab === 'borrowing' && <PrincipalLibraryBorrowingTab />}
+        {activeTab === 'reports' && <PrincipalLibraryReportsTab />}
       </div>
 
       <PrincipalLibraryBookModal />
