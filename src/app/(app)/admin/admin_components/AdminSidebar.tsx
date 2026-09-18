@@ -10,7 +10,7 @@ const adminCategories = [
   { id: "dashboard", title: "01. Dashboard", icon: School, href: "/admin/01-dashboard", items: [] },
   { id: "students", title: "02. Students", icon: School, href: "/admin/02-student-management", items: ["Student admission/enrollment", "Student promotion", "Student demotion", "Section change", "Class change", "Student transfer", "Student withdrawal", "Re-admission", "Roll number", "House allocation", "Student history"] },
   { id: "admissions", title: "03. Admissions", icon: School, href: "/admin/03-admission-management", items: ["Enquiry", "Application", "Registration", "Document verification", "Admission approval", "Waiting/rejected applications", "Enrollment", "Admission reports"] },
-  { id: "parents", title: "04. Parents & Guardians", icon: School, href: "/admin/04-parent-management", items: [] },
+  { id: "parents", title: "04. Parents & Guardians", icon: School, href: "/admin/04-parent-management", items: ["Multiple children switcher", "Child Profile", "Academics", "Attendance", "Timetable", "Homework", "Assignments", "Study Material", "Exams", "Results", "Fees", "Online Payment", "Receipts", "Leave Request", "Communication", "Messages", "PTM", "Events", "Library", "Transport", "Hostel", "Health", "Discipline", "Certificates/Document Requests", "Complaints/Grievance", "Feedback", "Notifications", "Reports", "Security"] },
   { id: "academics", title: "05. Academics", icon: School, href: "/admin/05-academic-management", items: ["Classes", "Sections", "Subjects", "Curriculum", "Syllabus", "Teacher-subject mapping", "Class-subject mapping", "Academic session operations"] },
   { id: "attendance", title: "06. Attendance", icon: School, href: "/admin/06-attendance-management", items: ["Student attendance", "Attendance correction/approval", "Attendance reports"] },
   { id: "examinations", title: "07. Examinations", icon: School, href: "/admin/07-examination-management", items: ["Exam creation", "Exam schedule", "Subject mapping", "Marks workflow", "Result workflow", "Report cards", "Promotion result"] },
@@ -19,7 +19,7 @@ const adminCategories = [
   { id: "leave", title: "10. Leave Management", icon: School, href: "/admin/10-leave-management", items: [] },
   { id: "communication", title: "11. Communication", icon: School, href: "/admin/11-communication", items: ["Notice", "Circular", "Announcement", "Parent communication", "Staff communication", "Templates", "Scheduled communication"] },
   { id: "timetable", title: "12. Timetable", icon: School, href: "/admin/12-timetable", items: ["Class timetable", "Teacher timetable", "Room allocation", "Substitute management"] },
-  { id: "transport", title: "13. Transport", icon: School, href: "/admin/13-transport-management", items: [] },
+  { id: "transport", title: "13. Transport", icon: School, href: "/admin/13-transport-management", items: ["Vehicles", "Vehicle Documents", "Drivers", "Conductors", "Routes", "Stops", "Student Transport", "Transport Requests", "Daily Trips", "Transport Attendance", "Live Tracking", "Maintenance", "Fuel", "Vehicle Inspection", "Safety", "Emergency", "Transport Fee view", "Transport Notifications", "Special/Event Transport", "Reports", "Audit"] },
   { id: "library", title: "14. Library", icon: School, href: "/admin/14-library", items: [] },
   { id: "inventory", title: "15. Inventory/Purchase", icon: School, href: "/admin/15-inventory-assets", items: ["Inventory", "Assets", "Purchase request", "Purchase", "Suppliers", "Stock", "Asset assignment"] },
   { id: "purchase", title: "16. Purchase/Expense", icon: School, href: "/admin/16-purchase-expense", items: [] },
@@ -34,7 +34,7 @@ const adminCategories = [
   { id: "settings", title: "25. Settings", icon: School, href: "/admin/25-settings", items: [] },
   { id: "security", title: "26. Security", icon: School, href: "/admin/26-security", items: [] },
   { id: "audit", title: "27. Audit Ledger", icon: School, href: "/admin/27-audit", items: [] },
-  { id: "hostel", title: "28. Hostel", icon: School, href: "/admin/28-hostel", items: [] },
+  { id: "hostel", title: "28. Hostel", icon: School, href: "/admin/28-hostel", items: ["Hostel Management", "Buildings/Floors", "Rooms", "Beds", "Student Allocation", "Hostel Admission", "Hostel Attendance", "Outing/Movement", "Hostel Leave", "Visitors", "Complaints", "Maintenance", "Inventory", "Mess/Food", "Health", "Discipline", "Events", "Academic Monitoring", "Hostel Fees view", "Emergency/Safety", "Rules/Notices", "Notifications", "Reports", "Audit"] },
   { id: "profile", title: "29. My Profile", icon: School, href: "/admin/my-profile", items: [] }
 ];
 
