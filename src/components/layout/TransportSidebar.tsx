@@ -53,7 +53,7 @@ export default function TransportSidebar({ isOpen = true, setIsOpen }: Props) {
       )}
       <aside 
         className={clsx(
-          "fixed top-0 left-0 h-screen bg-bg-main border-r border-border shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
+          "fixed top-0 left-0 h-screen bg-white border-r border-border shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
           isOpen ? "w-[280px] translate-x-0" : "-translate-x-full lg:translate-x-0 lg:w-[280px]"
         )}
       >
