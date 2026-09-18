@@ -12,19 +12,22 @@ import {
 } from 'lucide-react';
 
 const navItems = [
-  { label: 'Dashboard', href: '/student/dashboard', icon: <LayoutDashboard size={20} /> },
-  { label: 'Academics', href: '/student/academics', icon: <GraduationCap size={20} /> },
+  // User's Checklist
+  { label: 'My Profile', href: '/student/profile', icon: <UserCircle size={20} /> },
+  { label: 'My Academics', href: '/student/academics', icon: <GraduationCap size={20} /> },
   { label: 'Timetable', href: '/student/timetable', icon: <Calendar size={20} /> },
-  { label: 'Attendance', href: '/student/attendance', icon: <UserCheck size={20} /> },
+  { label: 'Attendance view', href: '/student/attendance-view', icon: <UserCheck size={20} /> },
   { label: 'Homework', href: '/student/homework', icon: <BookOpen size={20} /> },
   { label: 'Assignments', href: '/student/assignments', icon: <FileText size={20} /> },
   { label: 'Study Material', href: '/student/study-material', icon: <FileVideo size={20} /> },
   { label: 'Classwork', href: '/student/classwork', icon: <CheckSquare size={20} /> },
-  { label: 'Examinations', href: '/student/examinations', icon: <FileText size={20} /> },
+  { label: 'Exams', href: '/student/exams', icon: <FileText size={20} /> },
   { label: 'Results', href: '/student/results', icon: <Award size={20} /> },
   { label: 'Online Tests', href: '/student/online-tests', icon: <MonitorPlay size={20} /> },
   { label: 'Fees', href: '/student/fees', icon: <Wallet size={20} /> },
-  { label: 'Leave', href: '/student/leave', icon: <Clock size={20} /> },
+  { label: 'Payment', href: '/student/payment', icon: <CreditCard size={20} /> },
+  { label: 'Receipts', href: '/student/receipts', icon: <FileText size={20} /> },
+  { label: 'Leave Request', href: '/student/leave-request', icon: <Clock size={20} /> },
   { label: 'Communication', href: '/student/communication', icon: <MessageSquare size={20} /> },
   { label: 'Messages', href: '/student/messages', icon: <Inbox size={20} /> },
   { label: 'Events', href: '/student/events', icon: <CalendarDays size={20} /> },
@@ -36,11 +39,12 @@ const navItems = [
   { label: 'Certificates', href: '/student/certificates', icon: <FileBadge size={20} /> },
   { label: 'ID Card', href: '/student/id-card', icon: <CreditCard size={20} /> },
   { label: 'Feedback', href: '/student/feedback', icon: <MessageSquareQuote size={20} /> },
-  { label: 'Notifications', href: '/student/notifications', icon: <Bell size={20} /> },
-  { label: 'Reports', href: '/student/reports', icon: <PieChart size={20} /> },
   { label: 'My Requests', href: '/student/my-requests', icon: <InboxRequest size={20} /> },
   { label: 'Security', href: '/student/security', icon: <ShieldCheck size={20} /> },
-  { label: 'My Profile', href: '/student/profile', icon: <UserCircle size={20} /> },
+  // Preserved Defaults (Ensuring no removal of original non-overlapping features)
+  { label: 'Dashboard', href: '/student/dashboard', icon: <LayoutDashboard size={20} /> },
+  { label: 'Notifications', href: '/student/notifications', icon: <Bell size={20} /> },
+  { label: 'Reports', href: '/student/reports', icon: <PieChart size={20} /> },
 ];
 
 interface Props {
