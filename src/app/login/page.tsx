@@ -1,194 +1,163 @@
-"use client";
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { Shield, ArrowLeft, ArrowRight, ChevronDown, CheckCircle2, Building, X } from 'lucide-react';
-import { DEMO_SCHOOLS, ROLE_LOGIN_CONFIG } from './login_mock_data';
-
-const LS_KEY = "school_erp_config_sch_1";
+import { Shield, School, GraduationCap, ArrowLeft, ArrowRight, UserCircle, Calculator, Building2, Users } from 'lucide-react';
 
 export default function LoginSelectionPage() {
-  const [selectedSchoolId, setSelectedSchoolId] = useState<string>('school-c-large');
-  const [isSelectorOpen, setIsSelectorOpen] = useState(false);
-  const [localCustomConfig, setLocalCustomConfig] = useState<any>(null);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(LS_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw);
-        setLocalCustomConfig({
-          id: 'local-custom',
-          name: 'Your Custom School (Local)',
-          size: parsed.size,
-          roles: parsed.roles,
-          modules: parsed.modules,
-        });
-      }
-      // Also respect previously selected school
-      const prevSelected = localStorage.getItem('demo_active_school');
-      if (prevSelected) setSelectedSchoolId(prevSelected);
-    } catch { /* ignore */ }
-  }, []);
-
-  const allOptions = [...DEMO_SCHOOLS, ...(localCustomConfig ? [localCustomConfig] : [])];
-  const activeSchool = allOptions.find(s => s.id === selectedSchoolId) || allOptions[0];
-
-  const visibleRoles = Object.keys(activeSchool.roles)
-    .filter(roleId => activeSchool.roles[roleId as keyof typeof activeSchool.roles] === true)
-    .map(roleId => ROLE_LOGIN_CONFIG[roleId])
-    .filter(Boolean);
-
   return (
-    <div className="min-h-screen bg-bg-main flex flex-col font-sans">
-      {/* Top nav */}
-      <div className="w-full px-4 sm:px-6 pt-5 pb-2 flex items-center justify-between max-w-6xl mx-auto">
-        <Link href="/" className="flex items-center gap-1.5 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
-          <ArrowLeft size={16} /> Back
-        </Link>
-        <Link
-          href="/login/super-admin"
-          className="flex items-center gap-1.5 text-xs font-semibold text-text-secondary hover:text-[#1E3A8A] transition-colors bg-white px-3 py-2 rounded-full border border-border hover:border-[#1E3A8A]/30 shadow-sm"
-        >
-          <Shield size={13} />
-          <span className="hidden sm:inline">Platform Super Admin</span>
-          <span className="sm:hidden">Super Admin</span>
-        </Link>
+    <div className="min-h-screen bg-bg-main flex flex-col items-center justify-center p-6 font-sans relative">
+      <Link href="/" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
+        <ArrowLeft size={16} /> Back to Home
+      </Link>
+      
+      <div className="text-center mb-12">
+        <div className="flex items-center justify-center gap-2 mb-6">
+          <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-2xl shadow-md">
+            S
+          </div>
+          <span className="text-3xl font-bold tracking-tight text-text-primary">
+            School<span className="text-primary">ERP</span>
+          </span>
+        </div>
+        <h1 className="text-2xl font-extrabold text-text-primary mb-2">Welcome to School ERP</h1>
+        <p className="text-text-secondary text-base">Select your account type to continue securely.</p>
       </div>
 
-      <div className="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col">
-
-        {/* Header */}
-        <div className="flex flex-col items-center justify-center text-center mb-8 sm:mb-10">
-          <div className="flex items-center justify-center gap-2 mb-3">
-            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary flex items-center justify-center text-white font-bold text-2xl sm:text-3xl shadow-md">
-              S
-            </div>
-            <span className="text-3xl sm:text-4xl font-extrabold tracking-tight text-text-primary">
-              School<span className="text-primary">ERP</span>
-            </span>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full max-w-7xl">
+        
+        {/* Student Card */}
+        <Link href="/login/student" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <UserCircle className="text-blue-600" size={32} />
           </div>
-          <h1 className="text-xl sm:text-2xl font-bold text-text-primary mb-1">Welcome back</h1>
-          <p className="text-text-secondary text-sm sm:text-base">Select your school and account type to continue.</p>
-        </div>
-
-        {/* Demo School Selector */}
-        <div className="max-w-md mx-auto w-full mb-8 sm:mb-10 relative z-50">
-          <label className="text-xs font-bold text-text-secondary uppercase tracking-wider mb-2 block text-center">
-            Demo School Selection
-          </label>
-          <div className="relative">
-            <button
-              onClick={() => setIsSelectorOpen(!isSelectorOpen)}
-              className="w-full bg-white border border-border rounded-xl px-4 py-3 sm:py-3.5 flex items-center justify-between hover:border-primary transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-primary/20"
-            >
-              <div className="flex items-center gap-3 min-w-0">
-                <div className="bg-primary-subtle p-2 rounded-lg text-primary shrink-0">
-                  <Building size={16} />
-                </div>
-                <div className="text-left min-w-0">
-                  <p className="text-sm font-bold text-text-primary truncate">{activeSchool.name}</p>
-                  <p className="text-[11px] text-text-secondary uppercase font-semibold">Mode: {activeSchool.size}</p>
-                </div>
-              </div>
-              <ChevronDown size={18} className={`text-text-secondary shrink-0 transition-transform ${isSelectorOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            {isSelectorOpen && (
-              <>
-                {/* Backdrop to close on outside click */}
-                <div className="fixed inset-0 z-40" onClick={() => setIsSelectorOpen(false)} />
-                <div className="absolute top-full left-0 w-full mt-2 bg-white border border-border rounded-xl shadow-2xl overflow-hidden py-1 z-50">
-                  {allOptions.map(school => (
-                    <button
-                      key={school.id}
-                      onClick={() => {
-                        setSelectedSchoolId(school.id);
-                        setIsSelectorOpen(false);
-                        localStorage.setItem('demo_active_school', school.id);
-                      }}
-                      className={`w-full px-4 py-3 text-left flex items-center justify-between hover:bg-bg-page transition-colors ${selectedSchoolId === school.id ? 'bg-primary-subtle/30' : ''}`}
-                    >
-                      <div>
-                        <p className="text-sm font-bold text-text-primary">{school.name}</p>
-                        <p className="text-[11px] text-text-secondary uppercase">{school.size} mode</p>
-                      </div>
-                      {selectedSchoolId === school.id && <CheckCircle2 size={16} className="text-primary shrink-0" />}
-                    </button>
-                  ))}
-                </div>
-              </>
-            )}
+          <h2 className="text-xl font-bold text-text-primary mb-2">STUDENT</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Academics, Timetable & Exams</p>
+          <div className="mt-auto flex items-center gap-2 text-blue-600 font-bold bg-blue-500/5 px-6 py-2.5 rounded-full group-hover:bg-blue-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
           </div>
-        </div>
+        </Link>
 
-        {/* Dynamic Login Cards */}
-        <div className="bg-white border border-border rounded-2xl shadow-sm p-4 sm:p-6 lg:p-8">
-          <div className="mb-6 sm:mb-8 border-b border-border pb-4 sm:pb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <div>
-              <h2 className="text-lg sm:text-xl font-bold text-text-primary">
-                {activeSchool.name} Portal
-              </h2>
-              <p className="text-sm text-text-secondary mt-1">Choose how you want to continue</p>
-            </div>
-            <div className="bg-bg-page px-3 py-1.5 rounded-lg border border-border text-xs font-semibold text-text-secondary self-start sm:self-auto">
-              {visibleRoles.length} role{visibleRoles.length !== 1 ? 's' : ''} enabled
-            </div>
+        {/* Parent Card */}
+        <Link href="/login/parent" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-pink-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Users className="text-pink-600" size={32} />
           </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">PARENT</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Fees, Attendance & Progress</p>
+          <div className="mt-auto flex items-center gap-2 text-pink-600 font-bold bg-pink-500/5 px-6 py-2.5 rounded-full group-hover:bg-pink-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
 
-          {visibleRoles.length === 0 ? (
-            <div className="text-center py-10 sm:py-16">
-              <div className="w-16 h-16 bg-bg-page rounded-full flex items-center justify-center mx-auto mb-4 border border-border">
-                <Shield className="text-text-disabled" size={24} />
-              </div>
-              <h3 className="text-lg font-bold text-text-primary mb-2">No Logins Enabled</h3>
-              <p className="text-sm text-text-secondary max-w-sm mx-auto">
-                No operational login has been enabled for this school. Please contact your system administrator.
-              </p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4">
-              {visibleRoles.map(role => {
-                const Icon = role.icon;
-                return (
-                  <Link
-                    key={role.id}
-                    href={role.route}
-                    className="group bg-white border border-border rounded-xl p-4 sm:p-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all flex flex-col items-center text-center relative overflow-hidden"
-                  >
-                    <div
-                      className="absolute top-0 left-0 w-full h-1"
-                      style={{ backgroundColor: role.color }}
-                    />
-                    <div
-                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-full flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 transition-transform mt-1"
-                      style={{ backgroundColor: role.bgColor }}
-                    >
-                      <Icon color={role.color} size={24} />
-                    </div>
-                    <h3 className="text-sm sm:text-base font-bold text-text-primary mb-1">{role.label}</h3>
-                    <p className="text-text-secondary text-xs font-medium mb-4 sm:mb-6 line-clamp-2 min-h-[32px]">{role.description}</p>
+        {/* Teacher Card */}
+        <Link href="/login/teacher" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-cyan-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <GraduationCap className="text-cyan-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">TEACHER</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Classroom Management & Grading</p>
+          <div className="mt-auto flex items-center gap-2 text-cyan-600 font-bold bg-cyan-500/5 px-6 py-2.5 rounded-full group-hover:bg-cyan-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
 
-                    <div
-                      className="mt-auto flex items-center gap-2 font-bold px-3 sm:px-4 py-2 rounded-lg transition-colors w-full justify-center text-xs sm:text-[13px] border border-transparent"
-                      style={{ color: role.color, backgroundColor: role.bgColor }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = role.color;
-                        e.currentTarget.style.color = '#fff';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = role.bgColor;
-                        e.currentTarget.style.color = role.color;
-                      }}
-                    >
-                      Continue <ArrowRight size={13} />
-                    </div>
-                  </Link>
-                );
-              })}
-            </div>
-          )}
-        </div>
+        {/* Super Admin Card */}
+        <Link href="/login/super-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Shield className="text-red-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">SUPER ADMIN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">System Control & Global Settings</p>
+          <div className="mt-auto flex items-center gap-2 text-red-600 font-bold bg-red-500/5 px-6 py-2.5 rounded-full group-hover:bg-red-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* School Admin Card */}
+        <Link href="/login/school-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-purple-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <School className="text-purple-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">SCHOOL ADMIN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">School Management & Operations</p>
+          <div className="mt-auto flex items-center gap-2 text-purple-600 font-bold bg-purple-500/5 px-6 py-2.5 rounded-full group-hover:bg-purple-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* Principal Card */}
+        <Link href="/login/principal" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-amber-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-amber-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">PRINCIPAL</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Executive Overview & Dashboards</p>
+          <div className="mt-auto flex items-center gap-2 text-amber-600 font-bold bg-amber-500/5 px-6 py-2.5 rounded-full group-hover:bg-amber-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* Accountant Card */}
+        <Link href="/login/accountant" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Calculator className="text-emerald-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">ACCOUNTANT</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Finance, Fees & Expense Tracking</p>
+          <div className="mt-auto flex items-center gap-2 text-emerald-600 font-bold bg-emerald-500/5 px-6 py-2.5 rounded-full group-hover:bg-emerald-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* HR / Office Card */}
+        <Link href="/login/hr" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-fuchsia-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-fuchsia-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">HR / OFFICE</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Staff, Payroll & HR Operations</p>
+          <div className="mt-auto flex items-center gap-2 text-fuchsia-600 font-bold bg-fuchsia-500/5 px-6 py-2.5 rounded-full group-hover:bg-fuchsia-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* Transport Manager Card */}
+        <Link href="/login/transport-manager" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-teal-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-teal-600"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">TRANSPORT</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Vehicles, Routes & Tracking</p>
+          <div className="mt-auto flex items-center gap-2 text-teal-600 font-bold bg-teal-500/5 px-6 py-2.5 rounded-full group-hover:bg-teal-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* Hostel Warden Card */}
+        <Link href="/login/hostel-warden" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <Building2 className="text-orange-600" size={32} />
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">HOSTEL WARDEN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Hostels, Rooms & Allocations</p>
+          <div className="mt-auto flex items-center gap-2 text-orange-600 font-bold bg-orange-500/5 px-6 py-2.5 rounded-full group-hover:bg-orange-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
+        {/* Librarian Card */}
+        <Link href="/login/librarian" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+          <div className="w-16 h-16 rounded-full bg-indigo-500/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-indigo-600">
+              <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>
+            </svg>
+          </div>
+          <h2 className="text-xl font-bold text-text-primary mb-2">LIBRARIAN</h2>
+          <p className="text-text-secondary text-[13px] font-medium mb-8">Books, Circulation & Records</p>
+          <div className="mt-auto flex items-center gap-2 text-indigo-600 font-bold bg-indigo-500/5 px-6 py-2.5 rounded-full group-hover:bg-indigo-600 group-hover:text-white transition-colors w-full justify-center text-[14px]">
+            Continue <ArrowRight size={16} />
+          </div>
+        </Link>
+
       </div>
     </div>
   );
