@@ -28,7 +28,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
 
   return (
     <>
-      <header className="fixed top-0 right-0 left-0 md:left-[280px] z-10 h-16 bg-sidebar border-b border-border/20 flex items-center justify-between px-4 md:px-6 transition-all duration-300">
+      <header className="fixed top-0 right-0 left-0 md:left-[280px] z-10 h-16 bg-[#172554] border-b border-white/10 flex items-center justify-between px-4 md:px-6 transition-all duration-300">
         
         {/* Left side: Hamburger (Mobile) & Title */}
         <div className="flex items-center gap-3">
@@ -39,7 +39,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
             <Menu size={24} />
           </button>
           <h2 className="text-lg font-bold text-sidebar-text hidden sm:block w-36">
-            <span className="text-secondary">Super Admin</span>
+            <span className="text-[#3B82F6]">Super Admin</span>
           </h2>
           
           {/* Global Search Bar (Trigger) */}
@@ -49,7 +49,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
           >
             <Search size={16} />
             <span className="text-sm font-semibold flex-1">Search ERP (Students, Staff, Payments...)</span>
-            <span className="text-[10px] font-bold border border-white/20 px-1.5 py-0.5 rounded text-white/50">Ctrl K</span>
+            <span className="text-[10px] font-bold border border-white/30 px-1.5 py-0.5 rounded text-white/50">Ctrl K</span>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
             <button 
               onClick={() => setIsNotificationsOpen(!isNotificationsOpen)}
               className={`relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105 ${
-                isNotificationsOpen ? "bg-secondary text-[#1E3A8A] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#1E3A8A]"
+                isNotificationsOpen ? "bg-[#3B82F6] text-white shadow-sm" : "bg-transparent hover:bg-[#3B82F6]/20 text-sidebar-text-muted hover:text-[#3B82F6]"
               }`}
             >
               <Bell size={20} />
@@ -82,13 +82,13 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                 <div className="fixed inset-0 z-40" onClick={() => setIsNotificationsOpen(false)}></div>
                 <div className="absolute right-0 top-full mt-2 w-80 bg-card border border-border rounded-lg shadow-lg py-1 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
                   <div className="px-4 py-3 border-b border-border flex justify-between items-center bg-bg-page">
-                    <span className="text-sm font-bold text-text-[#1E3A8A]">Notifications</span>
+                    <span className="text-sm font-bold text-text-primary">Notifications</span>
                     <button className="text-xs font-bold text-[#1E3A8A] hover:underline">Mark all as read</button>
                   </div>
                   <div className="max-h-[300px] overflow-y-auto">
                     <div className="p-4 border-b border-border hover:bg-bg-page cursor-pointer transition-colors">
                       <div className="flex justify-between items-start mb-1">
-                        <span className="text-sm font-bold text-text-[#1E3A8A]">System Backup Complete</span>
+                        <span className="text-sm font-bold text-text-primary">System Backup Complete</span>
                         <span className="text-[10px] text-text-secondary">2 mins ago</span>
                       </div>
                       <span className="text-xs text-text-secondary">Weekly automated backup was successful.</span>
@@ -116,15 +116,15 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
             <button 
               onClick={() => setIsProfileOpen(!isProfileOpen)}
               className={`flex items-center gap-2 p-1.5 md:p-2 rounded-lg transition-all duration-200 ease-in-out group ${
-                isProfileOpen ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
+                isProfileOpen ? "bg-[#3B82F6]/20 shadow-sm" : "bg-transparent hover:bg-[#3B82F6]/20"
               }`}
             >
-              <UserCircle size={28} className={`transition-colors ${isProfileOpen ? "text-[#1E3A8A]" : "text-sidebar-text-muted group-hover:text-[#1E3A8A]"}`} />
+              <UserCircle size={28} className={`transition-colors ${isProfileOpen ? "text-[#3B82F6]" : "text-sidebar-text-muted group-hover:text-[#3B82F6]"}`} />
               <div className="hidden md:flex flex-col items-start leading-tight">
-                <span className={`text-sm font-semibold transition-colors ${isProfileOpen ? "text-[#1E3A8A]" : "text-sidebar-text group-hover:text-[#1E3A8A]"}`}>System Admin</span>
+                <span className={`text-sm font-semibold transition-colors ${isProfileOpen ? "text-[#3B82F6]" : "text-sidebar-text group-hover:text-[#3B82F6]"}`}>System Admin</span>
                 <span className="text-xs text-sidebar-text-muted">super@erp360.com</span>
               </div>
-              <ChevronDown size={16} className={`ml-1 hidden md:block transition-colors ${isProfileOpen ? "text-[#1E3A8A]" : "text-sidebar-text-muted group-hover:text-[#1E3A8A]"}`} />
+              <ChevronDown size={16} className={`ml-1 hidden md:block transition-colors ${isProfileOpen ? "text-[#3B82F6]" : "text-sidebar-text-muted group-hover:text-[#3B82F6]"}`} />
             </button>
 
             {/* Dropdown Menu */}
@@ -132,13 +132,13 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
               <>
                 <div className="fixed inset-0 z-40" onClick={() => setIsProfileOpen(false)}></div>
                 <div className="absolute right-0 top-full mt-2 w-48 bg-card border border-border rounded-lg shadow-lg py-1 z-50 overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                  <a href="/super-admin/25-my-profile" className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-[#1E3A8A] hover:bg-bg-page hover:text-[#1E3A8A] transition-colors">
+                  <a href="/super-admin/25-my-profile" className="flex items-center gap-2 px-4 py-2.5 text-sm text-text-primary hover:bg-bg-page hover:text-[#1E3A8A] transition-colors">
                     <UserCircle size={16} /> My Profile
                   </a>
                   <div className="h-px bg-border my-1"></div>
                   <button 
                     onClick={() => window.location.href = '/'}
-                    className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:text-[#3B82F6]-bg hover:text-danger-strong transition-colors text-left"
+                    className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 hover:text-danger-strong transition-colors text-left"
                   >
                     <LogOut size={16} /> Logout
                   </button>
@@ -162,13 +162,13 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                 type="text" 
                 autoFocus
                 placeholder="Search across all modules (Students, Users, Vehicles, Logs)..." 
-                className="flex-1 bg-transparent border-none outline-none text-text-[#1E3A8A] text-lg font-semibold placeholder:text-text-secondary placeholder:font-normal"
+                className="flex-1 bg-transparent border-none outline-none text-text-primary text-lg font-semibold placeholder:text-text-secondary placeholder:font-normal"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
               <button 
                 onClick={() => { setIsSearchOpen(false); setSearchQuery(""); }}
-                className="p-1 rounded-md text-text-secondary hover:text-danger hover:text-[#3B82F6]-bg transition-colors"
+                className="p-1 rounded-md text-text-secondary hover:text-danger hover:bg-danger/10 transition-colors"
               >
                 <X size={24} />
               </button>
@@ -183,7 +183,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                   <p className="text-xs">Search results are filtered based on your Super Admin permissions.</p>
                   <div className="flex flex-wrap justify-center gap-2 mt-4">
                     {['Users', 'Students', 'Payments', 'Logs', 'Certificates'].map(tag => (
-                      <span key={tag} onClick={() => setSearchQuery(tag)} className="text-[10px] font-bold px-2 py-1 bg-[#1E3A8A]/10 text-[#1E3A8A] rounded border border-primary/20 cursor-pointer hover:bg-[#1E3A8A] hover:text-white transition-colors">
+                      <span key={tag} onClick={() => setSearchQuery(tag)} className="text-[10px] font-bold px-2 py-1 bg-[#1E3A8A]/10 text-[#1E3A8A] rounded border border-[#1E3A8A]/20 cursor-pointer hover:bg-[#1E3A8A] hover:text-white transition-colors">
                         {tag}
                       </span>
                     ))}
@@ -199,15 +199,15 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
                         </div>
                         <div className="flex flex-col flex-1">
                           <div className="flex items-center gap-2">
-                            <span className="text-sm font-bold text-text-[#1E3A8A]">{result.title}</span>
-                            <span className="text-[9px] font-bold px-1.5 py-0.5 bg-[#1E3A8A]-subtle text-text-secondary rounded uppercase">{result.type}</span>
+                            <span className="text-sm font-bold text-text-primary">{result.title}</span>
+                            <span className="text-[9px] font-bold px-1.5 py-0.5 bg-primary-subtle text-text-secondary rounded uppercase">{result.type}</span>
                           </div>
                           <span className="text-xs text-text-secondary">{result.subtitle}</span>
                         </div>
                         {result.permission === 'Allowed' ? (
                           <span className="text-[10px] font-bold text-success bg-success-bg px-2 py-1 rounded">View Access</span>
                         ) : (
-                          <span className="text-[10px] font-bold text-danger text-[#3B82F6]-bg px-2 py-1 rounded">{result.permission}</span>
+                          <span className="text-[10px] font-bold text-danger bg-danger/10 px-2 py-1 rounded">{result.permission}</span>
                         )}
                       </div>
                     ))
@@ -224,7 +224,7 @@ export default function SuperAdminHeader({ onMenuClick }: SuperAdminHeaderProps)
             {/* Footer */}
             <div className="bg-bg-page border-t border-border p-3 flex justify-between items-center text-[10px] text-text-secondary font-bold uppercase">
               <span>System-Wide Global Search Engine</span>
-              <span className="flex items-center gap-1"><kbd className="bg-border px-1.5 py-0.5 rounded text-text-[#1E3A8A]">ESC</kbd> to close</span>
+              <span className="flex items-center gap-1"><kbd className="bg-border px-1.5 py-0.5 rounded text-text-primary">ESC</kbd> to close</span>
             </div>
           </div>
         </div>

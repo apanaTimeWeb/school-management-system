@@ -7,8 +7,8 @@ import { useLayoutStore } from './useLayoutStore';
 import { useSchoolConfig } from '@/hooks/useSchoolConfig';
 
 const MENU_ITEMS = [
-  { href: '/principal/student-overview', label: 'Student overview', icon: <GraduationCap size={20} /> },
-  { href: '/principal/admissions', label: 'Admissions monitoring', icon: <GraduationCap size={20} /> },
+  { href: '/principal/dashboard', label: 'School performance dashboards', icon: <GraduationCap size={20} /> },
+  { href: '/principal/students', label: 'Student overview', icon: <GraduationCap size={20} /> },
   { href: '/principal/academics', label: 'Academic monitoring', icon: <GraduationCap size={20} /> },
   { href: '/principal/attendance', label: 'Attendance monitoring', icon: <GraduationCap size={20} /> },
   { href: '/principal/teacher-monitoring', label: 'Teacher/Class monitoring', icon: <GraduationCap size={20} /> },
@@ -30,7 +30,6 @@ const MENU_ITEMS = [
   { href: '/principal/inventory', label: 'Inventory overview', icon: <GraduationCap size={20} /> },
   { href: '/principal/approvals', label: 'Approval Center', icon: <GraduationCap size={20} /> },
   { href: '/principal/reports', label: 'Reports & Analytics', icon: <GraduationCap size={20} /> },
-  { href: '/principal/dashboard', label: 'School performance dashboards', icon: <GraduationCap size={20} /> },
   // Original items not in the list but kept
   { href: '/principal/communication', label: 'Communication', icon: <GraduationCap size={20} /> },
   { href: '/principal/documents', label: 'Documents & Certs', icon: <GraduationCap size={20} /> },
@@ -55,16 +54,16 @@ export default function PrincipalSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-[#7C3AED] border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#4C1D95] border-r border-white/10 transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#7C3AED]">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#4C1D95]">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-white font-extrabold text-[18px]">
+            <div className="w-8 h-8 rounded-lg bg-[#8B5CF6] flex items-center justify-center text-white font-extrabold text-[18px]">
               P
             </div>
-            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-secondary">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-[#8B5CF6]">ERP</span></span>
           </div>
           <button 
             className="lg:hidden text-white/60 hover:text-white transition-colors"
@@ -91,7 +90,7 @@ export default function PrincipalSidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px]
                   ${isActive 
-                    ? 'bg-secondary text-white shadow-sm' 
+                    ? 'bg-[#7C3AED] text-white shadow-sm' 
                     : 'text-white/60 hover:text-white hover:bg-[#7C3AED]/50 border border-transparent'}
                 `}
               >
@@ -105,7 +104,7 @@ export default function PrincipalSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#7C3AED]">
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-white/10 bg-[#4C1D95]">
           <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
             <Settings size={20} />
             Settings

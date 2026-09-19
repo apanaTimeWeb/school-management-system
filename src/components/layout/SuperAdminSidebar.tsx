@@ -56,23 +56,23 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
   return (
     <aside 
       className={clsx(
-        "fixed top-0 left-0 z-30 h-screen w-[280px] bg-[#1E3A8A] border-r border-border/20 flex flex-col transition-transform duration-300",
+        "fixed top-0 left-0 z-30 h-screen w-[280px] bg-[#172554] border-r border-white/10 flex flex-col transition-transform duration-300",
         isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"
       )}
     >
-      <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#1E3A8A]">
+      <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#172554]">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-white font-extrabold text-xl">
+          <div className="w-8 h-8 rounded-lg bg-[#3B82F6] flex items-center justify-center text-white font-extrabold text-xl">
             S
           </div>
-          <h1 className="text-xl font-bold text-white tracking-tight">Super<span className="text-secondary">Admin</span></h1>
+          <h1 className="text-xl font-bold text-white tracking-tight">Super<span className="text-[#3B82F6]">Admin</span></h1>
         </div>
         
         {/* Mobile Close Button */}
         {setIsOpen && (
           <button 
             onClick={() => setIsOpen(false)}
-            className="md:hidden text-white/60 hover:text-secondary p-1"
+            className="md:hidden text-white/60 hover:text-[#3B82F6] p-1"
           >
             <X size={24} />
           </button>
@@ -91,7 +91,7 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
               <div key={category.title} className="flex flex-col mb-1">
                 <div className={clsx(
                     "flex items-center justify-between rounded-md transition-colors duration-200 group",
-                    isActive ? "bg-secondary" : "hover:bg-[#1E3A8A]/50"
+                    isActive ? "bg-[#1E3A8A]" : "hover:bg-[#1E3A8A]/50"
                 )}>
                   <Link
                     href={category.href}
@@ -103,15 +103,15 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
                     }}
                     className={clsx(
                       "flex-1 px-3 py-2.5 text-[13px] font-semibold flex items-center justify-between gap-3 w-full",
-                      isActive ? "text-white" : "text-white/60 hover:text-white"
+                      isActive ? "text-white" : "text-white/70 hover:text-white"
                     )}
                   >
                     <div className="flex items-center gap-3">
-                      {Icon && <Icon size={16} className={clsx(isActive ? "text-white" : "text-white/60 group-hover:text-white")} />}
+                      {Icon && <Icon size={16} className={clsx(isActive ? "text-white" : "text-white/70 group-hover:text-white")} />}
                       <span className="whitespace-nowrap">{category.title}</span>
                     </div>
                     {hasItems && (
-                      <div className={clsx("p-1 rounded-md transition-colors", isActive ? "text-white" : "text-white/60")}>
+                      <div className={clsx("p-1 rounded-md transition-colors", isActive ? "text-white" : "text-white/70")}>
                         {isOpenSection ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                       </div>
                     )}
@@ -123,7 +123,7 @@ export default function SuperAdminSidebar({ isOpen, setIsOpen }: SuperAdminSideb
                     {category.items.map((item) => (
                       <div
                         key={item}
-                        className="pl-4 py-1.5 text-xs text-white/60/70 cursor-default"
+                        className="pl-4 py-1.5 text-xs text-white/70 hover:text-white cursor-pointer transition-colors"
                       >
                         • {item}
                       </div>

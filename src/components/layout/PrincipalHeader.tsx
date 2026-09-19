@@ -37,16 +37,16 @@ export default function PrincipalHeader() {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="h-16 bg-header/90 backdrop-blur-md border-b border-border sticky top-0 z-30 flex items-center justify-between px-4 lg:px-8 transition-all duration-300">
+    <header className="h-16 bg-[#4C1D95] backdrop-blur-md border-b border-white/10 sticky top-0 z-30 flex items-center justify-between px-4 lg:px-8 transition-all duration-300">
       {/* Left side: Hamburger (Mobile) & Title */}
       <div className="flex items-center gap-3">
         <button
           onClick={toggleMobileSidebar}
-          className="lg:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#7C3AED]-subtle hover:text-sidebar-text transition-colors"
+          className="lg:hidden p-2 -ml-2 rounded-md text-white/80 hover:bg-[#8B5CF6]/20 hover:text-white transition-colors"
         >
           <Menu size={24} />
         </button>
-        <h2 className="text-lg font-semibold text-sidebar-text hidden sm:block">Principal Portal</h2>
+        <h2 className="text-lg font-semibold text-white hidden sm:block">Principal Portal</h2>
       </div>
 
       {/* Right side: Actions */}
@@ -54,11 +54,11 @@ export default function PrincipalHeader() {
 
         {/* Global Search */}
         <div className="hidden md:flex items-center gap-2 bg-black/20 border border-white/10 rounded-md px-3 py-1.5 focus-within:border-secondary/50 transition-colors w-64">
-          <Search size={16} className="text-sidebar-text-muted" />
+          <Search size={16} className="text-white/80" />
           <input
             type="text"
             placeholder="Search portal..."
-            className="bg-transparent border-none outline-none text-[13px] text-sidebar-text w-full placeholder:text-sidebar-text-muted"
+            className="bg-transparent border-none outline-none text-[13px] text-white w-full placeholder:text-white/80"
           />
         </div>
 
@@ -71,12 +71,12 @@ export default function PrincipalHeader() {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-[#7C3AED] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#7C3AED]"
+              showNotifications ? "bg-[#8B5CF6] text-white shadow-sm" : "bg-transparent hover:bg-[#8B5CF6]/20 text-white/80 hover:text-[#8B5CF6]"
             )}
           >
             <Bell size={20} />
             {unreadCount > 0 && (
-              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-[#8B5CF6] rounded-full border-2 border-header flex items-center justify-center"></span>
+              <span className="absolute top-1.5 right-1.5 w-2.5 h-2.5 text-white bg-[#7C3AED] rounded-full border-2 border-header flex items-center justify-center"></span>
             )}
           </button>
 
@@ -84,7 +84,7 @@ export default function PrincipalHeader() {
           {showNotifications && (
             <div className="absolute right-0 mt-2 w-80 bg-card border border-border rounded-xl shadow-xl overflow-hidden fade-in z-50">
               <div className="flex justify-between items-center p-3 border-b border-border bg-bg-page">
-                <h3 className="font-bold text-sm text-text-[#7C3AED]">Notifications</h3>
+                <h3 className="font-bold text-sm text-[#7C3AED]">Notifications</h3>
                 <span className="text-[10px] font-bold text-[#7C3AED] cursor-pointer hover:underline">Mark all as read</span>
               </div>
               <div className="max-h-80 overflow-y-auto flex flex-col">
@@ -97,7 +97,7 @@ export default function PrincipalHeader() {
                     </div>
                     <div className="flex flex-col flex-1">
                       <div className="flex justify-between items-start gap-2">
-                        <span className={clsx("text-sm font-bold text-text-[#7C3AED]", !notif.read && "text-[#7C3AED]")}>{notif.title}</span>
+                        <span className={clsx("text-sm font-bold text-[#7C3AED]", !notif.read && "text-[#7C3AED]")}>{notif.title}</span>
                         {!notif.read && <span className="w-2 h-2 rounded-full bg-[#7C3AED] shrink-0 mt-1"></span>}
                       </div>
                       <span className="text-xs font-semibold text-text-secondary mt-0.5">{notif.desc}</span>
@@ -124,28 +124,28 @@ export default function PrincipalHeader() {
             }}
             className={clsx(
               "flex items-center gap-2 p-1.5 pr-2 rounded-lg transition-all duration-200 ease-in-out group",
-              showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
+              showProfileMenu ? "bg-[#8B5CF6]/20 shadow-sm" : "bg-transparent hover:bg-[#8B5CF6]/20"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text-muted group-hover:text-[#7C3AED]")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#8B5CF6]" : "text-white/80 group-hover:text-[#8B5CF6]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text group-hover:text-[#7C3AED]")}>Dr. A. Sharma</span>
-              <span className="text-xs text-sidebar-text-muted hidden md:block">Principal</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#8B5CF6]" : "text-white group-hover:text-[#8B5CF6]")}>Dr. A. Sharma</span>
+              <span className="text-xs text-white/80 hidden md:block">Principal</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#7C3AED]" : "text-sidebar-text-muted group-hover:text-[#7C3AED]")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#8B5CF6]" : "text-white/80 group-hover:text-[#8B5CF6]")} />
           </button>
 
           {/* Profile Dropdown */}
           {showProfileMenu && (
             <div className="absolute right-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-xl overflow-hidden fade-in z-50 py-1">
               <div className="px-4 py-2 border-b border-border mb-1 block sm:hidden">
-                <p className="text-sm font-bold text-text-[#7C3AED] truncate">Dr. A. Sharma</p>
+                <p className="text-sm font-bold text-[#7C3AED] truncate">Dr. A. Sharma</p>
                 <p className="text-xs text-text-secondary truncate">Principal</p>
               </div>
-              <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-text-[#7C3AED] hover:bg-[#7C3AED]/10 transition">
+              <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-[#7C3AED] hover:bg-[#7C3AED]/10 transition">
                 <UserCircle size={16} /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#8B5CF6]/10 transition">
+              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

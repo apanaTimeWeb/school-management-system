@@ -18,15 +18,15 @@ export default function PrincipalLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-main flex items-center justify-center p-6 font-sans relative">
+    <div className="min-h-screen bg-[#F5F3FF] flex items-center justify-center p-6 font-sans relative">
       <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Selection
       </Link>
       
       <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-        <div className="bg-yellow-500/5 p-8 text-center border-b border-border">
-          <div className="w-16 h-16 rounded-full bg-yellow-500/10 flex items-center justify-center mx-auto mb-4">
-            <GraduationCap className="text-yellow-600" size={32} />
+        <div className="bg-[#F5F3FF] p-8 text-center border-b border-border">
+          <div className="w-16 h-16 rounded-full bg-[#7C3AED]/10 flex items-center justify-center mx-auto mb-4">
+            <GraduationCap className="text-[#7C3AED]" size={32} />
           </div>
           <h1 className="text-2xl font-bold text-text-primary">Principal</h1>
           <p className="text-text-secondary mt-1 text-sm">Executive Overview</p>
@@ -40,7 +40,7 @@ export default function PrincipalLogin() {
                 <input 
                   type="text" 
                   defaultValue="principal"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-yellow-500 outline-none transition-colors"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#8B5CF6] outline-none transition-colors"
                   
                 />
                 <User className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -53,7 +53,7 @@ export default function PrincipalLogin() {
                 <input 
                   type="password" 
                   defaultValue="password123"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-yellow-500 outline-none transition-colors tracking-widest"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#8B5CF6] outline-none transition-colors tracking-widest"
                   
                 />
                 <Lock className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -63,10 +63,10 @@ export default function PrincipalLogin() {
             <button 
               type="submit" 
               disabled={loading}
-              className="mt-4 w-full bg-secondary hover:bg-secondary/90 text-[#0B1C2C] font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 w-full bg-[#7C3AED] hover:bg-[#4C1D95] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading ? (
-                <div className="w-5 h-5 border-2 border-[#0B1C2C]/30 border-t-[#0B1C2C] rounded-full animate-spin" />
+                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
                 "Login as Principal"
               )}

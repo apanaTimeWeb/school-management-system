@@ -38,17 +38,17 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="fixed top-0 right-0 left-0 md:left-[280px] z-50 h-16 bg-header/90 backdrop-blur-md border-b border-border flex items-center justify-between px-4 md:px-6 transition-all duration-300">
+    <header className="fixed top-0 right-0 left-0 md:left-[280px] z-50 h-16 bg-[#134E4A] border-b border-white/10 flex items-center justify-between px-4 md:px-6 transition-all duration-300">
       
       {/* Left side */}
       <div className="flex items-center gap-3">
         <button 
-          className="md:hidden p-2 -ml-2 rounded-md text-sidebar-text-muted hover:bg-[#0F766E]-subtle hover:text-sidebar-text transition-colors"
+          className="md:hidden p-2 -ml-2 rounded-md text-white/80 hover:bg-white/10 hover:text-white transition-colors"
           onClick={onMenuClick}
         >
           <Menu size={24} />
         </button>
-        <h2 className="text-lg font-semibold text-sidebar-text">School Admin Portal</h2>
+        <h2 className="text-lg font-semibold text-white">School Admin Portal</h2>
       </div>
 
       {/* Right side: Actions & Profile */}
@@ -63,7 +63,7 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
             }}
             className={clsx(
               "relative p-2 rounded-full transition-all duration-200 ease-in-out hover:scale-105",
-              showNotifications ? "bg-secondary text-[#0F766E] shadow-sm" : "bg-transparent hover:bg-secondary text-sidebar-text-muted hover:text-[#0F766E]"
+              showNotifications ? "bg-[#14B8A6] text-white shadow-sm" : "bg-transparent hover:bg-[#14B8A6]/20 text-white/80 hover:text-[#14B8A6]"
             )}
           >
             <Bell size={20} />
@@ -116,15 +116,15 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
             }}
             className={clsx(
               "flex items-center gap-2 p-1.5 pr-2 rounded-lg transition-all duration-200 ease-in-out group",
-              showProfileMenu ? "bg-secondary shadow-sm" : "bg-transparent hover:bg-secondary"
+              showProfileMenu ? "bg-[#14B8A6]/20 shadow-sm" : "bg-transparent hover:bg-[#14B8A6]/20"
             )}
           >
-            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text-muted group-hover:text-[#0F766E]")} />
+            <UserCircle size={28} className={clsx("transition-colors", showProfileMenu ? "text-[#14B8A6]" : "text-white/80 group-hover:text-[#14B8A6]")} />
             <div className="hidden sm:flex flex-col items-start leading-tight">
-              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text group-hover:text-[#0F766E]")}>Principal / Admin</span>
-              <span className="text-xs text-sidebar-text-muted hidden md:block">admin@erp360.com</span>
+              <span className={clsx("text-sm font-semibold transition-colors", showProfileMenu ? "text-[#14B8A6]" : "text-white group-hover:text-[#14B8A6]")}>Principal / Admin</span>
+              <span className="text-xs text-white/80 hidden md:block">admin@erp360.com</span>
             </div>
-            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#0F766E]" : "text-sidebar-text-muted group-hover:text-[#0F766E]")} />
+            <ChevronDown size={16} className={clsx("ml-1 hidden sm:block transition-colors", showProfileMenu ? "text-[#14B8A6]" : "text-white/80 group-hover:text-[#14B8A6]")} />
           </button>
 
           {/* Profile Dropdown */}
@@ -134,11 +134,11 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
                  <p className="text-sm font-bold truncate">Principal / Admin</p>
                  <p className="text-xs text-text-secondary truncate">admin@erp360.com</p>
                </div>
-               <Link href="/admin/my-profile" className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-[#0F766E] hover:bg-bg-page transition">
+               <Link href="/admin/my-profile" className="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-text-primary hover:text-[#0F766E] hover:bg-bg-page transition">
                  <UserCircle size={16}/> My Profile
                </Link>
                <div className="h-px w-full bg-border my-1"></div>
-               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:text-[#14B8A6]/10 transition">
+               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                  <LogOut size={16}/> Logout
                </Link>
             </div>

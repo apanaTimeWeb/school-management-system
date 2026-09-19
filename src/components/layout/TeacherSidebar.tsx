@@ -57,16 +57,16 @@ export default function TeacherSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-[#15803D] border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#14532D] border-r border-white/10 transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#15803D]">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#14532D]">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-info flex items-center justify-center text-black font-extrabold text-[18px]">
+            <div className="w-8 h-8 rounded-lg bg-[#22C55E] flex items-center justify-center text-white font-extrabold text-[18px]">
               T
             </div>
-            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-info">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-[#22C55E]">ERP</span></span>
           </div>
           <button 
             className="lg:hidden text-white/60 hover:text-white transition-colors"
@@ -89,11 +89,11 @@ export default function TeacherSidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px] group
                   ${isActive 
-                    ? 'bg-info/20 text-info shadow-sm' 
-                    : 'text-white/60 hover:text-white hover:bg-info/10 border border-transparent'}
+                    ? 'bg-[#15803D] text-white shadow-sm' 
+                    : 'text-white/60 hover:text-white hover:bg-[#15803D]/50 border border-transparent'}
                 `}
               >
-                <span className={isActive ? 'text-info' : 'text-white/60 group-hover:text-info transition-colors'}>
+                <span className={isActive ? 'text-white' : 'text-white/60 group-hover:text-white transition-colors'}>
                   {item.icon}
                 </span>
                 {String(index + 1).padStart(2, '0')} - {item.label}
@@ -103,7 +103,7 @@ export default function TeacherSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#15803D]">
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-white/10 bg-[#14532D]">
           <button 
             onClick={(e) => { e.preventDefault(); window.dispatchEvent(new CustomEvent('open-teacher-coming-soon', { detail: 'Settings module coming soon.' })); }}
             className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]"
