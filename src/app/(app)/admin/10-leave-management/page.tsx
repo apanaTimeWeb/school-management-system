@@ -8,6 +8,7 @@ import LeaveHistoryBalance from "./leave_management_components/LeaveHistoryBalan
 import LeaveReports from "./leave_management_components/LeaveReports";
 import { Calendar, User, Users, History, BarChart2 } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "config", label: "Leave Configuration", icon: Calendar },
@@ -56,6 +57,7 @@ export default function LeaveManagementPage() {
         {activeTab === "history" && <LeaveHistoryBalance />}
         {activeTab === "reports" && <LeaveReports />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

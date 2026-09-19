@@ -7,6 +7,7 @@ import StudentOperations from "./student_management_components/StudentOperations
 import StudentProfileView from "./student_management_components/StudentProfileView";
 import { Users, UserPlus, Settings2, UserCircle } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "admission", label: "Student admission/enrollment", icon: UserPlus },
@@ -59,6 +60,7 @@ export default function StudentManagementPage() {
         {activeTab === "history" && <StudentProfileView />}
         {["promotion", "demotion", "section", "class", "transfer", "withdrawal", "roll", "house"].includes(activeTab) && <StudentOperations />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

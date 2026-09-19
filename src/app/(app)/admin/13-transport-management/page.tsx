@@ -8,6 +8,7 @@ import TransportFee from "./transport_components/TransportFee";
 import GPSReports from "./transport_components/GPSReports";
 import { Truck, Map, Users, IndianRupee, Navigation } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "vehicles", label: "Vehicles & Documents", icon: Truck },
@@ -56,6 +57,7 @@ export default function TransportManagementPage() {
         {activeTab === "fees" && <TransportFee />}
         {activeTab === "gps" && <GPSReports />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

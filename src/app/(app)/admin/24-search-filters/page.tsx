@@ -7,6 +7,7 @@ import AcademicSearch from "./search_components/AcademicSearch";
 import DocumentSearch from "./search_components/DocumentSearch";
 import { Users, IndianRupee, BookOpen, FileText } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "people", label: "Global People Search", icon: Users },
@@ -53,6 +54,7 @@ export default function SearchFiltersPage() {
         {activeTab === "academic" && <AcademicSearch />}
         {activeTab === "documents" && <DocumentSearch />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

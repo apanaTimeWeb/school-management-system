@@ -6,6 +6,7 @@ import ParentProfileView from "./parent_management_components/ParentProfileView"
 import ParentOperations from "./parent_management_components/ParentOperations";
 import { Users, UserCircle, Settings2 } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "directory", label: "Parent Directory", icon: Users },
@@ -50,6 +51,7 @@ export default function ParentManagementPage() {
         {activeTab === "profile" && <ParentProfileView />}
         {activeTab === "operations" && <ParentOperations />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

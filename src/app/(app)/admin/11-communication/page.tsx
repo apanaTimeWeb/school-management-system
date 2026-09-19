@@ -7,6 +7,7 @@ import NotificationTemplates from "./communication_components/NotificationTempla
 import CommunicationHistory from "./communication_components/CommunicationHistory";
 import { Megaphone, Send, FileText, History } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "notice", label: "Notice Board & Announcements", icon: Megaphone },
@@ -53,6 +54,7 @@ export default function CommunicationPage() {
         {activeTab === "templates" && <NotificationTemplates />}
         {activeTab === "history" && <CommunicationHistory />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

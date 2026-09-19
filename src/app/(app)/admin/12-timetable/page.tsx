@@ -7,6 +7,7 @@ import SubstituteManagement from "./timetable_components/SubstituteManagement";
 import TimetableSettings from "./timetable_components/TimetableSettings";
 import { CalendarDays, LayoutGrid, UserMinus, Clock } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "viewer", label: "Timetable Viewer", icon: CalendarDays },
@@ -53,6 +54,7 @@ export default function TimetablePage() {
         {activeTab === "substitute" && <SubstituteManagement />}
         {activeTab === "settings" && <TimetableSettings />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

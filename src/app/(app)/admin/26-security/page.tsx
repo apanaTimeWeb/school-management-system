@@ -7,6 +7,7 @@ import AccountSecurity from "./security_components/AccountSecurity";
 import AuditLogs from "./security_components/AuditLogs";
 import { ShieldAlert, Users, LockKeyhole, List } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "access", label: "Access Control (RBAC)", icon: Users },
@@ -53,6 +54,7 @@ export default function SecurityPage() {
         {activeTab === "account" && <AccountSecurity />}
         {activeTab === "audit" && <AuditLogs />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

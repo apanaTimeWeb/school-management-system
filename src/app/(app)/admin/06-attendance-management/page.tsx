@@ -7,6 +7,7 @@ import AttendanceOperations from "./attendance_management_components/AttendanceO
 import AttendanceReports from "./attendance_management_components/AttendanceReports";
 import { Users, Fingerprint, Settings2, BarChart2 } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "student", label: "Student Attendance", icon: Users },
@@ -53,6 +54,7 @@ export default function AttendanceManagementPage() {
         {activeTab === "operations" && <AttendanceOperations />}
         {activeTab === "reports" && <AttendanceReports />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

@@ -7,6 +7,7 @@ import StaffAdminReports from "./reports_components/StaffAdminReports";
 import OperationsReports from "./reports_components/OperationsReports";
 import { FileBarChart, IndianRupee, Users, PackageOpen } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "academic", label: "Academic Reports", icon: FileBarChart },
@@ -53,6 +54,7 @@ export default function ReportsAnalyticsPage() {
         {activeTab === "staff" && <StaffAdminReports />}
         {activeTab === "operations" && <OperationsReports />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

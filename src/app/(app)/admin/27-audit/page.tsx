@@ -7,6 +7,7 @@ import ClassroomAudit from "./audit_components/ClassroomAudit";
 import SystemAudit from "./audit_components/SystemAudit";
 import { ScrollText, UserCog, IndianRupee, ClipboardList, Settings } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "academic", label: "Academic & Documents", icon: UserCog },
@@ -53,6 +54,7 @@ export default function AuditPage() {
         {activeTab === "classroom" && <ClassroomAudit />}
         {activeTab === "system" && <SystemAudit />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

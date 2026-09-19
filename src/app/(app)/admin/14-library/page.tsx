@@ -7,6 +7,7 @@ import MembersReservations from "./library_components/MembersReservations";
 import LibraryInventory from "./library_components/LibraryInventory";
 import { Book, ArrowRightLeft, Users, AlertTriangle } from "lucide-react";
 import clsx from "clsx";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const tabs = [
   { id: "catalog", label: "Catalog Management", icon: Book },
@@ -53,6 +54,7 @@ export default function LibraryManagementPage() {
         {activeTab === "members" && <MembersReservations />}
         {activeTab === "inventory" && <LibraryInventory />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }
