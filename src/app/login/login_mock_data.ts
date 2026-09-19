@@ -137,7 +137,7 @@ export const ROLE_LOGIN_CONFIG: Record<string, any> = {
     color: '#0F766E', // Primary
     bgColor: '#0F766E0D', // Light bg (5-10%)
     route: '/login/school-admin',
-    dashboardRoute: '/school-admin/dashboard',
+    dashboardRoute: '/admin/01-dashboard',
     demoUser: 'admin',
     demoPass: 'admin123'
   },
@@ -221,7 +221,7 @@ export const ROLE_LOGIN_CONFIG: Record<string, any> = {
     color: '#6D28D9',
     bgColor: '#6D28D90D',
     route: '/login/librarian',
-    dashboardRoute: '/librarian/dashboard',
+    dashboardRoute: '/librarian',
     demoUser: 'librarian',
     demoPass: 'librarian123'
   },
@@ -233,7 +233,7 @@ export const ROLE_LOGIN_CONFIG: Record<string, any> = {
     color: '#0891B2',
     bgColor: '#0891B20D',
     route: '/login/transport-manager',
-    dashboardRoute: '/transport/dashboard',
+    dashboardRoute: '/transport-manager/dashboard',
     demoUser: 'transport',
     demoPass: 'transport123'
   },
@@ -245,7 +245,7 @@ export const ROLE_LOGIN_CONFIG: Record<string, any> = {
     color: '#166534',
     bgColor: '#1665340D',
     route: '/login/hostel-warden',
-    dashboardRoute: '/hostel/dashboard',
+    dashboardRoute: '/hostel-warden/dashboard',
     demoUser: 'hostel',
     demoPass: 'hostel123'
   }

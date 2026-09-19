@@ -7,6 +7,7 @@ import clsx from 'clsx';
 import { 
   LayoutDashboard, UserCircle, Users, PanelLeftClose, Wallet, BookOpen, Calendar, AlertCircle, FileText, FileVideo, GraduationCap, Award, MessageSquare, Mail, Trophy, Bus, Home, HeartPulse, Scale, ScrollText, IdCard, Star, ClipboardList, Bell, PieChart, Siren, ShieldCheck
 } from 'lucide-react';
+import { useSchoolConfig } from '@/hooks/useSchoolConfig';
 
 const navItems = [
   // User's Checklist
@@ -53,6 +54,7 @@ interface Props {
 export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
   const pathname = usePathname();
   const router = useRouter();
+  const { modules, isLoaded } = useSchoolConfig();
 
   return (
     <>
@@ -93,6 +95,10 @@ export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
         {/* Navigation Links */}
         <div className="flex-1 overflow-y-auto custom-scrollbar p-4 space-y-1">
           {navItems.map((item, index) => {
+            if (item.href.includes('/library') && modules.library === false) return null;
+            if (item.href.includes('/transport') && modules.transport === false) return null;
+            if (item.href.includes('/hostel') && modules.hostel === false) return null;
+
             const isActive = pathname === item.href || pathname.startsWith(item.href + '/');
             const serialNo = (index + 1).toString().padStart(2, '0') + ".";
             

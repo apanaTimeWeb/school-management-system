@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Settings, X, GraduationCap } from 'lucide-react';
 import { useLayoutStore } from './useLayoutStore';
+import { useSchoolConfig } from '@/hooks/useSchoolConfig';
 
 const MENU_ITEMS = [
   { href: '/principal/student-overview', label: 'Student overview', icon: <GraduationCap size={20} /> },
@@ -40,6 +41,7 @@ const MENU_ITEMS = [
 export default function PrincipalSidebar() {
   const pathname = usePathname();
   const { isMobileSidebarOpen, setMobileSidebarOpen } = useLayoutStore();
+  const { modules, isLoaded } = useSchoolConfig();
 
   return (
     <>
@@ -76,6 +78,10 @@ export default function PrincipalSidebar() {
         <nav className="p-4 space-y-1.5 overflow-y-auto h-[calc(100vh-140px)] custom-scrollbar">
           <p className="text-[11px] font-bold text-white/60 uppercase tracking-wider mb-3 px-2">Main Menu</p>
           {MENU_ITEMS.map((item, index) => {
+            if (item.href.includes('/library') && modules.library === false) return null;
+            if (item.href.includes('/transport') && modules.transport === false) return null;
+            if (item.href.includes('/hostel') && modules.hostel === false) return null;
+
             const isActive = pathname.startsWith(item.href);
             return (
               <Link 

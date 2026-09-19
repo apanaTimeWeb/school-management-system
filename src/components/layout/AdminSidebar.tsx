@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from 'react';
 import { ChevronDown, ChevronRight, X, School } from "lucide-react";
 import clsx from "clsx";
+import { useSchoolConfig } from "@/hooks/useSchoolConfig";
 
 const adminCategories = [
   { id: "dashboard", title: "01. Dashboard", icon: School, href: "/admin/01-dashboard", items: [] },
@@ -46,6 +47,7 @@ interface AdminSidebarProps {
 export default function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
   const pathname = usePathname();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const { modules, isLoaded } = useSchoolConfig();
 
   const toggleSection = (title: string, e: React.MouseEvent) => {
     setOpenSections(prev => ({
@@ -79,6 +81,11 @@ export default function AdminSidebar({ isOpen, setIsOpen }: AdminSidebarProps) {
       <div className="flex-1 overflow-y-auto overflow-x-hidden p-4 hide-scrollbar">
         <nav className="flex flex-col gap-1 pb-10">
           {adminCategories.map((category) => {
+            // Check conditional modules
+            if (category.id === "library" && modules.library === false) return null;
+            if (category.id === "transport" && modules.transport === false) return null;
+            if (category.id === "hostel" && modules.hostel === false) return null;
+
             const hasItems = category.items && category.items.length > 0;
             const isOpenSection = openSections[category.title];
             const isActive = pathname.startsWith(category.href);

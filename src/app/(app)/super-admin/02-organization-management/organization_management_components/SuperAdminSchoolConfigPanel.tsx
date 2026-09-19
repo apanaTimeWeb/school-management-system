@@ -449,32 +449,32 @@ export default function SuperAdminSchoolConfigPanel() {
       </div>
 
       {/* ── Summary Cards ──────────────────────────────────────────────── */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Size */}
-        <div className="bg-card border border-border rounded-lg p-4">
-          <p className="text-[11px] text-text-secondary uppercase font-semibold tracking-wide">School Mode</p>
-          <p className="text-base font-bold text-text-primary mt-1">{PRESET_LABELS[schoolSize]}</p>
-          <p className="text-[11px] text-text-secondary mt-0.5 line-clamp-2">{PRESET_DESCRIPTIONS[schoolSize]}</p>
+        <div className="bg-card border border-border rounded-lg p-3 sm:p-4">
+          <p className="text-[10px] sm:text-[11px] text-text-secondary uppercase font-semibold tracking-wide">School Mode</p>
+          <p className="text-sm sm:text-base font-bold text-text-primary mt-1">{PRESET_LABELS[schoolSize]}</p>
+          <p className="text-[10px] sm:text-[11px] text-text-secondary mt-0.5 line-clamp-2">{PRESET_DESCRIPTIONS[schoolSize]}</p>
         </div>
         {/* Active Logins */}
-        <div className="bg-card border border-border rounded-lg p-4">
-          <p className="text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Active Logins</p>
-          <p className="text-2xl font-bold text-primary mt-1">{enabledRoleCount}</p>
-          <p className="text-[11px] text-text-secondary mt-0.5">of 10 operational roles</p>
+        <div className="bg-card border border-border rounded-lg p-3 sm:p-4">
+          <p className="text-[10px] sm:text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Active Logins</p>
+          <p className="text-xl sm:text-2xl font-bold text-primary mt-1">{enabledRoleCount}</p>
+          <p className="text-[10px] sm:text-[11px] text-text-secondary mt-0.5">of 10 roles</p>
         </div>
         {/* Active Modules */}
-        <div className="bg-card border border-border rounded-lg p-4">
-          <p className="text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Active Modules</p>
-          <p className="text-2xl font-bold text-primary mt-1">{enabledModuleCount}</p>
-          <p className="text-[11px] text-text-secondary mt-0.5">of {MODULE_MASTER.length} available</p>
+        <div className="bg-card border border-border rounded-lg p-3 sm:p-4">
+          <p className="text-[10px] sm:text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Active Modules</p>
+          <p className="text-xl sm:text-2xl font-bold text-primary mt-1">{enabledModuleCount}</p>
+          <p className="text-[10px] sm:text-[11px] text-text-secondary mt-0.5">of {MODULE_MASTER.length} total</p>
         </div>
         {/* Last Saved */}
-        <div className="bg-card border border-border rounded-lg p-4">
-          <p className="text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Last Saved</p>
+        <div className="bg-card border border-border rounded-lg p-3 sm:p-4">
+          <p className="text-[10px] sm:text-[11px] text-text-secondary uppercase font-semibold tracking-wide">Last Saved</p>
           <p className="text-xs font-semibold text-text-primary mt-1">
             {savedConfig?.savedAt ? formatTimestamp(savedConfig.savedAt) : "Not saved yet"}
           </p>
-          <p className="text-[11px] text-text-secondary mt-0.5">by {MOCK_SCHOOL.lastSavedBy}</p>
+          <p className="text-[10px] sm:text-[11px] text-text-secondary mt-0.5">by {MOCK_SCHOOL.lastSavedBy}</p>
         </div>
       </div>
 
@@ -502,30 +502,30 @@ export default function SuperAdminSchoolConfigPanel() {
         title="School Size / Operational Mode"
         description="Select the school's operational scale. Presets load default role and module configurations."
       >
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
           {(["small", "medium", "large", "custom"] as SchoolSize[]).map((size) => (
             <button
               key={size}
               id={`size-btn-${size}`}
               onClick={() => handleSizeChange(size)}
               className={cn(
-                "flex flex-col gap-1.5 p-4 rounded-lg border-2 text-left transition-all",
+                "flex flex-col gap-1 sm:gap-1.5 p-3 sm:p-4 rounded-lg border-2 text-left transition-all",
                 schoolSize === size
                   ? "border-primary bg-primary-subtle"
                   : "border-border bg-bg-page hover:border-primary/40 hover:bg-primary-subtle/40"
               )}
             >
-              <div className="flex items-center justify-between">
-                <span className={cn("text-sm font-bold", schoolSize === size ? "text-primary" : "text-text-primary")}>
+              <div className="flex items-center justify-between gap-1">
+                <span className={cn("text-xs sm:text-sm font-bold", schoolSize === size ? "text-primary" : "text-text-primary")}>
                   {PRESET_LABELS[size]}
                 </span>
                 {schoolSize === size && (
-                  <span className="text-[10px] font-bold bg-primary text-white px-1.5 py-0.5 rounded">Active</span>
+                  <span className="text-[9px] sm:text-[10px] font-bold bg-primary text-white px-1.5 py-0.5 rounded shrink-0">Active</span>
                 )}
               </div>
-              <p className="text-[11px] text-text-secondary leading-relaxed">{PRESET_DESCRIPTIONS[size]}</p>
+              <p className="text-[10px] sm:text-[11px] text-text-secondary leading-relaxed hidden sm:block">{PRESET_DESCRIPTIONS[size]}</p>
               {size !== 'custom' && (
-                <p className="text-[11px] font-semibold text-primary mt-1">
+                <p className="text-[10px] sm:text-[11px] font-semibold text-primary mt-0.5">
                   {size === 'small' ? '1 login' : size === 'medium' ? '4 logins' : '7+ logins'}
                 </p>
               )}
@@ -543,7 +543,7 @@ export default function SuperAdminSchoolConfigPanel() {
         isOpen={roleSectionOpen}
         onToggle={() => setRoleSectionOpen(p => !p)}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {ROLE_MASTER.map((role) => {
             const available = isRoleAvailable(role.id, modules);
             const enabled = roles[role.id];
@@ -632,7 +632,7 @@ export default function SuperAdminSchoolConfigPanel() {
               <h4 className="text-xs font-bold uppercase tracking-widest text-text-secondary mb-3 pb-2 border-b border-border">
                 {cat.label}
               </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
                 {catModules.map((mod) => {
                   const enabled = modules[mod.id];
                   const isInfraModule = ['library', 'transport', 'hostel'].includes(mod.id);
@@ -710,7 +710,7 @@ export default function SuperAdminSchoolConfigPanel() {
         isOpen={historySectionOpen}
         onToggle={() => setHistorySectionOpen(p => !p)}
       >
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto -mx-5 px-5">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
