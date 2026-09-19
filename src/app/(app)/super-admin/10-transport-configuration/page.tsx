@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Bus } from 'lucide-react';
 
 import SuperAdminTransportMasterConfig from './transport_configuration_components/SuperAdminTransportMasterConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'transport-master', label: 'Transport Master Settings', icon: Bus },
@@ -53,6 +54,7 @@ export default function TransportConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

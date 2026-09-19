@@ -9,6 +9,7 @@ import SuperAdminBackupSettings from './data_management_components/SuperAdminBac
 import SuperAdminExportCard from './data_management_components/SuperAdminExportCard';
 import SuperAdminImportCard from './data_management_components/SuperAdminImportCard';
 import SuperAdminRestoreSection from './data_management_components/SuperAdminRestoreSection';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'backup', label: 'Backup & Restore', icon: DatabaseBackup },
@@ -72,6 +73,7 @@ export default function DataManagementPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

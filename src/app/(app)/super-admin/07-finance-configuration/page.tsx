@@ -6,6 +6,7 @@ import { CreditCard, Landmark } from 'lucide-react';
 
 import SuperAdminFeeFinanceConfig from './finance_configuration_components/SuperAdminFeeFinanceConfig';
 import SuperAdminPaymentGatewayConfig from './finance_configuration_components/SuperAdminPaymentGatewayConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'gateway', label: 'Payment Gateway', icon: CreditCard },
@@ -61,6 +62,7 @@ export default function FinanceConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

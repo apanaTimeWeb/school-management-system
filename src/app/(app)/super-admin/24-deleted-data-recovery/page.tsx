@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SuperAdminRecycleBinConfig from './deleted_data_recovery_components/SuperAdminRecycleBinConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 export default function deleteddatarecoveryPage() {
   return (
@@ -10,6 +11,7 @@ export default function deleteddatarecoveryPage() {
         <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">RecycleBin</h2>
         <SuperAdminRecycleBinConfig />
       </section>
+          <MissingFeaturesUI />
     </div>
   );
 }

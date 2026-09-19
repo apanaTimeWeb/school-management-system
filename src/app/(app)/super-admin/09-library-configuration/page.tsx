@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { BookOpen } from 'lucide-react';
 
 import SuperAdminLibraryMasterConfig from './library_configuration_components/SuperAdminLibraryMasterConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'library-master', label: 'Library Master Settings', icon: BookOpen },
@@ -53,6 +54,7 @@ export default function LibraryConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

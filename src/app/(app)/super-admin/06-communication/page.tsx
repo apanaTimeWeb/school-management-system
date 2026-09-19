@@ -8,6 +8,7 @@ import SuperAdminEmailConfig from './communication_components/SuperAdminEmailCon
 import SuperAdminNotificationConfig from './communication_components/SuperAdminNotificationConfig';
 import SuperAdminSmsConfig from './communication_components/SuperAdminSmsConfig';
 import SuperAdminWhatsappConfig from './communication_components/SuperAdminWhatsappConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'notifications', label: 'Notification Config', icon: Bell },
@@ -77,6 +78,7 @@ export default function CommunicationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

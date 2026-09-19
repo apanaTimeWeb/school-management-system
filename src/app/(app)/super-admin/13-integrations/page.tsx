@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Plug } from 'lucide-react';
 
 import SuperAdminIntegrationManagementConfig from './integrations_components/SuperAdminIntegrationManagementConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'integrations', label: 'Third-Party Integrations', icon: Plug },
@@ -53,6 +54,7 @@ export default function IntegrationsPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

@@ -20,6 +20,7 @@ import SuperAdminDepartmentDrawer from './organization_management_components/Sup
 import SuperAdminWingDrawer from './organization_management_components/SuperAdminWingDrawer';
 import SuperAdminClassDrawer from './organization_management_components/SuperAdminClassDrawer';
 import SuperAdminHouseDrawer from './organization_management_components/SuperAdminHouseDrawer';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'schools', label: 'Schools', icon: Building2 },
@@ -123,6 +124,7 @@ export default function OrganizationManagementPage() {
           </>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

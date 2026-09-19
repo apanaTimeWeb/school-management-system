@@ -16,6 +16,7 @@ import SuperAdminSensitiveDataProtectionConfig from './audit_security_components
 import SuperAdminSystemActivityLogsTable from './audit_security_components/SuperAdminSystemActivityLogsTable';
 import SuperAdminSystemAlertsConfig from './audit_security_components/SuperAdminSystemAlertsConfig';
 import SuperAdminTermsPrivacyConsentConfig from './audit_security_components/SuperAdminTermsPrivacyConsentConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'security', label: 'Security Settings', icon: ShieldCheck },
@@ -110,6 +111,7 @@ export default function AuditSecurityPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

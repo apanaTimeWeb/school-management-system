@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Users } from 'lucide-react';
 
 import SuperAdminHRMasterConfig from './hr_configuration_components/SuperAdminHRMasterConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'hr-master', label: 'HR Master Settings', icon: Users },
@@ -53,6 +54,7 @@ export default function HRConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

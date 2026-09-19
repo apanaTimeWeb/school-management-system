@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Building2 } from 'lucide-react';
 
 import SuperAdminHostelMasterConfig from './hostel_configuration_components/SuperAdminHostelMasterConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'hostel-master', label: 'Hostel Master Settings', icon: Building2 },
@@ -53,6 +54,7 @@ export default function HostelConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

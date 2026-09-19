@@ -8,6 +8,7 @@ import FeeCollectionSummary from './dashboard_components/FeeCollectionSummary';
 import RecentActivities from './dashboard_components/RecentActivities';
 import RecentLoginActivity from './dashboard_components/RecentLoginActivity';
 import SystemNotifications from './dashboard_components/SystemNotifications';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 export default function SuperAdminDashboardPage() {
   return (
@@ -41,6 +42,7 @@ export default function SuperAdminDashboardPage() {
           <RecentLoginActivity />
         </div>
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

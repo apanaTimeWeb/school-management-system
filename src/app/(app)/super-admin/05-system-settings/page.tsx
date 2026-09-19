@@ -11,6 +11,7 @@ import SuperAdminNumberingSequenceConfig from './system_settings_components/Supe
 import SuperAdminSchoolBrandingConfig from './system_settings_components/SuperAdminSchoolBrandingConfig';
 import SuperAdminTranslationTools from './system_settings_components/SuperAdminTranslationTools';
 import SuperAdminWebsiteGlobalSettingsConfig from './system_settings_components/SuperAdminWebsiteGlobalSettingsConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'general', label: 'System Settings', icon: Settings },
@@ -97,6 +98,7 @@ export default function SystemSettingsPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

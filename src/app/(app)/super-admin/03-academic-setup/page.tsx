@@ -15,6 +15,7 @@ import SuperAdminRolloverDrawer from './academic_setup_components/SuperAdminRoll
 import SuperAdminFinancialYearDrawer from './academic_setup_components/SuperAdminFinancialYearDrawer';
 import SuperAdminSubjectDrawer from './academic_setup_components/SuperAdminSubjectDrawer';
 import SuperAdminGroupDrawer from './academic_setup_components/SuperAdminGroupDrawer';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'sessions', label: 'Academic Session Master', icon: CalendarDays },
@@ -124,6 +125,7 @@ export default function AcademicSetupPage() {
 
         {activeTab === 'holidays' && <SuperAdminHolidayWorkingDayMasterConfig />}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

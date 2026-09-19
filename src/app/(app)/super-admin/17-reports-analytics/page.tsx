@@ -6,6 +6,7 @@ import { BarChart3, DownloadCloud } from 'lucide-react';
 
 import SuperAdminReportsAnalyticsConfig from './reports_analytics_components/SuperAdminReportsAnalyticsConfig';
 import SuperAdminSuperAdminExportCenterConfig from './reports_analytics_components/SuperAdminSuperAdminExportCenterConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'reports', label: 'Reports & Analytics', icon: BarChart3 },
@@ -60,6 +61,7 @@ export default function ReportsAnalyticsPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

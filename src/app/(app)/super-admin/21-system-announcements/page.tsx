@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Megaphone } from 'lucide-react';
 
 import SuperAdminSystemAnnouncementConfig from './system_announcements_components/SuperAdminSystemAnnouncementConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'announcements', label: 'System Announcements', icon: Megaphone },
@@ -53,6 +54,7 @@ export default function SystemAnnouncementsPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

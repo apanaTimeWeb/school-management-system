@@ -13,6 +13,7 @@ import SuperAdminRoleDrawer from './users_access_components/SuperAdminRoleDrawer
 import SuperAdminPermissionEditor from './users_access_components/SuperAdminPermissionEditor';
 
 import type { RoleType } from './users_access_types/super_admin_role_management.types';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'users', label: 'User Management', icon: Users },
@@ -111,6 +112,7 @@ export default function UsersAccessPage() {
           <SuperAdminDeviceSessionTable />
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

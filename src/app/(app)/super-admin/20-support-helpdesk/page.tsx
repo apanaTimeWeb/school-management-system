@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SuperAdminSupportHelpdeskConfig from './support_helpdesk_components/SuperAdminSupportHelpdeskConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 export default function supporthelpdeskPage() {
   return (
@@ -10,6 +11,7 @@ export default function supporthelpdeskPage() {
         <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">SupportHelpdesk</h2>
         <SuperAdminSupportHelpdeskConfig />
       </section>
+          <MissingFeaturesUI />
     </div>
   );
 }

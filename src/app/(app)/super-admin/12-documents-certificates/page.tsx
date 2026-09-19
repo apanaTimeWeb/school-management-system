@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { FileText } from 'lucide-react';
 
 import SuperAdminDocumentCertificateConfig from './documents_certificates_components/SuperAdminDocumentCertificateConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'docs-master', label: 'Documents & Certificates Settings', icon: FileText },
@@ -53,6 +54,7 @@ export default function DocumentCertificateConfigurationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { AlertTriangle } from 'lucide-react';
 
 import SuperAdminSuperAdminEmergencyControlsConfig from './emergency_controls_components/SuperAdminSuperAdminEmergencyControlsConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'emergency', label: 'Emergency Controls', icon: AlertTriangle },
@@ -53,6 +54,7 @@ export default function EmergencyControlsPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

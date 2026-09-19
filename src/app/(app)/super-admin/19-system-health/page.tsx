@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Activity } from 'lucide-react';
 
 import SuperAdminSystemHealthConfig from './system_health_components/SuperAdminSystemHealthConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'health', label: 'System Health & Alerts', icon: Activity },
@@ -53,6 +54,7 @@ export default function SystemHealthPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

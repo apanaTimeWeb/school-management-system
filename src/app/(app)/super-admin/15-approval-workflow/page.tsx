@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SuperAdminApprovalWorkflowConfig from './approval_workflow_components/SuperAdminApprovalWorkflowConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 export default function approvalworkflowPage() {
   return (
@@ -10,6 +11,7 @@ export default function approvalworkflowPage() {
         <h2 className="text-xl font-bold mb-4 border-b border-border pb-2">ApprovalWorkflow</h2>
         <SuperAdminApprovalWorkflowConfig />
       </section>
+          <MissingFeaturesUI />
     </div>
   );
 }

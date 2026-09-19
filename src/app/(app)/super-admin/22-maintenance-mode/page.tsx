@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Wrench } from 'lucide-react';
 
 import SuperAdminMaintenanceModeConfig from './maintenance_mode_components/SuperAdminMaintenanceModeConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'maintenance', label: 'Maintenance Mode Settings', icon: Wrench },
@@ -53,6 +54,7 @@ export default function MaintenanceModePage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }

@@ -5,6 +5,7 @@ import clsx from 'clsx';
 import { Zap } from 'lucide-react';
 
 import SuperAdminAutomationRulesConfig from './automation_components/SuperAdminAutomationRulesConfig';
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 const TABS = [
   { id: 'automation', label: 'Automation Rules', icon: Zap },
@@ -53,6 +54,7 @@ export default function AutomationPage() {
           </div>
         )}
       </div>
+          <MissingFeaturesUI />
     </div>
   );
 }
