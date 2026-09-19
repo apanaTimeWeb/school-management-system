@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantProfileMain from "./accountant_profile_components/AccountantProfileMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "My Profile | School ERP 360",
-  description: "Manage your profile, security settings, 2FA, and login history.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function AccountantProfilePage() {
-  return <AccountantProfileMain />;
+export default function profilePage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Accountant Profile</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage accountant profile and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

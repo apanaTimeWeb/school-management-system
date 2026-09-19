@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantExportMain from "./accountant_export_components/AccountantExportMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Reports Export Hub | School ERP 360",
-  description: "Advanced data export center with powerful filters.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function ReportsExportPage() {
-  return <AccountantExportMain />;
+export default function reportsexportPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Reports Export</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage reports export and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantCommunicationMain from "./accountant_communication_components/AccountantCommunicationMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Financial Communication | School ERP 360",
-  description: "Send fee reminders, receipts, and payment notifications.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function CommunicationPage() {
-  return <AccountantCommunicationMain />;
+export default function communicationPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Communication</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage communication and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

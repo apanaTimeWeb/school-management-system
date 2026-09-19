@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantStudentFeesListMain from "./accountant_student_fees_components/AccountantStudentFeesListMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Student Fees | School ERP 360",
-  description: "Search and manage individual student fee profiles.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function StudentFeesListPage() {
-  return <AccountantStudentFeesListMain />;
+export default function studentfeesPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Student Fees Profile</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage student fees profile and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

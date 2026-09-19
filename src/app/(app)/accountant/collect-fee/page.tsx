@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantCollectFeeMain from "./accountant_collect_fee_components/AccountantCollectFeeMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Collect Fee | School ERP 360",
-  description: "Process student fee payments with various options.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function CollectFeePage() {
-  return <AccountantCollectFeeMain />;
+export default function collectfeePage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Fee Collection Desk</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage fee collection desk and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

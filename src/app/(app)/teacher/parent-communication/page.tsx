@@ -1,8 +1,10 @@
+import StudentSpecificCommunication from './StudentSpecificCommunication';
 export default function ParentCommunicationPage() {
   return (
     <div className="p-6">
       <h1 className="text-2xl font-bold">Parent Communication</h1>
       <p className="text-muted-foreground mt-2">This module is under construction.</p>
+          <StudentSpecificCommunication />
     </div>
   );
 }

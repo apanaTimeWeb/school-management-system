@@ -1,8 +1,14 @@
-export default function OutstandingPage() {
+
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
+
+export default function outstandingPage() {
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold">Outstanding</h1>
-      <p className="text-muted-foreground mt-2">This module is under construction.</p>
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Outstanding & Defaulters</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage outstanding & defaulters and related operations.</p>
+      
+      <AccountantRichUI />
     </div>
   );
 }

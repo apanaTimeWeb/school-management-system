@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantReportsMain from "./accountant_reports_components/AccountantReportsMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Financial Reports | School ERP 360",
-  description: "Comprehensive financial analytics and reporting center.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function FinancialReportsPage() {
-  return <AccountantReportsMain />;
+export default function financialreportsPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Financial Reports</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage financial reports and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

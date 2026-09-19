@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantOnlinePaymentsMain from "./accountant_online_payments_components/AccountantOnlinePaymentsMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Online Payments | School ERP 360",
-  description: "Monitor and reconcile online payment gateway transactions.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function OnlinePaymentsPage() {
-  return <AccountantOnlinePaymentsMain />;
+export default function onlinepaymentsPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Online Payments</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage online payments and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

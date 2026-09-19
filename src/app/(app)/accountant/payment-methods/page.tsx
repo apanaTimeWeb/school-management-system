@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantMethodsMain from "./accountant_methods_components/AccountantMethodsMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Payment Methods | School ERP 360",
-  description: "Configure and manage active payment methods.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function PaymentMethodsPage() {
-  return <AccountantMethodsMain />;
+export default function paymentmethodsPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Payment Methods Tracking</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage payment methods tracking and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

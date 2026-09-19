@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantClosingMain from "./accountant_closing_components/AccountantClosingMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Daily Closing | School ERP 360",
-  description: "End of Day (EOD) daily closing and settlement.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function DailyClosingPage() {
-  return <AccountantClosingMain />;
+export default function dailyclosingPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Daily Closing & Settlement</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage daily closing & settlement and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

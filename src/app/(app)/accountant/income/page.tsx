@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantIncomeMain from "./accountant_income_components/AccountantIncomeMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Income & Receipts | School ERP 360",
-  description: "Track all school income, fees, and miscellaneous receipts.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function IncomePage() {
-  return <AccountantIncomeMain />;
+export default function incomePage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Income / Other Receipts</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage income / other receipts and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

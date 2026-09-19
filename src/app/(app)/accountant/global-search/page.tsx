@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantSearchMain from "./accountant_search_components/AccountantSearchMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Global Finance Search | School ERP 360",
-  description: "Omni-search for receipts, invoices, students, and transactions.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function GlobalSearchPage() {
-  return <AccountantSearchMain />;
+export default function globalsearchPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Global Search</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage global search and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

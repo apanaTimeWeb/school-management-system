@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantExpensesMain from "./accountant_expenses_components/AccountantExpensesMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Expense Management | School ERP 360",
-  description: "Track, record, and manage school expenses.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function ExpensesPage() {
-  return <AccountantExpensesMain />;
+export default function expensesPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Expense Management</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage expense management and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

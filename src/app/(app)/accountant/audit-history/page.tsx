@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantAuditMain from "./accountant_audit_components/AccountantAuditMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Audit & History | School ERP 360",
-  description: "Track all sensitive financial actions with IP and value change history.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function AuditHistoryPage() {
-  return <AccountantAuditMain />;
+export default function audithistoryPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Audit & Transaction History</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage audit & transaction history and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }

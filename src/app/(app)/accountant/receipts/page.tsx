@@ -1,12 +1,14 @@
-import React from "react";
-import AccountantReceiptsMain from "./accountant_receipts_components/AccountantReceiptsMain";
-import { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Receipts | School ERP 360",
-  description: "Manage, search, print, and void fee receipts.",
-};
+import React from 'react';
+import AccountantRichUI from './AccountantRichUI';
 
-export default function ReceiptsPage() {
-  return <AccountantReceiptsMain />;
+export default function receiptsPage() {
+  return (
+    <div className="p-6">
+      <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Receipts Management</h1>
+      <p className="text-gray-600 dark:text-gray-400 mt-1">Manage receipts management and related operations.</p>
+      
+      <AccountantRichUI />
+    </div>
+  );
 }
