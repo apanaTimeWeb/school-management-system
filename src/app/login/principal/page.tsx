@@ -19,7 +19,7 @@ export default function PrincipalLogin() {
 
   return (
     <div className="min-h-screen bg-[#F5F3FF] flex items-center justify-center p-6 font-sans relative">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
+      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#7C3AED] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Selection
       </Link>
       

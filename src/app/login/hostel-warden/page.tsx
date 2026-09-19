@@ -18,15 +18,15 @@ export default function HostelWardenLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-main flex items-center justify-center p-6 font-sans relative">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
+    <div className="min-h-screen bg-[#F0FDF4] flex items-center justify-center p-6 font-sans relative">
+      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#166534] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Selection
       </Link>
       
       <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-        <div className="bg-orange-500/5 p-8 text-center border-b border-border">
-          <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center mx-auto mb-4">
-             <Building2 className="text-orange-600" size={32} />
+        <div className="bg-[#F0FDF4] p-8 text-center border-b border-border">
+          <div className="w-16 h-16 rounded-full bg-[#166534]/10 flex items-center justify-center mx-auto mb-4">
+             <Building2 className="text-[#166534]" size={32} />
           </div>
           <h1 className="text-2xl font-bold text-text-primary">Hostel Warden</h1>
           <p className="text-text-secondary mt-1 text-sm">Hostels, Rooms & Allocations</p>
@@ -40,7 +40,7 @@ export default function HostelWardenLogin() {
                 <input 
                   type="text" 
                   defaultValue="warden_admin"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-orange-500 outline-none transition-colors"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#166534] outline-none transition-colors"
                   
                 />
                 <User className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -53,7 +53,7 @@ export default function HostelWardenLogin() {
                 <input 
                   type="password" 
                   defaultValue="hostel12345"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-orange-500 outline-none transition-colors tracking-widest"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#166534] outline-none transition-colors tracking-widest"
                   
                 />
                 <Lock className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -63,7 +63,7 @@ export default function HostelWardenLogin() {
             <button 
               type="submit" 
               disabled={loading}
-              className="mt-4 w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 w-full bg-[#166534] hover:bg-[#14532D] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

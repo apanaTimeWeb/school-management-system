@@ -33,15 +33,15 @@ export default function StudentLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-main flex flex-col items-center justify-center p-6 relative font-sans">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
+    <div className="min-h-screen bg-[#F0F9FF] flex flex-col items-center justify-center p-6 relative font-sans">
+      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#0284C7] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Roles
       </Link>
       
       <div className="w-full max-w-md bg-white border border-border rounded-2xl shadow-xl overflow-hidden motion-safe:animate-[slideIn_0.3s_ease-out]">
         
         {/* Header */}
-        <div className="bg-primary p-8 text-center relative overflow-hidden">
+        <div className="bg-[#0284C7] p-8 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/pattern.png')] opacity-10 mix-blend-overlay"></div>
           <div className="w-20 h-20 rounded-full bg-white/20 mx-auto flex items-center justify-center mb-4 backdrop-blur-sm border border-white/30 relative z-10 shadow-lg">
             <UserCircle size={48} className="text-white" />
@@ -65,7 +65,7 @@ export default function StudentLoginPage() {
               <input 
                 type="text" required placeholder="e.g. STU-2024-001"
                 value={admissionNo} onChange={(e) => setAdmissionNo(e.target.value)}
-                className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 font-semibold transition-all"
+                className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-4 py-3 outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 font-semibold transition-all"
               />
               <UserCircle size={18} className="absolute left-3 top-3.5 text-text-secondary" />
             </div>
@@ -77,12 +77,12 @@ export default function StudentLoginPage() {
               <input 
                 type={showPwd ? "text" : "password"} required placeholder="Enter your password"
                 value={password} onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-10 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 font-semibold transition-all"
+                className="w-full bg-page border border-border text-text-primary text-sm rounded-lg pl-10 pr-10 py-3 outline-none focus:border-[#0284C7] focus:ring-2 focus:ring-[#0284C7]/20 font-semibold transition-all"
               />
               <KeyRound size={18} className="absolute left-3 top-3.5 text-text-secondary" />
               <button 
                 type="button" onClick={() => setShowPwd(!showPwd)} 
-                className="absolute right-3 top-3.5 text-text-secondary hover:text-primary transition-colors"
+                className="absolute right-3 top-3.5 text-text-secondary hover:text-[#0284C7] transition-colors"
               >
                 {showPwd ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
@@ -91,15 +91,15 @@ export default function StudentLoginPage() {
 
           <div className="flex items-center justify-between mb-8">
             <label className="flex items-center gap-2 cursor-pointer">
-              <input type="checkbox" className="w-4 h-4 rounded border-border text-primary focus:ring-primary" />
+              <input type="checkbox" className="w-4 h-4 rounded border-border text-[#0284C7] focus:ring-[#0284C7]" />
               <span className="text-sm font-semibold text-text-secondary">Remember me</span>
             </label>
-            <a href="#" className="text-sm font-bold text-primary hover:underline">Forgot Password?</a>
+            <a href="#" className="text-sm font-bold text-[#0284C7] hover:underline">Forgot Password?</a>
           </div>
 
           <button 
             type="submit" disabled={isLoading}
-            className="w-full py-3.5 bg-primary text-white font-bold rounded-xl shadow-lg shadow-primary/30 hover:bg-primary-hover hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 text-base"
+            className="w-full py-3.5 bg-[#0284C7] text-white font-bold rounded-xl shadow-lg shadow-[#0284C7]/30 hover:bg-[#0C4A6E] hover:-translate-y-0.5 transition-all flex items-center justify-center gap-2 text-base"
           >
             {isLoading ? <><Loader2 size={20} className="animate-spin" /> Authenticating...</> : 'Login Securely'}
           </button>

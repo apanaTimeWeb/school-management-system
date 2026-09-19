@@ -75,23 +75,23 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
       {/* Sidebar Container */}
       <aside 
         className={clsx(
-          "fixed top-0 left-0 h-screen bg-white border-r border-border shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
+          "fixed top-0 left-0 h-screen bg-[#0C4A6E] border-r border-white/10 shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
           isOpen ? "w-[280px] translate-x-0" : "-translate-x-full lg:translate-x-0 lg:w-[280px]"
         )}
       >
         
         {/* Header Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border bg-card shrink-0">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#0C4A6E] shrink-0">
           <Link href="/student/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-[#0284C7] flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <div className="w-8 h-8 rounded-lg bg-[#38BDF8] flex items-center justify-center text-white font-bold text-xl shadow-md">
               S
             </div>
-            <span className="text-xl font-bold tracking-tight text-text-white">
-              Student<span className="text-white">ERP</span>
+            <span className="text-xl font-bold tracking-tight text-white">
+              Student<span className="text-[#38BDF8]">ERP</span>
             </span>
           </Link>
           <button 
-            className="lg:hidden text-text-secondary hover:text-white transition-colors"
+            className="lg:hidden text-white/60 hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             <PanelLeftClose size={24} />
@@ -116,7 +116,7 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
                   "flex items-center gap-3 px-4 py-2.5 rounded-xl font-semibold transition-all group relative",
                   isActive 
                     ? "bg-[#0284C7] text-white shadow-md shadow-primary/20" 
-                    : "text-text-secondary hover:bg-page hover:text-white"
+                    : "text-white/60 hover:bg-[#0284C7]/50 hover:text-white"
                 )}
               >
                 <div className="flex items-center gap-3">

@@ -57,16 +57,16 @@ export default function HRSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-[#BE185D] border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#831843] border-r border-white/10 transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#BE185D]">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#831843]">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-extrabold text-[18px]">
+            <div className="w-8 h-8 rounded-lg bg-[#EC4899] flex items-center justify-center text-white font-extrabold text-[18px]">
               HR
             </div>
-            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-indigo-500">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-[#EC4899]">ERP</span></span>
           </div>
           <button 
             className="lg:hidden text-white/60 hover:text-white transition-colors"
@@ -89,8 +89,8 @@ export default function HRSidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px]
                   ${isActive 
-                    ? 'bg-indigo-50 text-indigo-700 shadow-sm' 
-                    : 'text-white/60 hover:text-white hover:bg-[#BE185D]-hover border border-transparent'}
+                    ? 'bg-[#BE185D] text-white shadow-sm' 
+                    : 'text-white/60 hover:text-white hover:bg-[#BE185D]/50 border border-transparent'}
                 `}
               >
                 <span className={isActive ? 'text-white' : 'text-white/60 group-hover:text-white'}>
@@ -103,7 +103,7 @@ export default function HRSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#BE185D]">
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-white/10 bg-[#831843]">
           <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
             <Settings size={20} className="text-white/60" />
             Settings

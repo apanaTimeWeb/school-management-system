@@ -69,23 +69,23 @@ export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
       {/* Sidebar Container */}
       <aside 
         className={clsx(
-          "fixed top-0 left-0 h-screen bg-white border-r border-border shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
+          "fixed top-0 left-0 h-screen bg-[#78350F] border-r border-white/10 shadow-xl lg:shadow-none flex flex-col transition-all duration-300 z-50",
           isOpen ? "w-[280px] translate-x-0" : "-translate-x-full lg:translate-x-0 lg:w-[280px]"
         )}
       >
         
         {/* Header Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border bg-card shrink-0">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#78350F] shrink-0">
           <Link href="/parent/dashboard" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-pink-500 flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <div className="w-8 h-8 rounded-lg bg-[#F59E0B] flex items-center justify-center text-white font-bold text-xl shadow-md">
               P
             </div>
-            <span className="text-xl font-bold tracking-tight text-text-white">
-              Parent<span className="text-pink-500">Portal</span>
+            <span className="text-xl font-bold tracking-tight text-white">
+              Parent<span className="text-[#F59E0B]">Portal</span>
             </span>
           </Link>
           <button 
-            className="lg:hidden text-text-secondary hover:text-pink-500 transition-colors"
+            className="lg:hidden text-white/60 hover:text-white transition-colors"
             onClick={() => setIsOpen(false)}
           >
             <PanelLeftClose size={24} />
@@ -109,8 +109,8 @@ export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
                 className={clsx(
                   "flex items-center gap-3 px-4 py-2.5 rounded-xl font-semibold transition-all group relative",
                   isActive 
-                    ? "bg-pink-500 text-white shadow-md shadow-pink-500/20" 
-                    : "text-text-secondary hover:bg-page hover:text-pink-500"
+                    ? "bg-[#B45309] text-white shadow-md shadow-[#B45309]/20" 
+                    : "text-white/60 hover:bg-[#B45309]/50 hover:text-white"
                 )}
               >
                 <div className="flex items-center gap-3">
@@ -120,7 +120,7 @@ export default function ParentSidebar({ isOpen, setIsOpen }: Props) {
                 </div>
                 {/* Micro hover indicator */}
                 {!isActive && (
-                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-pink-500 rounded-r-full transition-all group-hover:h-1/2"></span>
+                  <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 bg-[#B45309] rounded-r-full transition-all group-hover:h-1/2"></span>
                 )}
               </Link>
             )

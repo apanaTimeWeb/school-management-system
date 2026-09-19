@@ -53,16 +53,16 @@ export default function AccountantSidebar() {
 
       {/* Sidebar */}
       <aside className={`
-        fixed top-0 left-0 z-50 h-screen w-64 bg-[#475569] border-r border-border transition-transform duration-300 ease-in-out
+        fixed top-0 left-0 z-50 h-screen w-64 bg-[#1E293B] border-r border-white/10 transition-transform duration-300 ease-in-out
         ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
         {/* Logo Area */}
-        <div className="h-16 flex items-center justify-between px-6 border-b border-border/20 bg-[#475569]">
+        <div className="h-16 flex items-center justify-between px-6 border-b border-white/10 bg-[#1E293B]">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-secondary flex items-center justify-center text-white font-extrabold text-[18px]">
+            <div className="w-8 h-8 rounded-lg bg-[#64748B] flex items-center justify-center text-white font-extrabold text-[18px]">
               A
             </div>
-            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-secondary">ERP</span></span>
+            <span className="font-bold text-[18px] text-white tracking-tight">School<span className="text-[#64748B]">ERP</span></span>
           </div>
           <button 
             className="lg:hidden text-white/60 hover:text-white transition-colors"
@@ -85,7 +85,7 @@ export default function AccountantSidebar() {
                 className={`
                   flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors font-semibold text-[14px]
                   ${isActive 
-                    ? 'bg-secondary text-white shadow-sm' 
+                    ? 'bg-[#475569] text-white shadow-sm' 
                     : 'text-white/60 hover:text-white hover:bg-[#475569]/50 border border-transparent'}
                 `}
               >
@@ -99,7 +99,7 @@ export default function AccountantSidebar() {
         </nav>
 
         {/* Footer Area */}
-        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-border/20 bg-[#475569]">
+        <div className="absolute bottom-0 left-0 w-full p-4 border-t border-white/10 bg-[#1E293B]">
           <button className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-danger hover:bg-danger/10 transition-colors font-semibold text-[14px]">
             <Settings size={20} className="text-white/60" />
             Settings
