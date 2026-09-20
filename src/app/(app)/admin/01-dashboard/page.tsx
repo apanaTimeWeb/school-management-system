@@ -5,10 +5,10 @@ import MetricCard from "./dashboard_components/MetricCard";
 import { FeeCollectionChart, AttendanceAnalyticsChart, AcademicPerformanceChart } from "./dashboard_components/DashboardCharts";
 import { AlertsAndNotifications, UpcomingEventsList, ExamsAndGrievancesList } from "./dashboard_components/DashboardLists";
 import { 
-import MissingFeaturesUI from './MissingFeaturesUI';
   Users, UserCheck, GraduationCap, IndianRupee, ClipboardList, TrendingUp,
   UserPlus, UserMinus, FileText, AlertCircle, Plus, BookOpen, User
 } from "lucide-react";
+import MissingFeaturesUI from './MissingFeaturesUI';
 
 export default function AdminDashboardPage() {
   return (
