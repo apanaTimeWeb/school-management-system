@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { UserCircle, ArrowLeft, Lock, User } from 'lucide-react';
+import { School, ArrowLeft, Lock, User } from 'lucide-react';
 
-export default function TeacherLogin() {
+export default function SchoolAdminLogin() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -13,23 +13,23 @@ export default function TeacherLogin() {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      router.push('/teacher/dashboard');
+      router.push('/admin/01-dashboard');
     }, 1000);
   };
 
   return (
-    <div className="min-h-screen bg-[#F0FDF4] flex items-center justify-center p-6 font-sans relative">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#15803D] transition-colors font-semibold text-sm">
+    <div className="min-h-screen bg-[#ECFDF5] flex items-center justify-center p-6 font-sans relative">
+      <Link href="/auth/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#0F766E] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Selection
       </Link>
       
       <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-        <div className="bg-[#F0FDF4] p-8 text-center border-b border-border">
-          <div className="w-16 h-16 rounded-full bg-[#15803D]/10 flex items-center justify-center mx-auto mb-4">
-            <UserCircle className="text-[#15803D]" size={32} />
+        <div className="bg-[#ECFDF5] p-8 text-center border-b border-border">
+          <div className="w-16 h-16 rounded-full bg-[#0F766E]/10 flex items-center justify-center mx-auto mb-4">
+            <School className="text-[#0F766E]" size={32} />
           </div>
-          <h1 className="text-2xl font-bold text-text-primary">Teacher</h1>
-          <p className="text-text-secondary mt-1 text-sm">Academics & Classroom Management</p>
+          <h1 className="text-2xl font-bold text-text-primary">School Admin</h1>
+          <p className="text-text-secondary mt-1 text-sm">School Management</p>
         </div>
 
         <div className="p-8">
@@ -39,8 +39,8 @@ export default function TeacherLogin() {
               <div className="relative">
                 <input 
                   type="text" 
-                  defaultValue="teacher"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#22C55E] outline-none transition-colors"
+                  defaultValue="admin"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#14B8A6] outline-none transition-colors"
                   
                 />
                 <User className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -53,7 +53,7 @@ export default function TeacherLogin() {
                 <input 
                   type="password" 
                   defaultValue="password123"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#22C55E] outline-none transition-colors tracking-widest"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#14B8A6] outline-none transition-colors tracking-widest"
                   
                 />
                 <Lock className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -63,12 +63,12 @@ export default function TeacherLogin() {
             <button 
               type="submit" 
               disabled={loading}
-              className="mt-4 w-full bg-[#15803D] hover:bg-[#14532D] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 w-full bg-[#0F766E] hover:bg-[#134E4A] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
-                "Login as Teacher"
+                "Login as School Admin"
               )}
             </button>
           </form>

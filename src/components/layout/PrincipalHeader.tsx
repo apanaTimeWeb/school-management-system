@@ -145,7 +145,7 @@ export default function PrincipalHeader() {
               <Link href="/principal/profile" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-[#7C3AED] hover:bg-[#7C3AED]/10 transition">
                 <UserCircle size={16} /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+              <Link href="/auth/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

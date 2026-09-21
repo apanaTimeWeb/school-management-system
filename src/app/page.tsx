@@ -22,7 +22,7 @@ export default function LandingPage() {
           <Link href="#modules" className="hover:text-primary transition-colors">Modules</Link>
         </div>
         <div>
-          <Link href="/login" className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2">
+          <Link href="/auth/login" className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm flex items-center gap-2">
             LOGIN
           </Link>
         </div>
@@ -50,7 +50,7 @@ export default function LandingPage() {
             A secure, cloud-based ERP handling Students, Academics, Finance, HR, and 20+ other modules seamlessly from one centralized dashboard.
           </p>
           
-          <Link href="/login" className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3">
+          <Link href="/auth/login" className="group bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center gap-3">
             🔐 Login to ERP
             <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
           </Link>

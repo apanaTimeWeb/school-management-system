@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { GraduationCap, ArrowLeft, Lock, User } from 'lucide-react';
+import { Shield, ArrowLeft, Lock, User } from 'lucide-react';
 
-export default function PrincipalLogin() {
+export default function SuperAdminLogin() {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
 
@@ -13,23 +13,23 @@ export default function PrincipalLogin() {
     e.preventDefault();
     setLoading(true);
     setTimeout(() => {
-      router.push('/principal/dashboard');
+      router.push('/super-admin/01-dashboard');
     }, 1000);
   };
 
   return (
-    <div className="min-h-screen bg-[#F5F3FF] flex items-center justify-center p-6 font-sans relative">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#7C3AED] transition-colors font-semibold text-sm">
+    <div className="min-h-screen bg-[#EFF6FF] flex items-center justify-center p-6 font-sans relative">
+      <Link href="/auth/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#1E3A8A] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Selection
       </Link>
       
       <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
-        <div className="bg-[#F5F3FF] p-8 text-center border-b border-border">
-          <div className="w-16 h-16 rounded-full bg-[#7C3AED]/10 flex items-center justify-center mx-auto mb-4">
-            <GraduationCap className="text-[#7C3AED]" size={32} />
+        <div className="bg-[#EFF6FF] p-8 text-center border-b border-border">
+          <div className="w-16 h-16 rounded-full bg-[#1E3A8A]/10 flex items-center justify-center mx-auto mb-4">
+            <Shield className="text-[#1E3A8A]" size={32} />
           </div>
-          <h1 className="text-2xl font-bold text-text-primary">Principal</h1>
-          <p className="text-text-secondary mt-1 text-sm">Executive Overview</p>
+          <h1 className="text-2xl font-bold text-text-primary">Super Admin</h1>
+          <p className="text-text-secondary mt-1 text-sm">System Administration</p>
         </div>
 
         <div className="p-8">
@@ -39,8 +39,8 @@ export default function PrincipalLogin() {
               <div className="relative">
                 <input 
                   type="text" 
-                  defaultValue="principal"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#8B5CF6] outline-none transition-colors"
+                  defaultValue="super@erp360.com"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#3B82F6] outline-none transition-colors"
                   
                 />
                 <User className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -53,7 +53,7 @@ export default function PrincipalLogin() {
                 <input 
                   type="password" 
                   defaultValue="password123"
-                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#8B5CF6] outline-none transition-colors tracking-widest"
+                  className="w-full bg-input border border-border rounded-lg pl-10 pr-4 py-3 text-sm font-medium focus:border-[#3B82F6] outline-none transition-colors tracking-widest"
                   
                 />
                 <Lock className="absolute left-3 top-3 text-text-secondary" size={18} />
@@ -63,12 +63,12 @@ export default function PrincipalLogin() {
             <button 
               type="submit" 
               disabled={loading}
-              className="mt-4 w-full bg-[#7C3AED] hover:bg-[#4C1D95] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
+              className="mt-4 w-full bg-[#1E3A8A] hover:bg-[#172554] text-white font-bold py-3.5 rounded-lg transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-70"
             >
               {loading ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
-                "Login as Principal"
+                "Login as Super Admin"
               )}
             </button>
           </form>

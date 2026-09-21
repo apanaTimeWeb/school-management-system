@@ -25,7 +25,7 @@ export default function LoginSelectionPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full max-w-7xl">
         
         {/* Student Card */}
-        <Link href="/login/student" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/student" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#F0F9FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <UserCircle className="text-[#0284C7]" size={32} />
           </div>
@@ -37,7 +37,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Parent Card */}
-        <Link href="/login/parent" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/parent" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#FFFBEB] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Users className="text-[#B45309]" size={32} />
           </div>
@@ -49,7 +49,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Teacher Card */}
-        <Link href="/login/teacher" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/teacher" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#F0FDF4] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <GraduationCap className="text-[#15803D]" size={32} />
           </div>
@@ -61,7 +61,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Super Admin Card */}
-        <Link href="/login/super-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/super-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#EFF6FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Shield className="text-[#1E3A8A]" size={32} />
           </div>
@@ -73,7 +73,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* School Admin Card */}
-        <Link href="/login/school-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/school-admin" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#ECFDF5] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <School className="text-[#0F766E]" size={32} />
           </div>
@@ -85,7 +85,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Principal Card */}
-        <Link href="/login/principal" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/principal" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#F5F3FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Building2 className="text-[#7C3AED]" size={32} />
           </div>
@@ -97,7 +97,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Accountant Card */}
-        <Link href="/login/accountant" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/accountant" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#F8FAFC] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Calculator className="text-[#475569]" size={32} />
           </div>
@@ -109,7 +109,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* HR / Office Card */}
-        <Link href="/login/hr" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/hr" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#FDF2F8] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Building2 className="text-[#BE185D]" size={32} />
           </div>
@@ -121,7 +121,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Transport Manager Card */}
-        <Link href="/login/transport-manager" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/transport-manager" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#ECFEFF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#0891B2]"><path d="M8 6v6"/><path d="M15 6v6"/><path d="M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3"/><circle cx="7" cy="18" r="2"/><path d="M9 18h5"/><circle cx="16" cy="18" r="2"/></svg>
           </div>
@@ -133,7 +133,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Hostel Warden Card */}
-        <Link href="/login/hostel-warden" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/hostel-warden" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#F0FDF4] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <Building2 className="text-[#166534]" size={32} />
           </div>
@@ -145,7 +145,7 @@ export default function LoginSelectionPage() {
         </Link>
 
         {/* Librarian Card */}
-        <Link href="/login/librarian" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
+        <Link href="/auth/login/librarian" className="group bg-white border border-border rounded-2xl p-6 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all flex flex-col items-center text-center">
           <div className="w-16 h-16 rounded-full bg-[#FAF5FF] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#6D28D9]">
               <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"/>

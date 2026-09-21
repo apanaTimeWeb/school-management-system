@@ -124,7 +124,7 @@ export default function TransportManagerSidebar() {
 
         {/* Footer Area */}
         <div className="absolute bottom-0 left-0 w-full p-4 border-t border-white/10 bg-[#164E63] shrink-0">
-          <Link href="/login" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-white hover:bg-danger/80 transition-colors font-semibold text-[14px]">
+          <Link href="/auth/login" className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-white/60 hover:text-white hover:bg-danger/80 transition-colors font-semibold text-[14px]">
             <LogOut size={20} className="text-red-400" />
             <span>27 - Logout</span>
           </Link>

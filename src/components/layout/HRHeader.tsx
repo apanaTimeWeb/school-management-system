@@ -135,7 +135,7 @@ export default function HRHeader() {
               <Link href="/hr/profile" className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-[#BE185D] hover:bg-[#BE185D]/10 transition border-b border-border">
                 <UserCircle size={16} className="text-[#EC4899]" /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 transition">
+              <Link href="/auth/login" className="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

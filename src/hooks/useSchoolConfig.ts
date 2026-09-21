@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { DEMO_SCHOOLS } from "@/app/login/login_mock_data";
+import { DEMO_SCHOOLS } from "@/app/auth/auth_mocks/auth_mock_fixtures";
 
 const LS_KEY = "school_erp_config_sch_1";
 

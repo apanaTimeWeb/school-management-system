@@ -135,7 +135,7 @@ export default function LibrarianHeader() {
               <Link href="/librarian/profile" className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-[#6D28D9] hover:bg-bg-page hover:text-[#6D28D9] transition border-b border-border">
                 <UserCircle size={16} className="text-[#6D28D9]" /> My Profile
               </Link>
-              <Link href="/login" className="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 transition">
+              <Link href="/auth/login" className="flex items-center gap-2 px-4 py-2.5 text-sm font-bold text-danger hover:bg-danger/10 transition">
                 <LogOut size={16} /> Logout
               </Link>
             </div>

@@ -30,7 +30,7 @@ export default function ParentLoginPage() {
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#B45309]/10 rounded-full blur-3xl"></div>
       </div>
 
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#B45309] transition-colors font-semibold text-sm z-10">
+      <Link href="/auth/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#B45309] transition-colors font-semibold text-sm z-10">
         <ArrowLeft size={16} /> Back to Roles
       </Link>
       

@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, useParams } from 'next/navigation';
 import { ArrowLeft, Lock, User, AlertTriangle, ShieldAlert, Eye, EyeOff } from 'lucide-react';
-import { ROLE_LOGIN_CONFIG, DEMO_SCHOOLS } from '../login_mock_data';
+import { ROLE_LOGIN_CONFIG } from '../../auth_constants/auth_constants';
+import { DEMO_SCHOOLS } from '../../auth_mocks/auth_mock_fixtures';
 
 const LS_KEY = "school_erp_config_sch_1";
 
@@ -61,7 +62,7 @@ export default function DynamicRoleLogin() {
       <div className="min-h-screen bg-bg-main flex flex-col items-center justify-center p-6 text-center">
         <h1 className="text-2xl sm:text-3xl font-bold text-text-primary mb-2">Role Not Found</h1>
         <p className="text-text-secondary mb-6 text-sm">The login role you requested does not exist.</p>
-        <Link href="/login" className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm">
+        <Link href="/auth/login" className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-primary/90 transition-colors text-sm">
           Back to Login Selection
         </Link>
       </div>
@@ -80,7 +81,7 @@ export default function DynamicRoleLogin() {
   if (!isEnabled) {
     return (
       <div className="min-h-screen bg-bg-main flex flex-col items-center justify-center p-4 relative">
-        <Link href="/login" className="absolute top-5 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
+        <Link href="/auth/login" className="absolute top-5 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
           <ArrowLeft size={16} /> Back
         </Link>
         <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center">
@@ -94,7 +95,7 @@ export default function DynamicRoleLogin() {
             <br /><br />
             Please configure the school settings in Super Admin to enable this login.
           </p>
-          <Link href="/login" className="inline-flex bg-bg-page border border-border text-text-primary px-6 py-2.5 rounded-lg font-bold hover:bg-bg-page/80 transition-colors w-full justify-center text-sm">
+          <Link href="/auth/login" className="inline-flex bg-bg-page border border-border text-text-primary px-6 py-2.5 rounded-lg font-bold hover:bg-bg-page/80 transition-colors w-full justify-center text-sm">
             Back to Login Selection
           </Link>
         </div>
@@ -127,7 +128,7 @@ export default function DynamicRoleLogin() {
     <div className="min-h-screen flex flex-col md:flex-row bg-bg-main">
       {/* Back button */}
       <Link
-        href="/login"
+        href="/auth/login"
         className="absolute top-4 left-4 sm:top-6 sm:left-6 flex items-center gap-1.5 text-text-secondary hover:text-primary transition-colors font-semibold text-sm z-50 bg-white/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm border border-border"
       >
         <ArrowLeft size={15} /> Back

@@ -34,7 +34,7 @@ export default function StudentLoginPage() {
 
   return (
     <div className="min-h-screen bg-[#F0F9FF] flex flex-col items-center justify-center p-6 relative font-sans">
-      <Link href="/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#0284C7] transition-colors font-semibold text-sm">
+      <Link href="/auth/login" className="absolute top-8 left-8 flex items-center gap-2 text-text-secondary hover:text-[#0284C7] transition-colors font-semibold text-sm">
         <ArrowLeft size={16} /> Back to Roles
       </Link>
       

@@ -138,7 +138,7 @@ export default function AdminHeader({ onMenuClick }: AdminHeaderProps) {
                  <UserCircle size={16}/> My Profile
                </Link>
                <div className="h-px w-full bg-border my-1"></div>
-               <Link href="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
+               <Link href="/auth/login" className="flex items-center gap-2 px-4 py-2 text-sm font-bold text-danger hover:bg-danger/10 transition">
                  <LogOut size={16}/> Logout
                </Link>
             </div>
