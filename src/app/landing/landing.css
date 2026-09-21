@@ -1,0 +1,10 @@
+/* 
+  Landing Module Specific CSS
+  Note: Core design system tokens are still inherited from globals.css. 
+  This file is for landing-specific overrides or complex animations if needed.
+*/
+
+.landing-hero-bg {
+  background-image: radial-gradient(circle at top, var(--primary) 0%, transparent 40%);
+  opacity: 0.05;
+}
