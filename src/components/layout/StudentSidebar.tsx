@@ -59,7 +59,7 @@ export default function StudentSidebar({ isOpen, setIsOpen }: Props) {
   const { modules, isLoaded } = useSchoolConfig();
 
   const handleLogout = () => {
-    router.push('/login');
+    router.push('/auth/login');
   };
 
   return (

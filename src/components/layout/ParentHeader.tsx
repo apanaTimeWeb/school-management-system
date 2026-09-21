@@ -26,7 +26,7 @@ export default function ParentHeader({ toggleSidebar }: Props) {
   }, []);
 
   const handleLogout = () => {
-    router.push('/login');
+    router.push('/auth/login');
   };
 
   return (
