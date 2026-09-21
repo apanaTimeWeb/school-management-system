@@ -1,6 +1,18 @@
 import { Shield, School, GraduationCap, Calculator, Users, UserCircle, BookOpen, Bus, Key, Building2 } from 'lucide-react';
 
 export const ROLE_LOGIN_CONFIG: Record<string, any> = {
+  'super-admin': {
+    id: 'super-admin',
+    label: 'Super Admin',
+    description: 'Platform Management & Settings',
+    icon: Shield,
+    color: '#1E3A8A',
+    bgColor: '#1E3A8A0D',
+    route: '/auth/login/super-admin',
+    dashboardRoute: '/super-admin/01-dashboard',
+    demoUser: 'super',
+    demoPass: 'super123'
+  },
   'school-admin': {
     id: 'school-admin',
     label: 'School Admin',

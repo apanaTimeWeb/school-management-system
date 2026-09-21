@@ -51,7 +51,7 @@ export default function DynamicRoleLogin() {
       }
     }
 
-    setIsEnabled(!!activeRoles[roleKey]);
+    setIsEnabled(roleKey === 'super-admin' || !!activeRoles[roleKey]);
     setActiveSchoolName(schoolName || 'Unknown School');
     setLoading(false);
   }, [roleKey, roleConfig]);
