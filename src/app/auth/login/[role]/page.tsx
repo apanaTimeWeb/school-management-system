@@ -84,7 +84,7 @@ export default function DynamicRoleLogin() {
         <Link href="/auth/login" className="absolute top-5 left-4 sm:top-8 sm:left-8 flex items-center gap-2 text-text-secondary hover:text-primary transition-colors font-semibold text-sm">
           <ArrowLeft size={16} /> Back
         </Link>
-        <div className="bg-white border border-border rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center">
+        <div className="bg-bg-card border border-border rounded-2xl shadow-xl w-full max-w-md p-6 sm:p-8 text-center">
           <div className="w-16 h-16 bg-danger-bg rounded-full flex items-center justify-center mx-auto mb-4">
             <ShieldAlert className="text-danger" size={32} />
           </div>
@@ -164,7 +164,7 @@ export default function DynamicRoleLogin() {
             <p className="text-text-secondary text-sm">School ERP Portal</p>
           </div>
 
-          <div className="bg-white border border-border rounded-2xl shadow-xl overflow-hidden">
+          <div className="bg-bg-card border border-border rounded-2xl shadow-xl overflow-hidden">
             {/* Role Header */}
             <div className="p-6 sm:p-8 text-center border-b border-border" style={{ backgroundColor: roleConfig.bgColor }}>
               <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center mx-auto mb-3 shadow-sm">
